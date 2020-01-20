@@ -1,5 +1,11 @@
 package DAO;
 
+import DAO.Implementation.*;
+import DAO.interfaces.*;
+import Model.BanqueSang;
+import Model.StockSang;
+import Model.Ville;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -59,5 +65,39 @@ public class DAOFactory {
         return DriverManager.getConnection(url,username,password);
     }
 
-    //Ajout des methodes d'acces au classes DAO imp
+    public AlerteBesoinDAO getAlerteBesoinDaoImpl(){
+        return new AlerteBesoinDaoImpl(this);
+    }
+
+    public BanqueSangDAO getBanqueSangDaoImpl(){
+        return new BanqueSangDaoImpl(this);
+    }
+
+    public ConvoiDAO getConvoiDaoImpl(){
+        return new ConvoiDaoImpl(this);
+    }
+
+    public DonnateurDAO getDonnateurDaoImpl(){
+        return new DonnateurDaoImpl(this);
+    }
+
+    public DonnationDAO getDonnationDaoImpl(){
+        return new DonnationDaoImpl(this);
+    }
+
+    public GroupeSanginDAO getGroupeSanginDaoImpl(){
+        return new GroupeSanginDaoImpl(this);
+    }
+
+    public PlanningDAO getPlanningDaoImpl(){
+        return new PlanningDaoImpl(this);
+    }
+
+    public StockSangDAO getStockSangDaoImpl(){
+        return new StockSangDaoImpl(this);
+    }
+
+    public VilleDAO getVilleDaoImpl(){
+        return new VilleDaoImpl(this);
+    }
 }
