@@ -19,6 +19,10 @@ public class BanqueSang {
         this.idVille = idVille;
     }
 
+    public BanqueSang() {
+
+    }
+
     public int getIdBS() {
         return idBS;
     }
