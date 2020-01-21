@@ -8,12 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b472344e-27b5-49a8-b1f9-2b364f8e5a2d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sang_Donnation.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Implementation/BanqueSangDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Implementation/BanqueSangDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/interfaces/BanqueSangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/interfaces/BanqueSangDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/BanqueSang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/BanqueSang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Implementation/GroupeSanginDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Implementation/GroupeSanginDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/interfaces/GroupeSanginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/interfaces/GroupeSanginDAO.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +193,7 @@
       <option name="presentableId" value="Default" />
       <updated>1579526673345</updated>
       <workItem from="1579526678846" duration="12406000" />
-      <workItem from="1579560605590" duration="5979000" />
+      <workItem from="1579560605590" duration="7379000" />
     </task>
     <servers />
   </component>
