@@ -5,7 +5,7 @@ import Model.Donnateur;
 import java.util.List;
 
 public interface DonnateurDAO {
-
+/*
     //Crud
     boolean addDonnateur(Donnateur donnateur);
     boolean updateDonnateur(Donnateur donnateur);
@@ -25,6 +25,6 @@ public interface DonnateurDAO {
 
     //Pour les statistiques
     int donorsNbrPerCity(int idVille);
-    int donorsNbrPerGrpSg(int idGS);
+    int donorsNbrPerGrpSg(int idGS);*/
 
 }
