@@ -9,39 +9,14 @@
     <list default="true" id="b472344e-27b5-49a8-b1f9-2b364f8e5a2d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/DAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/AlerteBesoinDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/AlerteBesoinDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/BanqueSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/BanqueSangDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/ConvoiDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/ConvoiDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/DonnateurDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/DonnateurDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/DonnationDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/DonnationDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/GroupeSanginDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/GroupeSanginDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/PlanningDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/PlanningDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/StockSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/StockSangDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/VilleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/VilleDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/AlerteBesoinDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/AlerteBesoinDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/BanqueSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/BanqueSangDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/ConvoiDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/ConvoiDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/DonnationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/DonnationDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/GroupeSanginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/GroupeSanginDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/PlanningDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/PlanningDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/StockSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/StockSangDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/VilleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/VilleDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/AlerteBesoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/AlerteBesoin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/BanqueSang.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/BanqueSang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/Planning.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/Planning.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/TestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/TestServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/interfaces/DonnateurDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/interfaces/DonnateurDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnateurDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnateurDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnateurDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnateurDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/AlerteBesoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/AlerteBesoin.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="2019_DW_Pr20" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -98,7 +73,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8">
-    <configuration name="DAOFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="DAOFactory" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DAO.DAOFactory" />
       <module name="Sang_Donnation" />
       <extension name="coverage">
@@ -111,9 +86,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 8" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.49" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+    <configuration name="Tomcat 8" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8088/" />
+      <option name="BROWSER_ID" value="53e2f627-b1a7-4dfa-bfa7-5b83cc034776" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Sang_Donnation:Web exploded">
@@ -124,6 +99,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_Sang_Donnation_2" />
+        <option name="HTTP_PORT" value="8088" />
         <option name="JNDI_PORT" value="1098" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
@@ -186,40 +162,109 @@
         </option>
       </method>
     </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Sang_Donnation:Web exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_2019_DW_Pr20" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="49434" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Sang_Donnation:Web exploded" />
+        </option>
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.DAOFactory" />
       <item itemvalue="Tomcat Server.Tomcat 8" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.DAOFactory" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.20865533" />
+          <option name="contentProportion" value="0.46" />
           <treeState>
             <expand>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="com.intellij.execution.dashboard.RunDashboardServiceViewContributor@2349c4d8" type="d2cb1801:ServiceModel$ContributorNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="com.intellij.execution.dashboard.RunDashboardServiceViewContributor@2349c4d8" type="d2cb1801:ServiceModel$ContributorNode" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="com.intellij.execution.dashboard.RunDashboardServiceViewContributor@2349c4d8" type="d2cb1801:ServiceModel$ContributorNode" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
           </treeState>
+          <option name="groupByContributor" value="true" />
         </serviceView>
       </list>
     </option>
@@ -271,45 +316,93 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="28" key="#Project_Structure" />
-    <state x="275" y="28" key="#Project_Structure/0.0.1366.738@0.0.1366.738" />
-    <state x="380" y="0" width="619" height="738" key="#Tomcat_8" />
-    <state x="380" y="0" width="619" height="738" key="#Tomcat_8/0.0.1366.738@0.0.1366.738" />
-    <state x="137" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
-    <state x="137" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" />
-    <state x="488" y="86" key="#com.intellij.ide.util.MemberChooser" />
-    <state x="488" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" />
-    <state x="531" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
-    <state x="531" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.738@0.0.1366.738" />
-    <state x="463" y="125" key="FileChooserDialogImpl" />
-    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.0.bottom" />
-    <state width="1023" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.0.center" />
-    <state width="1023" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.0.left" />
-    <state width="1023" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.0.right" />
-    <state width="1023" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.1.bottom" />
-    <state width="1023" height="182" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.1.center" />
-    <state width="1023" height="182" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.1.left" />
-    <state width="1023" height="182" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.1.right" />
-    <state width="1023" height="182" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.2.bottom" />
-    <state width="1023" height="182" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.2.center" />
-    <state width="1023" height="182" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.2.left" />
-    <state width="1023" height="182" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" />
-    <state width="1023" height="182" key="GridCell.Tab.2.right" />
-    <state width="1023" height="182" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" />
-    <state x="339" y="165" key="run.anything.popup" />
-    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" />
+    <state x="275" y="28" key="#Project_Structure" timestamp="1579646201715" />
+    <state x="275" y="28" key="#Project_Structure/0.0.1366.738@0.0.1366.738" timestamp="1579646201715" />
+    <state x="380" y="0" width="619" height="738" key="#Tomcat_8" timestamp="1579646201715" />
+    <state x="380" y="0" width="619" height="738" key="#Tomcat_8/0.0.1366.738@0.0.1366.738" timestamp="1579646201715" />
+    <state x="137" y="0" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579646713902">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="137" y="0" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1579646713902" />
+    <state x="488" y="86" key="#com.intellij.ide.util.MemberChooser" timestamp="1579646201715" />
+    <state x="488" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1579646201715" />
+    <state x="531" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1579646239712">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="531" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.738@0.0.1366.738" timestamp="1579646239712" />
+    <state x="275" y="28" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1579646653754">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="28" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1366.738@0.0.1366.738" timestamp="1579646653754" />
+    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1579646201715" />
+    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1579646201715" />
+    <state width="323" height="182" key="GridCell.Tab.0.bottom" timestamp="1579646770263">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1579646770263" />
+    <state width="323" height="182" key="GridCell.Tab.0.center" timestamp="1579646770263">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1579646770263" />
+    <state width="323" height="182" key="GridCell.Tab.0.left" timestamp="1579646770262">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1579646770262" />
+    <state width="323" height="182" key="GridCell.Tab.0.right" timestamp="1579646770263">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1579646770263" />
+    <state width="518" height="182" key="GridCell.Tab.1.bottom" timestamp="1579646770031">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1579646770031" />
+    <state width="518" height="182" key="GridCell.Tab.1.center" timestamp="1579646770031">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1579646770031" />
+    <state width="518" height="182" key="GridCell.Tab.1.left" timestamp="1579646770031">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1579646770031" />
+    <state width="518" height="182" key="GridCell.Tab.1.right" timestamp="1579646770031">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1579646770031" />
+    <state width="518" height="182" key="GridCell.Tab.2.bottom" timestamp="1579646770032">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" timestamp="1579646770032" />
+    <state width="518" height="182" key="GridCell.Tab.2.center" timestamp="1579646770032">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" timestamp="1579646770032" />
+    <state width="518" height="182" key="GridCell.Tab.2.left" timestamp="1579646770032">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" timestamp="1579646770032" />
+    <state width="518" height="182" key="GridCell.Tab.2.right" timestamp="1579646770032">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1579646770032" />
+    <state width="518" height="182" key="GridCell.Tab.3.bottom" timestamp="1579646770033">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.3.bottom/0.0.1366.738@0.0.1366.738" timestamp="1579646770033" />
+    <state width="518" height="182" key="GridCell.Tab.3.center" timestamp="1579646770032">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.3.center/0.0.1366.738@0.0.1366.738" timestamp="1579646770032" />
+    <state width="518" height="182" key="GridCell.Tab.3.left" timestamp="1579646770032">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.3.left/0.0.1366.738@0.0.1366.738" timestamp="1579646770032" />
+    <state width="518" height="182" key="GridCell.Tab.3.right" timestamp="1579646770032">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="518" height="182" key="GridCell.Tab.3.right/0.0.1366.738@0.0.1366.738" timestamp="1579646770032" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1579646201715" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1579646201715" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1579646201715" />
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1579646201715" />
   </component>
 </project>
