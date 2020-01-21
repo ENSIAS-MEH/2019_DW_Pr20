@@ -7,6 +7,7 @@ import java.util.List;
 public class AlerteBesoin {
     private int idBS; //banque du sang
     private List<Integer> listGS = new ArrayList<>(); //liste des groupes de sang
+    /* pour l'alert, il vaut mieux spécifier idGS au lieux d'avoir une liste des groupes de sang*/
     private Timestamp dateAlerte;
     private String descriptionAlerte;
     private boolean enable;
