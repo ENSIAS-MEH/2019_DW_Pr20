@@ -8,6 +8,10 @@ public class Convoi {
     private String desciption;
     private int idBS;  //banque du sang
 
+    public Convoi() {
+
+    }
+
     public Convoi(int idConvoi, String titreConvoi, String desciption, Timestamp dateConvoi, int idBS) {
         this.idConvoi = idConvoi;
         this.titreConvoi = titreConvoi;
