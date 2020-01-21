@@ -18,6 +18,23 @@ public class GroupeSanginDaoImpl implements GroupeSanginDAO {
         this.daoFactory = daoFactory;
     }
 
+    @Override
+    public GroupeSangin findGroupSanginById(int id) {
+        String query = "select * from GroupeSangin where idGS = '"+id+"'";
+        try {
+            Connection connection = daoFactory.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            if(resultSet.next()){
+                GroupeSangin groupeSangin = new GroupeSangin(resultSet.getInt("idGS"),resultSet.getString("nomGS"));
+                return  groupeSangin;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     @Override
     public GroupeSangin findGroupSanginByName(String nom) {

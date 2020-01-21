@@ -8,8 +8,19 @@
   <component name="ChangeListManager">
     <list default="true" id="b472344e-27b5-49a8-b1f9-2b364f8e5a2d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/BanqueSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/BanqueSangDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/GroupeSanginDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/GroupeSanginDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/BanqueSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/BanqueSangDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/GroupeSanginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/GroupeSanginDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/BanqueSang.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/BanqueSang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Implementation/GroupeSanginDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Implementation/GroupeSanginDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/interfaces/GroupeSanginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/interfaces/GroupeSanginDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/BanqueSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/BanqueSangDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/GroupeSanginDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/GroupeSanginDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/BanqueSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/BanqueSangDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/GroupeSanginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/GroupeSanginDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/BanqueSang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/BanqueSang.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +42,9 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="2019_DW_Pr20" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -46,8 +60,8 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
@@ -68,10 +82,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="http.proxy" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -193,7 +213,9 @@
       <option name="presentableId" value="Default" />
       <updated>1579526673345</updated>
       <workItem from="1579526678846" duration="12406000" />
-      <workItem from="1579560605590" duration="7379000" />
+      <workItem from="1579560605590" duration="7711000" />
+      <workItem from="1579609707275" duration="2063000" />
+      <workItem from="1579611855337" duration="2666000" />
     </task>
     <servers />
   </component>
@@ -205,7 +227,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
