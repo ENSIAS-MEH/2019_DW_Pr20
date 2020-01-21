@@ -7,35 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b472344e-27b5-49a8-b1f9-2b364f8e5a2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/TestServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/lib/mysql-connector-java-5.1.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/AlerteBesoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/AlerteBesoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Planning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Planning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/DAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/AlerteBesoinDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/AlerteBesoinDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/BanqueSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/BanqueSangDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/ConvoiDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/ConvoiDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnateurDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnateurDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnationDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnationDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/GroupeSanginDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/GroupeSanginDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/PlanningDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/PlanningDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/StockSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/StockSangDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/VilleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/VilleDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/AlerteBesoinDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/AlerteBesoinDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/BanqueSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/BanqueSangDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/ConvoiDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/ConvoiDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnateurDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnateurDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnationDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/GroupeSanginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/GroupeSanginDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/PlanningDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/PlanningDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/StockSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/StockSangDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/VilleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/VilleDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/BanqueSang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/BanqueSang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Implementation/DonnateurDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Implementation/DonnateurDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/interfaces/DonnateurDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/interfaces/DonnateurDAO.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,12 +61,24 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="http.proxy" />
+    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 8">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.DAOFactory">
     <configuration name="DAOFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DAO.DAOFactory" />
       <module name="Sang_Donnation" />
@@ -188,34 +177,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <option name="contentProportion" value="0.20865533" />
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -228,11 +189,23 @@
       <updated>1579526673345</updated>
       <workItem from="1579526678846" duration="12406000" />
       <workItem from="1579608348634" duration="3030000" />
+      <workItem from="1579624937376" duration="6904000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="28" key="#Project_Structure" timestamp="1579617682893">
