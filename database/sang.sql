@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 21 jan. 2020 à 13:04
+-- Généré le :  mar. 21 jan. 2020 à 15:21
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  5.6.40
 
@@ -138,7 +138,8 @@ DROP TABLE IF EXISTS `planning`;
 CREATE TABLE IF NOT EXISTS `planning` (
   `idConvoi` int(11) NOT NULL,
   `idVille` int(11) NOT NULL,
-  `dateConvoi` date NOT NULL,
+  `dateConvoi_debut` date NOT NULL,
+  `dateConvoi_fin` date NOT NULL,
   PRIMARY KEY (`idConvoi`,`idVille`),
   KEY `idVille` (`idVille`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

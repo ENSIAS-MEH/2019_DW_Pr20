@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Sang_Donnation" />
+        <module name="2019_DW_Pr20" />
       </profile>
     </annotationProcessing>
   </component>

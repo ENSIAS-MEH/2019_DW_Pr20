@@ -7,54 +7,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b472344e-27b5-49a8-b1f9-2b364f8e5a2d" name="Default Changelist" comment="">
-<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/TestServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/BanqueSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/BanqueSangDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/GroupeSanginDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/GroupeSanginDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/BanqueSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/BanqueSangDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/GroupeSanginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/GroupeSanginDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/BanqueSang.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/BanqueSang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/lib/mysql-connector-java-5.1.6.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Implementation/GroupeSanginDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Implementation/GroupeSanginDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/interfaces/GroupeSanginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/interfaces/GroupeSanginDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/AlerteBesoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/AlerteBesoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Planning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Planning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/DAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/AlerteBesoinDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/AlerteBesoinDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/BanqueSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/BanqueSangDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/ConvoiDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/ConvoiDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnateurDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnateurDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnationDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnationDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/GroupeSanginDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/GroupeSanginDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/PlanningDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/PlanningDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/StockSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/StockSangDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/VilleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/VilleDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/AlerteBesoinDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/AlerteBesoinDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/BanqueSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/BanqueSangDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/ConvoiDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/ConvoiDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnateurDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnateurDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnationDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/GroupeSanginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/GroupeSanginDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/PlanningDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/PlanningDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/StockSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/StockSangDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/VilleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/VilleDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Model/BanqueSang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/BanqueSang.class" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/AlerteBesoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/AlerteBesoin.java" afterDir="false" />
-    </list>
->>>>>>> 006fc29d5baec32ce47fb878844193fb0196c55c
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-<<<<<<< HEAD
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="2019_DW_Pr20" />
-  </component>
-=======
->>>>>>> 006fc29d5baec32ce47fb878844193fb0196c55c
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -70,8 +56,8 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="false" />
-    <option name="FILTER_DEBUG" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
@@ -81,12 +67,6 @@
       </MavenImportingSettings>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="ProjectId" id="1Wg9tQWp49iQnuLkcjZI4mlmHu1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
-=======
   <component name="ProjectId" id="1WhiYhc92xs4bn4nvcVVEcPyDyO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -96,41 +76,19 @@
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
->>>>>>> 006fc29d5baec32ce47fb878844193fb0196c55c
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579548974038" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn clean" />
-    </option>
-  </component>
-<<<<<<< HEAD
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-=======
->>>>>>> 006fc29d5baec32ce47fb878844193fb0196c55c
   <component name="RunManager" selected="Tomcat Server.Tomcat 8">
     <configuration name="DAOFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DAO.DAOFactory" />
@@ -145,23 +103,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-    <configuration name="Tomcat 8" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.47" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
-=======
     <configuration name="Tomcat 8" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="53e2f627-b1a7-4dfa-bfa7-5b83cc034776" />
->>>>>>> 006fc29d5baec32ce47fb878844193fb0196c55c
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Sang_Donnation:Web exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/Sang_Donnation_Web_exploded" />
+            <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_Sang_Donnation_2" />
+        <option name="HTTP_PORT" value="8088" />
+        <option name="JNDI_PORT" value="1098" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -237,6 +192,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
+          <option name="contentProportion" value="0.20865533" />
           <treeState>
             <expand>
               <path>
@@ -246,7 +202,12 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Failed" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -266,151 +227,93 @@
       <option name="presentableId" value="Default" />
       <updated>1579526673345</updated>
       <workItem from="1579526678846" duration="12406000" />
-<<<<<<< HEAD
-      <workItem from="1579560605590" duration="7711000" />
-      <workItem from="1579609707275" duration="2063000" />
-      <workItem from="1579611855337" duration="2666000" />
-=======
       <workItem from="1579608348634" duration="3030000" />
->>>>>>> 006fc29d5baec32ce47fb878844193fb0196c55c
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-<<<<<<< HEAD
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-=======
   <component name="WindowStateProjectService">
+    <state x="275" y="28" key="#Project_Structure" timestamp="1579617682893">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="28" key="#Project_Structure/0.0.1366.738@0.0.1366.738" timestamp="1579617682893" />
     <state x="380" y="0" width="619" height="738" key="#Tomcat_8" timestamp="1579612039100">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="380" y="0" width="619" height="738" key="#Tomcat_8/0.0.1366.738@0.0.1366.738" timestamp="1579612039100" />
+    <state x="137" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579619160539">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="137" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1579619160539" />
+    <state x="488" y="86" key="#com.intellij.ide.util.MemberChooser" timestamp="1579619879495">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1579619879495" />
     <state x="531" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1579552580675">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="531" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.738@0.0.1366.738" timestamp="1579552580675" />
-    <state width="905" height="182" key="GridCell.Tab.0.bottom" timestamp="1579612067087">
+    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1579618893467">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1579612067087" />
-    <state width="905" height="182" key="GridCell.Tab.0.center" timestamp="1579612067086">
+    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1579618893467" />
+    <state width="1023" height="182" key="GridCell.Tab.0.bottom" timestamp="1579619169714">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1579612067086" />
-    <state width="905" height="182" key="GridCell.Tab.0.left" timestamp="1579612067086">
+    <state width="1023" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1579619169714" />
+    <state width="1023" height="182" key="GridCell.Tab.0.center" timestamp="1579619169714">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1579612067086" />
-    <state width="905" height="182" key="GridCell.Tab.0.right" timestamp="1579612067087">
+    <state width="1023" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1579619169714" />
+    <state width="1023" height="182" key="GridCell.Tab.0.left" timestamp="1579619169713">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1579612067087" />
+    <state width="1023" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1579619169713" />
+    <state width="1023" height="182" key="GridCell.Tab.0.right" timestamp="1579619169714">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1023" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1579619169714" />
+    <state width="1023" height="182" key="GridCell.Tab.1.bottom" timestamp="1579619169624">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1023" height="182" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1579619169624" />
+    <state width="1023" height="182" key="GridCell.Tab.1.center" timestamp="1579619169624">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1023" height="182" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1579619169624" />
+    <state width="1023" height="182" key="GridCell.Tab.1.left" timestamp="1579619169624">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1023" height="182" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1579619169624" />
+    <state width="1023" height="182" key="GridCell.Tab.1.right" timestamp="1579619169624">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1023" height="182" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1579619169624" />
+    <state width="1023" height="182" key="GridCell.Tab.2.bottom" timestamp="1579619169625">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1023" height="182" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" timestamp="1579619169625" />
+    <state width="1023" height="182" key="GridCell.Tab.2.center" timestamp="1579619169625">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1023" height="182" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" timestamp="1579619169625" />
+    <state width="1023" height="182" key="GridCell.Tab.2.left" timestamp="1579619169625">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1023" height="182" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" timestamp="1579619169625" />
+    <state width="1023" height="182" key="GridCell.Tab.2.right" timestamp="1579619169625">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1023" height="182" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1579619169625" />
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1579608363213">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1579608363213" />
->>>>>>> 006fc29d5baec32ce47fb878844193fb0196c55c
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>Sang_Donnation:Web exploded</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Web (Sang_Donnation)|Web</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Web|Sang_Donnation</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Maven: javax.servlet:javax.servlet-api:3.1.0</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <state x="339" y="165" key="run.anything.popup" timestamp="1579619619759">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1579619619759" />
   </component>
 </project>
