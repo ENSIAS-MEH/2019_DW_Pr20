@@ -11,6 +11,10 @@ public class Donnateur {
     private int idVille;
     private int idGS;   //groupe sangin
 
+    public Donnateur(){
+        super();
+    }
+
     public Donnateur(int idDonnateur, String cin, String nomD, String prenomD, String teleD, String emailD, String passwordD, int idVille, int idGS) {
         this.idDonnateur = idDonnateur;
         this.cin = cin;
