@@ -25,7 +25,7 @@ public class StockSangDaoImpl implements StockSangDAO {
         StockSang stock = null;
         try{
             connection = daoFactory.getConnection();
-            preparedStatement = connection.prepareStatement("select * from stockSang WHERE idBS = ? and idGS = ?");
+            preparedStatement = connection.prepareStatement("SELECT * from stockSang WHERE idBS = ? and idGS = ?");
             preparedStatement.setInt(1,idBS);
             preparedStatement.setInt(2,idGS);
 
