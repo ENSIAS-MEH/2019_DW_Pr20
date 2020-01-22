@@ -8,6 +8,10 @@ public class Planning {
     private Timestamp dateConvoi_debut;
     private Timestamp dateConvoi_fin;
 
+    public Planning() {
+
+    }
+
     public Planning(int idConvoi, int idVille, Timestamp dateConvoi_debut, Timestamp dateConvoi_fin) {
         this.idConvoi = idConvoi;
         this.idVille = idVille;

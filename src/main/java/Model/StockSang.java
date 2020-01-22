@@ -10,6 +10,9 @@ public class StockSang {
         this.idGS = idGS;
         this.quantite = quantite;
     }
+    public StockSang(){
+
+    }
 
     public int getIdBS() {
         return idBS;
