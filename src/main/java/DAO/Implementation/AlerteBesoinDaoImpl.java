@@ -195,9 +195,9 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
         /*alerteBesoinDao.disableAlerte(3);
         AlerteBesoin ab10 = new AlerteBesoin();
         ab10.setIdAlerte(4); ab10.setIdGS(8);ab10.setDescriptionAlerte("dessssssssssssssssssc 4");
-        alerteBesoinDao.updateAlerte(ab10);
+        alerteBesoinDao.updateAlerte(ab10);*/
         for(AlerteBesoin ab: alerteBesoinDao.getAllAlertes()){
             System.out.println(ab);
-        }*/
+        }
     }
 }

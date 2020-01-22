@@ -7,80 +7,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b472344e-27b5-49a8-b1f9-2b364f8e5a2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/dbV2/sang.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/TestDaoClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/sang.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/sang.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/DAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Controller/TestServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Controller/txt.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/AlerteBesoinDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/AlerteBesoinDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/BanqueSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/BanqueSangDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/ConvoiDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/ConvoiDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/DonnationDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/DonnationDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/GroupeSanginDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/GroupeSanginDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/DonnateurDaoImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/PlanningDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/PlanningDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/StockSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/StockSangDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/VilleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/Implementation/VilleDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/AlerteBesoinDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/AlerteBesoinDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/BanqueSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/BanqueSangDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/ConvoiDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/ConvoiDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/DonnationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/DonnationDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/GroupeSanginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/GroupeSanginDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/DonnateurDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/PlanningDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/PlanningDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/StockSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/StockSangDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/VilleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/DAO/interfaces/VilleDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/BanqueSang.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/BanqueSang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/Convoi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/Convoi.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/Planning.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/Planning.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/StockSang.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/Model/StockSang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/database.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded/WEB-INF/classes/util/txt.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Implementation/AlerteBesoinDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Implementation/AlerteBesoinDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Implementation/ConvoiDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Implementation/ConvoiDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Implementation/PlanningDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Implementation/PlanningDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Implementation/StockSangDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Implementation/StockSangDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Implementation/VilleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Implementation/VilleDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/interfaces/AlerteBesoinDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/interfaces/AlerteBesoinDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/interfaces/ConvoiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/interfaces/ConvoiDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/interfaces/PlanningDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/interfaces/PlanningDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/interfaces/StockSangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/interfaces/StockSangDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/interfaces/VilleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/interfaces/VilleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/AlerteBesoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/AlerteBesoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Convoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Convoi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Planning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Planning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/StockSang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/StockSang.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Ville.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Ville.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/DAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/AlerteBesoinDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/AlerteBesoinDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/BanqueSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/BanqueSangDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/ConvoiDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/ConvoiDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnationDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnationDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/GroupeSanginDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/GroupeSanginDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/PlanningDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/PlanningDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/StockSangDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/StockSangDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/VilleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/Implementation/VilleDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/AlerteBesoinDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/AlerteBesoinDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/BanqueSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/BanqueSangDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/ConvoiDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/ConvoiDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnationDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/GroupeSanginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/GroupeSanginDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/PlanningDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/PlanningDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/StockSangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/StockSangDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/VilleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/interfaces/VilleDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/AlerteBesoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/AlerteBesoin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/BanqueSang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/BanqueSang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Convoi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Convoi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Donnateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Donnateur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Donnation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Donnation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/GroupeSangin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/GroupeSangin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Planning.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Planning.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/StockSang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/StockSang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Ville.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Ville.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/TestDaoClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/TestServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/txt.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/DAOFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/AlerteBesoinDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/BanqueSangDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/ConvoiDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnateurDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/DonnationDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/GroupeSanginDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/PlanningDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/StockSangDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/Implementation/VilleDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/AlerteBesoinDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/BanqueSangDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/ConvoiDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnateurDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/DonnationDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/GroupeSanginDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/PlanningDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/StockSangDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/interfaces/VilleDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/AlerteBesoin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/BanqueSang.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Convoi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Donnateur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Donnation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/GroupeSangin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Planning.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/StockSang.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Ville.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/database.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/txt.txt" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,32 +70,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="100" column="38" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
+            <state relative-caret-position="358">
+              <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2465#2466#0" expanded="true" />
+                <element signature="e#2514#2515#0" expanded="true" />
+                <element signature="e#2562#2563#0" expanded="true" />
+                <element signature="e#2611#2612#0" expanded="true" />
+                <element signature="e#2665#2666#0" expanded="true" />
+                <element signature="e#2717#2718#0" expanded="true" />
+                <element signature="e#2763#2764#0" expanded="true" />
+                <element signature="e#2811#2812#0" expanded="true" />
+                <element signature="e#2859#2860#0" expanded="true" />
+                <element signature="e#2908#2909#0" expanded="true" />
+                <element signature="e#2948#2949#0" expanded="true" />
+                <element signature="e#2993#2994#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/interfaces/VilleDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/AlerteBesoin.java">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+            <state relative-caret-position="17">
+              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -130,30 +124,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Implementation/AlerteBesoinDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
-              <caret line="200" column="11" selection-start-line="200" selection-start-column="11" selection-end-line="200" selection-end-column="11" />
+            <state relative-caret-position="395">
+              <caret line="197" column="43" selection-start-line="197" selection-start-column="43" selection-end-line="197" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Implementation/VilleDaoImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/interfaces/DonnateurDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="119" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="391">
+              <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
               <folding>
-                <element signature="e#378#379#0" expanded="true" />
-                <element signature="e#422#423#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -176,14 +160,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/interfaces/DonnateurDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/Ville.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/interfaces/VilleDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/AlerteBesoin.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/interfaces/AlerteBesoinDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/Implementation/AlerteBesoinDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/Implementation/VilleDaoImpl.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/Implementation/AlerteBesoinDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/DAOFactory.java" />
       </list>
     </option>
   </component>
@@ -200,28 +179,6 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="Sang_Donnation" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="Sang_Donnation" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="976" />
-    <option name="height" value="1096" />
   </component>
   <component name="ProjectId" id="1WhiYhc92xs4bn4nvcVVEcPyDyO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -240,6 +197,11 @@
             <path>
               <item name="Sang_Donnation" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sang_Donnation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sang_Donnation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sang_Donnation" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Sang_Donnation" type="b2602c69:ProjectViewProjectNode" />
@@ -290,8 +252,7 @@
               <item name="Sang_Donnation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -308,12 +269,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579715088622" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579716161369" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Sang_Donnation_Web_exploded" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
@@ -446,14 +407,14 @@
     </configuration>
     <list>
       <item itemvalue="Application.DAOFactory" />
-      <item itemvalue="Application.VilleDaoImpl" />
       <item itemvalue="Application.AlerteBesoinDaoImpl" />
+      <item itemvalue="Application.VilleDaoImpl" />
       <item itemvalue="Tomcat Server.Tomcat 8" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.VilleDaoImpl" />
         <item itemvalue="Application.AlerteBesoinDaoImpl" />
+        <item itemvalue="Application.VilleDaoImpl" />
         <item itemvalue="Application.DAOFactory" />
       </list>
     </recent_temporary>
@@ -492,27 +453,17 @@
       <updated>1579526673345</updated>
       <workItem from="1579526678846" duration="12406000" />
       <workItem from="1579608348634" duration="3030000" />
-      <workItem from="1579714861110" duration="225000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8381000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -522,7 +473,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3136033" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3136033" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997923" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -567,133 +518,116 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="28" key="#Project_Structure" />
-    <state x="275" y="28" key="#Project_Structure/0.0.1366.738@0.0.1366.738" />
-    <state x="380" y="0" width="619" height="738" key="#Tomcat_8" />
-    <state x="380" y="0" width="619" height="738" key="#Tomcat_8/0.0.1366.738@0.0.1366.738" />
-    <state x="137" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
-    <state x="137" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" />
-    <state x="488" y="86" key="#com.intellij.ide.util.MemberChooser" />
-    <state x="488" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" />
-    <state x="531" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
-    <state x="531" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.738@0.0.1366.738" />
-    <state x="463" y="125" key="FileChooserDialogImpl" />
-    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.0.bottom" />
-    <state width="905" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.0.center" />
-    <state width="905" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.0.left" />
-    <state width="905" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.0.right" />
-    <state width="905" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.1.bottom" />
-    <state width="905" height="182" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.1.center" />
-    <state width="905" height="182" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.1.left" />
-    <state width="905" height="182" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.1.right" />
-    <state width="905" height="182" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.2.bottom" />
-    <state width="905" height="182" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.2.center" />
-    <state width="905" height="182" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.2.left" />
-    <state width="905" height="182" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" />
-    <state width="905" height="182" key="GridCell.Tab.2.right" />
-    <state width="905" height="182" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" />
-    <state x="339" y="165" key="run.anything.popup" />
-    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" />
+    <state x="275" y="28" key="#Project_Structure" timestamp="1579617682893">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="28" key="#Project_Structure/0.0.1366.738@0.0.1366.738" timestamp="1579617682893" />
+    <state x="380" y="0" width="619" height="738" key="#Tomcat_8" timestamp="1579612039100">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="380" y="0" width="619" height="738" key="#Tomcat_8/0.0.1366.738@0.0.1366.738" timestamp="1579612039100" />
+    <state x="137" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579619160539">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="137" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1579619160539" />
+    <state x="488" y="86" key="#com.intellij.ide.util.MemberChooser" timestamp="1579655637522">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1579655637522" />
+    <state x="531" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1579552580675">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="531" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.738@0.0.1366.738" timestamp="1579552580675" />
+    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1579618893467">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1579618893467" />
+    <state width="905" height="182" key="GridCell.Tab.0.bottom" timestamp="1579656048819">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1579656048819" />
+    <state width="905" height="182" key="GridCell.Tab.0.center" timestamp="1579656048818">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1579656048818" />
+    <state width="905" height="182" key="GridCell.Tab.0.left" timestamp="1579656048818">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1579656048818" />
+    <state width="905" height="182" key="GridCell.Tab.0.right" timestamp="1579656048818">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1579656048818" />
+    <state width="905" height="182" key="GridCell.Tab.1.bottom" timestamp="1579656048728">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1579656048728" />
+    <state width="905" height="182" key="GridCell.Tab.1.center" timestamp="1579656048727">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1579656048727" />
+    <state width="905" height="182" key="GridCell.Tab.1.left" timestamp="1579656048727">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1579656048727" />
+    <state width="905" height="182" key="GridCell.Tab.1.right" timestamp="1579656048728">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1579656048728" />
+    <state width="905" height="182" key="GridCell.Tab.2.bottom" timestamp="1579656048729">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" timestamp="1579656048729" />
+    <state width="905" height="182" key="GridCell.Tab.2.center" timestamp="1579656048729">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" timestamp="1579656048729" />
+    <state width="905" height="182" key="GridCell.Tab.2.left" timestamp="1579656048728">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" timestamp="1579656048728" />
+    <state width="905" height="182" key="GridCell.Tab.2.right" timestamp="1579656048729">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="182" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1579656048729" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1579608363213">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1579608363213" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1579619619759">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1579619619759" />
+    &gt;&gt;&gt;&gt;&gt;&gt;&gt; a888d2165bdab74c8643f27acd9d8d51f4ef3d33
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="751" column="12" selection-start-line="751" selection-start-column="12" selection-end-line="751" selection-end-column="12" />
+        <state>
+          <caret line="410" column="58" selection-start-line="410" selection-start-column="58" selection-end-line="410" selection-end-column="58" />
           <folding>
-            <element signature="n#component#0;n#project#0;n#!!top" />
+            <element signature="e#27510#27514#0" expanded="true" />
+            <element signature="e#27514#27518#0" expanded="true" />
+            <element signature="e#27518#27522#0" expanded="true" />
+            <element signature="e#27522#27526#0" expanded="true" />
+            <element signature="e#27526#27530#0" expanded="true" />
+            <element signature="e#27530#27534#0" expanded="true" />
+            <element signature="e#27534#27538#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Implementation/BanqueSangDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/TestServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Implementation/DonnateurDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        <state relative-caret-position="153">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/interfaces/DonnateurDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Implementation/ConvoiDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="143" column="49" lean-forward="true" selection-start-line="143" selection-start-column="49" selection-end-line="143" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Ville.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/BanqueSang.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="100" column="38" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
+        <state relative-caret-position="391">
+          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -714,28 +648,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/interfaces/AlerteBesoinDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Implementation/AlerteBesoinDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="200" column="11" selection-start-line="200" selection-start-column="11" selection-end-line="200" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Implementation/VilleDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        <state relative-caret-position="511">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
           <folding>
             <element signature="e#378#379#0" expanded="true" />
             <element signature="e#422#423#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -746,82 +673,34 @@
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>Sang_Donnation:Web exploded</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Web</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Sang_Donnation</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Maven: mysql:mysql-connector-java:5.1.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Implementation/AlerteBesoinDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="197" column="43" selection-start-line="197" selection-start-column="43" selection-end-line="197" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2465#2466#0" expanded="true" />
+            <element signature="e#2514#2515#0" expanded="true" />
+            <element signature="e#2562#2563#0" expanded="true" />
+            <element signature="e#2611#2612#0" expanded="true" />
+            <element signature="e#2665#2666#0" expanded="true" />
+            <element signature="e#2717#2718#0" expanded="true" />
+            <element signature="e#2763#2764#0" expanded="true" />
+            <element signature="e#2811#2812#0" expanded="true" />
+            <element signature="e#2859#2860#0" expanded="true" />
+            <element signature="e#2908#2909#0" expanded="true" />
+            <element signature="e#2948#2949#0" expanded="true" />
+            <element signature="e#2993#2994#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
