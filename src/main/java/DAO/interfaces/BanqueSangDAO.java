@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BanqueSangDAO {
     public BanqueSang findBanqueSangById(int idBS);
-    public BanqueSang findBanqueSangByName(String nom);
+    public BanqueSang findBanqueSangByName(String nomBS);
     public BanqueSang findBanqueSangByEmail(String Email);
     public List<BanqueSang> findAllBanqueSang();
     public void ajouterBanqueSang(BanqueSang banqueSang);
