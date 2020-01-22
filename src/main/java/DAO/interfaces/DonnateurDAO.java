@@ -5,7 +5,7 @@ import Model.Donnateur;
 import java.util.List;
 
 public interface DonnateurDAO {
-/*
+
     //Crud
     boolean addDonnateur(Donnateur donnateur);
     boolean updateDonnateur(Donnateur donnateur);
@@ -17,7 +17,7 @@ public interface DonnateurDAO {
 
     //check if a donor exist
     boolean findDonnateurByMail(String mail);
-
+/*
     //get data for multiple donors
     List<Donnateur> getAllDonnateurs();
     List<Donnateur> getDonnateursByCity(int idVille);
