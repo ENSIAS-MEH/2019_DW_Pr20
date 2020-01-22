@@ -20,7 +20,7 @@ public class GroupeSanginDaoImpl implements GroupeSanginDAO {
 
     @Override
     public GroupeSangin findGroupSanginById(int id) {
-        String query = "select * from groupesangin where idGS = '"+id+"'";
+        String query = "SELECT * from groupesangin where idGS = '"+id+"'";
         try {
             Connection connection = daoFactory.getConnection();
             Statement statement = connection.createStatement();
