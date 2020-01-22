@@ -55,7 +55,7 @@ public class GroupeSanginDaoImpl implements GroupeSanginDAO {
 
     @Override
     public List<GroupeSangin> findAll() {
-        String query = "SELECT * FROM groupesangin";
+        String query = "select * FROM groupesangin";
         try {
             Connection connection = daoFactory.getConnection();
             Statement statement = connection.createStatement();
