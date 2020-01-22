@@ -5,6 +5,8 @@ import DAO.interfaces.DonnateurDAO;
 import Model.Donnateur;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DonnateurDaoImpl implements DonnateurDAO {
 
@@ -174,6 +176,142 @@ public class DonnateurDaoImpl implements DonnateurDAO {
             return false;
         }
         return false;
+    }
+
+    @Override
+    public List<Donnateur> getAllDonnateurs(){
+        Connection conn = null;
+        Statement st = null;
+
+        try {
+            conn = daoFactory.getConnection();
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM donnateur;");
+            List<Donnateur> donorsList = new ArrayList<>();
+
+            while(rs.next()){
+                Donnateur donnateur = new Donnateur();
+                donnateur.setIdDonnateur(1);
+                donnateur.setCin(rs.getString(2));
+                donnateur.setNomD(rs.getString(3));
+                donnateur.setPrenomD(rs.getString(4));
+                donnateur.setTeleD(rs.getString(5));
+                donnateur.setEmailD(rs.getString(6));
+                donnateur.setPasswordD(rs.getString(7));
+                donnateur.setIdVille(rs.getInt(8));
+                donnateur.setIdGS(rs.getInt(9));
+
+                donorsList.add(donnateur);
+            }
+            return donorsList;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Donnateur> getDonnateursByCity(int idVille){
+        Connection conn = null;
+        Statement st = null;
+
+        try {
+            conn = daoFactory.getConnection();
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM donnateur WHERE idVille="+idVille+";");
+            List<Donnateur> donorsList = new ArrayList<>();
+
+            while(rs.next()){
+                Donnateur donnateur = new Donnateur();
+                donnateur.setIdDonnateur(1);
+                donnateur.setCin(rs.getString(2));
+                donnateur.setNomD(rs.getString(3));
+                donnateur.setPrenomD(rs.getString(4));
+                donnateur.setTeleD(rs.getString(5));
+                donnateur.setEmailD(rs.getString(6));
+                donnateur.setPasswordD(rs.getString(7));
+                donnateur.setIdVille(rs.getInt(8));
+                donnateur.setIdGS(rs.getInt(9));
+
+                donorsList.add(donnateur);
+            }
+            return donorsList;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Donnateur> getDonnateursByGrpSg(int idGS){
+        Connection conn = null;
+        Statement st = null;
+
+        try {
+            conn = daoFactory.getConnection();
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM donnateur WHERE idGS="+idGS+";");
+            List<Donnateur> donorsList = new ArrayList<>();
+
+            while(rs.next()){
+                Donnateur donnateur = new Donnateur();
+                donnateur.setIdDonnateur(1);
+                donnateur.setCin(rs.getString(2));
+                donnateur.setNomD(rs.getString(3));
+                donnateur.setPrenomD(rs.getString(4));
+                donnateur.setTeleD(rs.getString(5));
+                donnateur.setEmailD(rs.getString(6));
+                donnateur.setPasswordD(rs.getString(7));
+                donnateur.setIdVille(rs.getInt(8));
+                donnateur.setIdGS(rs.getInt(9));
+
+                donorsList.add(donnateur);
+            }
+            return donorsList;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public int donorsNbrPerCity(int idVille){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int nbrDonors = 0;
+
+        try {
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("SELECT count(idDonnateur) AS nbr FROM donnateur WHERE idVille="+idVille +";");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                nbrDonors = Integer.parseInt(rs.getString("nbr"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return nbrDonors;
+    }
+
+    @Override
+    public int donorsNbrPerGrpSg(int idGS){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int nbrDonors = 0;
+
+        try {
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("SELECT count(idDonnateur) AS nbr FROM donnateur WHERE idGS="+idGS+";" );
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                nbrDonors = Integer.parseInt(rs.getString("nbr"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return nbrDonors;
     }
 
 }
