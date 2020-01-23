@@ -13,9 +13,9 @@ public interface DonnationDAO {
 
     List<Donnation> getAllDennation();
     List<Donnation> getAllDonnationsVille(int idVille);
-/*
-    List<Donnation> getAllDonnationsDonnateur(int idDonnateur);
 
+    List<Donnation> getAllDonnationsDonnateur(int idDonnateur);
+/*
     int countDonnations(int villeFilter, int groupeFilter);
     int countDonnationsPerCenter(int idCentre);
 
