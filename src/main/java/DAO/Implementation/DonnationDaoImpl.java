@@ -120,8 +120,61 @@ public class DonnationDaoImpl implements DonnationDAO {
         try {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT dn.idDonnateur, idBS, dateDonnation, idVille FROM donnation dn, donnateur dr " +
-                    "WHERE dn.idDonnateur=dr.idDonnateur AND idVille="+idVille+";");
+            ResultSet rs = st.executeQuery("SELECT d.idDonnateur, idBS, dateDonnation, idVille FROM donnation d, banquesange b " +
+                    "WHERE d.idBS=b.idBS AND idVille="+idVille+";");
+            List<Donnation> donationsList = new ArrayList<>();
+
+            while(rs.next()){
+                Donnation donnation = new Donnation();
+                donnation.setIdDonnateur(rs.getInt(1));
+                donnation.setIdBS(rs.getInt(2));
+                donnation.setDateDonnation(rs.getTimestamp(3));
+
+                donationsList.add(donnation);
+            }
+            return donationsList;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Donnation> getAllDonnationsBanq(int idBS){
+        Connection conn = null;
+        Statement st = null;
+
+        try {
+            conn = daoFactory.getConnection();
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM donnation WHERE idBS="+idBS+";");
+            List<Donnation> donationsList = new ArrayList<>();
+
+            while(rs.next()){
+                Donnation donnation = new Donnation();
+                donnation.setIdDonnateur(rs.getInt(1));
+                donnation.setIdBS(rs.getInt(2));
+                donnation.setDateDonnation(rs.getTimestamp(3));
+
+                donationsList.add(donnation);
+            }
+            return donationsList;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Donnation> getAllDonnationsVilleGS(int idVille, int idGS){
+        Connection conn = null;
+        Statement st = null;
+
+        try {
+            conn = daoFactory.getConnection();
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT dn.idDonnateur, idBS, dateDonnation FROM donnation dn, donnateur dr " +
+                    ", banquesange b WHERE dn.idBS=b.idBS AND dn.idDonnateur=dr.idDonnateur AND idGS="+ idGS +" AND b.idVille="+idVille+";");
             List<Donnation> donationsList = new ArrayList<>();
 
             while(rs.next()){

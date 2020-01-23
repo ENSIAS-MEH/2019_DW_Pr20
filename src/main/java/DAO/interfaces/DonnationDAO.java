@@ -13,11 +13,15 @@ public interface DonnationDAO {
 
     List<Donnation> getAllDennation();
     List<Donnation> getAllDonnationsVille(int idVille);
-
+    List<Donnation> getAllDonnationsBanq(int idBS);
+    List<Donnation> getAllDonnationsVilleGS(int idVille, int idGS);
     List<Donnation> getAllDonnationsDonnateur(int idDonnateur);
+
 /*
-    int countDonnations(int villeFilter, int groupeFilter);
-    int countDonnationsPerCenter(int idCentre);
+    int countDonnationsPerVille(int idVille);
+    int countDonnationsPerBanq(int idBS);
+    int countDonnationsPerDonnateur(int idDonnateur);
+    int countDonnationsPerVilleGS(int idVille, int idGS);
 
 */
 }
