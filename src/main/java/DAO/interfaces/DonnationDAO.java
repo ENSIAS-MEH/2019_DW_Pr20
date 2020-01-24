@@ -12,16 +12,16 @@ public interface DonnationDAO {
     boolean deleteDonnation(int idDonnateur, Timestamp dateDonnation);
 
     List<Donnation> getAllDennation();
-    List<Donnation> getAllDonnationsVille(int idVille);
+    List<Donnation> getAllDonnationsVille(int idVille);                 //ville du BanqueSang pas du donnateur
     List<Donnation> getAllDonnationsBanq(int idBS);
-    List<Donnation> getAllDonnationsVilleGS(int idVille, int idGS);
+    List<Donnation> getAllDonnationsVilleGS(int idVille, int idGS);     //ville du BanqueSang pas du donnateur
     List<Donnation> getAllDonnationsDonnateur(int idDonnateur);
 
-/*
-    int countDonnationsPerVille(int idVille);
-    int countDonnationsPerBanq(int idBS);
-    int countDonnationsPerDonnateur(int idDonnateur);
-    int countDonnationsPerVilleGS(int idVille, int idGS);
+
+    int DonnationsNbrPerVille(int idVille);                     //ville du BanqueSang pas du donnateur
+    int DonnationsNbrPerBanq(int idBS);
+/*    int DonnationsNbrPerDonnateur(int idDonnateur);
+    int DonnationsNbrPerVilleGS(int idVille, int idGS);         //ville du BanqueSang pas du donnateur
 
 */
 }
