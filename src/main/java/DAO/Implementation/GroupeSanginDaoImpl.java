@@ -20,7 +20,7 @@ public class GroupeSanginDaoImpl implements GroupeSanginDAO {
 
     @Override
     public GroupeSangin findGroupSanginById(int id) {
-        String query = "select * from GroupeSangin where idGS = '"+id+"'";
+        String query = "SELECT * from groupesangin where idGS = '"+id+"'";
         try {
             Connection connection = daoFactory.getConnection();
             Statement statement = connection.createStatement();
@@ -38,7 +38,7 @@ public class GroupeSanginDaoImpl implements GroupeSanginDAO {
 
     @Override
     public GroupeSangin findGroupSanginByName(String nom) {
-        String query = "select * from GroupeSangin where nomGS = '"+nom+"'";
+        String query = "select * from groupesangin where nomGS = '"+nom+"'";
         try {
             Connection connection = daoFactory.getConnection();
             Statement statement = connection.createStatement();
@@ -55,7 +55,7 @@ public class GroupeSanginDaoImpl implements GroupeSanginDAO {
 
     @Override
     public List<GroupeSangin> findAll() {
-        String query = "SELECT * FROM GroupeSangin";
+        String query = "select * FROM groupesangin";
         try {
             Connection connection = daoFactory.getConnection();
             Statement statement = connection.createStatement();
@@ -67,7 +67,8 @@ public class GroupeSanginDaoImpl implements GroupeSanginDAO {
             }
             return groupeSangins;
         }catch (SQLException e){
-            e.printStackTrace();
+            e.printStackTrace(); e.printStackTrace();
+			
         }
         return null;
     }

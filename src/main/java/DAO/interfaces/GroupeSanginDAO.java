@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface GroupeSanginDAO {
 
-    public GroupeSangin findGroupSanginById(int id);
+    public GroupeSangin findGroupSanginById(int idGS);
     public GroupeSangin findGroupSanginByName(String name);
     public List<GroupeSangin> findAll();
 

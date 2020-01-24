@@ -26,7 +26,7 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
 
         try{
             conn = daoFactory.getConnection();
-            ps = conn.prepareStatement("select * from BanqueSang where idBS = ?");
+            ps = conn.prepareStatement("SELECT * from BanqueSang where idBS = ?");
             ps.setInt(1,idBS);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){

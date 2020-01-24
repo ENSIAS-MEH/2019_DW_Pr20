@@ -5,7 +5,7 @@ import Model.StockSang;
 import java.util.List;
 
 public interface StockSangDAO {
-    public StockSang findStockById(int idBS,int idGS);
+    public StockSang findStockById(int idBs,int idGS);
     public List<StockSang> findStockByBanqueSang(int idBS);
     public List<StockSang> findStockByGroupSang(int idGS);
     public List<StockSang> findAll();

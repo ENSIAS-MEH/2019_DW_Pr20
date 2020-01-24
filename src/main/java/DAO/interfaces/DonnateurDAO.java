@@ -17,7 +17,7 @@ public interface DonnateurDAO {
 
     //check if a donor exist
     boolean findDonnateurByMail(String mail);
-/*
+
     //get data for multiple donors
     List<Donnateur> getAllDonnateurs();
     List<Donnateur> getDonnateursByCity(int idVille);
@@ -25,6 +25,6 @@ public interface DonnateurDAO {
 
     //Pour les statistiques
     int donorsNbrPerCity(int idVille);
-    int donorsNbrPerGrpSg(int idGS);*/
+    int donorsNbrPerGrpSg(int idGS);
 
 }

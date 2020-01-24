@@ -16,7 +16,7 @@ public class TestDaoClass {
         stockSangdao.ajouterStockSang(stock);*/
 
         /*delete Stock*/
-        StockSang stock = new StockSang(1,1,21);
+        StockSang stock = new StockSang(1,1,11);
         stockSangdao.deleteStockSang(stock);
 
 
