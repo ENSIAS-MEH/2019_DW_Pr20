@@ -20,8 +20,8 @@ public interface DonnationDAO {
 
     int DonnationsNbrPerVille(int idVille);                     //ville du BanqueSang pas du donnateur
     int DonnationsNbrPerBanq(int idBS);
-/*    int DonnationsNbrPerDonnateur(int idDonnateur);
+    int DonnationsNbrPerDonnateur(int idDonnateur);
     int DonnationsNbrPerVilleGS(int idVille, int idGS);         //ville du BanqueSang pas du donnateur
 
-*/
+
 }

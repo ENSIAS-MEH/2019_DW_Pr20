@@ -261,5 +261,47 @@ public class DonnationDaoImpl implements DonnationDAO {
         return nbr;
     }
 
+    @Override
+    public int DonnationsNbrPerDonnateur(int idDonnateur){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int nbr = 0;
+
+        try {
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("SELECT count(idDonnateur) AS nbr FROM donnation d WHERE idDonnateur ="+idDonnateur +";");
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()){
+                nbr = Integer.parseInt(rs.getString("nbr"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return nbr;
+    }
+
+    @Override
+    public int DonnationsNbrPerVilleGS(int idVille, int idGS){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int nbr = 0;
+
+        try {
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("SELECT count(dn.idDonnateur) AS nbr FROM donnation dn, donnateur dr , banquesang b " +
+                    "WHERE dn.idBS=b.idBS AND dn.idDonnateur=dr.idDonnateur AND idGS="+ idGS +" AND b.idVille="+idVille+";");
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()){
+                nbr = Integer.parseInt(rs.getString("nbr"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return nbr;
+    }
 
 }
