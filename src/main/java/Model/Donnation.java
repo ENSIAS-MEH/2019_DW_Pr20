@@ -7,6 +7,10 @@ public class Donnation {
     private int idBS; //banque du sang
     private Timestamp dateDonnation;
 
+    public Donnation() {
+        super();
+    }
+
     public Donnation(int idDonnateur, int idBS, Timestamp dateDonnation) {
         this.idDonnateur = idDonnateur;
         this.idBS = idBS;
