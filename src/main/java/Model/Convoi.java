@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class Convoi {
     private int idConvoi;
     private String titreConvoi;
-    private String desciption;
+    private String description;
     private int idBS;  //banque du sang
 
     public Convoi() {
@@ -15,7 +15,7 @@ public class Convoi {
     public Convoi(int idConvoi, String titreConvoi, String desciption, Timestamp dateConvoi, int idBS) {
         this.idConvoi = idConvoi;
         this.titreConvoi = titreConvoi;
-        this.desciption = desciption;
+        this.description = desciption;
         this.idBS = idBS;
     }
 
@@ -36,11 +36,11 @@ public class Convoi {
     }
 
     public String getDesciption() {
-        return desciption;
+        return description;
     }
 
     public void setDesciption(String desciption) {
-        this.desciption = desciption;
+        this.description = desciption;
     }
 
     public int getIdBS() {
@@ -56,7 +56,7 @@ public class Convoi {
         return "***Convoi{" +
                 "\n\tidConvoi=" + idConvoi +
                 "\n\ttitreConvoi='" + titreConvoi + '\'' +
-                "\n\tdesciption='" + desciption + '\'' +
+                "\n\tdesciption='" + description + '\'' +
                 "\n\tidBS=" + idBS +
                 '}';
     }

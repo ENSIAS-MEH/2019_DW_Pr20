@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 22 jan. 2020 à 17:25
--- Version du serveur :  5.7.24
--- Version de PHP :  7.2.14
+-- Host: 127.0.0.1
+-- Generation Time: Jan 24, 2020 at 01:05 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,30 +19,38 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `sang`
+-- Database: `sang`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `alertebesoin`
+-- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `alertebesoin`;
-CREATE TABLE IF NOT EXISTS `alertebesoin` (
-  `idAlerte` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `admin` (
+  `idAdmin` int(2) NOT NULL,
+  `emailAdmin` varchar(256) DEFAULT NULL,
+  `passwordAdmin` varchar(256) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alertebesoin`
+--
+
+CREATE TABLE `alertebesoin` (
+  `idAlerte` int(11) NOT NULL,
   `idBS` int(11) NOT NULL,
   `idGS` int(11) NOT NULL,
-  `dateAlerte` timestamp NOT NULL,
+  `dateAlerte` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `descriptionAlerte` text NOT NULL,
-  `enable` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`idAlerte`,`idBS`,`idGS`),
-  KEY `idBS` (`idBS`),
-  KEY `idGS` (`idGS`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `enable` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `alertebesoin`
+-- Dumping data for table `alertebesoin`
 --
 
 INSERT INTO `alertebesoin` (`idAlerte`, `idBS`, `idGS`, `dateAlerte`, `descriptionAlerte`, `enable`) VALUES
@@ -54,55 +62,50 @@ INSERT INTO `alertebesoin` (`idAlerte`, `idBS`, `idGS`, `dateAlerte`, `descripti
 -- --------------------------------------------------------
 
 --
--- Structure de la table `banquesang`
+-- Table structure for table `banquesang`
 --
 
-DROP TABLE IF EXISTS `banquesang`;
-CREATE TABLE IF NOT EXISTS `banquesang` (
-  `idBS` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `banquesang` (
+  `idBS` int(11) NOT NULL,
   `nomBS` varchar(50) NOT NULL,
   `emailBS` varchar(50) NOT NULL,
-  `telBS` varchar(20) NOT NULL,
+  `teleBS` varchar(20) NOT NULL,
   `passwordBS` varchar(20) NOT NULL,
-  `adressBS` varchar(80) NOT NULL,
-  `idVille` int(11) NOT NULL,
-  PRIMARY KEY (`idBS`),
-  KEY `idVille` (`idVille`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `adresseBS` varchar(80) NOT NULL,
+  `idVille` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `banquesang`
+-- Dumping data for table `banquesang`
 --
 
-INSERT INTO `banquesang` (`idBS`, `nomBS`, `emailBS`, `telBS`, `passwordBS`, `adressBS`, `idVille`) VALUES
-(1, 'nom BS 1', 'bs1@gmail.com', '0610203040', 'bs1', 'adresse bs1', 1),
-(2, 'nom bs 2', 'bs2@gmail.com', '0650607080', 'bs2', 'adresse bs2', 2);
+INSERT INTO `banquesang` (`idBS`, `nomBS`, `emailBS`, `teleBS`, `passwordBS`, `adresseBS`, `idVille`) VALUES
+(1, 'banque103', 'email@gmail.com', '0616161616', '123', 'hay salam', 1),
+(2, 'banque2', 'banq1@gmail.com', '0321121212', '78954', 'hay nour', 2),
+(3, 'Ta7alil', 'email@gmail.com', '021544521', '12311', 'rabat agdal ', 2),
+(4, 'Mokhtabar', 'email@email.com', '021202120', '12512', 'Ibn btouta', 1);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `convoi`
+-- Table structure for table `convoi`
 --
 
-DROP TABLE IF EXISTS `convoi`;
-CREATE TABLE IF NOT EXISTS `convoi` (
-  `idConvoi` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `convoi` (
+  `idConvoi` int(11) NOT NULL,
   `titreConvoi` varchar(50) NOT NULL,
   `desciption` text NOT NULL,
-  `idBS` int(11) NOT NULL,
-  PRIMARY KEY (`idConvoi`),
-  KEY `idBS` (`idBS`)
+  `idBS` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `donnateur`
+-- Table structure for table `donnateur`
 --
 
-DROP TABLE IF EXISTS `donnateur`;
-CREATE TABLE IF NOT EXISTS `donnateur` (
-  `idDonnateur` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `donnateur` (
+  `idDonnateur` int(11) NOT NULL,
   `cin` varchar(20) NOT NULL,
   `nomD` varchar(50) NOT NULL,
   `prenomD` varchar(50) NOT NULL,
@@ -110,47 +113,49 @@ CREATE TABLE IF NOT EXISTS `donnateur` (
   `emailD` varchar(80) NOT NULL,
   `passwordD` varchar(20) NOT NULL,
   `idVille` int(11) NOT NULL,
-  `idGS` int(11) NOT NULL,
-  PRIMARY KEY (`idDonnateur`),
-  KEY `idGS` (`idGS`),
-  KEY `idVille` (`idVille`)
+  `idGS` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `donnateur`
+--
+
+INSERT INTO `donnateur` (`idDonnateur`, `cin`, `nomD`, `prenomD`, `teleD`, `emailD`, `passwordD`, `idVille`, `idGS`) VALUES
+(1, 'LB202020', 'Mejdaoui', 'Soufiane', '0612451245', 'soufiane@email.com', 'azerty', 4, 7),
+(2, 'A121212', 'El Yossr', 'Mohamed Amine', '061213212', 'amin@emial.com', 'azerty', 5, 8),
+(3, 'K121212', 'Oussama', 'Mossati', '0631121212', 'oussama@email.com', 'azerty', 6, 3),
+(4, 'T321212', 'EL MEhdi', 'Zouhair', '0621353636', 'zouhair@email.com', 'azerty', 3, 2);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `donnation`
+-- Table structure for table `donnation`
 --
 
-DROP TABLE IF EXISTS `donnation`;
-CREATE TABLE IF NOT EXISTS `donnation` (
+CREATE TABLE `donnation` (
   `idDonnateur` int(11) NOT NULL,
   `idBS` int(11) NOT NULL,
-  `dateDonnation` date NOT NULL,
-  PRIMARY KEY (`idDonnateur`,`idBS`),
-  KEY `idBS` (`idBS`)
+  `dateDonnation` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `groupesangin`
+-- Table structure for table `groupesangin`
 --
 
-DROP TABLE IF EXISTS `groupesangin`;
-CREATE TABLE IF NOT EXISTS `groupesangin` (
-  `idGS` int(11) NOT NULL AUTO_INCREMENT,
-  `nomGS` varchar(4) NOT NULL,
-  PRIMARY KEY (`idGS`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+CREATE TABLE `groupesangin` (
+  `idGS` int(11) NOT NULL,
+  `nomGS` varchar(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `groupesangin`
+-- Dumping data for table `groupesangin`
 --
 
 INSERT INTO `groupesangin` (`idGS`, `nomGS`) VALUES
-(1, 'A+'),
-(2, 'A-'),
+(1, 'A-'),
+(2, 'A+'),
 (3, 'B+'),
 (4, 'B-'),
 (5, 'AB+'),
@@ -161,103 +166,213 @@ INSERT INTO `groupesangin` (`idGS`, `nomGS`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `planning`
+-- Table structure for table `planning`
 --
 
-DROP TABLE IF EXISTS `planning`;
-CREATE TABLE IF NOT EXISTS `planning` (
+CREATE TABLE `planning` (
   `idConvoi` int(11) NOT NULL,
   `idVille` int(11) NOT NULL,
-  `dateConvoi_debut` date NOT NULL,
-  `dateConvoi_fin` date NOT NULL,
-  PRIMARY KEY (`idConvoi`,`idVille`),
-  KEY `idVille` (`idVille`)
+  `dateConvoi` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `stocksang`
+-- Table structure for table `stocksang`
 --
 
-DROP TABLE IF EXISTS `stocksang`;
-CREATE TABLE IF NOT EXISTS `stocksang` (
+CREATE TABLE `stocksang` (
   `idBS` int(11) NOT NULL,
   `idGS` int(11) NOT NULL,
-  `quantite` int(11) NOT NULL,
-  PRIMARY KEY (`idBS`,`idGS`),
-  KEY `idGS` (`idGS`)
+  `quantite` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `stocksang`
+--
+
+INSERT INTO `stocksang` (`idBS`, `idGS`, `quantite`) VALUES
+(2, 1, 2),
+(2, 7, 11),
+(4, 1, 10);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ville`
+-- Table structure for table `ville`
 --
 
-DROP TABLE IF EXISTS `ville`;
-CREATE TABLE IF NOT EXISTS `ville` (
-  `idVille` int(11) NOT NULL AUTO_INCREMENT,
-  `nomVille` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`idVille`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+CREATE TABLE `ville` (
+  `idVille` int(11) NOT NULL,
+  `nomVille` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `ville`
+-- Dumping data for table `ville`
 --
 
 INSERT INTO `ville` (`idVille`, `nomVille`) VALUES
-(1, 'Casablanca'),
-(2, 'Rabat'),
-(3, 'Tanger'),
-(4, 'Fes');
+(1, 'tanger'),
+(2, 'rabat'),
+(3, 'Taza'),
+(4, 'Ksar el kebir'),
+(5, 'Casablanca'),
+(6, 'Mohmmadia'),
+(7, 'Fes'),
+(8, 'El Jadida');
 
 --
--- Contraintes pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Contraintes pour la table `alertebesoin`
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`idAdmin`);
+
+--
+-- Indexes for table `alertebesoin`
 --
 ALTER TABLE `alertebesoin`
-  ADD CONSTRAINT `alertebesoin_ibfk_1` FOREIGN KEY (`idBS`) REFERENCES `banquesang` (`idBS`),
-  ADD CONSTRAINT `alertebesoin_ibfk_2` FOREIGN KEY (`idGS`) REFERENCES `groupesangin` (`idGS`);
+  ADD PRIMARY KEY (`idAlerte`,`idBS`,`idGS`),
+  ADD KEY `idBS` (`idBS`),
+  ADD KEY `idGS` (`idGS`);
 
 --
--- Contraintes pour la table `banquesang`
+-- Indexes for table `banquesang`
+--
+ALTER TABLE `banquesang`
+  ADD PRIMARY KEY (`idBS`),
+  ADD KEY `idVille` (`idVille`);
+
+--
+-- Indexes for table `convoi`
+--
+ALTER TABLE `convoi`
+  ADD PRIMARY KEY (`idConvoi`),
+  ADD KEY `idBS` (`idBS`);
+
+--
+-- Indexes for table `donnateur`
+--
+ALTER TABLE `donnateur`
+  ADD PRIMARY KEY (`idDonnateur`),
+  ADD KEY `idGS` (`idGS`),
+  ADD KEY `idVille` (`idVille`);
+
+--
+-- Indexes for table `donnation`
+--
+ALTER TABLE `donnation`
+  ADD PRIMARY KEY (`idDonnateur`,`idBS`),
+  ADD KEY `idBS` (`idBS`);
+
+--
+-- Indexes for table `groupesangin`
+--
+ALTER TABLE `groupesangin`
+  ADD PRIMARY KEY (`idGS`);
+
+--
+-- Indexes for table `planning`
+--
+ALTER TABLE `planning`
+  ADD PRIMARY KEY (`idConvoi`,`idVille`),
+  ADD KEY `idVille` (`idVille`);
+
+--
+-- Indexes for table `stocksang`
+--
+ALTER TABLE `stocksang`
+  ADD PRIMARY KEY (`idBS`,`idGS`),
+  ADD KEY `idGS` (`idGS`);
+
+--
+-- Indexes for table `ville`
+--
+ALTER TABLE `ville`
+  ADD PRIMARY KEY (`idVille`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `alertebesoin`
+--
+ALTER TABLE `alertebesoin`
+  MODIFY `idAlerte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `banquesang`
+--
+ALTER TABLE `banquesang`
+  MODIFY `idBS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `convoi`
+--
+ALTER TABLE `convoi`
+  MODIFY `idConvoi` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `donnateur`
+--
+ALTER TABLE `donnateur`
+  MODIFY `idDonnateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `groupesangin`
+--
+ALTER TABLE `groupesangin`
+  MODIFY `idGS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `ville`
+--
+ALTER TABLE `ville`
+  MODIFY `idVille` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `banquesang`
 --
 ALTER TABLE `banquesang`
   ADD CONSTRAINT `banquesang_ibfk_1` FOREIGN KEY (`idVille`) REFERENCES `ville` (`idVille`);
 
 --
--- Contraintes pour la table `convoi`
+-- Constraints for table `convoi`
 --
 ALTER TABLE `convoi`
   ADD CONSTRAINT `convoi_ibfk_1` FOREIGN KEY (`idBS`) REFERENCES `banquesang` (`idBS`);
 
 --
--- Contraintes pour la table `donnateur`
+-- Constraints for table `donnateur`
 --
 ALTER TABLE `donnateur`
   ADD CONSTRAINT `donnateur_ibfk_1` FOREIGN KEY (`idGS`) REFERENCES `groupesangin` (`idGS`),
   ADD CONSTRAINT `donnateur_ibfk_2` FOREIGN KEY (`idVille`) REFERENCES `ville` (`idVille`);
 
 --
--- Contraintes pour la table `donnation`
+-- Constraints for table `donnation`
 --
 ALTER TABLE `donnation`
   ADD CONSTRAINT `donnation_ibfk_1` FOREIGN KEY (`idDonnateur`) REFERENCES `donnateur` (`idDonnateur`),
   ADD CONSTRAINT `donnation_ibfk_2` FOREIGN KEY (`idBS`) REFERENCES `banquesang` (`idBS`);
 
 --
--- Contraintes pour la table `planning`
+-- Constraints for table `planning`
 --
 ALTER TABLE `planning`
   ADD CONSTRAINT `planning_ibfk_1` FOREIGN KEY (`idConvoi`) REFERENCES `convoi` (`idConvoi`),
   ADD CONSTRAINT `planning_ibfk_2` FOREIGN KEY (`idVille`) REFERENCES `ville` (`idVille`);
 
 --
--- Contraintes pour la table `stocksang`
+-- Constraints for table `stocksang`
 --
 ALTER TABLE `stocksang`
   ADD CONSTRAINT `stocksang_ibfk_1` FOREIGN KEY (`idBS`) REFERENCES `banquesang` (`idBS`),
