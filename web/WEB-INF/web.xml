@@ -3,4 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <!-- Alertes de besoin -->
+    <servlet>
+        <servlet-name>alertes</servlet-name>
+        <servlet-class>Controller.AlerteBesoin.AlerteBesoinServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>alertes</servlet-name>
+        <url-pattern>/Alertes</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>traiterAlerte</servlet-name>
+        <servlet-class>Controller.AlerteBesoin.TraiterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>traiterAlerte</servlet-name>
+        <url-pattern>/TraiterAlerte</url-pattern>
+    </servlet-mapping>
 </web-app>

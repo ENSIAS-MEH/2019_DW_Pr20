@@ -9,10 +9,13 @@
 <html>
 <head>
     <title>Hello</title>
-    <link rel="stylesheet" href="frameworks/bootstap4/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="frameworks/bootstap4/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="frameworks/font-awesome/css/fontawesome.min.css">
 </head>
-<body class="container">
-    <h1 class="text-danger">hello world</h1><br>
-    <h1 class="text-info">hello world2</h1>
+<body>
+    <div class="container">
+        <h1 class="text-danger">hello world</h1><br>
+        <h1 class="text-info">hello world2</h1>
+    </div>
 </body>
 </html>

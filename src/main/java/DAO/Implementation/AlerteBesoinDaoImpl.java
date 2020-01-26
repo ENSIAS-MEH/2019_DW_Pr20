@@ -3,6 +3,7 @@ package DAO.Implementation;
 import DAO.DAOFactory;
 import DAO.interfaces.AlerteBesoinDAO;
 import Model.AlerteBesoin;
+import Model.GroupeSangin;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
             connection = daoFactory.getConnection();
             ps = connection.prepareStatement("INSERT INTO alertebesoin(idBS,idGS,dateAlerte,descriptionAlerte,enable) VALUES(?,?,?,?,?)");
             ps.setInt(1,ab.getIdBS());
-            ps.setInt(2,ab.getIdGS());
+            ps.setInt(2,ab.getGS().getIdGS());
             ps.setTimestamp(3,new Timestamp(System.currentTimeMillis()));
             ps.setString(4,ab.getDescriptionAlerte());
             ps.setBoolean(5,true);
@@ -33,6 +34,15 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return false;
     }
@@ -45,11 +55,13 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
         ResultSet rs = null;
         try {
             connection = daoFactory.getConnection();
-            ps = connection.prepareStatement("SELECT * FROM alertebesoin WHERE enable=? ORDER BY dateAlerte DESC");
+            ps = connection.prepareStatement("SELECT * FROM alertebesoin,groupesangin WHERE alertebesoin.idGS=groupesangin.idGS and enable=? ORDER BY dateAlerte DESC");
             ps.setBoolean(1, true);
             rs = ps.executeQuery();
             while (rs.next()){
-                AlerteBesoin ab = new AlerteBesoin(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getTimestamp(4),rs.getString(5),rs.getBoolean(6));
+                GroupeSangin gs =new GroupeSangin(rs.getInt("idGS"),rs.getString("nomGS"));
+                AlerteBesoin ab = new AlerteBesoin(rs.getInt("idAlerte"),rs.getInt("idBS"),rs.getTimestamp("dateAlerte"),rs.getString("descriptionAlerte"),rs.getBoolean("enable"));
+                ab.setGS(gs);
                 alertes.add(ab);
             }
             return alertes;
@@ -67,16 +79,29 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
         ResultSet rs = null;
         try {
             connection = daoFactory.getConnection();
-            ps = connection.prepareStatement("SELECT * FROM alertebesoin WHERE idBS=? ORDER BY dateAlerte DESC");
+            ps = connection.prepareStatement("SELECT * FROM alertebesoin,groupesangin WHERE alertebesoin.idGS=groupesangin.idGS and enable=1 and idBS=? ORDER BY dateAlerte DESC");
             ps.setInt(1,idBS);
             rs = ps.executeQuery();
             while (rs.next()){
-                AlerteBesoin ab = new AlerteBesoin(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getTimestamp(4),rs.getString(5),rs.getBoolean(6));
+                GroupeSangin gs =new GroupeSangin(rs.getInt("idGS"),rs.getString("nomGS"));
+                AlerteBesoin ab = new AlerteBesoin(rs.getInt("idAlerte"),rs.getInt("idBS"),rs.getTimestamp("dateAlerte"),rs.getString("descriptionAlerte"),rs.getBoolean("enable"));
+                ab.setGS(gs);
                 alertes.add(ab);
             }
             return alertes;
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        finally {
+            if(connection!=null){
+                try {
+                    ps.close();
+                    rs.close();
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -89,23 +114,24 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
         ResultSet rs = null;
         try {
             connection = daoFactory.getConnection();
-            ps = connection.prepareStatement("SELECT * FROM alertebesoin WHERE idGS=? ORDER BY dateAlerte DESC");
+            ps = connection.prepareStatement("SELECT * FROM alertebesoin,groupesangin WHERE alertebesoin.idGS=groupesangin.idGS and idGS=? ORDER BY dateAlerte DESC");
             ps.setInt(1,idGS);
             rs = ps.executeQuery();
             while (rs.next()){
-                AlerteBesoin ab = new AlerteBesoin(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getTimestamp(4),rs.getString(5),rs.getBoolean(6));
+                GroupeSangin gs =new GroupeSangin(rs.getInt("idGS"),rs.getString("nomGS"));
+                AlerteBesoin ab = new AlerteBesoin(rs.getInt("idAlerte"),rs.getInt("idBS"),rs.getTimestamp("dateAlerte"),rs.getString("descriptionAlerte"),rs.getBoolean("enable"));
+                ab.setGS(gs);
                 alertes.add(ab);
             }
-            return alertes;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return alertes;
     }
 
     @Override
     public boolean updateAlerte(AlerteBesoin alerteBesoin) {
-        Connection connection = null;
+        /*Connection connection = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -118,7 +144,7 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
         return false;
     }
 
@@ -133,6 +159,7 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
             ps.setInt(1, idAlerte);
             ps.executeUpdate();
             ps.close();
+            connection.close();
             return true;
         }catch (Exception e){
             e.printStackTrace();
@@ -151,6 +178,8 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
             ps.setBoolean(1,false);
             ps.setInt(2,idAlerte);
             ps.execute();
+            ps.close();
+            connection.close();
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -196,8 +225,8 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
         AlerteBesoin ab10 = new AlerteBesoin();
         ab10.setIdAlerte(4); ab10.setIdGS(8);ab10.setDescriptionAlerte("dessssssssssssssssssc 4");
         alerteBesoinDao.updateAlerte(ab10);*/
-        for(AlerteBesoin ab: alerteBesoinDao.getAllAlertes()){
+        /*for(AlerteBesoin ab: alerteBesoinDao.getAllAlertes()){
             System.out.println(ab);
-        }
+        }*/
     }
 }
