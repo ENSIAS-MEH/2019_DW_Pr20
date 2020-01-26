@@ -13,5 +13,6 @@ public interface BanqueSangDAO {
     public void updateBanqueSang(BanqueSang banqueSang);
     public void deleteBanqueSang(int idBS);
     public boolean searchBanqueSangByName(String nom);
+    public int countBanqueSang();
 
 }
