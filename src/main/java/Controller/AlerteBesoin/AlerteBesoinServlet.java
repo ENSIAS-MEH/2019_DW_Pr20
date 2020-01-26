@@ -43,7 +43,7 @@ public class AlerteBesoinServlet extends HttpServlet {
         request.setAttribute("alertes", alertes);
         request.setAttribute("villes",villes);
         request.setAttribute("groupes",groupes);
-        this.getServletContext().getRequestDispatcher("/alertes.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/jsp/alertes.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
