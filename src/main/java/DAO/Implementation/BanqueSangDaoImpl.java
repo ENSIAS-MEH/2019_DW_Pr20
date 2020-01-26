@@ -186,4 +186,19 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
         return false;
     }
 
+    @Override
+    public int countBanqueSang(){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        try {
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("select count(*) as nbr from BanqueSang");
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()) return  rs.getInt("nbr");
+        }catch (SQLException sqlexc){
+            sqlexc.getErrorCode();
+        }
+        return 0;
+    }
+
 }

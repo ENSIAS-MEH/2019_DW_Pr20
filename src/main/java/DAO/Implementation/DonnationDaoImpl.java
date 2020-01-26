@@ -120,7 +120,7 @@ public class DonnationDaoImpl implements DonnationDAO {
         try {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT d.idDonnateur, idBS, dateDonnation, idVille FROM donnation d, banquesange b " +
+            ResultSet rs = st.executeQuery("SELECT idDonnateur, d.idBS, dateDonnation, idVille FROM donnation d, banquesang b " +
                     "WHERE d.idBS=b.idBS AND idVille="+idVille+";");
             List<Donnation> donationsList = new ArrayList<>();
 
@@ -173,8 +173,8 @@ public class DonnationDaoImpl implements DonnationDAO {
         try {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT dn.idDonnateur, idBS, dateDonnation FROM donnation dn, donnateur dr " +
-                    ", banquesange b WHERE dn.idBS=b.idBS AND dn.idDonnateur=dr.idDonnateur AND idGS="+ idGS +" AND b.idVille="+idVille+";");
+            ResultSet rs = st.executeQuery("SELECT dn.idDonnateur, b.idBS, dateDonnation FROM donnation dn, donnateur dr " +
+                    ", banquesang b WHERE dn.idBS=b.idBS AND dn.idDonnateur=dr.idDonnateur AND idGS="+ idGS +" AND b.idVille="+idVille+";");
             List<Donnation> donationsList = new ArrayList<>();
 
             while(rs.next()){
@@ -217,4 +217,91 @@ public class DonnationDaoImpl implements DonnationDAO {
         }
         return null;
     }
+
+    @Override
+    public int DonnationsNbrPerVille(int idVille){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int nbr = 0;
+
+        try {
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("SELECT count(idDonnateur) AS nbr FROM donnation d, banquesang b " +
+                    "WHERE d.idBS = b.idBS AND idVille ="+idVille +";");
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()){
+                nbr = Integer.parseInt(rs.getString("nbr"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return nbr;
+    }
+
+    @Override
+    public int DonnationsNbrPerBanq(int idBS){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int nbr = 0;
+
+        try {
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("SELECT count(idDonnateur) AS nbr FROM donnation d WHERE idBS ="+idBS +";");
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()){
+                nbr = Integer.parseInt(rs.getString("nbr"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return nbr;
+    }
+
+    @Override
+    public int DonnationsNbrPerDonnateur(int idDonnateur){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int nbr = 0;
+
+        try {
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("SELECT count(idDonnateur) AS nbr FROM donnation d WHERE idDonnateur ="+idDonnateur +";");
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()){
+                nbr = Integer.parseInt(rs.getString("nbr"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return nbr;
+    }
+
+    @Override
+    public int DonnationsNbrPerVilleGS(int idVille, int idGS){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int nbr = 0;
+
+        try {
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("SELECT count(dn.idDonnateur) AS nbr FROM donnation dn, donnateur dr , banquesang b " +
+                    "WHERE dn.idBS=b.idBS AND dn.idDonnateur=dr.idDonnateur AND idGS="+ idGS +" AND b.idVille="+idVille+";");
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()){
+                nbr = Integer.parseInt(rs.getString("nbr"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return nbr;
+    }
+
 }
