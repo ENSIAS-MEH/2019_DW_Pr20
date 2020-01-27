@@ -34,18 +34,22 @@
     <div class="card">
         <div class="card-body">
             <c:if test="${banqueSangExist != null}">
-            <form action="update" method="post">
+            <form action="/LesBaqnuesDuSang" method="post">
                 </c:if>
                 <c:if test="${banqueSangExist == null}">
-                <form action="insert" method="post">
+                <form action="/LesBaqnuesDuSang" method="post">
                     </c:if>
                     <caption>
                         <h2>
                             <c:if test="${banqueSangExist != null}">
-                                Modifier un Banque Du Sang
+                                <p class="align-content-md-center">
+                                    Modifier un Banque Du Sang
+                                </p>
                             </c:if>
                             <c:if test="${banqueSangExist == null}">
+                            <p class="align-content-md-center">
                                 Ajouter un nouveau Banque Du Sang
+                            </p>
                             </c:if>
                         </h2>
                     </caption>

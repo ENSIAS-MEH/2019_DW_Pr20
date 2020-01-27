@@ -28,7 +28,7 @@ public class BanqueSangController extends HttpServlet {
     public void init() throws ServletException {
 
         daoFactory.getInstance();
-        System.out.println("good : "+daoFactory);
+        //System.out.println("good : "+daoFactory);
         banqueSangDAO = daoFactory.getBanqueSangDaoImpl();
         villeDAO = daoFactory.getVilleDaoImpl();
     }
@@ -39,21 +39,27 @@ public class BanqueSangController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getServletPath();
-        System.out.println(action);
-
+        System.out.println("Servletpath : "+action);
+        //action = "/nouveauBanqueForm";
         try {
             switch (action) {
-                case "/LesBaqnuesDuSang/nouveauBanqueForm":
+                case "/nouveauBanqueForm":
+                    System.out.println("nouveauBanqueform : "+action);
                     nouveauBanqueForm(request, response);
                 case "/nouveauBanqueDuSang":
+                    System.out.println("nouveauBanqueDuSang : "+action);
                     nouveauBanque(request, response);
                 case "/supprimerBanqueDuSang":
+                    System.out.println("supprimerBanqueDuSang : "+action);
                     supprimerBanque(request, response);
                 case "/modifierBanqueForm":
+                    System.out.println("modifierBanqueForm : "+action);
                     modifierBanqueForm(request, response);
                 case "/modifierBanqueDuSang":
+                    System.out.println("modifierBanqueDuSang : "+action);
                     modifierBanque(request, response);
                 default:
+                    System.out.println("Default : "+action);
                     listerBanque(request, response);
             }
         } catch (SQLException ex) {

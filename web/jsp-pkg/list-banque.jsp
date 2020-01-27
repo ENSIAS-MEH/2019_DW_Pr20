@@ -24,7 +24,7 @@
         </div>
 
         <ul class="navbar-nav">
-            <li><a href="<%=request.getContextPath()%>/LesBaqnuesDuSang" class="nav-link">Les Banques du Sang</a></li>
+            <li><a href="/LesBaqnuesDuSang" class="nav-link">Les Banques du Sang</a></li>
         </ul>
     </nav>
 </header>
@@ -36,8 +36,7 @@
         <h3 class="text-center">Liste des Banques du Sang</h3>
         <hr>
         <div class="container text-left">
-
-            <a href="<%=request.getContextPath()%>/nouveauBanqueForm" class="btn btn-success">Nouveau banque du sang</a>
+                <a href="/nouveauBanqueForm" class="btn btn-success">Nouveau banque du sang</a>
         </div>
         <br>
         <table class="table table-bordered">
