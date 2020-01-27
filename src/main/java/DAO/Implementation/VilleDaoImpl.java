@@ -128,20 +128,20 @@ public class VilleDaoImpl implements VilleDAO {
             e.printStackTrace();
         }
     }
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         VilleDaoImpl villeDao = new VilleDaoImpl(DAOFactory.getInstance());
-        /*Ville ville1 = new Ville();ville1.setNomVille("Casablanca");
+       Ville ville1 = new Ville();ville1.setNomVille("Casablanca");
         Ville ville2 = new Ville();ville2.setNomVille("Rabat");
         Ville ville3 = new Ville();ville3.setNomVille("Tanger");
         Ville ville4 = new Ville();ville4.setNomVille("Fes");
         Ville ville5 = new Ville();ville5.setNomVille("Meknes");
-        villeDao.addVille(ville1);villeDao.addVille(ville2);villeDao.addVille(ville3);villeDao.addVille(ville4);villeDao.addVille(ville5);*/
+        villeDao.addVille(ville1);villeDao.addVille(ville2);villeDao.addVille(ville3);villeDao.addVille(ville4);villeDao.addVille(ville5);
        // villeDao.deleteVille(5);
        List<Ville> villes = villeDao.getAllVille();
         for (Ville v:villes){
             System.out.println(v);
         }
         //System.out.println(villeDao.getVilleById(1));
-    }
+    }*/
 
 }
