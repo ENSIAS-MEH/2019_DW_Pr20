@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 public class AjouterConvoiServlet extends HttpServlet {
 
@@ -34,6 +35,7 @@ public class AjouterConvoiServlet extends HttpServlet {
 
         }
         */
+
             this.getServletContext().getRequestDispatcher("/jsp/addConvoi.jsp").forward(request, response);
 
     }
@@ -57,7 +59,7 @@ public class AjouterConvoiServlet extends HttpServlet {
 
             Convoi convoi = new Convoi();
             convoi.setTitreConvoi(titreConvoi);
-            convoi.setDesciption(description);
+            convoi.setDescription(description);
             convoi.setIdBS(banqueSang.getIdBS());
 
             convoiDao.addConvoi(convoi);

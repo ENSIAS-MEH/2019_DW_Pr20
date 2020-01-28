@@ -34,4 +34,13 @@
         <url-pattern>/AjouterConvoi</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AfficherListConvoiServlet</servlet-name>
+        <servlet-class>Controller.Convoi.AfficherListConvoiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AfficherListConvoiServlet</servlet-name>
+        <url-pattern>/AfficherListConvoi</url-pattern>
+    </servlet-mapping>
+
 </web-app>
