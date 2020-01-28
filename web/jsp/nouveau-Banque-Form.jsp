@@ -18,7 +18,8 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #af111c">
+    <%@ include file="navbar.jsp"%>
+    <!--<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #af111c">
         <div>
             <a href="https://www.github.com/MejdaouiSoufiane" class="navbar-brand"> Platforme de Don du Sang</a>
         </div>
@@ -26,7 +27,7 @@
         <ul class="navbar-nav">
             <li><a href="<%=request.getContextPath()%>/LesBaqnuesDuSang" class="nav-link">Les Banques du Sang</a></li>
         </ul>
-    </nav>
+    </nav>-->
 </header>
 <br>
 

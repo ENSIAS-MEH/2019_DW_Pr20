@@ -21,4 +21,7 @@
         <servlet-name>traiterAlerte</servlet-name>
         <url-pattern>/TraiterAlerte</url-pattern>
     </servlet-mapping>
+
+    <!-- Banques Du Sang-->
+
 </web-app>

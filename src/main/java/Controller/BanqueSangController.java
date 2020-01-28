@@ -69,7 +69,7 @@ public class BanqueSangController extends HttpServlet {
 
     private void nouveauBanqueForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException{
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp-pkg/nouveau-Banque-Form.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/nouveau-Banque-Form.jsp");
         request.setAttribute("nombreBanque",banqueSangDAO.countBanqueSang());
         List<Ville> villes = villeDAO.getAllVille();
         request.setAttribute("villes",villes);
@@ -108,7 +108,7 @@ public class BanqueSangController extends HttpServlet {
             throws SQLException, IOException, ServletException{
         int idBanque = Integer.parseInt(request.getParameter("idBanque"));
         BanqueSang banqueSangExist = banqueSangDAO.findBanqueSangById(idBanque);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp-pkg/nouveau-Banque-Form.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/nouveau-Banque-Form.jsp");
         request.setAttribute("banqueSangExist",banqueSangExist);
         List<Ville> villes = villeDAO.getAllVille();
         request.setAttribute("villes",villes);
@@ -142,7 +142,7 @@ public class BanqueSangController extends HttpServlet {
         List<Ville> villes = villeDAO.getAllVille();
         request.setAttribute("villes",villes);
         request.setAttribute("banqueSangList",banqueSangList);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp-pkg/list-banque.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/list-banque.jsp");
         requestDispatcher.forward(request,response);
     }
 
