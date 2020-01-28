@@ -12,7 +12,7 @@
 <html>
 <head>
     <title>Le Banque du Sang</title>
-    <link rel="stylesheet" href="frameworks/bootstap4/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../frameworks/bootstap4/dist/css/bootstrap.min.css"/>
 </head>
 
 <body>
