@@ -119,11 +119,10 @@ public class ConvoiDaoImpl implements ConvoiDAO {
 
         try {
             connexion = daoFactory.getConnection();
-            preparedStatement = connexion.prepareStatement("INSERT INTO convoi(titreConvoi, description, idBS) VALUES(?, ?, ?);");
+            preparedStatement = connexion.prepareStatement("INSERT INTO convoi(titreConvoi, desciption, idBS) VALUES(?, ?, ?);");
             preparedStatement.setString(1, convoi.getTitreConvoi());
             preparedStatement.setString(2, convoi.getDesciption());
             preparedStatement.setInt(3, convoi.getIdBS());
-
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

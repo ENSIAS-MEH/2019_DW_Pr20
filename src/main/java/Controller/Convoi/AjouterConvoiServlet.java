@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "AjouterConvoiServlet")
 public class AjouterConvoiServlet extends HttpServlet {
 
     private DAOFactory daoFactory;
@@ -23,12 +22,20 @@ public class AjouterConvoiServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         daoFactory = DAOFactory.getInstance();
-
+        convoiDao = daoFactory.getConvoiDaoImpl();
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.init();
+        /*
+        HttpSession session = request.getSession();
+        if(session.getAttribute("BanqueSang")==null){
+            response.sendRedirect("/jsp/login.jsp");
+        }else {
 
-        this.getServletContext().getRequestDispatcher("/jsp/addConvoi.jsp").forward(request, response);
+        }
+        */
+            this.getServletContext().getRequestDispatcher("/jsp/addConvoi.jsp").forward(request, response);
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,10 +44,14 @@ public class AjouterConvoiServlet extends HttpServlet {
         if(session.getAttribute("BanqueSang")==null){
             response.sendRedirect("/jsp/login.jsp");
         }
-        else{
+        else {
+        }
 
+         
             String titreConvoi = request.getParameter("titreConvoi");
             String description = request.getParameter("description");
+
+            System.out.println(titreConvoi + " "+ description);
 
             BanqueSang banqueSang = (BanqueSang) session.getAttribute("BanqueSang");
 
@@ -51,7 +62,7 @@ public class AjouterConvoiServlet extends HttpServlet {
 
             convoiDao.addConvoi(convoi);
             this.getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
-        }
+
     }
 
 }

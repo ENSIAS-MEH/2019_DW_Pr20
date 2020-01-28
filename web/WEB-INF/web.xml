@@ -24,4 +24,14 @@
 
     <!-- Banques Du Sang-->
 
+    <!-- Convoi -->
+    <servlet>
+        <servlet-name>AjouterConvoiServlet</servlet-name>
+        <servlet-class>Controller.Convoi.AjouterConvoiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjouterConvoiServlet</servlet-name>
+        <url-pattern>/AjouterConvoi</url-pattern>
+    </servlet-mapping>
+
 </web-app>
