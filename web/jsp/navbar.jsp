@@ -38,7 +38,7 @@
     </button>
     <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav">
-            <c:if test="${(empty sessionScope.BS) && (empty sessionScope.admin)  && (empty sessionScope.donnateur)}">
+            <c:if test="${(empty sessionScope.admin)  && (empty sessionScope.banquesang) && (empty sessionScope.donnateur)}">
                 <li class="nav-item">
                     <a href="#" class="nav-link p-2 mr-5 rounded">Home</a>
                 </li>
@@ -49,7 +49,12 @@
                     <a href="#" class="nav-link p-2 mr-5 border border-danger rounded">Join US</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link mr-5 p-2 border border-danger rounded">Sign In</a>
+                    <a href="/SignIn" class="nav-link mr-5 p-2 border border-danger rounded">Sign In</a>
+                </li>
+            </c:if>
+            <c:if test="${(not empty sessionScope.admin)  || (not empty sessionScope.banquesang) || (not empty sessionScope.donnateur)}">
+                <li class="nav-item">
+                    <a href="/LogOut" class="nav-link mr-5 p-2 border border-danger rounded">Log Out</a>
                 </li>
             </c:if>
         </ul>

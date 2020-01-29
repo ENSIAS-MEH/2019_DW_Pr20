@@ -2,6 +2,7 @@ package DAO.Implementation;
 
 import DAO.DAOFactory;
 import DAO.interfaces.BanqueSangDAO;
+import Model.Admin;
 import Model.BanqueSang;
 
 import java.sql.Connection;
@@ -62,15 +63,16 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
     }
 
     @Override
-    public BanqueSang findBanqueSangByEmail(String Email){
+    public BanqueSang findBanqueSang(String mail, String password){
         Connection conn = null;
         PreparedStatement ps = null;
         BanqueSang banque = null;
 
         try{
             conn = daoFactory.getConnection();
-            ps = conn.prepareStatement("select * from BanqueSang where email = ?");
-            ps.setString(1,Email);
+            ps = conn.prepareStatement("select * from BanqueSang where emailBS = ? and passwordBS=?");
+            ps.setString(1,mail);
+            ps.setString(2,password);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 banque = new BanqueSang(rs.getInt("idBS"),rs.getString("nomBS"),rs.getString("emailBS"),
@@ -199,6 +201,27 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
             sqlexc.getErrorCode();
         }
         return 0;
+    }
+
+    @Override
+    public Admin getAdmin(String mail, String password) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        Admin admin = null;
+
+        try{
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("select * from admin where emailAdmin = ? and passwordAdmin = ?");
+            ps.setString(1,mail);
+            ps.setString(2,password);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                admin = new Admin(rs.getInt(1),rs.getString(1),rs.getString(2));
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return admin;
     }
 
 }
