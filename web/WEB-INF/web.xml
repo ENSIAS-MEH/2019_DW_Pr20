@@ -26,15 +26,6 @@
 
     <!-- Convoi -->
     <servlet>
-        <servlet-name>AjouterConvoiServlet</servlet-name>
-        <servlet-class>Controller.Convoi.AjouterConvoiServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AjouterConvoiServlet</servlet-name>
-        <url-pattern>/AjouterConvoi</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>AfficherListConvoiServlet</servlet-name>
         <servlet-class>Controller.Convoi.AfficherListConvoiServlet</servlet-class>
     </servlet>

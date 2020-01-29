@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
-
+@WebServlet("/AjouterConvoi")
 public class AjouterConvoiServlet extends HttpServlet {
 
     private DAOFactory daoFactory;
@@ -41,15 +42,13 @@ public class AjouterConvoiServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+/*
         HttpSession session = request.getSession();
         if(session.getAttribute("BanqueSang")==null){
             response.sendRedirect("/jsp/login.jsp");
         }
         else {
         }
-
-
             String titreConvoi = request.getParameter("titreConvoi");
             String description = request.getParameter("description");
 
@@ -64,7 +63,28 @@ public class AjouterConvoiServlet extends HttpServlet {
 
             convoiDao.addConvoi(convoi);
             this.getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
+ */
+        try {
+            insertConvoi(request, response);
+        } catch (SQLException ex) {
+            throw new ServletException(ex);
 
+        }
     }
 
+    private void insertConvoi(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException {
+        String titreConvoi = request.getParameter("titreConvoi");
+        String description = request.getParameter("description");
+
+        //BanqueSang banqueSang = (BanqueSang) session.getAttribute("BanqueSang");
+
+        Convoi convoi = new Convoi();
+        convoi.setTitreConvoi(titreConvoi);
+        convoi.setDescription(description);
+        //convoi.setIdBS(banqueSang.getIdBS());
+        convoi.setIdBS(1);
+        convoiDao.addConvoi(convoi);
+        response.sendRedirect("Convois");
+    }
 }

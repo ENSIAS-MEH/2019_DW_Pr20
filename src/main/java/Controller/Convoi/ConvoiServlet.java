@@ -51,18 +51,7 @@ public class ConvoiServlet extends HttpServlet {
 
         try{
             listConvoi(request, response);
-            /*
-            switch (action){
-                case "/Convois":
-                    listConvoi(request,response);
-                    break;
-                case "/supprimerConvoi":
-                    supprimerConvoi(request,response);
-                    break;
 
-
-            }
-             */
         }catch (SQLException ex){
             throw new ServletException(ex);
         }
@@ -77,25 +66,4 @@ public class ConvoiServlet extends HttpServlet {
         this.getServletContext().getRequestDispatcher("/jsp/list-convois.jsp").forward(request, response);
 
     }
-
-    private void insertConvoi(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException {
-        String titreConvoi = request.getParameter("titreConvoi");
-        String description = request.getParameter("description");
-
-        System.out.println(titreConvoi + " "+ description);
-
-        //BanqueSang banqueSang = (BanqueSang) session.getAttribute("BanqueSang");
-
-        Convoi convoi = new Convoi();
-        convoi.setTitreConvoi(titreConvoi);
-        convoi.setDescription(description);
-        //convoi.setIdBS(banqueSang.getIdBS());
-        convoi.setIdBS(1);
-        convoiDao.addConvoi(convoi);
-        response.sendRedirect("Convois");
-    }
-
-
-
 }
