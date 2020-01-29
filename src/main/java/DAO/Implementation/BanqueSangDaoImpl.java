@@ -136,7 +136,7 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
         try{
             conn = daoFactory.getConnection();
             ps = conn.prepareStatement(
-                    "update BanqueSang set nomBS = ?,emailBS = ?,teleBS = ?,passwordBS = ?,adresseBS = ?,idVille = ? ");
+                    "update BanqueSang set nomBS = ?,emailBS = ?,teleBS = ?,passwordBS = ?,adresseBS = ?,idVille = ?  where idBS = ?");
 
             ps.setString(1,banqueSang.getNomBS());
             ps.setString(2,banqueSang.getEmailBS());
@@ -144,6 +144,7 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
             ps.setString(4,banqueSang.getPasswordBS());
             ps.setString(5,banqueSang.getAdresseBS());
             ps.setInt(6,banqueSang.getIdVille());
+            ps.setInt(7,banqueSang.getIdVille());
             ps.executeUpdate();
 
         }catch (SQLException e){

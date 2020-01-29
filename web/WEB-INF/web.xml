@@ -23,6 +23,24 @@
     </servlet-mapping>
 
     <!-- Banques Du Sang-->
+    <servlet>
+    <servlet-name>BanqueDuSang</servlet-name>
+    <servlet-class>Controller.BanqueDuSang.BanqueSangController</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>BanqueDuSang</servlet-name>
+        <url-pattern>/LesBanquesDuSang</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SupprimerBanque</servlet-name>
+        <servlet-class>Controller.BanqueDuSang.SupprimerBanqueController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupprimerBanque</servlet-name>
+        <url-pattern>/SupprimerBanqueDuSang</url-pattern>
+    </servlet-mapping>
+
 
     <!-- Convoi -->
     <servlet>
