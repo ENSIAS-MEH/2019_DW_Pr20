@@ -4,8 +4,9 @@ import java.sql.Timestamp;
 
 public class AlerteBesoin {
     private int idAlerte;
+    private GroupeSangin GS;
     private int idBS; //banque du sang
-    private int idGS;
+    //private int idGS;
     private Timestamp dateAlerte;
     private String descriptionAlerte;
     private boolean enable;
@@ -13,10 +14,9 @@ public class AlerteBesoin {
     public AlerteBesoin() {
     }
 
-    public AlerteBesoin(int idAlerte,int idBS, int idGS, Timestamp dateAlerte, String descriptionAlerte, boolean enable) {
+    public AlerteBesoin(int idAlerte,int idBS, Timestamp dateAlerte, String descriptionAlerte, boolean enable) {
         this.idAlerte = idAlerte;
         this.idBS = idBS;
-        this.idGS = idGS;
         this.dateAlerte = dateAlerte;
         this.descriptionAlerte = descriptionAlerte;
         this.enable = enable;
@@ -30,20 +30,20 @@ public class AlerteBesoin {
         this.idAlerte = idAlerte;
     }
 
+    public GroupeSangin getGS() {
+        return GS;
+    }
+
+    public void setGS(GroupeSangin GS) {
+        this.GS = GS;
+    }
+
     public int getIdBS() {
         return idBS;
     }
 
     public void setIdBS(int idBS) {
         this.idBS = idBS;
-    }
-
-    public int getIdGS() {
-        return idGS;
-    }
-
-    public void setIdGS(int idGS) {
-        this.idGS = idGS;
     }
 
     public Timestamp getDateAlerte() {
@@ -75,7 +75,7 @@ public class AlerteBesoin {
         return "***AlerteBesoin{" +
                 "\n\tidAlerte=" + idAlerte +
                 "\n\tidBS=" + idBS +
-                "\n\tidGS=" + idGS +
+                "\n\tidGS=" + GS.getIdGS() +
                 "\n\tdateAlerte=" + dateAlerte +
                 "\n\tdescriptionAlerte='" + descriptionAlerte + '\'' +
                 "\n\tenable=" + enable +
