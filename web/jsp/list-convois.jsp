@@ -76,8 +76,8 @@
                             </td>
 
                             <td>
-                                <a data-toggle="modal" href="#AjouterConvoi">
-                                    <span class="shadow text-danger p-2" data-toggle="tooltip" title="modifier" data-placement="left">
+                                <a data-toggle="modal" href="#modifier${convoi.idConvoi}">
+                                    <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                         <span class="fa fa-edit" aria-hidden="true"></span>
                                     </span>
                                 </a>
@@ -107,6 +107,36 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+
+                    <div class="modal mt-lg-4" id="modifier${convoi.idConvoi}">
+                        <div class="modal-dialog">
+                            <div class="modal-content rouded">
+                                <div class="modal-header alert-danger text-center">
+                                    <h5 class="font-weight-bold modal-title">Formulaire de Modification</h5>
+                                    <button type="button" class="close" data-dismiss="modal">X</button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/ModifierConvoi?id=${convoi.idConvoi}" method="post">
+                                        <fieldset class="form-group">
+                                            <label>Titre Convoi</label>
+                                            <input type="text"  class="form-control" name="titreConvoi" value="${convoi.titreConvoi}" required="required">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Description</label>
+                                            <textarea class="form-control" rows="5"  name="description">${convoi.description}</textarea>
+                                        </fieldset>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-success">Modifier</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     </c:forEach>
                 </tbody>
 
@@ -137,7 +167,7 @@
 
                         <fieldset class="form-group">
                             <label>Description</label>
-                            <textarea class="form-control" rows="5" id="description" name="description"></textarea>
+                            <textarea class="form-control" rows="5"  name="description"></textarea>
                         </fieldset>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success">Ajouter</button>

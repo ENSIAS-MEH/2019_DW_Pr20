@@ -55,7 +55,6 @@ public class ConvoiServlet extends HttpServlet {
         }catch (SQLException ex){
             throw new ServletException(ex);
         }
-
     }
 
     private void listConvoi(HttpServletRequest request , HttpServletResponse response) throws SQLException, IOException, ServletException{
