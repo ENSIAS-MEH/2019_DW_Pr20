@@ -18,7 +18,7 @@
 <%@ include file="jsp/navbar.jsp"%>
     <div class="container">
         <h1 class="text-danger">hello world</h1><br>
-        <h1 class="text-info">hello world2</h1>
+        <h1 class="text-info">hello ahmed</h1>
     </div>
 </body>
 <script src="frameworks/jquery/jquery.js"></script>

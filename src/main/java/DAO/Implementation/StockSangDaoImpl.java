@@ -139,7 +139,7 @@ public class StockSangDaoImpl implements StockSangDAO {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         try{
-            connection=daoFactory.getConnection();
+            connection = daoFactory.getConnection();
             preparedStatement=connection.prepareStatement(
                     "update stockSang set idBS = ?,idGS = ?,quantite = ?");
             preparedStatement.setInt(1,stockSang.getIdBS());
@@ -160,8 +160,8 @@ public class StockSangDaoImpl implements StockSangDAO {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         try{
-            connection=daoFactory.getConnection();
-            preparedStatement=connection.prepareStatement(
+            connection = daoFactory.getConnection();
+            preparedStatement = connection.prepareStatement(
                     "delete from stockSang where idBS = ? and idGS = ?");
             preparedStatement.setInt(1,stockSang.getIdBS());
             preparedStatement.setInt(2,stockSang.getIdGS());
@@ -170,6 +170,28 @@ public class StockSangDaoImpl implements StockSangDAO {
         }catch (SQLException e){
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public int stockPerBanque(int idBS){
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        int total = -1;
+        try
+        {
+            connection = daoFactory.getConnection();
+            preparedStatement =  connection.prepareStatement(
+                    "select sum(quantite) as total from stocksang where idBS = ? ");
+            preparedStatement.setInt(1,idBS);
+            rs = preparedStatement.executeQuery();
+            if(rs.next())
+                total = Integer.parseInt(rs.getString("total"));
+
+        }catch (SQLException sql){
+            sql.printStackTrace();
+        }
+        return total;
     }
 
 }

@@ -12,4 +12,7 @@ public interface StockSangDAO {
     public void ajouterStockSang(StockSang stockSang);
     public void updateStockSang(StockSang stockSang);
     public void deleteStockSang(StockSang stockSang);
+
+    //La quantité du  sang dans le stock pour chaque BanqueDuSang
+    public int stockPerBanque(int idBS);
 }

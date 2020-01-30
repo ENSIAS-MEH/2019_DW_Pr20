@@ -35,12 +35,12 @@ public class Convoi {
         this.titreConvoi = titreConvoi;
     }
 
-    public String getDesciption() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDesciption(String desciption) {
-        this.description = desciption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getIdBS() {

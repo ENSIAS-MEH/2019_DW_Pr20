@@ -35,7 +35,7 @@ public class ConvoiDaoImpl implements ConvoiDAO {
 
                 convoi.setIdConvoi(idConvoi);
                 convoi.setTitreConvoi(titreConvoi);
-                convoi.setDesciption(desciption);
+                convoi.setDescription(desciption);
                 convoi.setIdBS(idBS);
 
 
@@ -61,14 +61,14 @@ public class ConvoiDaoImpl implements ConvoiDAO {
             while (resultat.next()) {
                 int idConvoi = resultat.getInt("idConvoi");
                 String titreConvoi = resultat.getString("titreConvoi");
-                String desciption = resultat.getString("desciption");
+                String description = resultat.getString("desciption");
                 int idBS = resultat.getInt("idBS");
 
 
                 Convoi convoi = new Convoi();
                 convoi.setIdConvoi(idConvoi);
                 convoi.setTitreConvoi(titreConvoi);
-                convoi.setDesciption(desciption);
+                convoi.setDescription(description);
                 convoi.setIdBS(idBS);
 
                 convois.add(convoi);
@@ -101,7 +101,7 @@ public class ConvoiDaoImpl implements ConvoiDAO {
                 Convoi convoi = new Convoi();
                 convoi.setIdConvoi(idConvoi);
                 convoi.setTitreConvoi(titreConvoi);
-                convoi.setDesciption(desciption);
+                convoi.setDescription(desciption);
                 convoi.setIdBS(idBS);
 
                 convois.add(convoi);
@@ -119,11 +119,10 @@ public class ConvoiDaoImpl implements ConvoiDAO {
 
         try {
             connexion = daoFactory.getConnection();
-            preparedStatement = connexion.prepareStatement("INSERT INTO convoi(titreConvoi, description, idBS) VALUES(?, ?, ?);");
+            preparedStatement = connexion.prepareStatement("INSERT INTO convoi(titreConvoi, desciption, idBS) VALUES(?, ?, ?);");
             preparedStatement.setString(1, convoi.getTitreConvoi());
-            preparedStatement.setString(2, convoi.getDesciption());
+            preparedStatement.setString(2, convoi.getDescription());
             preparedStatement.setInt(3, convoi.getIdBS());
-
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -137,9 +136,9 @@ public class ConvoiDaoImpl implements ConvoiDAO {
 
         try {
             connexion = daoFactory.getConnection();
-            preparedStatement = connexion.prepareStatement("UPDATE convoi set titreConvoi=?, description=?, idBS=? where idConvoi=?;");
+            preparedStatement = connexion.prepareStatement("UPDATE convoi set titreConvoi=?, desciption=?, idBS=? where idConvoi=?;");
             preparedStatement.setString(1, convoi.getTitreConvoi());
-            preparedStatement.setString(2, convoi.getDesciption());
+            preparedStatement.setString(2, convoi.getDescription());
             preparedStatement.setInt(3, convoi.getIdBS());
             preparedStatement.setInt(4,convoi.getIdConvoi());
 

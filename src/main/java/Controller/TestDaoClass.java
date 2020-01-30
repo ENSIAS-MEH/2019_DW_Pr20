@@ -15,9 +15,12 @@ public class TestDaoClass {
         StockSang stock = new StockSang(1,1,21);
         stockSangdao.ajouterStockSang(stock);*/
 
-        /*delete Stock*/
+        /*delete Stock
         StockSang stock = new StockSang(1,1,11);
-        stockSangdao.deleteStockSang(stock);
+        stockSangdao.deleteStockSang(stock);*/
+
+        /*StockPerBanque*/
+        System.out.println("Stock per Banque : "+stockSangdao.stockPerBanque(2));
 
 
     }
