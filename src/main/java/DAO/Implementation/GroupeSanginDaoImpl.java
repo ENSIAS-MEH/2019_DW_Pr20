@@ -68,7 +68,7 @@ public class GroupeSanginDaoImpl implements GroupeSanginDAO {
             return groupeSangins;
         }catch (SQLException e){
             e.printStackTrace(); e.printStackTrace();
-			
+
         }
         return null;
     }

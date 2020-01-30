@@ -136,7 +136,7 @@ public class ConvoiDaoImpl implements ConvoiDAO {
 
         try {
             connexion = daoFactory.getConnection();
-            preparedStatement = connexion.prepareStatement("UPDATE convoi set titreConvoi=?, description=?, idBS=? where idConvoi=?;");
+            preparedStatement = connexion.prepareStatement("UPDATE convoi set titreConvoi=?, desciption=?, idBS=? where idConvoi=?;");
             preparedStatement.setString(1, convoi.getTitreConvoi());
             preparedStatement.setString(2, convoi.getDescription());
             preparedStatement.setInt(3, convoi.getIdBS());

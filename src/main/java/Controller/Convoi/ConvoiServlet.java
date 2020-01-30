@@ -1,7 +1,9 @@
 package Controller.Convoi;
 
 import DAO.DAOFactory;
+import DAO.interfaces.BanqueSangDAO;
 import DAO.interfaces.ConvoiDAO;
+import Model.BanqueSang;
 import Model.Convoi;
 
 import javax.servlet.ServletException;
@@ -11,22 +13,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
-@WebServlet("/supprimerConvoi")
-public class SupprimerConvoiServlet extends HttpServlet {
+@WebServlet("/Convois")
+public class ConvoiServlet extends HttpServlet {
 
     private DAOFactory daoFactory;
     private ConvoiDAO convoiDao;
+    private BanqueSangDAO banqueSangDAO;
+
 
     @Override
     public void init() throws ServletException {
         super.init();
         daoFactory = DAOFactory.getInstance();
         convoiDao = daoFactory.getConvoiDaoImpl();
+        banqueSangDAO = daoFactory.getBanqueSangDaoImpl();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,19 +45,24 @@ public class SupprimerConvoiServlet extends HttpServlet {
 
         }
         */
-        try {
-            supprimerConvoi(request,response);
-        } catch (SQLException e) {
-            throw new ServletException(e);
-        }
+        String action = request.getServletPath();
+        System.out.println(action);
 
+
+        try{
+            listConvoi(request, response);
+
+        }catch (SQLException ex){
+            throw new ServletException(ex);
+        }
     }
 
-    private void supprimerConvoi(HttpServletRequest request, HttpServletResponse response) throws SQLException,IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Convoi convoi = new Convoi();
-        convoi.setIdConvoi(id);
-        convoiDao.deleteConvoi(convoi);
-        response.sendRedirect("Convois");
+    private void listConvoi(HttpServletRequest request , HttpServletResponse response) throws SQLException, IOException, ServletException{
+        List<BanqueSang> banqueSangs = banqueSangDAO.findAllBanqueSang();
+        List<Convoi> convois = convoiDao.allConvoi();
+        request.setAttribute("convois",convois);
+        request.setAttribute("banques",banqueSangs);
+        this.getServletContext().getRequestDispatcher("/jsp/list-convois.jsp").forward(request, response);
+
     }
 }

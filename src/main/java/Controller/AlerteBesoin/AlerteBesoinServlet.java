@@ -56,7 +56,6 @@ public class AlerteBesoinServlet extends HttpServlet {
             ab.setGS(G);
             ab.setDescriptionAlerte(d);
             ab.setIdBS(1);
-            System.out.println(ab);
             alerteBesoinDAO.addAlerte(ab);
         }
         this.init();
