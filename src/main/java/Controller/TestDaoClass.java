@@ -1,8 +1,11 @@
 package Controller;
 
 import DAO.DAOFactory;
+import DAO.Implementation.BanqueSangDaoImpl;
 import DAO.Implementation.StockSangDaoImpl;
+import DAO.interfaces.BanqueSangDAO;
 import DAO.interfaces.StockSangDAO;
+import Model.BanqueSang;
 import Model.StockSang;
 
 public class TestDaoClass {
@@ -19,9 +22,14 @@ public class TestDaoClass {
         StockSang stock = new StockSang(1,1,11);
         stockSangdao.deleteStockSang(stock);*/
 
-        /*StockPerBanque*/
-        System.out.println("Stock per Banque : "+stockSangdao.stockPerBanque(2));
+        /*StockPerBanque
+        System.out.println("Stock per Banque : "+stockSangdao.stockPerBanque(2));*/
 
-
+        /*Ajouter banque with stock*/
+        BanqueSangDAO banqueSangDAO = new BanqueSangDaoImpl(new DAOFactory("jdbc:mysql://localhost:3306/sang","root",""));
+        BanqueSang banqueSang =
+                new BanqueSang("Assalam", "asalam@email.com", "0621212121", "Testtt", "hay nours", 1);
+        banqueSangDAO.ajouterBanqueSang(banqueSang);
+        System.out.println(banqueSang.getIdVille());
     }
 }

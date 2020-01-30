@@ -3,7 +3,11 @@ package DAO.Implementation;
 import DAO.DAOFactory;
 import DAO.interfaces.BanqueSangDAO;
 import Model.Admin;
+import DAO.interfaces.GroupeSanginDAO;
+import DAO.interfaces.StockSangDAO;
 import Model.BanqueSang;
+import Model.GroupeSangin;
+import Model.StockSang;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -108,6 +112,8 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
 
     @Override
     public void ajouterBanqueSang(BanqueSang banqueSang){
+        GroupeSanginDAO groupeSanginDAO = daoFactory.getGroupeSanginDaoImpl();
+        StockSangDAO stockSangDAO = daoFactory.getStockSangDaoImpl();
         Connection conn = null;
         PreparedStatement ps = null;
         try{
@@ -122,6 +128,20 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
             ps.setString(5,banqueSang.getAdresseBS());
             ps.setInt(6,banqueSang.getIdVille());
             ps.executeUpdate();
+            /*Aprés la création du banqueDuSang, il faut initialiser son stock*/
+            List<GroupeSangin> groupeSanginList = groupeSanginDAO.findAll();
+
+            for (GroupeSangin group : groupeSanginList) {
+                StockSang stockSang = new StockSang();
+                stockSang.setIdGS(group.getIdGS());
+                ps = conn.prepareStatement("select idBS from banqueSang where emailBS = ?");
+                ps.setString(1,banqueSang.getEmailBS());
+                ResultSet rs = ps.executeQuery();
+                if(rs.next())
+                stockSang.setIdBS(rs.getInt("idBS"));
+                stockSang.setQuantite(0);
+                stockSangDAO.ajouterStockSang(stockSang);
+            }
 
         }catch (SQLException e){
             e.printStackTrace();

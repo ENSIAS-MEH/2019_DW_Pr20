@@ -47,7 +47,7 @@
                     <span class="input-group-text"><span class="fa fa-search text-danger"></span></span>
                 </div>
             </div>
-            <div class="col-lg-7 float-left mb-3 row justify-content-end">
+            <div class="col-lg-7 mb-3 row justify-content-lg-end justify-content-sm-center justify-content-md-center">
                 <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" href="#Ajouterbanque">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Banque Du Sang</a>
             </div>
         </div>
