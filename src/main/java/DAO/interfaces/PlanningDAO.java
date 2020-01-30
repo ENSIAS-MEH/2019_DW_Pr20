@@ -16,6 +16,4 @@ public interface PlanningDAO {
     void updatePlanning(Planning planning);
     void deletePlanning(Planning planning);
 
-
-
 }
