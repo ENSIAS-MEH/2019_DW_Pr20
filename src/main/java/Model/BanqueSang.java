@@ -19,6 +19,15 @@ public class BanqueSang {
         this.idVille = idVille;
     }
 
+    public BanqueSang(String nomBS, String emailBS, String teleBS, String passwordBS, String adresseBS, int idVille) {
+        this.nomBS = nomBS;
+        this.emailBS = emailBS;
+        this.teleBS = teleBS;
+        this.passwordBS = passwordBS;
+        this.adresseBS = adresseBS;
+        this.idVille = idVille;
+    }
+
     public BanqueSang() {
 
     }
