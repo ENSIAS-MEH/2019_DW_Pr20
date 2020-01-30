@@ -72,4 +72,23 @@ public class GroupeSanginDaoImpl implements GroupeSanginDAO {
         }
         return null;
     }
+
+    @Override
+    public String getGSNameByID(int idGS){
+        Connection conn = null;
+        Statement st = null;
+
+        try {
+            conn = daoFactory.getConnection();
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery("select nomGS FROM groupesangin WHERE idGS="+idGS+";");
+
+            if(rs.next())
+                return rs.getString(2);
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

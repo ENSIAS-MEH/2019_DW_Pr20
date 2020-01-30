@@ -94,7 +94,7 @@ public class DonnationDaoImpl implements DonnationDAO {
         try {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM donnation;");
+            ResultSet rs = st.executeQuery("SELECT * FROM donnation ORDER BY dateDonnation DESC;");
             List<Donnation> donationsList = new ArrayList<>();
 
             while(rs.next()){

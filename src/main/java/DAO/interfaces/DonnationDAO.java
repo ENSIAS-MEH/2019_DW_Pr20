@@ -18,6 +18,7 @@ public interface DonnationDAO {
     List<Donnation> getAllDonnationsDonnateur(int idDonnateur);
 
 
+
     int DonnationsNbrPerVille(int idVille);                     //ville du BanqueSang pas du donnateur
     int DonnationsNbrPerBanq(int idBS);
     int DonnationsNbrPerDonnateur(int idDonnateur);
