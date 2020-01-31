@@ -75,6 +75,12 @@
                             </td>
 
                             <td>
+                                <a data-toggle="modal" href="#modifier${planning.idConvoi}et${planning.idVille}et${planning.dateConvoi_debut}">
+                                    <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier Date fin" data-placement="left">
+                                        <span class="fa fa-edit" aria-hidden="true"></span>
+                                    </span>
+                                </a>
+
                                 <a data-toggle="modal" href="#supprimer${planning.idConvoi}et${planning.idVille}et${planning.dateConvoi_debut}">
                                     <span class="shadow text-danger p-2" data-toggle="tooltip" title="Supprimer" data-placement="right">
                                         <span class="fa fa-trash-alt" aria-hidden="true"></span>
@@ -97,6 +103,40 @@
                                                 Supprimer
                                             </a>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal mt-lg-5" id="modifier${planning.idConvoi}et${planning.idVille}et${planning.dateConvoi_debut}">
+                            <div class="modal-dialog">
+                                <div class="modal-content rounded">
+                                    <div class="modal-header alert-danger text-center">
+                                        <h5 class="font-weight-bold modal-title">Ajouter Un convoi</h5>
+                                        <button type="button" class="close" data-dismiss="modal">X</button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <form action="/ModifierPlanning" method="post">
+
+
+
+                                            <fieldset class="form-group">
+                                                <input type="hidden" class="form-control" name="idConvoi" value="${planning.idConvoi}" />
+                                                <input type="hidden" class="form-control" name="idville" value="${planning.idVille}">
+                                                <input type="hidden" class="form-control" name="dd" value="${planning.dateConvoi_debut}">
+                                            </fieldset>
+
+
+                                            <fieldset class="form-group">
+                                                <label  class="control-label">Date fin</label>
+                                                <input  class="form-control datepicker" name="df" type="date"/>
+                                            </fieldset>
+
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-success">Modifier</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

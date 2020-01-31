@@ -35,11 +35,6 @@ public class ModifierPlanningServlet extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         try {
             modifierPlanning(request,response);
         } catch (SQLException e) {
@@ -47,6 +42,11 @@ public class ModifierPlanningServlet extends HttpServlet {
         } catch (ParseException e) {
             throw new ServletException(e);
         }
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
     }
 
     private void modifierPlanning(HttpServletRequest request,HttpServletResponse response) throws SQLException, IOException, ParseException {
@@ -58,18 +58,19 @@ public class ModifierPlanningServlet extends HttpServlet {
         Timestamp dateConvoi_debut;
         Timestamp dateConvoi_fin;
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS");
         Date date = dateFormat.parse(date_debut);
         long time = date.getTime();
         dateConvoi_debut = new Timestamp(time);
 
-        date = (Date) dateFormat.parse(date_fin);
-        time = date.getTime();
-        dateConvoi_fin = new Timestamp(time);
+        DateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
+        Date date2 = dateFormat2.parse(date_fin);
+        long time2 = date2.getTime();
+        dateConvoi_fin = new Timestamp(time2);
 
         Planning planning = new Planning(idConvoi,idville,dateConvoi_debut,dateConvoi_fin);
         planningDAO.updatePlanning(planning);
-        response.sendRedirect("Convois");
+        response.sendRedirect("Planning?idConvoi="+idConvoi);
 
     }
 }

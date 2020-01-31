@@ -63,6 +63,6 @@ public class SupprimerPlanningServlet extends HttpServlet {
 
         Planning planning = new Planning(idConvoi,idville,dateConvoi_debut,null);
         planningDAO.deletePlanning(planning);
-        response.sendRedirect("Planning");
+        response.sendRedirect("Planning?idConvoi="+idConvoi);
     }
 }
