@@ -65,7 +65,11 @@
 
                     <c:forEach var="donnateur" items="${donnateurs}">
                         <c:if test="${donnateur.idDonnateur eq donnation.idDonnateur}">
-                            <td><c:out value="${donnateur.nomD}"/> <c:out value="${donnateur.prenomD}"/></td>
+                            <td data-toggle="tooltip" data-placement="right" title="Email: <c:out value="${donnateur.emailD}"/>
+                           Tel: <c:out value="${donnateur.teleD}"/>
+                           <c:out value="${donnateur.teleD}"/>">
+                                <c:out value="${donnateur.nomD}"/> <c:out value="${donnateur.prenomD}"/>
+                            </td>
                             <td>
                                 <c:forEach var="gs" items="${gsList}">
                                     <c:if test="${gs.idGS eq donnateur.idGS}">
@@ -112,6 +116,9 @@
         </table>
     </div>
 </div>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+    Tooltip on right
+</button>
 
 </body>
 
