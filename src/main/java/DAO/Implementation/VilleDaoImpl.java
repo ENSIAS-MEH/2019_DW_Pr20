@@ -44,7 +44,7 @@ public class VilleDaoImpl implements VilleDAO {
 
         try {
             connection = daoFactory.getConnection();
-            ps = connection.prepareStatement("select  * from  ville");
+            ps = connection.prepareStatement("select  * from  ville ORDER BY nomVille");
             rs = ps.executeQuery();
             while (rs.next()){
                 Ville ville = new Ville();

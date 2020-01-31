@@ -94,14 +94,14 @@ public class DonnationDaoImpl implements DonnationDAO {
         try {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT idDonnateur, idBS, date_format(dateDonnation, '%d %M %Y') FROM donnation ORDER BY dateDonnation DESC;");
+            ResultSet rs = st.executeQuery("SELECT * FROM donnation ORDER BY dateDonnation DESC;");
             List<Donnation> donationsList = new ArrayList<>();
 
             while(rs.next()){
                 Donnation donnation = new Donnation();
                 donnation.setIdDonnateur(rs.getInt(1));
                 donnation.setIdBS(rs.getInt(2));
-                donnation.setDateDonnation(rs.getTimestamp(3));
+                //donnation.setDateDonnation(rs.getString(3));
 
                 donationsList.add(donnation);
             }
@@ -120,7 +120,7 @@ public class DonnationDaoImpl implements DonnationDAO {
         try {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT idDonnateur, d.idBS, date_format(dateDonnation, '%d %M %Y'), idVille FROM donnation d, banquesang b " +
+            ResultSet rs = st.executeQuery("SELECT idDonnateur, d.idBS, dateDonnation, idVille FROM donnation d, banquesang b " +
                     "WHERE d.idBS=b.idBS AND idVille="+idVille+";");
             List<Donnation> donationsList = new ArrayList<>();
 
@@ -147,7 +147,7 @@ public class DonnationDaoImpl implements DonnationDAO {
         try {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT idDonnateur, idBS, date_format(dateDonnation, '%d %M %Y') FROM donnation WHERE idBS="+idBS+";");
+            ResultSet rs = st.executeQuery("SELECT * FROM donnation WHERE idBS="+idBS+";");
             List<Donnation> donationsList = new ArrayList<>();
 
             while(rs.next()){
@@ -173,7 +173,7 @@ public class DonnationDaoImpl implements DonnationDAO {
         try {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT dn.idDonnateur, b.idBS, date_format(dateDonnation, '%d %M %Y') FROM donnation dn, donnateur dr " +
+            ResultSet rs = st.executeQuery("SELECT dn.idDonnateur, b.idBS, dateDonnation FROM donnation dn, donnateur dr " +
                     ", banquesang b WHERE dn.idBS=b.idBS AND dn.idDonnateur=dr.idDonnateur AND idGS="+ idGS +" AND b.idVille="+idVille+";");
             List<Donnation> donationsList = new ArrayList<>();
 
@@ -200,7 +200,7 @@ public class DonnationDaoImpl implements DonnationDAO {
         try {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT idDonnateur, idBS, date_format(dateDonnation, '%d %M %Y') FROM donnation WHERE idDonnateur="+idDonnateur+";");
+            ResultSet rs = st.executeQuery("SELECT * FROM donnation WHERE idDonnateur="+idDonnateur+";");
             List<Donnation> donationsList = new ArrayList<>();
 
             while(rs.next()){
