@@ -54,7 +54,7 @@ public class SupprimerPlanningServlet extends HttpServlet {
 
         Timestamp dateConvoi_debut;
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS");
         Date date = dateFormat.parse(date_debut);
         long time = date.getTime();
         dateConvoi_debut = new Timestamp(time);
@@ -63,6 +63,6 @@ public class SupprimerPlanningServlet extends HttpServlet {
 
         Planning planning = new Planning(idConvoi,idville,dateConvoi_debut,null);
         planningDAO.deletePlanning(planning);
-        response.sendRedirect("Convois");
+        response.sendRedirect("Planning");
     }
 }

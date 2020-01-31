@@ -36,7 +36,13 @@ public class AjouterPlanningServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        try {
+            insertPlanning(request,response);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            throw new ServletException(e);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,13 +55,10 @@ public class AjouterPlanningServlet extends HttpServlet {
 
         }
         */
-        try {
-            insertPlanning(request,response);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            throw new ServletException(e);
-        }
+
+
+
+
     }
 
     private void insertPlanning(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ParseException {
@@ -67,7 +70,7 @@ public class AjouterPlanningServlet extends HttpServlet {
         Timestamp dateConvoi_debut;
         Timestamp dateConvoi_fin;
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = (Date) dateFormat.parse(date_debut);
         long time = date.getTime();
         dateConvoi_debut = new Timestamp(time);
@@ -79,7 +82,7 @@ public class AjouterPlanningServlet extends HttpServlet {
         Planning planning = new Planning(idConvoi,idville,dateConvoi_debut,dateConvoi_fin);
 
         planningDAO.addPlanning(planning);
-        response.sendRedirect("Convois");
+        response.sendRedirect("Planning?idConvoi="+idConvoi);
 
     }
 }
