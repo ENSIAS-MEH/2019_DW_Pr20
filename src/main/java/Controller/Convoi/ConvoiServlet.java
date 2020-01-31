@@ -45,8 +45,6 @@ public class ConvoiServlet extends HttpServlet {
 
         }
         */
-        String action = request.getServletPath();
-        System.out.println(action);
 
 
         try{
