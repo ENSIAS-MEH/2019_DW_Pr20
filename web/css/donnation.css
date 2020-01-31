@@ -5,3 +5,7 @@
 #dnt_table thead tr th{
     cursor: pointer;
 }
+
+#gs_select, #ville_select {
+    text-align: center;
+}
