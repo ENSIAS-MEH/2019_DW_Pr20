@@ -191,7 +191,7 @@ public class DonnateurDaoImpl implements DonnateurDAO {
 
             while(rs.next()){
                 Donnateur donnateur = new Donnateur();
-                donnateur.setIdDonnateur(1);
+                donnateur.setIdDonnateur(rs.getInt(1));
                 donnateur.setCin(rs.getString(2));
                 donnateur.setNomD(rs.getString(3));
                 donnateur.setPrenomD(rs.getString(4));
@@ -223,7 +223,7 @@ public class DonnateurDaoImpl implements DonnateurDAO {
 
             while(rs.next()){
                 Donnateur donnateur = new Donnateur();
-                donnateur.setIdDonnateur(1);
+                donnateur.setIdDonnateur(rs.getInt(1));
                 donnateur.setCin(rs.getString(2));
                 donnateur.setNomD(rs.getString(3));
                 donnateur.setPrenomD(rs.getString(4));
@@ -255,7 +255,7 @@ public class DonnateurDaoImpl implements DonnateurDAO {
 
             while(rs.next()){
                 Donnateur donnateur = new Donnateur();
-                donnateur.setIdDonnateur(1);
+                donnateur.setIdDonnateur(rs.getInt(1));
                 donnateur.setCin(rs.getString(2));
                 donnateur.setNomD(rs.getString(3));
                 donnateur.setPrenomD(rs.getString(4));

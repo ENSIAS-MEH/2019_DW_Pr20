@@ -12,6 +12,8 @@ public interface VilleDAO {
 
     public Ville getVilleById(int idVille);
 
+    public Ville getVilleByName(String nomVille);
+
     public List<Ville> searchVilleByName(String nomVille);
 
     public void deleteVille(int idVille);

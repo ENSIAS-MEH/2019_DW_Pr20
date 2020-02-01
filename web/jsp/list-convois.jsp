@@ -87,9 +87,17 @@
                                         <span class="fa fa-trash-alt" aria-hidden="true"></span>
                                     </span>
                                 </a>
+
+                                <a data-toggle="modal" href="#Planning${convoi.idConvoi}" >
+                                    <span class="shadow text-danger p-2" data-toggle="tooltip" title="Planning" data-placement="right">
+                                        <span class="fa fa-calendar-alt" aria-hidden="true"></span>
+                                    </span>
+                                </a>
+
                             </td>
 
                         </tr>
+
                         <div class="modal mt-lg-4" id="supprimer${convoi.idConvoi}">
                             <div class="modal-dialog">
                                 <div class="modal-content rouded">
@@ -108,7 +116,20 @@
                             </div>
                         </div>
 
-
+                        <div class="modal mt-lg-4" id="Planning${convoi.idConvoi}">
+                            <div class="modal-dialog">
+                                <div class="modal-content rounded">
+                                    <div class="modal-body alert-dark">
+                                        <p class="font-weight-bold text-center">Acceder au Planning du Convoi : <c:out value="${convoi.titreConvoi}"></c:out></p>
+                                        <div class="text-center">
+                                            <a class="btn btn-outline-info" type="button" href="Planning?idConvoi=<c:out value='${convoi.idConvoi}' />">
+                                                Planning
+                                            </a>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
                     <div class="modal mt-lg-4" id="modifier${convoi.idConvoi}">

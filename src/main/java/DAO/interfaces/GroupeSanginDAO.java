@@ -10,4 +10,6 @@ public interface GroupeSanginDAO {
     public GroupeSangin findGroupSanginByName(String name);
     public List<GroupeSangin> findAll();
 
+    public String getGSNameByID(int idGS);
+
 }
