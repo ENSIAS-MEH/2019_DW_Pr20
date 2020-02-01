@@ -174,7 +174,7 @@ public class DonnationDaoImpl implements DonnationDAO {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
             ResultSet rs = st.executeQuery("SELECT dn.idDonnateur, idBS, dateDonnation FROM donnation dn, donnateur dt, groupesangin g " +
-                    "WHERE dn.idDonnateur = dt.idDonnateur AND dt.idGS = g.idGS AND nomGS ="+nomGS+";");
+                    "WHERE dn.idDonnateur = dt.idDonnateur AND dt.idGS = g.idGS AND nomGS ='"+nomGS+"';");
             List<Donnation> donationsList = new ArrayList<>();
 
             while(rs.next()){

@@ -34,40 +34,44 @@
         <h3 class="text-center">La Liste des Donnations</h3>
         <hr>
         <div class="row">
-            <div class="input-group mb-3 col-lg-4" style="background-color: burlywood;">
+            <div class="input-group mb-3 col-lg-4" >
                 <input type="text" id="donnation" class="form-control border-danger" placeholder="Chercher par nom du donnateur">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><span class="fa fa-search text-danger"></span></span>
                 </div>
             </div>
-            <div class="col-lg-3 mb-3" style="background-color: grey;">
-                Groupe sanguin:
-                <select name="GrpSng" id="gs_select">
-                    <option value="all">-- All --</option>
-                    <option value="A-">A-</option>
-                    <option value="A+">A+</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="AB+">AB+</option>
-                    <option value="AB-">AB-</option>
-                    <option value="O+">O+</option>
-                    <option value="O-">O-</option>
-                </select>
+            <div class="col-lg-3 mb-3" id="gs_div_container">
+                <div id="gs_div">
+                    Groupe sanguin:
+                    <select name="GrpSng" id="gs_select">
+                        <option value="all">-- All --</option>
+                        <option value="A-">A-</option>
+                        <option value="A+">A+</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+
             </div>
 
-            <div class="col-lg-1 mb-3"></div>
+            <div class="col-lg-2 mb-3" id="ville_div_container">
+                <div id="ville_div">
+                    Ville:
+                    <select name="villes" id="ville_select">
+                        <option value="all">-- All --</option>
+                        <c:forEach var="ville" items="${villes}">
+                            <option value="<c:out value="${ville.nomVille}"/>"><c:out value="${ville.nomVille}"/></option>
+                        </c:forEach>
+                    </select>
+                </div>
 
-            <div class="col-lg-2 mb-3" style="background-color: darkolivegreen;">
-                Ville:
-                <select name="villes" id="ville_select">
-                    <option value="all">-- All --</option>
-                    <c:forEach var="ville" items="${villes}">
-                        <option value="<c:out value="${ville.nomVille}"/>"><c:out value="${ville.nomVille}"/></option>
-                    </c:forEach>
-                </select>
             </div>
 
-            <div class="col-lg-3 float-left mb-3 row justify-content-end" style="background-color: royalblue;">
+            <div class="col-lg-3 float-left mb-3 row justify-content-end" >
                 <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" href="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donnation</a>
             </div>
         </div>

@@ -39,37 +39,42 @@ public class DonnationController extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        //doGet(request, response);
         String action = request.getParameter("action").trim();
 
-        if(action.equals("filter")){
+        System.out.println(action.equals("filt"));
+        if(action.equals("filt")){
             String gs = request.getParameter("gs").trim();
             String ville = request.getParameter("ville").trim();
 
             if(gs.equals("all") && ville.equals("all")){
+                System.out.println("case 0");
                 allDonnations();
             }
             else if(!gs.equals("all") && ville.equals("all")){
+                System.out.println("case 1");
                 filterByGs(gs);
             }
             else if(gs.equals("all") && !ville.equals("all")){
+                System.out.println("case 2");
                 filterByVille(ville);
             }
             else if(!gs.equals("all") && !ville.equals("all")){
+                System.out.println("case 3");
                 filterByBoth(ville, gs);
             }
         }
+    }
 
-        try {
-            showDonnations(request, response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        } catch (SQLException ex) {
-            throw new ServletException(ex);
-        }
+            try {
+                showDonnations(request, response);
+
+            } catch (SQLException ex) {
+                throw new ServletException(ex);
+            }
+
     }
 
     private void showDonnations(HttpServletRequest request, HttpServletResponse response)
@@ -102,7 +107,7 @@ public class DonnationController extends HttpServlet {
     private void filterByGs(String gs){
 
         List<Donnation> donnationList = donnationDAO.getAllDonnationsGS(gs);
-
+        System.out.println(donnationList.toString());
         JsonConverter converter = new JsonConverter();
         String output = converter.convertToJson(donnationList);
     }

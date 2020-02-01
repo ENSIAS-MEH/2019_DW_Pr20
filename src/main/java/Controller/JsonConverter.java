@@ -11,7 +11,6 @@ public class JsonConverter {
     private final Gson gson;
 
     public JsonConverter() {
-
         gson = new GsonBuilder().create();
     }
 

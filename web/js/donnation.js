@@ -50,7 +50,24 @@ function chercher(){
     });
 }
 
+function data_filter(){
+
+    var gs = document.getElementById("gs_select").value;
+    var ville = document.getElementById("ville_select").value;
+
+
+    console.log(gs);
+    console.log(ville);
+
+    $.post('Donnation', {gs:gs, ville:ville, action:"filt"}, function(data){
+
+        console.log(data);
+    });
+}
+
 window.onload = function(){
 
     document.querySelector("#donnation").addEventListener("keyup",chercher);
+    document.querySelector("#gs_select").addEventListener("change",data_filter);
+    document.querySelector("#ville_select").addEventListener("change",data_filter);
 }
