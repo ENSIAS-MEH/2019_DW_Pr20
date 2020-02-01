@@ -40,7 +40,19 @@
         <servlet-name>SupprimerBanque</servlet-name>
         <url-pattern>/SupprimerBanqueDuSang</url-pattern>
     </servlet-mapping>
+<!-- Fin banque Du Sang-->
 
+    <!-- Stock Du Sang-->
+    <servlet>
+        <servlet-name>Stock</servlet-name>
+        <servlet-class>Controller.StockController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Stock</servlet-name>
+        <url-pattern>/Statistiques</url-pattern>
+    </servlet-mapping>
+
+    <!-- Fin Stock Du Sang-->
 
     <!-- Convoi -->
 
