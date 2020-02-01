@@ -166,6 +166,33 @@ public class DonnationDaoImpl implements DonnationDAO {
     }
 
     @Override
+    public List<Donnation> getAllDonnationsGS(String nomGS){
+        Connection conn = null;
+        Statement st = null;
+
+        try {
+            conn = daoFactory.getConnection();
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT dn.idDonnateur, idBS, dateDonnation FROM donnation dn, donnateur dt, groupesangin g " +
+                    "WHERE dn.idDonnateur = dt.idDonnateur AND dt.idGS = g.idGS AND nomGS ="+nomGS+";");
+            List<Donnation> donationsList = new ArrayList<>();
+
+            while(rs.next()){
+                Donnation donnation = new Donnation();
+                donnation.setIdDonnateur(rs.getInt(1));
+                donnation.setIdBS(rs.getInt(2));
+                donnation.setDateDonnation(rs.getTimestamp(3));
+
+                donationsList.add(donnation);
+            }
+            return donationsList;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
     public List<Donnation> getAllDonnationsVilleGS(int idVille, int idGS){
         Connection conn = null;
         Statement st = null;

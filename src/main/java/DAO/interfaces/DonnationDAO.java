@@ -14,8 +14,10 @@ public interface DonnationDAO {
     List<Donnation> getAllDennation();
     List<Donnation> getAllDonnationsVille(int idVille);                 //ville du BanqueSang pas du donnateur
     List<Donnation> getAllDonnationsBanq(int idBS);
+    List<Donnation> getAllDonnationsGS(String nomGS);
     List<Donnation> getAllDonnationsVilleGS(int idVille, int idGS);     //ville du BanqueSang pas du donnateur
     List<Donnation> getAllDonnationsDonnateur(int idDonnateur);
+
 
 
 

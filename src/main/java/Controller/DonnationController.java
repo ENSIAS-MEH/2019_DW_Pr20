@@ -44,6 +44,26 @@ public class DonnationController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String action = request.getParameter("action").trim();
+
+        if(action.equals("filter")){
+            String gs = request.getParameter("gs").trim();
+            String ville = request.getParameter("ville").trim();
+
+            if(gs.equals("all") && ville.equals("all")){
+                allDonnations();
+            }
+            else if(!gs.equals("all") && ville.equals("all")){
+                filterByGs(gs);
+            }
+            else if(gs.equals("all") && !ville.equals("all")){
+                filterByVille(ville);
+            }
+            else if(!gs.equals("all") && !ville.equals("all")){
+                filterByBoth(ville, gs);
+            }
+        }
+
         try {
             showDonnations(request, response);
 
@@ -69,5 +89,40 @@ public class DonnationController extends HttpServlet {
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/listDonnation.jsp");
         requestDispatcher.forward(request,response);
+    }
+
+    private void allDonnations(){
+
+        List<Donnation> donnationList = donnationDAO.getAllDennation();
+
+        JsonConverter converter = new JsonConverter();
+        String output = converter.convertToJson(donnationList);
+    }
+
+    private void filterByGs(String gs){
+
+        List<Donnation> donnationList = donnationDAO.getAllDonnationsGS(gs);
+
+        JsonConverter converter = new JsonConverter();
+        String output = converter.convertToJson(donnationList);
+    }
+
+    private void filterByVille(String ville){
+        int idVille = villeDAO.getVilleByName(ville).getIdVille();
+        List<Donnation> donnationList = donnationDAO.getAllDonnationsVille(idVille);
+
+        JsonConverter converter = new JsonConverter();
+        String output = converter.convertToJson(donnationList);
+
+    }
+
+    private void filterByBoth(String ville, String gs){
+        int idVille = villeDAO.getVilleByName(ville).getIdVille();
+        int idGS = groupeSanginDAO.findGroupSanginByName(gs).getIdGS();
+
+        List<Donnation> donnationList = donnationDAO.getAllDonnationsVilleGS(idVille, idGS);
+
+        JsonConverter converter = new JsonConverter();
+        String output = converter.convertToJson(donnationList);
     }
 }
