@@ -101,7 +101,7 @@ public class DonnationDaoImpl implements DonnationDAO {
                 Donnation donnation = new Donnation();
                 donnation.setIdDonnateur(rs.getInt(1));
                 donnation.setIdBS(rs.getInt(2));
-                //donnation.setDateDonnation(rs.getString(3));
+                donnation.setDateDonnation(rs.getTimestamp(3));
 
                 donationsList.add(donnation);
             }

@@ -140,12 +140,11 @@
                         </a>
                     </td>
                 </tr>
-                <!-- Fin Table -->
-
             </c:forEach>
-            </tbody>
 
+            </tbody>
         </table>
+        <div id="warn" ></div>
     </div>
 </div>
 
