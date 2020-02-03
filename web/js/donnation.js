@@ -50,19 +50,52 @@ function chercher(){
     });
 }
 
-function data_filter(){
+function data_filter() {
 
     var gs = document.getElementById("gs_select").value;
     var ville = document.getElementById("ville_select").value;
 
+    document.getElementById('dnt').innerText ="";
 
-    console.log(gs);
-    console.log(ville);
+    $.get("Donnation",{"gs":gs, "ville":ville, "action":"filter"},function(array){
 
-    $.post('Donnation', {gs:gs, ville:ville, action:"filt"}, function(data){
+        if(!array.idDonnateur[0])
+            document.getElementById('warn').innerHTML = '<div class="alert alert-warning" role="alert"> <i class="fas fa-exclamation-circle"></i> <b> Aucune donation ne correspond à cette catégorie!</b></div>';
+        else{
+            document.getElementById('warn').innerText ="";
+            for (var i=0; array.idDonnateur[i]!=null; i++) {
 
-        console.log(data);
+                var table = document.getElementById('dnt');
+                var row = table.insertRow(table.rows.length);
+
+                var idDonn = document.createTextNode(array.idDonnateur[i]);
+                var nom_prenom = document.createTextNode(array.pnomD[i]);
+                var gs = document.createTextNode(array.gs[i]);
+                var dateDonn = document.createTextNode(array.dateDonnation[i]);
+                var nom_bnq = document.createTextNode(array.nomB[i]);
+                var tel_bnq = document.createTextNode(array.telB[i]);
+                var ville_bnq = document.createTextNode(array.villeB[i]);
+                row.insertCell(0).appendChild(idDonn);
+                row.insertCell(1).appendChild(nom_prenom);
+                row.insertCell(2).appendChild(gs);
+                row.insertCell(3).appendChild(dateDonn);
+                row.insertCell(4).appendChild(nom_bnq);
+                row.insertCell(5).appendChild(tel_bnq);
+                row.insertCell(6).appendChild(ville_bnq);
+                row.insertCell(7).innerHTML = "<a data-toggle=\"modal\" href=\"#AjouterBanque\">\n" +
+                    "                                   <span class=\"shadow text-danger p-2\" data-toggle=\"tooltip\" title=\"Modifier\" data-placement=\"left\">\n" +
+                    "                                    <span class=\"fa fa-pen\" aria-hidden=\"true\"></span>\n" +
+                    "                                   </span>\n" +
+                    "                               </a>\n" +
+                    "                               <a data-toggle=\"modal\" href=\"#sup${banque.idBS}\">\n" +
+                    "                                   <span class=\"shadow text-danger p-2 \" data-toggle=\"tooltip\" title=\"Supprimer\" data-placement=\"right\">\n" +
+                    "                                    <span class=\"fa fa-trash\" aria-hidden=\"true\"></span>\n" +
+                    "                                   </span>\n" +
+                    "                               </a>";
+            }
+        }
     });
+
 }
 
 window.onload = function(){
@@ -70,4 +103,5 @@ window.onload = function(){
     document.querySelector("#donnation").addEventListener("keyup",chercher);
     document.querySelector("#gs_select").addEventListener("change",data_filter);
     document.querySelector("#ville_select").addEventListener("change",data_filter);
+
 }
