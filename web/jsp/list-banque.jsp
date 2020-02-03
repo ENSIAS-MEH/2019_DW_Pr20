@@ -72,29 +72,28 @@
             <c:forEach var="banque" items="${banqueSangList}">
 
                 <tr>
-                    <td>
+                    <td class="bnqq">
                         <c:out value="${banque.idBS}" />
                     </td>
-                    <td>
+                    <td class="bnqq">
                         <c:out value="${banque.nomBS}" />
                     </td>
-                    <td>
+                    <td class="bnqq">
                         <c:out value="${banque.emailBS}" />
                     </td>
-                    <td>
+                    <td class="bnqq">
                         <c:out value="${banque.teleBS}" />
                     </td>
-                    <td>
+                    <td class="bnqq">
                         <c:out value="${banque.adresseBS}" />
                     </td>
-                    <td>
+                    <td class="bnqq">
                         <c:forEach var="ville" items="${villes}">
                             <c:if test="${banque.idVille eq ville.idVille}">
                                 <c:out value="${ville.nomVille}"/>
                             </c:if>
                         </c:forEach>
                     </td>
-
                     <td >
                         <a data-toggle="modal" href="#mod${banque.idBS}">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
@@ -244,7 +243,7 @@
                         </fieldset>
                         <fieldset class="form-group">
                             <label>Adresse</label>
-                            <select class="browser-default custom-select form-control" name="ajidVille">
+                            <select class="browser-default custom-select form-control" name="ajidVille" required="required">
                                 <option selected value="">La ville du Banque</option>
                                 <c:forEach items="${villes}" var="ville">
                                     <option value="<c:out value="${ville.idVille}"/>" ><c:out value="${ville.nomVille}"/></option>
@@ -253,7 +252,7 @@
                         </fieldset>
 
                         <button type="submit" class="btn btn-danger align-content-md-center">
-                            Modifier la Banque
+                            Ajouter la Banque
                         </button>
 
                     </form>
