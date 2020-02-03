@@ -29,166 +29,173 @@
 </header>
 <br>
 <div class="container">
-    <h3 class="card-title"> Les statistique sur Les Banques du sang</h3>
+    <h3> Les statistique sur Les Banques du sang</h3>
     <div class="row">
-        <div class="col-xl-3 col-lg-6 col-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="media d-flex">
-                        <div class="align-self-center">
-                            <img src="/img/A+.png" width="40" height="60">
-                        </div>
-                        <div class="media-body text-right">
-                            <h3 class="text-stat">${stockList.get(1).quantite}L</h3>       <!--Text ghaykon fih Le nombre dyal kol Groupe-->
-                            <a data-toggle="modal" href="#modifier1">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-lg-6 mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <img src="/img/A+.png" width="40" height="60">
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3 class="text-stat">${stockList.get(1).quantite}L</h3>       <!--Text ghaykon fih Le nombre dyal kol Groupe-->
+                                    <a data-toggle="modal" href="#modifier1">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                     <span class="fa fa-edit" aria-hidden="true"></span>
                                 </span>
-                            </a>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <img src="/img/B+.png" width="40" height="60">
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3 class="text-stat">${stockList.get(2).quantite}L</h3>
+                                    <a data-toggle="modal" href="#modifier2">
+                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
+                                    <span class="fa fa-edit" aria-hidden="true"></span>
+                                </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <img src="/img/AB+.png" width="40" height="60">
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3 class="text-stat">${stockList.get(4).quantite}L</h3>
+                                    <a data-toggle="modal" href="#modifier4">
+                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
+                                    <span class="fa fa-edit" aria-hidden="true"></span>
+                                </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <img src="/img/O+.png" width="40" height="60">
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3 class="text-stat">${stockList.get(6).quantite}L</h3>
+                                    <a data-toggle="modal" href="#modifier6">
+                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
+                                    <span class="fa fa-edit" aria-hidden="true"></span>
+                                </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <img src="/img/A-.png" width="40" height="60">
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3 class="text-stat">${stockList.get(0).quantite}L</h3>
+                                    <a data-toggle="modal" href="#modifier0">
+                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
+                                    <span class="fa fa-edit" aria-hidden="true"></span>
+                                </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <img src="/img/B-.png" width="40" height="60">
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3 class="text-stat">${stockList.get(3).quantite}L</h3>
+                                    <a data-toggle="modal" href="#modifier3">
+                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
+                                    <span class="fa fa-edit" aria-hidden="true"></span>
+                                </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <img src="/img/AB-.png" width="40" height="60">
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3 class="text-stat">${stockList.get(5).quantite}L</h3>
+                                    <a data-toggle="modal" href="#modifier5">
+                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
+                                    <span class="fa fa-edit" aria-hidden="true"></span>
+                                </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <img src="/img/O-.png" width="40" height="60">
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3 class="text-stat">${stockList.get(7).quantite}L</h3>
+                                    <a data-toggle="modal" href="#modifier7">
+                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
+                                    <span class="fa fa-edit" aria-hidden="true"></span>
+                                </span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-6">
-            <div class="card">
+        <div class="col-lg-6">
+            <div class="card pb-2 border border-danger">
                 <div class="card-body">
-                    <div class="media d-flex">
-                        <div class="align-self-center">
-                            <img src="/img/B+.png" width="40" height="60">
-                        </div>
-                        <div class="media-body text-right">
-                            <h3 class="text-stat">${stockList.get(2).quantite}L</h3>
-                            <a data-toggle="modal" href="#modifier2">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="media d-flex">
-                        <div class="align-self-center">
-                            <img src="/img/AB+.png" width="40" height="60">
-                        </div>
-                        <div class="media-body text-right">
-                            <h3 class="text-stat">${stockList.get(4).quantite}L</h3>
-                            <a data-toggle="modal" href="#modifier4">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="media d-flex">
-                        <div class="align-self-center">
-                            <img src="/img/O+.png" width="40" height="60">
-                        </div>
-                        <div class="media-body text-right">
-                            <h3 class="text-stat">${stockList.get(6).quantite}L</h3>
-                            <a data-toggle="modal" href="#modifier6">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
+                    <div id="container2" style="margin: 0 auto"></div>
                 </div>
             </div>
         </div>
     </div>
-        <br>
-    <!--2nd Row-->
-    <div class="row">
-        <div class="col-xl-3 col-lg-6 col-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="media d-flex">
-                        <div class="align-self-center">
-                            <img src="/img/A-.png" width="40" height="60">
-                        </div>
-                        <div class="media-body text-right">
-                            <h3 class="text-stat">${stockList.get(0).quantite}L</h3>
-                            <a data-toggle="modal" href="#modifier0">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="media d-flex">
-                        <div class="align-self-center">
-                            <img src="/img/B-.png" width="40" height="60">
-                        </div>
-                        <div class="media-body text-right">
-                            <h3 class="text-stat">${stockList.get(3).quantite}L</h3>
-                            <a data-toggle="modal" href="#modifier3">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="media d-flex">
-                        <div class="align-self-center">
-                            <img src="/img/AB-.png" width="40" height="60">
-                        </div>
-                        <div class="media-body text-right">
-                            <h3 class="text-stat">${stockList.get(5).quantite}L</h3>
-                            <a data-toggle="modal" href="#modifier5">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="media d-flex">
-                        <div class="align-self-center">
-                            <img src="/img/O-.png" width="40" height="60">
-                        </div>
-                        <div class="media-body text-right">
-                            <h3 class="text-stat">${stockList.get(7).quantite}L</h3>
-                            <a data-toggle="modal" href="#modifier7">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <!-- debut modal modifier -->
 <div class="modal mt-lg-5" id="modifier0">
@@ -360,7 +367,7 @@
 </div>
 <!-- Fin Modal Supprimer -->
 <br>
-
+<!--
 <div class="container">
     <div class="row">
         <div class="col-6">
@@ -372,16 +379,11 @@
             </div>
         </div>
         <div class="col-6">
-            <div class="card">
-                <div class="card-header text-center" style="font-size: 24px">Les Statistiques</div>
-                <div class="card-body">
-                    <div id="container2" style="margin: 0 auto"></div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
-
+-->
 <!-- Script for stat -->
 <script src="../frameworks/js/chart.js"></script>
 <script src="../frameworks/js/highcharts.js"></script>
