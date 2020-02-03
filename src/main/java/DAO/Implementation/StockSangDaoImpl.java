@@ -141,10 +141,10 @@ public class StockSangDaoImpl implements StockSangDAO {
         try{
             connection = daoFactory.getConnection();
             preparedStatement=connection.prepareStatement(
-                    "update stockSang set idBS = ?,idGS = ?,quantite = ?");
-            preparedStatement.setInt(1,stockSang.getIdBS());
-            preparedStatement.setInt(2,stockSang.getIdGS());
-            preparedStatement.setInt(3,stockSang.getQuantite());
+                    "update stockSang set quantite = ? where idBS = ? and idGS = ?");
+            preparedStatement.setInt(2,stockSang.getIdBS());
+            preparedStatement.setInt(3,stockSang.getIdGS());
+            preparedStatement.setInt(1,stockSang.getQuantite());
 
             preparedStatement.executeUpdate();
 
