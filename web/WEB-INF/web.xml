@@ -62,6 +62,16 @@
         <url-pattern>/Statistiques</url-pattern>
     </servlet-mapping>
 
+    <!--Admin Statistic-->
+    <servlet>
+        <servlet-name>AdminStat</servlet-name>
+        <servlet-class>Controller.AdminStatistics</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminStat</servlet-name>
+        <url-pattern>/AdminStatistiques</url-pattern>
+    </servlet-mapping>
+
     <!-- Fin Stock Du Sang-->
 
     <!-- Convoi -->
