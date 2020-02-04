@@ -12,7 +12,7 @@
 
 <html>
 <head>
-    <title>DONNATION</title>
+    <title>Donation</title>
     <link rel="stylesheet" href="../frameworks/bootstap4/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/regular.min.css">
@@ -31,7 +31,7 @@
 <div class="row">
 
     <div class="container">
-        <h3 class="text-center">La Liste des Donnations</h3>
+        <h3 class="text-center">La Liste des Donations</h3>
         <hr>
         <div class="row">
             <div class="input-group mb-3 col-lg-4" >
@@ -80,10 +80,10 @@
         <table class="table table-bordered" id="dnt_table">
             <thead>
             <tr>
-                <th onclick='sortTable(1)'>N° donnateur</th>
+                <th onclick='sortTable(1)'>N° donateur</th>
                 <th onclick='sortTable(2)'>Nom & Prenom</th>
                 <th onclick='sortTable(3)'>Groupe sanguin</th>
-                <th onclick='sortTable(4)'>Date de donnation</th>
+                <th onclick='sortTable(4)'>Date de donation</th>
                 <th onclick='sortTable(5)'>Banque sanguin</th>
                 <th onclick='sortTable(6)'>Téléphone</th>
                 <th onclick='sortTable(7)'>Ville</th>
@@ -128,12 +128,12 @@
                     </c:forEach>
 
                     <td >
-                        <a data-toggle="modal" href="#AjouterBanque">
+                        <a data-toggle="modal" href="#ModifierDonnation">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                     <span class="fa fa-pen" aria-hidden="true"></span>
                                 </span>
                         </a>
-                        <a data-toggle="modal" href="#sup${banque.idBS}">
+                        <a data-toggle="modal" href="#sup_modal">
                                 <span class="shadow text-danger p-2 " data-toggle="tooltip" title="Supprimer" data-placement="right">
                                     <span class="fa fa-trash" aria-hidden="true"></span>
                                 </span>
@@ -149,6 +149,141 @@
 </div>
 
 </body>
+
+<!-- Début Modal - Ajouter Donnation -->
+<div class="modal mt-lg-5" id="AjouterDonnation">
+    <div class="modal-dialog">
+        <div class="modal-content rounded">
+            <div class="modal-header alert-danger text-center">
+                <h5 class="font-weight-bold modal-title">Ajouter une nouvelle Donation</h5>
+                <button type="button" class="close" data-dismiss="modal">x</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <caption>
+                        <h5>
+
+                        </h5>
+                    </caption>
+
+                    <fieldset class="form-group">
+                        <label>Numéro du donateur</label>
+                        <input type="text" class="form-control" name="idD_aj" id="idD_aj">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Nom & Prénom</label>
+                        <input type="text" class="form-control" name="nomD_aj" id="nomD_aj">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Groupe Sanguin</label><br>
+                        <select name="GrpSng" name="gs_aj" id="gs_aj">
+                            <option value="">-- Choisissez un groupe sanguin --</option>
+                            <option value="A-">A-</option>
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>Date de donation</label>
+                        <input type="datetime-local" class="form-control" name="dateD_aj" id="dateD_aj">
+                    </fieldset>
+
+
+                    <button id="aj_btn" type="submit" class="btn btn-danger align-content-md-center" style="float: right;">
+                        Valider
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin Modal - Ajouter Donnation -->
+
+<!-- Début Modal - Modifier Donnation -->
+<div class="modal mt-lg-5" id="ModifierDonnation">
+    <div class="modal-dialog">
+        <div class="modal-content rounded">
+            <div class="modal-header alert-danger text-center">
+                <h5 class="font-weight-bold modal-title">Modifier une Donation</h5>
+                <button type="button" class="close" data-dismiss="modal">x</button>
+            </div>
+            <div class="modal-body">
+                <form action="Donnation" method="post">
+                    <caption>
+                        <h5>
+
+                        </h5>
+                    </caption>
+
+                    <input type="hidden" name="idDonnateur" value="-1" />
+
+                    <fieldset class="form-group">
+                        <label>Numéro du donateur</label>
+                        <input type="text" class="form-control" name="idD_aj" id="idD_md">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Nom & Prénom</label>
+                        <input type="text" class="form-control" name="nomD_aj" id="nomD_md">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Groupe Sanguin</label><br>
+                        <select name="GrpSng" name="gs_aj" id="gs_md">
+                            <option value="">-- Choisissez un groupe sanguin --</option>
+                            <option value="A-">A-</option>
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>Date de donation</label>
+                        <input type="datetime-local" class="form-control" name="dateD_aj" id="dateD_md">
+                    </fieldset>
+
+
+                    <button id="md_btn" type="submit" class="btn btn-danger align-content-md-center" style="float: right;">
+                        Valider
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin Modal - Modifier Donnation -->
+
+<!-- Début Modal - Supprimer Donnation -->
+<div class="modal mt-lg-5" id="sup_modal">
+    <div class="modal-dialog">
+        <div class="modal-content rounded">
+            <div class="modal-body alert-dark">
+                <p class="font-weight-bold text-center">Voulez vous vraiment supprimer cette Banque du sang ? </p>
+                <div>
+                    <button class="btn btn-outline-dark float-left" data-dismiss="modal" type="button">
+                        Annuler
+                    </button>
+                    <a class="btn btn-outline-danger float-right" type="button" id="supp_dnt">
+                        Supprimer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="../frameworks/jquery/jquery.js"></script>
 <script src="../frameworks/bootstap4/dist/js/bootstrap.bundle.min.js"></script>

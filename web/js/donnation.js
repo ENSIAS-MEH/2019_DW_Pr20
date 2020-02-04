@@ -95,13 +95,32 @@ function data_filter() {
             }
         }
     });
+}
+
+function ajouter_donation(){
+
+
+    //document.getElementById("idD_aj").value  ;
+   // document.getElementById("aj_btn").value = ;
+   // document.getElementById("aj_btn").value = ;
+}
+
+function modifier_donnation(){
 
 }
 
 window.onload = function(){
 
+    document.querySelector("#aj_btn").addEventListener("click",ajouter_donation);
+    document.querySelector("#md_btn").addEventListener("click",modifier_donnation);
+
     document.querySelector("#donnation").addEventListener("keyup",chercher);
     document.querySelector("#gs_select").addEventListener("change",data_filter);
     document.querySelector("#ville_select").addEventListener("change",data_filter);
 
+    document.getElementById("aj_btn").disabled = true;
+
+    $.get("Donnation",{"get_session" : "get_session"},function(data) {
+        console.log(data);
+    });
 }
