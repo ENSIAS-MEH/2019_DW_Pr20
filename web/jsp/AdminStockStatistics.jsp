@@ -30,19 +30,19 @@
 <br>
 
     <div class="container">
-    <h3> Statistique d'administration</h3>
+    <h3> Statistique d'Administration</h3>
     <div class="row">
         <div class="col-lg-3 ml-1 col-md-6 mb-3">
             <select name="villes" id="ville_select" class="form-control">
-                <option value="none" selected disabled>Ville</option>
+                <option value="all" >-- All --</option>
                 <c:forEach var="ville" items="${villes}">
-                    <option value="<c:out value="${ville.nomVille}"/>"><c:out value="${ville.nomVille}"/></option>
+                    <option value="<c:out value="${ville.idVille}"/>"><c:out value="${ville.nomVille}"/></option>
                 </c:forEach>
             </select>
         </div>
         <div class="col-lg-3 col-md-6 mb-3">
             <select name="banques" id="banq_select" class="form-control">
-                <option value="none" selected disabled>Banque de Sang</option>
+                <option value="all">-- All --</option>
                 <c:forEach var="bnq" items="${banqueSangList}">
                     <option value="<c:out value="${bnq.idBS}"/>"><c:out value="${bnq.nomBS}"/></option>
                 </c:forEach>
@@ -60,12 +60,8 @@
                                     <img src="/img/A+.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(1).quantite}L</h3>       <!--Text ghaykon fih Le nombre dyal kol Groupe-->
-                                    <a data-toggle="modal" href="#modifier1">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                                    </a>
+                                    <h3 class="text-stat" id="cardAplus">L</h3>       <!--Text ghaykon fih Le nombre dyal kol Groupe-->
+
                                 </div>
                             </div>
                         </div>
@@ -79,12 +75,8 @@
                                     <img src="/img/B+.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(2).quantite}L</h3>
-                                    <a data-toggle="modal" href="#modifier2">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                                    </a>
+                                    <h3 class="text-stat" id="cardBplus">L</h3>
+
                                 </div>
                             </div>
                         </div>
@@ -98,12 +90,8 @@
                                     <img src="/img/AB+.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(4).quantite}L</h3>
-                                    <a data-toggle="modal" href="#modifier4">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                                    </a>
+                                    <h3 class="text-stat" id="cardABplus"></h3>
+
                                 </div>
                             </div>
                         </div>
@@ -117,12 +105,8 @@
                                     <img src="/img/O+.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(6).quantite}L</h3>
-                                    <a data-toggle="modal" href="#modifier6">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                                    </a>
+                                    <h3 class="text-stat" id="cardOplus">L</h3>
+
                                 </div>
                             </div>
                         </div>
@@ -136,12 +120,8 @@
                                     <img src="/img/A-.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(0).quantite}L</h3>
-                                    <a data-toggle="modal" href="#modifier0">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                                    </a>
+                                    <h3 class="text-stat" id="cardAmoin">L</h3>
+
                                 </div>
                             </div>
                         </div>
@@ -155,12 +135,8 @@
                                     <img src="/img/B-.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(3).quantite}L</h3>
-                                    <a data-toggle="modal" href="#modifier3">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
-                                    </a>
+                                    <h3 class="text-stat" id="cardBmoin">L</h3>
+
                                 </div>
                             </div>
                         </div>
@@ -174,11 +150,7 @@
                                     <img src="/img/AB-.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(5).quantite}L</h3>
-                                    <a data-toggle="modal" href="#modifier5">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
+                                    <h3 class="text-stat" id="cardABmoin">L</h3>
                                     </a>
                                 </div>
                             </div>
@@ -193,11 +165,7 @@
                                     <img src="/img/O-.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(7).quantite}L</h3>
-                                    <a data-toggle="modal" href="#modifier7">
-                                <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                    <span class="fa fa-edit" aria-hidden="true"></span>
-                                </span>
+                                    <h3 class="text-stat" id="cardOmoin">L</h3>
                                     </a>
                                 </div>
                             </div>
@@ -388,6 +356,7 @@
     <br>
     <!-- Script for stat -->
     <script src="../frameworks/js/chart.js"></script>
+    <script src="../js/stock.js"></script>
     <script src="../frameworks/js/highcharts.js"></script>
     <script src="../frameworks/js/exporting.js"></script>
     <script src="../frameworks/js/export-data.js"></script>
@@ -398,316 +367,6 @@
     <script src="../frameworks/bootstap4/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Statistic Script-->
-    <script>
-
-              Highcharts.chart('container2', {
-            chart: {
-                type: 'pie'
-            },
-            title: {
-                text: 'Les Statiqtiques Actuels du Stock'
-            },
-            subtitle: {
-                text: '${currentBanque.nomBS}' /*Nom du Banque*/
-            },
-            xAxis: {
-                type: 'category'
-            },
-            yAxis: {
-                title: {
-                    text: 'Quantité Totale (L)'
-                }
-
-            },
-            legend: {
-                enabled: false
-            },
-            plotOptions: {
-                series: {
-                    borderWidth: 0,
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.y:.1f}L'
-                    }
-                }
-            },
-
-            tooltip: {
-                headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b> L<br/>'
-            },
-
-            "series": [
-                {
-                    "name": "Browsers",
-                    "colorByPoint": true,
-                    "data": [
-                        {
-                            "name": "${groupList.get(0).nomGS}",
-                            "y": ${stockList.get(0).quantite},
-                            "drilldown": "${groupList.get(0).nomGS}"
-                        },
-                        {
-                            "name": "${groupList.get(1).nomGS}",
-                            "y": ${stockList.get(1).quantite},
-                            "drilldown": "${groupList.get(1).nomGS}"
-                        },
-                        {
-                            "name": "${groupList.get(2).nomGS}",
-                            "y": ${stockList.get(2).quantite},
-                            "drilldown": "${groupList.get(2).nomGS}"
-                        },
-                        {
-                            "name": "${groupList.get(3).nomGS}",
-                            "y": ${stockList.get(3).quantite},
-                            "drilldown": "${groupList.get(3).nomGS}"
-                        },
-                        {
-                            "name": "${groupList.get(4).nomGS}",
-                            "y": ${stockList.get(4).quantite},
-                            "drilldown": "${groupList.get(4).nomGS}"
-                        },
-                        {
-                            "name": "${groupList.get(5).nomGS}",
-                            "y": ${stockList.get(5).quantite},
-                            "drilldown": "${groupList.get(5).nomGS}"
-                        },
-                        {
-                            "name": "${groupList.get(6).nomGS}",
-                            "y": ${stockList.get(6).quantite},
-                            "drilldown": "${groupList.get(6).nomGS}"
-                        },
-                        {
-                            "name": "${groupList.get(7).nomGS}",
-                            "y": ${stockList.get(7).quantite},
-                            "drilldown": "${groupList.get(7).nomGS}"
-                        }
-                    ]
-                }
-            ],
-            "drilldown": {
-                "series": [
-                    {
-                        "name": "Chrome",
-                        "id": "Chrome",
-                        "data": [
-                            [
-                                "v65.0",
-                                0.1
-                            ],
-                            [
-                                "v64.0",
-                                1.3
-                            ],
-                            [
-                                "v63.0",
-                                53.02
-                            ],
-                            [
-                                "v62.0",
-                                1.4
-                            ],
-                            [
-                                "v61.0",
-                                0.88
-                            ],
-                            [
-                                "v60.0",
-                                0.56
-                            ],
-                            [
-                                "v59.0",
-                                0.45
-                            ],
-                            [
-                                "v58.0",
-                                0.49
-                            ],
-                            [
-                                "v57.0",
-                                0.32
-                            ],
-                            [
-                                "v56.0",
-                                0.29
-                            ],
-                            [
-                                "v55.0",
-                                0.79
-                            ],
-                            [
-                                "v54.0",
-                                0.18
-                            ],
-                            [
-                                "v51.0",
-                                0.13
-                            ],
-                            [
-                                "v49.0",
-                                2.16
-                            ],
-                            [
-                                "v48.0",
-                                0.13
-                            ],
-                            [
-                                "v47.0",
-                                0.11
-                            ],
-                            [
-                                "v43.0",
-                                0.17
-                            ],
-                            [
-                                "v29.0",
-                                0.26
-                            ]
-                        ]
-                    },
-                    {
-                        "name": "Firefox",
-                        "id": "Firefox",
-                        "data": [
-                            [
-                                "v58.0",
-                                1.02
-                            ],
-                            [
-                                "v57.0",
-                                7.36
-                            ],
-                            [
-                                "v56.0",
-                                0.35
-                            ],
-                            [
-                                "v55.0",
-                                0.11
-                            ],
-                            [
-                                "v54.0",
-                                0.1
-                            ],
-                            [
-                                "v52.0",
-                                0.95
-                            ],
-                            [
-                                "v51.0",
-                                0.15
-                            ],
-                            [
-                                "v50.0",
-                                0.1
-                            ],
-                            [
-                                "v48.0",
-                                0.31
-                            ],
-                            [
-                                "v47.0",
-                                0.12
-                            ]
-                        ]
-                    },
-                    {
-                        "name": "Internet Explorer",
-                        "id": "Internet Explorer",
-                        "data": [
-                            [
-                                "v11.0",
-                                6.2
-                            ],
-                            [
-                                "v10.0",
-                                0.29
-                            ],
-                            [
-                                "v9.0",
-                                0.27
-                            ],
-                            [
-                                "v8.0",
-                                0.47
-                            ]
-                        ]
-                    },
-                    {
-                        "name": "Safari",
-                        "id": "Safari",
-                        "data": [
-                            [
-                                "v11.0",
-                                3.39
-                            ],
-                            [
-                                "v10.1",
-                                0.96
-                            ],
-                            [
-                                "v10.0",
-                                0.36
-                            ],
-                            [
-                                "v9.1",
-                                0.54
-                            ],
-                            [
-                                "v9.0",
-                                0.13
-                            ],
-                            [
-                                "v5.1",
-                                0.2
-                            ]
-                        ]
-                    },
-                    {
-                        "name": "Edge",
-                        "id": "Edge",
-                        "data": [
-                            [
-                                "v16",
-                                2.6
-                            ],
-                            [
-                                "v15",
-                                0.92
-                            ],
-                            [
-                                "v14",
-                                0.4
-                            ],
-                            [
-                                "v13",
-                                0.1
-                            ]
-                        ]
-                    },
-                    {
-                        "name": "Opera",
-                        "id": "Opera",
-                        "data": [
-                            [
-                                "v50.0",
-                                0.96
-                            ],
-                            [
-                                "v49.0",
-                                0.82
-                            ],
-                            [
-                                "v12.1",
-                                0.14
-                            ]
-                        ]
-                    }
-                ]
-            }
-        });
-
-    </script>
     <!-- End Script for Stat -->
 
 </body>
