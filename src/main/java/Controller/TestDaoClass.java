@@ -39,5 +39,8 @@ public class TestDaoClass {
         List<Integer> stocks = new ArrayList<Integer>();
         stocks = stockSangdao.AllstocStatistic();
         System.out.println("Stock  :"+stocks);
+
+        stocks = stockSangdao.statsByBanque(6);
+        System.out.println("StockByVille : "+ stocks);
     }
 }

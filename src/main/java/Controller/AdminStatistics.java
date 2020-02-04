@@ -41,6 +41,25 @@ public class AdminStatistics extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(request.getParameter("action").equals("filter")){
+            String ville = request.getParameter("ville");
+            String bq = request.getParameter("banq");
+
+            if(ville.equals("all") && bq.equals("all")){
+                response.getWriter().write(allStats());
+            }
+            else if(!ville.equals("all") && bq.equals("all")){
+                //response.getWriter().write(statsByVille());
+            }
+            else if(ville.equals("all") && !bq.equals("all")){
+                //response.getWriter().write(statsByBanq());
+            }
+            else if(!ville.equals("all") && !bq.equals("all")){
+                //response.getWriter().write(statsBoth());
+            }
+        }
+
         //System.out.println("From statistics");
         List<StockSang> stockSangList = new ArrayList<StockSang>();
         stockSangList= stockSangDAO.findStockByBanqueSang(idBS);   /*Id depuis la Session Aprés*/
@@ -70,8 +89,24 @@ public class AdminStatistics extends HttpServlet {
         stockSangDAO.updateStockSang(stockSang);
         this.init();
         this.doGet(request,response);
+    }
 
+    private int allStats() {
+        stockSangDAO.AllstocStatistic();
+        return  0;
+    }
+
+    /*private int statsByVille() {
 
     }
+
+    private int statsByBanq() {
+
+    }
+
+    private int statsBoth() {
+        stockSangDAO.
+    }*/
+
 
 }

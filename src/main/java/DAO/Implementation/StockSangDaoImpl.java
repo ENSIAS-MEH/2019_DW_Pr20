@@ -2,6 +2,7 @@ package DAO.Implementation;
 
 import DAO.DAOFactory;
 import DAO.interfaces.StockSangDAO;
+import Model.BanqueSang;
 import Model.StockSang;
 
 import java.sql.Connection;
@@ -9,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class StockSangDaoImpl implements StockSangDAO {
@@ -220,6 +222,66 @@ public class StockSangDaoImpl implements StockSangDAO {
             }
         return groups;
     }
+
+    public List<Integer> statsByVille(int idVille){
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        BanqueSangDaoImpl banqueSangDao = (BanqueSangDaoImpl) daoFactory.getBanqueSangDaoImpl();
+        List<BanqueSang> banqueSangList = banqueSangDao.findBanquesByVille(idVille);
+        List<Integer> groups = new ArrayList<Integer>(Collections.nCopies(8, 0));
+
+        for (BanqueSang banque: banqueSangList) {
+        for (int i=0;i<8;i++) {
+            try
+            { connection = daoFactory.getConnection();
+                preparedStatement =  connection.prepareStatement(
+                        "select sum(quantite) as total from stocksang where idGS = ? and idBS = ?");
+                preparedStatement.setInt(1,i+1);
+                preparedStatement.setInt(2,banque.getIdBS());
+                //System.out.println("idGS : "+(i+1) +" idBS : "+banque.getIdBS());
+                rs = preparedStatement.executeQuery();
+                if(rs.next())
+                     groups.set(i,rs.getInt("total")+groups.get(i));
+                else
+                    groups.add(i,0);
+
+            }catch (SQLException sql){
+                sql.printStackTrace();
+            }
+        }
+
+        }
+        return groups;
+    }
+
+    @Override
+    public List<Integer> statsByBanque(int idBanque) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        List<Integer> groups = new ArrayList<Integer>(Collections.nCopies(8, 0));
+
+        for (int i=0;i<8;i++) {
+                try
+                { connection = daoFactory.getConnection();
+                    preparedStatement =  connection.prepareStatement(
+                            "select sum(quantite) as total from stocksang where idGS = ? and idBS = ?");
+                    preparedStatement.setInt(1,i+1);
+                    preparedStatement.setInt(2,idBanque);
+                    rs = preparedStatement.executeQuery();
+                    if(rs.next())
+                        groups.set(i,rs.getInt("total")+groups.get(i));
+                    else
+                        groups.add(i,0);
+
+                }catch (SQLException sql){
+                    sql.printStackTrace();
+                }
+            }
+        return groups;
+    }
+
 
 }
 
