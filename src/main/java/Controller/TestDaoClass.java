@@ -8,6 +8,9 @@ import DAO.interfaces.StockSangDAO;
 import Model.BanqueSang;
 import Model.StockSang;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestDaoClass {
     public static void main(String[] args){
         StockSangDAO stockSangdao = new StockSangDaoImpl(new DAOFactory("jdbc:mysql://localhost:3306/sang","root",""));
@@ -25,11 +28,16 @@ public class TestDaoClass {
         /*StockPerBanque
         System.out.println("Stock per Banque : "+stockSangdao.stockPerBanque(2));*/
 
-        /*Ajouter banque with stock*/
+        /*Ajouter banque with stock
         BanqueSangDAO banqueSangDAO = new BanqueSangDaoImpl(new DAOFactory("jdbc:mysql://localhost:3306/sang","root",""));
         BanqueSang banqueSang =
                 new BanqueSang("Assalam", "asalam@email.com", "0621212121", "Testtt", "hay nours", 1);
         banqueSangDAO.ajouterBanqueSang(banqueSang);
-        System.out.println(banqueSang.getIdVille());
+        System.out.println(banqueSang.getIdVille());*/
+
+        /*Test AllStockStat*/
+        List<Integer> stocks = new ArrayList<Integer>();
+        stocks = stockSangdao.AllstocStatistic();
+        System.out.println("Stock  :"+stocks);
     }
 }

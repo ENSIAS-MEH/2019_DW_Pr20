@@ -15,4 +15,5 @@ public interface StockSangDAO {
 
     //La quantité du  sang dans le stock pour chaque BanqueDuSang (Total)
     public int stockPerBanque(int idBS);
+    public List<Integer> AllstocStatistic();
 }

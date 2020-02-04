@@ -194,4 +194,41 @@ public class StockSangDaoImpl implements StockSangDAO {
         return total;
     }
 
+    public List<Integer> AllstocStatistic()
+    {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        List<Integer> groups = new ArrayList<Integer>();
+
+
+            for (int i=0;i<8;i++) {
+                try
+                    { connection = daoFactory.getConnection();
+                    preparedStatement =  connection.prepareStatement(
+                            "select sum(quantite) as total from stocksang where idGS = ? ");
+                        preparedStatement.setInt(1,i+1);
+                    rs = preparedStatement.executeQuery();
+                    if(rs.next())
+                        groups.add(i,Integer.parseInt(rs.getString("total")));
+                    else
+                        groups.add(i,0);
+
+            }catch (SQLException sql){
+                sql.printStackTrace();
+            }
+            }
+        return groups;
+    }
+
 }
+
+/*Id Group Sangin
+* A- : 1*/
+/* A+ : 1*/
+/* B+ : 1*/
+/* B- : 1*/
+/* AB+ : 1*/
+/* AB- : 1*/
+/* O+ : 1*/
+/* O- : 1*/

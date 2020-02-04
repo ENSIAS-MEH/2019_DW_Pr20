@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +48,10 @@ public class AdminStatistics extends HttpServlet {
         BanqueSang currentBanque = banqueSangDAO.findBanqueSangById(idBS);  /*Id depuis la Session Aprés*/
         List<Ville> villes = villeDAO.getAllVille();
         List<BanqueSang> banqueSangList = banqueSangDAO.findAllBanqueSang();
+        ArrayList<Integer> allStock = (ArrayList<Integer>) stockSangDAO.AllstocStatistic();
+        System.out.println("All Stock ;"+allStock);
 
+        request.setAttribute("allStock",allStock);
         request.setAttribute("villes",villes);
         request.setAttribute("banqueSangList",banqueSangList);
         request.setAttribute("groupList",groupeSanginList);
