@@ -12,21 +12,32 @@ public class TwitterMethods {
 
     public List<TwitterAlerte> getAllTweet() throws TwitterException {
         List<TwitterAlerte> Alertes = new ArrayList<>();
-        Twitter twitter = new TwitterFactory().getInstance();
+       /* Twitter twitter = new TwitterFactory().getInstance();
         List<Status> statuts = twitter.getUserTimeline();
 
         for(Status s : statuts){
-            TwitterAlerte t = new TwitterAlerte(s.getId(),s.getUser().getScreenName(),s.getText(),s.getCreatedAt());
+            TwitterAlerte t = new TwitterAlerte(s.getId(),s.getUser().getScreenName(),s.getText(),s.getUser().getProfileImageURL(),s.getCreatedAt());
             Alertes.add(t);
-        }
+        }*/
         return Alertes;
     }
 
+    public void updateTweet(String s) {
+        Twitter twitter = new TwitterFactory().getInstance();
+        try {
+            twitter.updateStatus(s);
+        } catch (TwitterException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) throws TwitterException {
-        TwitterMethods t = new TwitterMethods();
+        TwitterMethods tm = new TwitterMethods();
+        tm.updateTweet("donatioooooooooooooooooon");
+        /*TwitterMethods t = new TwitterMethods();
         for(TwitterAlerte tw: t.getAllTweet()){
             System.out.println(tw);
-        }
+        }*/
 
     }
 }

@@ -34,11 +34,19 @@
             top: -20px;
             border-radius: 50%;
         }
+        .twitter-timeline{
+            height: 150px;
+        }
     </style>
 </head>
 <body>
 <br><br><br><br>
     <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-lg-6 ">
+            </div>
+
+        </div>
         <div class="row">
             <div class="input-group mb-3 col-lg-5">
                 <input type="text" id="grp" class="form-control border-danger" placeholder="Chercher une alerte">
@@ -91,73 +99,79 @@
         </c:if>
         <c:if test="${not empty alertes}">
             <div class="row w-100 mt-5" id="alt">
-                <c:forEach items="${alertes}" var="alerte">
-                    <div class="col-md-4 altr">
-                        <div class="card border-danger mr-1 ml-1 mb-5 alert-danger">
-                            <div class="card border-danger shadow text-danger alert-dark p-3 myCard">
-                                <span class="fa fa-tint" aria-hidden="true"></span>
-                            </div>
-                            <a data-toggle="modal" href="#D${alerte.idAlerte}">
+                <div class="col-lg-7">
+                    <c:forEach items="${alertes}" var="alerte">
+                        <div class="col-md-12 altr">
+                            <div class="card border-danger mr-1 ml-1 mb-5 alert-danger">
+                                <div class="card border-danger shadow text-danger alert-dark p-3 myCard">
+                                    <span class="fa fa-tint" aria-hidden="true"></span>
+                                </div>
+                                <a data-toggle="modal" href="#D${alerte.idAlerte}">
                                 <span class="card border-danger shadow text-danger p-3 myCard1" data-toggle="tooltip" title="Désactiver l'alerte">
                                     <span class="fa fa-power-off" aria-hidden="true"></span>
                                 </span>
-                            </a>
-                            <a data-toggle="modal" href="#S${alerte.idAlerte}">
+                                </a>
+                                <a data-toggle="modal" href="#S${alerte.idAlerte}">
                                 <span class="card border-danger shadow text-danger p-3 myCard2" data-toggle="tooltip" title="Supprimer l'alerte">
                                     <span class="far fa-trash-alt" aria-hidden="true"></span>
                                 </span>
-                            </a>
-                            <br>
-                            <div class="p-2">
-                                    ${alerte.descriptionAlerte}
-                            </div>
-                            <div class="card-footer p-2 alert-dark">
+                                </a>
+                                <br>
+                                <div class="p-2">
+                                        ${alerte.descriptionAlerte}
+                                </div>
+                                <div class="card-footer p-2 alert-dark">
                                 <span class="mr-1 float-left">
                                     <span class="fa fa-tint text-danger"></span>&nbsp;
                                     ${alerte.GS.nomGS}
                                 </span>
-                                <span class="float-right">
+                                    <span class="float-right">
                                     <span class="fas fa-calendar text-danger"></span>&nbsp;
                                     <fmt:formatDate value="${alerte.dateAlerte}" pattern="dd/MM/yyyy HH:mm"/>
                                 </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="modal mt-lg-5" id="D${alerte.idAlerte}">
-                            <div class="modal-dialog">
-                                <div class="modal-content rounded">
-                                    <div class="modal-body alert-dark">
-                                        <p class="font-weight-bold text-center">Voulez vous vraiment désactiver cet alerte ? </p>
-                                        <div>
-                                            <button class="btn btn-outline-dark float-left" data-dismiss="modal" type="button">
-                                                Annuler
-                                            </button>
-                                            <a class="btn btn-outline-danger float-right" type="button" href="TraiterAlerte?d=${alerte.idAlerte}">
-                                                Désactiver
-                                            </a>
+                            <div class="modal mt-lg-5" id="D${alerte.idAlerte}">
+                                <div class="modal-dialog">
+                                    <div class="modal-content rounded">
+                                        <div class="modal-body alert-dark">
+                                            <p class="font-weight-bold text-center">Voulez vous vraiment désactiver cet alerte ? </p>
+                                            <div>
+                                                <button class="btn btn-outline-dark float-left" data-dismiss="modal" type="button">
+                                                    Annuler
+                                                </button>
+                                                <a class="btn btn-outline-danger float-right" type="button" href="TraiterAlerte?d=${alerte.idAlerte}">
+                                                    Désactiver
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal mt-lg-5" id="S${alerte.idAlerte}">
+                                <div class="modal-dialog">
+                                    <div class="modal-content rounded">
+                                        <div class="modal-body alert-dark">
+                                            <p class="font-weight-bold text-center">Voulez vous vraiment supprimer cet alerte ? </p>
+                                            <div>
+                                                <button class="btn btn-outline-dark float-left" data-dismiss="modal" type="button">
+                                                    Annuler
+                                                </button>
+                                                <a class="btn btn-outline-danger float-right" type="button" href="TraiterAlerte?s=${alerte.idAlerte}">
+                                                    Supprimer
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal mt-lg-5" id="S${alerte.idAlerte}">
-                            <div class="modal-dialog">
-                                <div class="modal-content rounded">
-                                    <div class="modal-body alert-dark">
-                                        <p class="font-weight-bold text-center">Voulez vous vraiment supprimer cet alerte ? </p>
-                                        <div>
-                                            <button class="btn btn-outline-dark float-left" data-dismiss="modal" type="button">
-                                                Annuler
-                                            </button>
-                                            <a class="btn btn-outline-danger float-right" type="button" href="TraiterAlerte?s=${alerte.idAlerte}">
-                                                Supprimer
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
+                    </c:forEach>
+                </div>
+                <div class="col-lg-5 tt">
+                    <a class="twitter-timeline" href="https://twitter.com/Donation_Sang">Tweets by @Donation_Sang</a>
+                </div>
+
             </div>
         </c:if>
     </div>
@@ -175,4 +189,5 @@
         });
     });
 </script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </html>

@@ -7,12 +7,18 @@ import Model.AlerteBesoin;
 import Model.GroupeSangin;
 import Model.Ville;
 import DAO.interfaces.VilleDAO;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
+import util.TwitterAlerte;
+import util.TwitterMethods;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlerteBesoinServlet extends HttpServlet {
@@ -57,6 +63,12 @@ public class AlerteBesoinServlet extends HttpServlet {
             ab.setDescriptionAlerte(d);
             ab.setIdBS(1);
             alerteBesoinDAO.addAlerte(ab);
+            Twitter twitter = new TwitterFactory().getInstance();
+            try {
+                twitter.updateStatus(ab.getDescriptionAlerte());
+            } catch (TwitterException e) {
+                e.printStackTrace();
+            }
         }
         this.init();
         this.doGet(request,response);

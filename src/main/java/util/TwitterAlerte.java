@@ -21,13 +21,6 @@ public class TwitterAlerte {
         this.dateTweet = dateTweet;
     }
 
-    public TwitterAlerte(long idStatus, String screenName, String status, Date dateTweet) {
-        IdStatus = idStatus;
-        ScreenName = screenName;
-        Status = status;
-        this.dateTweet = dateTweet;
-    }
-
     public TwitterAlerte() {
     }
 

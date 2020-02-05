@@ -4,6 +4,8 @@ import DAO.DAOFactory;
 import DAO.interfaces.AlerteBesoinDAO;
 import Model.AlerteBesoin;
 import Model.GroupeSangin;
+import twitter4j.Twitter;
+import util.TwitterMethods;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,6 +13,7 @@ import java.util.List;
 
 public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
     private DAOFactory daoFactory;
+
 
     public AlerteBesoinDaoImpl(DAOFactory daoFactory) {
         this.daoFactory = daoFactory;
@@ -29,6 +32,7 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
             ps.setString(4,ab.getDescriptionAlerte());
             ps.setBoolean(5,true);
             ps.execute();
+
             ps.close();
             return true;
 
