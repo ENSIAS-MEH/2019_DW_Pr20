@@ -3,8 +3,10 @@ package DAO.Implementation;
 import DAO.DAOFactory;
 import DAO.interfaces.AlerteBesoinDAO;
 import Model.AlerteBesoin;
+import Model.BanqueSang;
+import Model.Donnateur;
 import Model.GroupeSangin;
-import twitter4j.Twitter;
+import util.SendMail;
 import util.TwitterMethods;
 
 import java.sql.*;
@@ -23,6 +25,11 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
     public boolean addAlerte(AlerteBesoin ab) {
         Connection connection = null;
         PreparedStatement ps = null;
+        GroupeSanginDaoImpl gs =new GroupeSanginDaoImpl(DAOFactory.getInstance());
+        TwitterMethods tm =new TwitterMethods();
+        DonnateurDaoImpl dd =new DonnateurDaoImpl(DAOFactory.getInstance());
+        BanqueSangDaoImpl bs =new BanqueSangDaoImpl(DAOFactory.getInstance());
+        List<Donnateur> donnateurs = dd.getAllDonnateurs();
         try {
             connection = daoFactory.getConnection();
             ps = connection.prepareStatement("INSERT INTO alertebesoin(idBS,idGS,dateAlerte,descriptionAlerte,enable) VALUES(?,?,?,?,?)");
@@ -32,7 +39,13 @@ public class AlerteBesoinDaoImpl implements AlerteBesoinDAO {
             ps.setString(4,ab.getDescriptionAlerte());
             ps.setBoolean(5,true);
             ps.execute();
-
+            tm.updateTweet("Banque du sang: "+bs.findBanqueSangById(ab.getIdBS()).getNomBS()+"\n"+"Groupe sangin: "+gs.findGroupSanginById(ab.getGS().getIdGS()).getNomGS()+"\n"+ab.getDescriptionAlerte());
+            for(Donnateur d : donnateurs){
+                Thread smd = new SendMail("Alerte d'un besoin du sang",d.getEmailD(),"<b>Banque du sang :</b> "
+                                            +bs.findBanqueSangById(ab.getIdBS()).getNomBS()+"<br><br><b>Groupe sangin :</b> "
+                                            +gs.findGroupSanginById(ab.getGS().getIdGS()).getNomGS()+"<br><br><b>Description de l'alerte :</b> "+ab.getDescriptionAlerte());
+                smd.start();
+            }
             ps.close();
             return true;
 

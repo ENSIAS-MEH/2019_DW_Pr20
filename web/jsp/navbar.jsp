@@ -51,6 +51,11 @@
                     <a href="/SignIn" class="nav-link mr-5 p-2 border border-danger rounded">Sign In</a>
                 </li>
             </c:if>
+            <c:if test="${(not empty sessionScope.admin)  || (not empty sessionScope.banquesang)}">
+                <li class="nav-item">
+                    <a href="/LogOut" class="nav-link mr-5 p-2 border border-danger rounded"></a>
+                </li>
+            </c:if>
             <c:if test="${(not empty sessionScope.admin)  || (not empty sessionScope.banquesang) || (not empty sessionScope.donnateur)}">
                 <li class="nav-item">
                     <a href="/LogOut" class="nav-link mr-5 p-2 border border-danger rounded">Log Out</a>

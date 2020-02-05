@@ -63,12 +63,6 @@ public class AlerteBesoinServlet extends HttpServlet {
             ab.setDescriptionAlerte(d);
             ab.setIdBS(1);
             alerteBesoinDAO.addAlerte(ab);
-            Twitter twitter = new TwitterFactory().getInstance();
-            try {
-                twitter.updateStatus(ab.getDescriptionAlerte());
-            } catch (TwitterException e) {
-                e.printStackTrace();
-            }
         }
         this.init();
         this.doGet(request,response);
