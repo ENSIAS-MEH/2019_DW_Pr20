@@ -58,18 +58,20 @@ public class AuthenticationServlet extends HttpServlet {
                 session.setAttribute("role", "banquesang");
                 session.setAttribute("banquesang", banqueSang);
                 System.out.println("role : "+session.getAttribute("role") + "\n"+banqueSang);
-                //response.sendRedirect("/");
+                response.sendRedirect("/Donnation");            //Dial Oussama bach ytesté b session :)
+                //response.sendRedirect("/LesBaqnuesDuSang");
             }
             else if(donnateur != null){
                 HttpSession session = request.getSession();
                 session.setAttribute("role", "donnateur");
                 session.setAttribute("donnateur", donnateur);
                 System.out.println("role : "+session.getAttribute("role") + "\n"+donnateur);
+                response.sendRedirect("/Donnation");            //Dial Oussama bach ytesté b session :)
                 //response.sendRedirect("/");
             }
         }
 
-        response.sendRedirect("/TestServlet");
+        //response.sendRedirect("/TestServlet");
 
     }
 
