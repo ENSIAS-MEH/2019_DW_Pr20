@@ -201,8 +201,7 @@ public class StockSangDaoImpl implements StockSangDAO {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
-        List<Integer> groups = new ArrayList<Integer>();
-
+        List<Integer> groups = new ArrayList<Integer>(Collections.nCopies(8, 0));
 
             for (int i=0;i<8;i++) {
                 try
@@ -212,9 +211,8 @@ public class StockSangDaoImpl implements StockSangDAO {
                         preparedStatement.setInt(1,i+1);
                     rs = preparedStatement.executeQuery();
                     if(rs.next())
-                        groups.add(i,Integer.parseInt(rs.getString("total")));
-                    else
-                        groups.add(i,0);
+                        groups.set(i,Integer.parseInt(rs.getString("total")));
+
 
             }catch (SQLException sql){
                 sql.printStackTrace();
@@ -243,8 +241,7 @@ public class StockSangDaoImpl implements StockSangDAO {
                 rs = preparedStatement.executeQuery();
                 if(rs.next())
                      groups.set(i,rs.getInt("total")+groups.get(i));
-                else
-                    groups.add(i,0);
+
 
             }catch (SQLException sql){
                 sql.printStackTrace();
@@ -272,8 +269,6 @@ public class StockSangDaoImpl implements StockSangDAO {
                     rs = preparedStatement.executeQuery();
                     if(rs.next())
                         groups.set(i,rs.getInt("total")+groups.get(i));
-                    else
-                        groups.add(i,0);
 
                 }catch (SQLException sql){
                     sql.printStackTrace();

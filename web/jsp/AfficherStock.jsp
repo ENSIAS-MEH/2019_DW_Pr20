@@ -41,7 +41,7 @@
                                     <img src="/img/A+.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(1).quantite}L</h3>       <!--Text ghaykon fih Le nombre dyal kol Groupe-->
+                                    <h3 class="text-stat">${stockList.get(1)}L</h3>       <!--Text ghaykon fih Le nombre dyal kol Groupe-->
                                     <a data-toggle="modal" href="#modifier1">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                     <span class="fa fa-edit" aria-hidden="true"></span>
@@ -60,7 +60,7 @@
                                     <img src="/img/B+.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(2).quantite}L</h3>
+                                    <h3 class="text-stat">${stockList.get(2)}L</h3>
                                     <a data-toggle="modal" href="#modifier2">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                     <span class="fa fa-edit" aria-hidden="true"></span>
@@ -79,7 +79,7 @@
                                     <img src="/img/AB+.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(4).quantite}L</h3>
+                                    <h3 class="text-stat">${stockList.get(4)}L</h3>
                                     <a data-toggle="modal" href="#modifier4">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                     <span class="fa fa-edit" aria-hidden="true"></span>
@@ -98,7 +98,7 @@
                                     <img src="/img/O+.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(6).quantite}L</h3>
+                                    <h3 class="text-stat">${stockList.get(6)}L</h3>
                                     <a data-toggle="modal" href="#modifier6">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                     <span class="fa fa-edit" aria-hidden="true"></span>
@@ -117,7 +117,7 @@
                                     <img src="/img/A-.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(0).quantite}L</h3>
+                                    <h3 class="text-stat">${stockList.get(0)}L</h3>
                                     <a data-toggle="modal" href="#modifier0">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                     <span class="fa fa-edit" aria-hidden="true"></span>
@@ -136,7 +136,7 @@
                                     <img src="/img/B-.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(3).quantite}L</h3>
+                                    <h3 class="text-stat">${stockList.get(3)}L</h3>
                                     <a data-toggle="modal" href="#modifier3">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                     <span class="fa fa-edit" aria-hidden="true"></span>
@@ -155,7 +155,7 @@
                                     <img src="/img/AB-.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(5).quantite}L</h3>
+                                    <h3 class="text-stat">${stockList.get(5)}L</h3>
                                     <a data-toggle="modal" href="#modifier5">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                     <span class="fa fa-edit" aria-hidden="true"></span>
@@ -174,7 +174,7 @@
                                     <img src="/img/O-.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(7).quantite}L</h3>
+                                    <h3 class="text-stat">${stockList.get(7)}L</h3>
                                     <a data-toggle="modal" href="#modifier7">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                     <span class="fa fa-edit" aria-hidden="true"></span>
@@ -442,42 +442,42 @@
                 "data": [
                     {
                         "name": "${groupList.get(0).nomGS}",
-                        "y": ${stockList.get(0).quantite},
+                        "y": ${stockList.get(0)},
                         "drilldown": "${groupList.get(0).nomGS}"
                     },
                     {
                         "name": "${groupList.get(1).nomGS}",
-                        "y": ${stockList.get(1).quantite},
+                        "y": ${stockList.get(1)},
                         "drilldown": "${groupList.get(1).nomGS}"
                     },
                     {
                         "name": "${groupList.get(2).nomGS}",
-                        "y": ${stockList.get(2).quantite},
+                        "y": ${stockList.get(2)},
                         "drilldown": "${groupList.get(2).nomGS}"
                     },
                     {
                         "name": "${groupList.get(3).nomGS}",
-                        "y": ${stockList.get(3).quantite},
+                        "y": ${stockList.get(3)},
                         "drilldown": "${groupList.get(3).nomGS}"
                     },
                     {
                         "name": "${groupList.get(4).nomGS}",
-                        "y": ${stockList.get(4).quantite},
+                        "y": ${stockList.get(4)},
                         "drilldown": "${groupList.get(4).nomGS}"
                     },
                     {
                         "name": "${groupList.get(5).nomGS}",
-                        "y": ${stockList.get(5).quantite},
+                        "y": ${stockList.get(5)},
                         "drilldown": "${groupList.get(5).nomGS}"
                     },
                     {
                         "name": "${groupList.get(6).nomGS}",
-                        "y": ${stockList.get(6).quantite},
+                        "y": ${stockList.get(6)},
                         "drilldown": "${groupList.get(6).nomGS}"
                     },
                     {
                         "name": "${groupList.get(7).nomGS}",
-                        "y": ${stockList.get(7).quantite},
+                        "y": ${stockList.get(7)},
                         "drilldown": "${groupList.get(7).nomGS}"
                     }
                 ]
@@ -754,42 +754,42 @@
                 "data": [
                     {
                         "name": "${groupList.get(0).nomGS}",
-                        "y": ${stockList.get(0).quantite},
+                        "y": ${stockList.get(0)},
                         "drilldown": "${groupList.get(0).nomGS}"
                     },
                     {
                         "name": "${groupList.get(1).nomGS}",
-                        "y": ${stockList.get(1).quantite},
+                        "y": ${stockList.get(1)},
                         "drilldown": "${groupList.get(1).nomGS}"
                     },
                     {
                         "name": "${groupList.get(2).nomGS}",
-                        "y": ${stockList.get(2).quantite},
+                        "y": ${stockList.get(2)},
                         "drilldown": "${groupList.get(2).nomGS}"
                     },
                     {
                         "name": "${groupList.get(3).nomGS}",
-                        "y": ${stockList.get(3).quantite},
+                        "y": ${stockList.get(3)},
                         "drilldown": "${groupList.get(3).nomGS}"
                     },
                     {
                         "name": "${groupList.get(4).nomGS}",
-                        "y": ${stockList.get(4).quantite},
+                        "y": ${stockList.get(4)},
                         "drilldown": "${groupList.get(4).nomGS}"
                     },
                     {
                         "name": "${groupList.get(5).nomGS}",
-                        "y": ${stockList.get(5).quantite},
+                        "y": ${stockList.get(5)},
                         "drilldown": "${groupList.get(5).nomGS}"
                     },
                     {
                         "name": "${groupList.get(6).nomGS}",
-                        "y": ${stockList.get(6).quantite},
+                        "y": ${stockList.get(6)},
                         "drilldown": "${groupList.get(6).nomGS}"
                     },
                     {
                         "name": "${groupList.get(7).nomGS}",
-                        "y": ${stockList.get(7).quantite},
+                        "y": ${stockList.get(7)},
                         "drilldown": "${groupList.get(7).nomGS}"
                     }
                 ]

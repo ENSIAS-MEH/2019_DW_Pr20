@@ -49,40 +49,14 @@ public class StockController extends HttpServlet {
         BanqueSang banq = (BanqueSang)session.getAttribute("banquesang");
         int idBS = banq.getIdBS();
 
-        List<StockSang> stockSangList = new ArrayList<StockSang>();
-        stockSangList= stockSangDAO.findStockByBanqueSang(idBS);   /*Id depuis la Session Aprés*/
+        List<Integer> stockSangList = stockSangDAO.statsByBanque(idBS);   /*Id depuis la Session Aprés*/
+        System.out.println(stockSangList);
         List<GroupeSangin> groupeSanginList = groupeSanginDAO.findAll();
         BanqueSang currentBanque = banqueSangDAO.findBanqueSangById(idBS);  /*Id depuis la Session Aprés*/
         request.setAttribute("groupList",groupeSanginList);
         request.setAttribute("currentBanque",currentBanque);
         request.setAttribute("stockList",stockSangList);
-        //System.out.println(currentBanque.getNomBS());
         this.getServletContext().getRequestDispatcher("/jsp/AfficherStock.jsp").forward(request,response);
-        //System.out.println(Integer.parseInt(request.getParameter("id")));
-        /* Statistiques
-        Gson gsonObj = new Gson();
-        Map<Object,Object> map = null;
-        List<Map<Object,Object>> list = new ArrayList<Map<Object,Object>>();
-
-        map = new HashMap<Object,Object>(); map.put("label", "A+");
-        map.put("y", stockSangList.get(0).getQuantite()); list.add(map);
-        map = new HashMap<Object,Object>(); map.put("label", "B+");
-        map.put("y", stockSangList.get(1).getQuantite()); list.add(map);
-        map = new HashMap<Object,Object>(); map.put("label", "AB+");
-        map.put("y", stockSangList.get(2).getQuantite()); list.add(map);
-        map = new HashMap<Object,Object>(); map.put("label", "O+");
-        map.put("y", stockSangList.get(3).getQuantite()); list.add(map);
-        map = new HashMap<Object,Object>(); map.put("label", "A-");
-        map.put("y", stockSangList.get(4).getQuantite()); list.add(map);
-        map = new HashMap<Object,Object>(); map.put("label", "B-");
-        map.put("y", stockSangList.get(5).getQuantite()); list.add(map);
-        map = new HashMap<Object,Object>(); map.put("label", "AB-");
-        map.put("y", stockSangList.get(6).getQuantite()); list.add(map);
-        map = new HashMap<Object,Object>(); map.put("label", "O-");
-        map.put("y", stockSangList.get(7).getQuantite()); list.add(map);
-
-        String dataPoints = gsonObj.toJson(list);
-        request.setAttribute("dataPoints",dataPoints); */
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
@@ -91,7 +65,6 @@ public class StockController extends HttpServlet {
         int idBS = banq.getIdBS();
         int idGroup = Integer.parseInt(request.getParameter("id"));
         System.out.println("idPOST = "+idGroup);
-        //BanqueSang currentbanqueSang = banqueSangDAO.findBanqueSangById(idBS);
         StockSang stockSang  = stockSangDAO.findStockById(idBS,idGroup);
         int quantite = Integer.parseInt(request.getParameter("quantite"));
         stockSang.setQuantite(quantite);
