@@ -16,19 +16,16 @@ public class DonnationDaoImpl implements DonnationDAO {
     }
 
     @Override
-    public boolean addDonnation(Donnation donnation) {
+    public boolean addDonnation(int idDonnateur, int idBS) {
         Connection conn = null;
         PreparedStatement ps = null;
 
-        String query = "INSERT INTO Donnation(idDonnateur, idBS, dateDonnation) VALUES(?,?,?);";
-
         try {
             conn = daoFactory.getConnection();
-            ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement("INSERT INTO Donnation(idDonnateur, idBS) VALUES(?,?);");
 
-            ps.setInt(1, donnation.getIdDonnateur());
-            ps.setInt(2, donnation.getIdBS());
-            ps.setTimestamp(3, donnation.getDateDonnation());
+            ps.setInt(1, idDonnateur);
+            ps.setInt(2, idBS);
 
             ps.executeUpdate();
             return true;
@@ -94,7 +91,7 @@ public class DonnationDaoImpl implements DonnationDAO {
         try {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM donnation;");
+            ResultSet rs = st.executeQuery("SELECT * FROM donnation ORDER BY dateDonnation DESC;");
             List<Donnation> donationsList = new ArrayList<>();
 
             while(rs.next()){
@@ -148,6 +145,33 @@ public class DonnationDaoImpl implements DonnationDAO {
             conn = daoFactory.getConnection();
             st = conn.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM donnation WHERE idBS="+idBS+";");
+            List<Donnation> donationsList = new ArrayList<>();
+
+            while(rs.next()){
+                Donnation donnation = new Donnation();
+                donnation.setIdDonnateur(rs.getInt(1));
+                donnation.setIdBS(rs.getInt(2));
+                donnation.setDateDonnation(rs.getTimestamp(3));
+
+                donationsList.add(donnation);
+            }
+            return donationsList;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Donnation> getAllDonnationsGS(String nomGS){
+        Connection conn = null;
+        Statement st = null;
+
+        try {
+            conn = daoFactory.getConnection();
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT dn.idDonnateur, idBS, dateDonnation FROM donnation dn, donnateur dt, groupesangin g " +
+                    "WHERE dn.idDonnateur = dt.idDonnateur AND dt.idGS = g.idGS AND nomGS ='"+nomGS+"';");
             List<Donnation> donationsList = new ArrayList<>();
 
             while(rs.next()){

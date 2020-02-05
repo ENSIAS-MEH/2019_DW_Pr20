@@ -44,7 +44,7 @@ public class VilleDaoImpl implements VilleDAO {
 
         try {
             connection = daoFactory.getConnection();
-            ps = connection.prepareStatement("select  * from  ville");
+            ps = connection.prepareStatement("select  * from  ville ORDER BY nomVille");
             rs = ps.executeQuery();
             while (rs.next()){
                 Ville ville = new Ville();
@@ -71,6 +71,32 @@ public class VilleDaoImpl implements VilleDAO {
             connection = daoFactory.getConnection();
             ps = connection.prepareStatement("SELECT * from ville where idVille = ?");
             ps.setInt(1, idVille);
+            rs = ps.executeQuery();
+            if(rs.next()){
+                ville = new Ville();
+                ville.setIdVille(rs.getInt(1));
+                ville.setNomVille(rs.getString(2));
+                ps.close();
+                return ville;
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public Ville getVilleByName(String nomVille) {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Ville ville;
+
+        try{
+            connection = daoFactory.getConnection();
+            ps = connection.prepareStatement("SELECT * from ville where nomVille = ?");
+            ps.setString(1, nomVille);
             rs = ps.executeQuery();
             if(rs.next()){
                 ville = new Ville();

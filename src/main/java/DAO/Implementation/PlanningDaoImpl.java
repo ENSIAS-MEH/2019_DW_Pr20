@@ -58,15 +58,19 @@ public class PlanningDaoImpl implements PlanningDAO {
             while (resultat.next()) {
 
                 int idVille = resultat.getInt("idVille");
+
                 Timestamp dateConvoi_debut = resultat.getTimestamp("dateConvoi_debut");
                 Timestamp dateConvoi_fin = resultat.getTimestamp("dateConvoi_fin");
 
+                System.out.println(idVille);
 
                Planning planning = new Planning();
                planning.setIdConvoi(idConvoi);
                planning.setIdVille(idVille);
                planning.setDateConvoi_debut(dateConvoi_debut);
                planning.setDateConvoi_fin(dateConvoi_fin);
+
+               System.out.println(planning.toString());
 
                 plannings.add(planning);
             }

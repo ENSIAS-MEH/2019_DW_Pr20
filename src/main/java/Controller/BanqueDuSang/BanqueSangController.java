@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-//@WebServlet("/LesBaqnuesDuSang")
+@WebServlet("/LesBaqnuesDuSang")
 public class BanqueSangController extends HttpServlet {
     private BanqueSangDAO banqueSangDAO;
     private VilleDAO villeDAO;
@@ -99,7 +99,7 @@ public class BanqueSangController extends HttpServlet {
         banqueSang.setAdresseBS(adresseBanque);
         //System.out.println(adresseBanque);
         banqueSang.setIdBS(idBanque);
-        //System.out.println(Integer.parseInt(idville));
+        System.out.println(Integer.parseInt(idville));
         banqueSang.setIdVille(Integer.parseInt(idville));
 
         banqueSangDAO.updateBanqueSang(banqueSang);

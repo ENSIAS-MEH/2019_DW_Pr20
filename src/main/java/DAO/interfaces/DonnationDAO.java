@@ -7,15 +7,18 @@ import java.util.List;
 
 public interface DonnationDAO {
 
-    boolean addDonnation(Donnation donnation);
+    boolean addDonnation(int idDonnateur, int idBS);
     boolean updateDonnation(int idDonnateur, Timestamp dateDonnation, Donnation donnation);
     boolean deleteDonnation(int idDonnateur, Timestamp dateDonnation);
 
     List<Donnation> getAllDennation();
     List<Donnation> getAllDonnationsVille(int idVille);                 //ville du BanqueSang pas du donnateur
     List<Donnation> getAllDonnationsBanq(int idBS);
+    List<Donnation> getAllDonnationsGS(String nomGS);
     List<Donnation> getAllDonnationsVilleGS(int idVille, int idGS);     //ville du BanqueSang pas du donnateur
     List<Donnation> getAllDonnationsDonnateur(int idDonnateur);
+
+
 
 
     int DonnationsNbrPerVille(int idVille);                     //ville du BanqueSang pas du donnateur

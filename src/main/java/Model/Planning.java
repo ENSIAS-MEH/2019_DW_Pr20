@@ -50,4 +50,14 @@ public class Planning {
     public void setDateConvoi_fin(Timestamp dateConvoi_fin) {
         this.dateConvoi_fin = dateConvoi_fin;
     }
+
+    @Override
+    public String toString() {
+        return "Planning{" +
+                "idConvoi=" + idConvoi +
+                ", idVille=" + idVille +
+                ", dateConvoi_debut=" + dateConvoi_debut +
+                ", dateConvoi_fin=" + dateConvoi_fin +
+                '}';
+    }
 }
