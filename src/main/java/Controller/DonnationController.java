@@ -3,8 +3,6 @@ package Controller;
 import DAO.DAOFactory;
 import DAO.interfaces.*;
 import Model.*;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,14 +14,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 @WebServlet("/Donnation")
 public class DonnationController extends HttpServlet {
@@ -46,17 +38,44 @@ public class DonnationController extends HttpServlet {
         villeDAO = daoFactory.getVilleDaoImpl();
         groupeSanginDAO = daoFactory.getGroupeSanginDaoImpl();
         banqueSangDAO = daoFactory.getBanqueSangDaoImpl();
+
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("doGet");
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(request.getParameter("action").equals("ajouter")){
+            System.out.println("ajouttterrrr");
+            int idDonnateur = Integer.parseInt(request.getParameter("idD"));
+            int idBS = Integer.parseInt(request.getParameter("idBS"));
 
-        if(request.getParameter("action") == null){
-            try {
-                showDonnations(request, response);
-            } catch (SQLException ex) {
-                throw new ServletException(ex);
-            }
+            System.out.println("pre add");
+            Boolean res = donnationDAO.addDonnation(idDonnateur, idBS);
+            System.out.println("post add");
+            System.out.println("result add : "+res);
+            response.getWriter().write(res.toString());
+        }
+        if(request.getParameter("action").equals("modifier")){
+            System.out.println("ajouttterrrr");
+            int idDonnateur = Integer.parseInt(request.getParameter("idD"));
+            int idBS = Integer.parseInt(request.getParameter("idBS"));
+
+            System.out.println("pre add");
+            Boolean res = donnationDAO.addDonnation(idDonnateur, idBS);
+            System.out.println("post add");
+            System.out.println("result add : "+res);
+            response.getWriter().write(res.toString());
+        }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(request.getParameter("action") == null || request.getParameter("action").equals("")){
+                try {
+                    showDonnations(request, response);
+                } catch (SQLException ex) {
+                    throw new ServletException(ex);
+                }
         }
         else if(request.getParameter("action").equals("filter")){
             String gs = request.getParameter("gs").trim();
@@ -79,28 +98,20 @@ public class DonnationController extends HttpServlet {
         }
 
     }
-
+/*
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("doPost");
-        doGet(request, response);
-        int donnateur = Integer.parseInt(request.getParameter("idDonnateur"));
+        if(request.getParameter("action").equals("ajouter")){
+            System.out.println("dad");
+            int idDonnateur = Integer.parseInt(request.getParameter("idD"));
+            int idBS = Integer.parseInt(request.getParameter("idBS"));
+            Timestamp dateDonnation = Timestamp.valueOf(request.getParameter("dateD"));
 
-        if(donnateur == -1) {
-            try {
-                addDonnation(request,response);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            Donnation d = new Donnation(idDonnateur, idBS, dateDonnation);
+            Boolean res = donnationDAO.addDonnation(d);
+            response.getWriter().write(res.toString());
         }
-        else {
-            try {
-                updateDonnation(request,response);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+    }*/
 
     private String donnationtoJSON(List<Donnation> donnList) {
 
@@ -209,14 +220,11 @@ public class DonnationController extends HttpServlet {
         String role = (String)session.getAttribute("role");
 
         if(role.equals("banquesang")){
-            System.out.println("baaaanq");
             BanqueSang banq = (BanqueSang)session.getAttribute("banquesang");
             donnationList = donnationDAO.getAllDonnationsBanq(banq.getIdBS());
         }
         else if(role.equals("donnateur")){
-            System.out.println("donnateur");
             Donnateur donnateur = (Donnateur)session.getAttribute("donnateur");
-            System.out.println(donnateur.getIdDonnateur());
             donnationList = donnationDAO.getAllDonnationsDonnateur(donnateur.getIdDonnateur());
         }
 
@@ -277,8 +285,7 @@ public class DonnationController extends HttpServlet {
         d.setIdDonnateur(Integer.parseInt(idDonnateur));
         d.setDateDonnation(Timestamp.valueOf(dateDonnation));
 
-        donnationDAO.addDonnation(d);
-        response.sendRedirect("Donnation");
+        //response.sendRedirect("Donnation");
     }
 
 

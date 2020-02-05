@@ -16,19 +16,16 @@ public class DonnationDaoImpl implements DonnationDAO {
     }
 
     @Override
-    public boolean addDonnation(Donnation donnation) {
+    public boolean addDonnation(int idDonnateur, int idBS) {
         Connection conn = null;
         PreparedStatement ps = null;
 
-        String query = "INSERT INTO Donnation(idDonnateur, idBS, dateDonnation) VALUES(?,?,?);";
-
         try {
             conn = daoFactory.getConnection();
-            ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement("INSERT INTO Donnation(idDonnateur, idBS) VALUES(?,?);");
 
-            ps.setInt(1, donnation.getIdDonnateur());
-            ps.setInt(2, donnation.getIdBS());
-            ps.setTimestamp(3, donnation.getDateDonnation());
+            ps.setInt(1, idDonnateur);
+            ps.setInt(2, idBS);
 
             ps.executeUpdate();
             return true;

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface DonnationDAO {
 
-    boolean addDonnation(Donnation donnation);
+    boolean addDonnation(int idDonnateur, int idBS);
     boolean updateDonnation(int idDonnateur, Timestamp dateDonnation, Donnation donnation);
     boolean deleteDonnation(int idDonnateur, Timestamp dateDonnation);
 

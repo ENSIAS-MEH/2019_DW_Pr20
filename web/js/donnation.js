@@ -100,9 +100,14 @@ function data_filter() {
 function ajouter_donation(){
 
 
-    //document.getElementById("idD_aj").value  ;
-   // document.getElementById("aj_btn").value = ;
-   // document.getElementById("aj_btn").value = ;
+    var idD = document.getElementById("idD_aj").value  ;
+    var idBS = document.getElementById("session").value;
+
+    //console.log("idBS: "+idBS +"-- idDonnateur: "+idD+ "-- DateD: "+dateD);
+
+    $.post("Donnation",{"idD":idD, "idBS":idBS, "action":"ajouter"},function(array){
+        console.log(array);
+    });
 }
 
 function modifier_donnation(){
@@ -118,9 +123,13 @@ window.onload = function(){
     document.querySelector("#gs_select").addEventListener("change",data_filter);
     document.querySelector("#ville_select").addEventListener("change",data_filter);
 
-    document.getElementById("aj_btn").disabled = true;
+    document.getElementById('dateD_aj').value = new Date();
 
-    $.get("Donnation",{"get_session" : "get_session"},function(data) {
-        console.log(data);
-    });
+    console.log('uncc');
+    // document.getElementById("aj_btn").disabled = true;
+
+    //document.getElementById("session").value = '<%= Session["role"].toString() %>';
+
+
+
 }

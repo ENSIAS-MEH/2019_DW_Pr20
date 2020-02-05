@@ -36,6 +36,20 @@
         <div class="row">
             <div class="input-group mb-3 col-lg-4" >
                 <input type="text" id="donnation" class="form-control border-danger" placeholder="Chercher par nom du donnateur">
+
+
+                <input type="hidden" value='${sessionScope.role}' id="role">
+
+                <c:if test="${sessionScope.role eq 'admin'}">
+                    <input type="hidden" value='${sessionScope.admin}' id="session">
+                </c:if>
+                <c:if test="${sessionScope.role eq 'banquesang'}">
+                    <input type="hidden" value='${sessionScope.banquesang.getIdBS()}' id="session">
+                </c:if>
+                <c:if test="${sessionScope.role eq 'donnateur'}">
+                    <input type="hidden" value='${sessionScope.donnateur.getIdDonnateur()}' id="session">
+                </c:if>
+
                 <div class="input-group-prepend">
                     <span class="input-group-text"><span class="fa fa-search text-danger"></span></span>
                 </div>
@@ -72,7 +86,7 @@
             </div>
 
             <div class="col-lg-3 float-left mb-3 row justify-content-end" >
-                <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" href="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donnation</a>
+                <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" data-target="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donnation</a>
             </div>
         </div>
 
@@ -168,12 +182,12 @@
 
                     <fieldset class="form-group">
                         <label>Numéro du donateur</label>
-                        <input type="text" class="form-control" name="idD_aj" id="idD_aj">
+                        <input type="text" class="form-control" name="idD_aj" id="idD_aj" required>
                     </fieldset>
 
                     <fieldset class="form-group">
                         <label>Nom & Prénom</label>
-                        <input type="text" class="form-control" name="nomD_aj" id="nomD_aj">
+                        <input type="text" class="form-control" name="nomD_aj" id="nomD_aj" required>
                     </fieldset>
 
                     <fieldset class="form-group">
@@ -192,11 +206,11 @@
                     </fieldset>
                     <fieldset class="form-group">
                         <label>Date de donation</label>
-                        <input type="datetime-local" class="form-control" name="dateD_aj" id="dateD_aj">
+                        <input type="datetime-local" class="form-control" name="dateD_aj" id="dateD_aj" required>
                     </fieldset>
 
 
-                    <button id="aj_btn" type="submit" class="btn btn-danger align-content-md-center" style="float: right;">
+                    <button id="aj_btn" class="btn btn-danger align-content-md-center" style="float: right;">
                         Valider
                     </button>
 
@@ -216,7 +230,7 @@
                 <button type="button" class="close" data-dismiss="modal">x</button>
             </div>
             <div class="modal-body">
-                <form action="Donnation" method="post">
+                <form>
                     <caption>
                         <h5>
 
@@ -227,17 +241,17 @@
 
                     <fieldset class="form-group">
                         <label>Numéro du donateur</label>
-                        <input type="text" class="form-control" name="idD_aj" id="idD_md">
+                        <input type="text" class="form-control" name="idD_md" id="idD_md">
                     </fieldset>
 
                     <fieldset class="form-group">
                         <label>Nom & Prénom</label>
-                        <input type="text" class="form-control" name="nomD_aj" id="nomD_md">
+                        <input type="text" class="form-control" name="nomD_md" id="nomD_md">
                     </fieldset>
 
                     <fieldset class="form-group">
                         <label>Groupe Sanguin</label><br>
-                        <select name="GrpSng" name="gs_aj" id="gs_md">
+                        <select name="GrpSng" name="gs_md" id="gs_md">
                             <option value="">-- Choisissez un groupe sanguin --</option>
                             <option value="A-">A-</option>
                             <option value="A+">A+</option>
@@ -251,11 +265,11 @@
                     </fieldset>
                     <fieldset class="form-group">
                         <label>Date de donation</label>
-                        <input type="datetime-local" class="form-control" name="dateD_aj" id="dateD_md">
+                        <input type="datetime-local" class="form-control" name="dateD_md" id="dateD_md">
                     </fieldset>
 
 
-                    <button id="md_btn" type="submit" class="btn btn-danger align-content-md-center" style="float: right;">
+                    <button id="md_btn" class="btn btn-danger align-content-md-center" style="float: right;">
                         Valider
                     </button>
 
@@ -288,9 +302,7 @@
 <script src="../frameworks/jquery/jquery.js"></script>
 <script src="../frameworks/bootstap4/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    $(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
+
 </script>
 
 <script src="../js/donnation.js" type="text/javascript"></script>
