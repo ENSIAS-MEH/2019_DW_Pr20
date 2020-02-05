@@ -9,6 +9,9 @@ public class GroupeSangin {
         this.nomGS = nomGS;
     }
 
+    public GroupeSangin() {
+    }
+
     public int getIdGS() {
         return idGS;
     }

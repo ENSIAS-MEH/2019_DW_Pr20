@@ -245,4 +245,26 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
         return admin;
     }
 
+    @Override
+    public List<BanqueSang> findBanquesByVille(int idVille) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<BanqueSang> banqueSangs = new ArrayList<BanqueSang>();
+
+        try{
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("select * from BanqueSang where idVille = ?");
+            ps.setInt(1,idVille);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                BanqueSang banque = new BanqueSang(rs.getInt("idBS"),rs.getString("nomBS"),rs.getString("emailBS"),
+                        rs.getString("teleBS"),rs.getString("passwordBS"),rs.getString("adresseBS"),rs.getInt("idVille"));
+                banqueSangs.add(banque);
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return banqueSangs;
+    }
+
 }

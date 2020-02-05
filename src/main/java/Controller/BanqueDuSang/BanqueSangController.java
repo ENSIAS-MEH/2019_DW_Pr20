@@ -99,7 +99,7 @@ public class BanqueSangController extends HttpServlet {
         banqueSang.setAdresseBS(adresseBanque);
         //System.out.println(adresseBanque);
         banqueSang.setIdBS(idBanque);
-        //System.out.println(Integer.parseInt(idville));
+        System.out.println(Integer.parseInt(idville));
         banqueSang.setIdVille(Integer.parseInt(idville));
 
         banqueSangDAO.updateBanqueSang(banqueSang);

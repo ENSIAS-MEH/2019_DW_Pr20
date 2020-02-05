@@ -16,4 +16,5 @@ public interface BanqueSangDAO {
     public boolean searchBanqueSangByName(String nom);
     public int countBanqueSang();
     public Admin getAdmin(String username, String password);
+    public List<BanqueSang> findBanquesByVille(int idVille);
 }

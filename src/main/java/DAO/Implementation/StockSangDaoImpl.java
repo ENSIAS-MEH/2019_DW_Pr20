@@ -2,6 +2,7 @@ package DAO.Implementation;
 
 import DAO.DAOFactory;
 import DAO.interfaces.StockSangDAO;
+import Model.BanqueSang;
 import Model.StockSang;
 
 import java.sql.Connection;
@@ -9,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class StockSangDaoImpl implements StockSangDAO {
@@ -141,10 +143,10 @@ public class StockSangDaoImpl implements StockSangDAO {
         try{
             connection = daoFactory.getConnection();
             preparedStatement=connection.prepareStatement(
-                    "update stockSang set idBS = ?,idGS = ?,quantite = ?");
-            preparedStatement.setInt(1,stockSang.getIdBS());
-            preparedStatement.setInt(2,stockSang.getIdGS());
-            preparedStatement.setInt(3,stockSang.getQuantite());
+                    "update stockSang set quantite = ? where idBS = ? and idGS = ?");
+            preparedStatement.setInt(2,stockSang.getIdBS());
+            preparedStatement.setInt(3,stockSang.getIdGS());
+            preparedStatement.setInt(1,stockSang.getQuantite());
 
             preparedStatement.executeUpdate();
 
@@ -194,4 +196,96 @@ public class StockSangDaoImpl implements StockSangDAO {
         return total;
     }
 
+    public List<Integer> AllstocStatistic()
+    {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        List<Integer> groups = new ArrayList<Integer>(Collections.nCopies(8, 0));
+
+            for (int i=0;i<8;i++) {
+                try
+                    { connection = daoFactory.getConnection();
+                    preparedStatement =  connection.prepareStatement(
+                            "select sum(quantite) as total from stocksang where idGS = ? ");
+                        preparedStatement.setInt(1,i+1);
+                    rs = preparedStatement.executeQuery();
+                    if(rs.next())
+                        groups.set(i,Integer.parseInt(rs.getString("total")));
+
+
+            }catch (SQLException sql){
+                sql.printStackTrace();
+            }
+            }
+        return groups;
+    }
+
+    public List<Integer> statsByVille(int idVille){
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        BanqueSangDaoImpl banqueSangDao = (BanqueSangDaoImpl) daoFactory.getBanqueSangDaoImpl();
+        List<BanqueSang> banqueSangList = banqueSangDao.findBanquesByVille(idVille);
+        List<Integer> groups = new ArrayList<Integer>(Collections.nCopies(8, 0));
+
+        for (BanqueSang banque: banqueSangList) {
+        for (int i=0;i<8;i++) {
+            try
+            { connection = daoFactory.getConnection();
+                preparedStatement =  connection.prepareStatement(
+                        "select sum(quantite) as total from stocksang where idGS = ? and idBS = ?");
+                preparedStatement.setInt(1,i+1);
+                preparedStatement.setInt(2,banque.getIdBS());
+                //System.out.println("idGS : "+(i+1) +" idBS : "+banque.getIdBS());
+                rs = preparedStatement.executeQuery();
+                if(rs.next())
+                     groups.set(i,rs.getInt("total")+groups.get(i));
+
+
+            }catch (SQLException sql){
+                sql.printStackTrace();
+            }
+        }
+
+        }
+        return groups;
+    }
+
+    @Override
+    public List<Integer> statsByBanque(int idBanque) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        List<Integer> groups = new ArrayList<Integer>(Collections.nCopies(8, 0));
+
+        for (int i=0;i<8;i++) {
+                try
+                { connection = daoFactory.getConnection();
+                    preparedStatement =  connection.prepareStatement(
+                            "select sum(quantite) as total from stocksang where idGS = ? and idBS = ?");
+                    preparedStatement.setInt(1,i+1);
+                    preparedStatement.setInt(2,idBanque);
+                    rs = preparedStatement.executeQuery();
+                    if(rs.next())
+                        groups.set(i,rs.getInt("total")+groups.get(i));
+
+                }catch (SQLException sql){
+                    sql.printStackTrace();
+                }
+            }
+        return groups;
+    }
+
+
 }
+
+/*Id Group Sangin
+* A- : 1*/
+/* A+ : 1*/
+/* B+ : 1*/
+/* B- : 1*/
+/* AB+ : 1*/
+/* AB- : 1*/
+/* O+ : 1*/
+/* O- : 1*/
