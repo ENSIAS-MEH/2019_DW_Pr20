@@ -31,7 +31,6 @@ public class StockController extends HttpServlet {
     private HttpSession httpSession;
     private StockSangDAO stockSangDAO;
     private GroupeSanginDAO groupeSanginDAO;
-    private int idBS = 9;
 
     @Override
     public void init() throws ServletException  {
@@ -41,10 +40,15 @@ public class StockController extends HttpServlet {
         villeDAO = daoFactory.getVilleDaoImpl();
         stockSangDAO = daoFactory.getStockSangDaoImpl();
         groupeSanginDAO = daoFactory.getGroupeSanginDaoImpl();
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //System.out.println("From statistics");
+        HttpSession session = request.getSession(false);
+        BanqueSang banq = (BanqueSang)session.getAttribute("banquesang");
+        int idBS = banq.getIdBS();
+
         List<StockSang> stockSangList = new ArrayList<StockSang>();
         stockSangList= stockSangDAO.findStockByBanqueSang(idBS);   /*Id depuis la Session Aprés*/
         List<GroupeSangin> groupeSanginList = groupeSanginDAO.findAll();
@@ -82,6 +86,9 @@ public class StockController extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
+        HttpSession session = request.getSession(false);
+        BanqueSang banq = (BanqueSang)session.getAttribute("banquesang");
+        int idBS = banq.getIdBS();
         int idGroup = Integer.parseInt(request.getParameter("id"));
         System.out.println("idPOST = "+idGroup);
         //BanqueSang currentbanqueSang = banqueSangDAO.findBanqueSangById(idBS);
