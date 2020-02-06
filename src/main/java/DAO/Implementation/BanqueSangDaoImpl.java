@@ -237,7 +237,7 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
             ps.setString(2,password);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
-                admin = new Admin(rs.getInt(1),rs.getString(1),rs.getString(2));
+                admin = new Admin(rs.getInt(1),rs.getString(2),rs.getString(3));
             }
         }catch(SQLException e){
             e.printStackTrace();
