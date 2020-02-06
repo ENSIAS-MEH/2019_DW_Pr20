@@ -31,7 +31,9 @@
 <div class="row">
 
     <div class="container">
-        <h3 class="text-center">La Liste des Donations</h3>
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fas fa-syringe pt-2"></span></span>&nbsp;&nbsp;Donations
+        </div>
         <hr>
         <div class="row" >
             <div class="input-group mb-3 col-lg-4" >
@@ -112,7 +114,7 @@
 
         <br>
         <table class="table table-bordered" id="dnt_table">
-            <thead>
+            <thead class="alert-dark">
             <tr>
                 <th onclick='sortTable(1)'>N° donateur</th>
                 <th onclick='sortTable(2)'>Nom & Prenom</th>

@@ -39,12 +39,10 @@
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
-<br><br><br>
+<br>
     <div class="container">
-        <div class="row justify-content-center ">
-            <div class="col-lg-6 ">
-
-            </div>
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fa fa-bell pt-2"></span></span>&nbsp;&nbsp;Alertes des Besoins
         </div>
         <div class="row">
             <div class="input-group mb-3 col-lg-5">

@@ -22,7 +22,10 @@
 
     <div class="row">
         <div class="container" >
-            <h3>Planning du Convois : <c:out value="${convoi.titreConvoi}"></c:out></h3>
+            <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+                <span class=""><span class="fa fa-calendar-alt pt-2"></span></span>&nbsp;&nbsp;Planning
+            </div>
+            <h3><c:out value="${convoi.titreConvoi}"></c:out></h3>
             <hr/>
 
             <div class="row">
