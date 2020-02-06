@@ -8,9 +8,11 @@
 <html>
 <head>
     <title>Don du sang</title>
+    <link rel="stylesheet" href="../frameworks/bootstap4/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/regular.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/solid.min.css">
+    <link rel="stylesheet" href="../frameworks/font-awesome/css/all.min.css">
     <style>
         .navbar{
             background: lightgray;
@@ -34,7 +36,7 @@
         .btn-round,.btn-round:hover,.btn-round:active{border-color:transparent}
     </style>
 </head>
-<body>
+<body class="alert-secondary">
 <div class="navbar navbar-expand-lg navbar-dark mb-3">
     <a href="#" class="navbar-brand font-weight-bold text-Danger text-lg-left float-left"><span class="fa fa-tint fa-2x"></span>&nbsp;Don du Sang</a>
     <button type="button" class="navbar-toggler btn btn-outline-danger" data-toggle="collapse" data-target="#nav">
@@ -91,7 +93,7 @@
         </ul>
     </div>
     <div class="justify-content-end">
-        <button class="btn btn-secondary btn-round btn-block" data-toggle="modal" data-target="#help"><span class="far fa-lightbulb text-danger fa-2x"></span></button>
+        <button class="btn btn-secondary btn-round btn-block" data-toggle="modal" data-target="#help"><span class="far fa-lightbulb text-white fa-2x"></span></button>
     </div>
 </div>
 <div class="modal" id="help" tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop="true">
