@@ -41,6 +41,15 @@ public class StockSangDaoImpl implements StockSangDAO {
         }catch (SQLException e){
             e.printStackTrace();
         }
+        finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         return stock;
     }
 
@@ -64,6 +73,15 @@ public class StockSangDaoImpl implements StockSangDAO {
 
         }catch (SQLException e){
             e.printStackTrace();
+        }
+        finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return stockSangs;
     }
@@ -89,6 +107,14 @@ public class StockSangDaoImpl implements StockSangDAO {
 
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return stockSangs;
     }
@@ -112,6 +138,14 @@ public class StockSangDaoImpl implements StockSangDAO {
 
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return stockSangs;
     }
@@ -132,6 +166,14 @@ public class StockSangDaoImpl implements StockSangDAO {
 
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 }
 
@@ -152,6 +194,14 @@ public class StockSangDaoImpl implements StockSangDAO {
 
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -171,6 +221,14 @@ public class StockSangDaoImpl implements StockSangDAO {
 
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -192,6 +250,14 @@ public class StockSangDaoImpl implements StockSangDAO {
 
         }catch (SQLException sql){
             sql.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return total;
     }
@@ -216,7 +282,15 @@ public class StockSangDaoImpl implements StockSangDAO {
 
             }catch (SQLException sql){
                 sql.printStackTrace();
-            }
+            }finally {
+                    if(connection!=null){
+                        try {
+                            connection.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
             }
         return groups;
     }
@@ -245,6 +319,14 @@ public class StockSangDaoImpl implements StockSangDAO {
 
             }catch (SQLException sql){
                 sql.printStackTrace();
+            }finally {
+                if(connection!=null){
+                    try {
+                        connection.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
 
@@ -272,6 +354,14 @@ public class StockSangDaoImpl implements StockSangDAO {
 
                 }catch (SQLException sql){
                     sql.printStackTrace();
+                }finally {
+                    if(connection!=null){
+                        try {
+                            connection.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             }
         return groups;

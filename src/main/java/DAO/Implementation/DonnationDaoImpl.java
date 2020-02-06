@@ -32,6 +32,14 @@ public class DonnationDaoImpl implements DonnationDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return false;
     }
@@ -58,6 +66,14 @@ public class DonnationDaoImpl implements DonnationDAO {
         }catch (SQLException e){
             e.printStackTrace();
             return false;
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -80,6 +96,14 @@ public class DonnationDaoImpl implements DonnationDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -105,6 +129,14 @@ public class DonnationDaoImpl implements DonnationDAO {
             return donationsList;
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -132,6 +164,14 @@ public class DonnationDaoImpl implements DonnationDAO {
             return donationsList;
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -158,6 +198,14 @@ public class DonnationDaoImpl implements DonnationDAO {
             return donationsList;
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -185,6 +233,14 @@ public class DonnationDaoImpl implements DonnationDAO {
             return donationsList;
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -212,6 +268,14 @@ public class DonnationDaoImpl implements DonnationDAO {
             return donationsList;
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -238,6 +302,14 @@ public class DonnationDaoImpl implements DonnationDAO {
             return donationsList;
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -259,6 +331,14 @@ public class DonnationDaoImpl implements DonnationDAO {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         return nbr;
@@ -280,6 +360,14 @@ public class DonnationDaoImpl implements DonnationDAO {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         return nbr;
@@ -301,6 +389,14 @@ public class DonnationDaoImpl implements DonnationDAO {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         return nbr;
@@ -323,6 +419,14 @@ public class DonnationDaoImpl implements DonnationDAO {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         return nbr;

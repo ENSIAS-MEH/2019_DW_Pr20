@@ -37,11 +37,18 @@ public class ConvoiDaoImpl implements ConvoiDAO {
                 convoi.setTitreConvoi(titreConvoi);
                 convoi.setDescription(desciption);
                 convoi.setIdBS(idBS);
-
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return convoi;
     }
@@ -76,6 +83,15 @@ public class ConvoiDaoImpl implements ConvoiDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         return convois;
     }
 
@@ -109,6 +125,15 @@ public class ConvoiDaoImpl implements ConvoiDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         return convois;
     }
 
@@ -126,6 +151,15 @@ public class ConvoiDaoImpl implements ConvoiDAO {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -146,6 +180,15 @@ public class ConvoiDaoImpl implements ConvoiDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
 
     }
 
@@ -163,6 +206,15 @@ public class ConvoiDaoImpl implements ConvoiDAO {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }
