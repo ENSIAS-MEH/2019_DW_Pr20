@@ -7,27 +7,23 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
 <head>
     <title>Planning</title>
-    <link rel="stylesheet" href="frameworks/bootstap4/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="frameworks/font-awesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="frameworks/font-awesome/css/regular.min.css">
-    <link rel="stylesheet" href="frameworks/font-awesome/css/solid.min.css">
-    <link rel="stylesheet" href="/css/calendar-css.css">
+    <link rel="stylesheet" href="../frameworks/bootstap4/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/calendar-css.css">
 </head>
 <body>
     <header>
         <%@ include file="navbar.jsp"%>
     </header>
 
-
-
     <div class="row">
         <div class="container" >
             <h3>Planning du Convois : <c:out value="${convoi.titreConvoi}"></c:out></h3>
-            <hr />
+            <hr/>
 
             <div class="row">
                 <div class="input-group mb-3 col-lg-5">
@@ -39,12 +35,11 @@
                     </div>
                 </div>
                 <div class="col-lg-7 float-left mb-3 row justify-content-end">
-                    <a class="btn btn-outline-dark font-weight-bold" data-toggle="modal" href="#AjouterPlanning">
+                    <a class="btn btn-dark font-weight-bold" data-toggle="modal" href="#AjouterPlanning">
                         <span class="fa fa-plus"></span>&nbsp;Ajouter un Plan au calendrier
                     </a>
                 </div>
             </div>
-
 
             <table class="table">
                 <thead>
@@ -55,46 +50,42 @@
                     <th scope="col">Option</th>
                 </tr>
                 </thead>
+
                 <tbody id="plan">
                     <c:forEach items="${plannings}" var="planning">
                         <tr>
-                            <th scope="row">
+                            <td scope="row">
                                 <c:forEach var="ville" items="${villes}">
                                     <c:if test="${ville.idVille eq planning.idVille}">
                                         <c:out value="${ville.nomVille}"></c:out>
                                     </c:if>
                                 </c:forEach>
-                            </th>
-
-                            <td scope="row">
-                                <c:out value="${planning.dateConvoi_debut}"></c:out>
                             </td>
-
                             <td scope="row">
-                                <c:out value="${planning.dateConvoi_fin}"></c:out>
+                                <fmt:formatDate value="${planning.dateConvoi_debut}" pattern="dd/MM/yyyy HH:mm"/>
                             </td>
-
+                            <td scope="row">
+                                <fmt:formatDate value="${planning.dateConvoi_fin}" pattern="dd/MM/yyyy HH:mm"/>
+                            </td>
                             <td>
                                 <a data-toggle="modal" href="#modifier${planning.idConvoi}et${planning.idVille}et${planning.dateConvoi_debut}">
                                     <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier Date fin" data-placement="left">
                                         <span class="fa fa-edit" aria-hidden="true"></span>
                                     </span>
                                 </a>
-
                                 <a data-toggle="modal" href="#supprimer${planning.idConvoi}et${planning.idVille}et${planning.dateConvoi_debut}">
                                     <span class="shadow text-danger p-2" data-toggle="tooltip" title="Supprimer" data-placement="right">
                                         <span class="fa fa-trash-alt" aria-hidden="true"></span>
                                     </span>
                                 </a>
                             </td>
-
                         </tr>
 
                         <div class="modal mt-lg-4" id="supprimer${planning.idConvoi}et${planning.idVille}et${planning.dateConvoi_debut}">
                             <div class="modal-dialog">
                                 <div class="modal-content rouded">
                                     <div class="modal-body alert-dark">
-                                        <p class="font-weight-bold text-center">Vous êtes sûr que vous voullez supprimer du calendier</p>
+                                        <p class="font-weight-bold text-center">Vous êtes sûr que vous voulez supprimer du calendier</p>
                                         <div>
                                             <button class="btn btn-outline-dark float-left" data-dismiss="modal" type="button">
                                                 Annuler
@@ -112,21 +103,17 @@
                             <div class="modal-dialog">
                                 <div class="modal-content rounded">
                                     <div class="modal-header alert-danger text-center">
-                                        <h5 class="font-weight-bold modal-title">Ajouter Un convoi</h5>
+                                        <h5 class="font-weight-bold modal-title">Modifier Un planning</h5>
                                         <button type="button" class="close" data-dismiss="modal">X</button>
                                     </div>
 
                                     <div class="modal-body">
-                                        <form action="/ModifierPlanning" method="post">
-
-
-
+                                        <form action="ModifierPlanning" method="post">
                                             <fieldset class="form-group">
                                                 <input type="hidden" class="form-control" name="idConvoi" value="${planning.idConvoi}" />
                                                 <input type="hidden" class="form-control" name="idville" value="${planning.idVille}">
                                                 <input type="hidden" class="form-control" name="dd" value="${planning.dateConvoi_debut}">
                                             </fieldset>
-
 
                                             <fieldset class="form-group">
                                                 <label  class="control-label">Date fin</label>
@@ -134,7 +121,7 @@
                                             </fieldset>
 
                                             <div class="text-center">
-                                                <button type="submit" class="btn btn-success">Modifier</button>
+                                                <button type="submit" class="btn btn-danger">Modifier</button>
                                             </div>
                                         </form>
                                     </div>
@@ -151,7 +138,7 @@
 
     <hr />
     <!-- Start calendar -->
-    <div class="p-5">
+    <div class="p-5 container">
         <h2 class="mb-4">Calendrier</h2>
         <div class="card">
             <div class="card-body p-0">
@@ -165,21 +152,14 @@
         <div class="modal-dialog">
             <div class="modal-content rounded">
                 <div class="modal-header alert-danger text-center">
-                    <h5 class="font-weight-bold modal-title">Ajouter Un convoi</h5>
-                    <button type="button" class="close" data-dismiss="modal">X</button>
+                    <h5 class="font-weight-bold modal-title">Ajouter Un planning</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-
                 <div class="modal-body">
-                    <form action="/AjouterPlanning" method="post">
-
-                        <caption>
-                            <h2 class="align-content-md-center">Nouveau Plan</h2>
-                        </caption>
-
+                    <form action="AjouterPlanning" method="post">
                         <fieldset class="form-group">
-                        <input type="hidden" class="form-control" name="idConvoi" value="${convoi.idConvoi}" />
+                            <input type="hidden" class="form-control" name="idConvoi" value="${convoi.idConvoi}" />
                         </fieldset>
-
                         <fieldset class="form-group">
                             <label class="custom-control-label">Ville</label>
                             <select class="form-control" id="ville" name="idville">
@@ -189,19 +169,16 @@
                                 </c:forEach>
                             </select>
                         </fieldset>
-
                         <fieldset class="form-group">
                            <label for="dd" class="control-label">Date début</label>
                             <input id="dd" class="form-control datepicker" name="dd" type="date" />
                         </fieldset>
-
                         <fieldset class="form-group">
                             <label for="df" class="control-label">Date fin</label>
                             <input id="df" class="form-control datepicker" name="df" type="date" />
                         </fieldset>
-
                         <div class="text-center">
-                            <button type="submit" class="btn btn-success">Ajouter</button>
+                            <button type="submit" class="btn btn-danger">Ajouter</button>
                         </div>
                     </form>
                 </div>
@@ -225,15 +202,12 @@
 
 
 </body>
-<script src="frameworks/jquery/jquery.js"></script>
-<script src="frameworks/bootstap4/dist/js/bootstrap.bundle.min.js"></script>
-
-
+<script src="../frameworks/jquery/jquery.js"></script>
+<script src="../frameworks/bootstap4/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
 
 <script>
