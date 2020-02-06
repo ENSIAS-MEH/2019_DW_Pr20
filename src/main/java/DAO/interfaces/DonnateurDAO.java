@@ -22,6 +22,7 @@ public interface DonnateurDAO {
     List<Donnateur> getAllDonnateurs();
     List<Donnateur> getDonnateursByCity(int idVille);
     List<Donnateur> getDonnateursByGrpSg(int idGS);
+    List<Donnateur> getAllDonnateursVilleGS(int idVille, int idGS);
 
     //Pour les statistiques
     int donorsNbrPerCity(int idVille);
