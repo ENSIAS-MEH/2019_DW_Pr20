@@ -210,6 +210,40 @@ public class DonnateurDaoImpl implements DonnateurDAO {
         return null;
     }
 
+
+
+    @Override
+    public List<Donnateur> getAllDonnateursVilleGS(int idVille, int idGS){
+        Connection conn = null;
+        Statement st = null;
+
+        try {
+            conn = daoFactory.getConnection();
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM donnateur WHERE idVille="+idVille+" AND idGS="+ idGS+";");
+            List<Donnateur> donorsList = new ArrayList<>();
+
+            while(rs.next()){
+                Donnateur donnateur = new Donnateur();
+                donnateur.setIdDonnateur(rs.getInt(1));
+                donnateur.setCin(rs.getString(2));
+                donnateur.setNomD(rs.getString(3));
+                donnateur.setPrenomD(rs.getString(4));
+                donnateur.setTeleD(rs.getString(5));
+                donnateur.setEmailD(rs.getString(6));
+                donnateur.setPasswordD(rs.getString(7));
+                donnateur.setIdVille(rs.getInt(8));
+                donnateur.setIdGS(rs.getInt(9));
+
+                donorsList.add(donnateur);
+            }
+            return donorsList;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     @Override
     public List<Donnateur> getDonnateursByCity(int idVille){
         Connection conn = null;
