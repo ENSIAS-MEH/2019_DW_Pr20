@@ -14,14 +14,12 @@
     <link rel="stylesheet" href="../frameworks/bootstap4/dist/css/bootstrap.min.css"/>
 </head>
 <body>
-    <header>
-        <%@ include file="navbar.jsp"%>
-    </header>
-
+    <%@ include file="navbar.jsp"%>
     <div class="row">
         <div class="container" style="margin-top: 30px;">
-            <h3 class="text-center">La List des Convoi</h3>
-            <hr />
+            <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+                <span class=""><span class="fas fa-truck-moving pt-2"></span></span>&nbsp;&nbsp;Convois
+            </div>
             <div class="row">
                 <div class="input-group mb-3 col-lg-5">
                     <input type="text" id="convoi" class="form-control border-danger" placeholder="Chercher un Convoi">
@@ -39,7 +37,7 @@
             </div>
 
             <table class="table">
-                <thead>
+                <thead class="alert-dark">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Titre</th>

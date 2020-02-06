@@ -27,8 +27,10 @@
 </header>
 <br>
 <div class="container">
-    <h3> Les statistique sur Les Banques du sang</h3>
-    <div class="row">
+    <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+        <span class=""><span class="fas fa-chart-line pt-2"></span></span>&nbsp;&nbsp;Statisqtiques
+    </div>
+    <div class="row mt-5">
         <div class="col-lg-6">
             <div class="row">
                 <div class="col-lg-6 mb-2">
