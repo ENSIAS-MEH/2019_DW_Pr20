@@ -64,7 +64,7 @@ public class AjouterConvoiServlet extends HttpServlet {
         String description = request.getParameter("description");
 
         HttpSession session = request.getSession();
-        BanqueSang banqueSang = (BanqueSang) session.getAttribute("BanqueSang");
+        BanqueSang banqueSang = (BanqueSang) session.getAttribute("banquesang");
 
         Convoi convoi = new Convoi();
         convoi.setTitreConvoi(titreConvoi);

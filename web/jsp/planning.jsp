@@ -37,11 +37,13 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-lg-7 float-left mb-3 row justify-content-end">
-                    <a class="btn btn-dark font-weight-bold" data-toggle="modal" href="#AjouterPlanning">
-                        <span class="fa fa-plus"></span>&nbsp;Ajouter un Plan au calendrier
-                    </a>
-                </div>
+                <c:if test="${sessionScope.role eq 'banquesang'}">
+                    <div class="col-lg-7 float-left mb-3 row justify-content-end">
+                        <a class="btn btn-dark font-weight-bold" data-toggle="modal" href="#AjouterPlanning">
+                            <span class="fa fa-plus"></span>&nbsp;Ajouter un Plan au calendrier
+                        </a>
+                    </div>
+                </c:if>
             </div>
 
             <table class="table">
@@ -50,7 +52,9 @@
                     <th scope="col">Ville</th>
                     <th scope="col">Date debut</th>
                     <th scope="col">Date Fin</th>
-                    <th scope="col">Option</th>
+                    <c:if test="${sessionScope.role eq 'banquesang'}">
+                        <th scope="col">Option</th>
+                    </c:if>
                 </tr>
                 </thead>
 
@@ -70,18 +74,20 @@
                             <td scope="row">
                                 <fmt:formatDate value="${planning.dateConvoi_fin}" pattern="dd/MM/yyyy HH:mm"/>
                             </td>
-                            <td>
-                                <a data-toggle="modal" href="#modifier${planning.idConvoi}et${planning.idVille}et${planning.dateConvoi_debut}">
-                                    <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier Date fin" data-placement="left">
-                                        <span class="fa fa-edit" aria-hidden="true"></span>
-                                    </span>
-                                </a>
-                                <a data-toggle="modal" href="#supprimer${planning.idConvoi}et${planning.idVille}et${planning.dateConvoi_debut}">
-                                    <span class="shadow text-danger p-2" data-toggle="tooltip" title="Supprimer" data-placement="right">
-                                        <span class="fa fa-trash-alt" aria-hidden="true"></span>
-                                    </span>
-                                </a>
-                            </td>
+                            <c:if test="${sessionScope.role eq 'banquesang'}">
+                                <td>
+                                    <a data-toggle="modal" href="#modifier${planning.idConvoi}et${planning.idVille}et${planning.dateConvoi_debut}">
+                                        <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier Date fin" data-placement="left">
+                                            <span class="fa fa-edit" aria-hidden="true"></span>
+                                        </span>
+                                    </a>
+                                    <a data-toggle="modal" href="#supprimer${planning.idConvoi}et${planning.idVille}et${planning.dateConvoi_debut}">
+                                        <span class="shadow text-danger p-2" data-toggle="tooltip" title="Supprimer" data-placement="right">
+                                            <span class="fa fa-trash-alt" aria-hidden="true"></span>
+                                        </span>
+                                    </a>
+                                </td>
+                            </c:if>
                         </tr>
 
                         <div class="modal mt-lg-4" id="supprimer${planning.idConvoi}et${planning.idVille}et${planning.dateConvoi_debut}">
