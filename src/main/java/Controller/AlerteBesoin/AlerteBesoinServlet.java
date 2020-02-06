@@ -1,13 +1,18 @@
 package Controller.AlerteBesoin;
 
 import DAO.DAOFactory;
+import DAO.Implementation.BanqueSangDaoImpl;
+import DAO.Implementation.DonnateurDaoImpl;
+import DAO.Implementation.GroupeSanginDaoImpl;
 import DAO.interfaces.AlerteBesoinDAO;
+import DAO.interfaces.BanqueSangDAO;
 import DAO.interfaces.GroupeSanginDAO;
 import Model.*;
 import DAO.interfaces.VilleDAO;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
+import util.SendSMS;
 import util.TwitterAlerte;
 import util.TwitterMethods;
 
@@ -70,6 +75,10 @@ public class AlerteBesoinServlet extends HttpServlet {
             response.sendRedirect("SignIn");
         }
         else {
+            GroupeSanginDaoImpl groupeSanginDao =new GroupeSanginDaoImpl(DAOFactory.getInstance());
+            DonnateurDaoImpl donnateurDao =new DonnateurDaoImpl(DAOFactory.getInstance());
+            BanqueSangDaoImpl banqueSangDao =new BanqueSangDaoImpl(DAOFactory.getInstance());
+            List<Donnateur> donnateurs = donnateurDao.getAllDonnateurs();
             idBS = bs.getIdBS();
             String g = request.getParameter("groupesangin");
             String d = request.getParameter("desc");
@@ -81,6 +90,10 @@ public class AlerteBesoinServlet extends HttpServlet {
                 ab.setDescriptionAlerte(d);
                 ab.setIdBS(idBS);
                 alerteBesoinDAO.addAlerte(ab);
+                Thread sms = new SendSMS(donnateurs,"Une Alerte est lancée. C'est urgent !! "+"Banque du Sang : "
+                        +banqueSangDao.findBanqueSangById(ab.getIdBS()).getNomBS()+" Adresse : "+banqueSangDao.findBanqueSangById(ab.getIdBS()).getAdresseBS()+" Groupe sangin : "
+                        +groupeSanginDao.findGroupSanginById(ab.getGS().getIdGS()).getNomGS()+"<br><br><b>Description de l'alerte :</b> "+ab.getDescriptionAlerte());
+                sms.start();
             }
             this.init();
             this.doGet(request, response);

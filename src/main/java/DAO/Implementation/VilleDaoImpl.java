@@ -7,6 +7,7 @@ import Model.Ville;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +33,14 @@ public class VilleDaoImpl implements VilleDAO {
             ps.close();
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -56,6 +65,14 @@ public class VilleDaoImpl implements VilleDAO {
             return villes;
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -82,6 +99,14 @@ public class VilleDaoImpl implements VilleDAO {
 
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -108,6 +133,14 @@ public class VilleDaoImpl implements VilleDAO {
 
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -134,6 +167,14 @@ public class VilleDaoImpl implements VilleDAO {
             return villes;
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         return null;
@@ -152,6 +193,14 @@ public class VilleDaoImpl implements VilleDAO {
             ps.close();
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(connection!=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
     /*public static void main(String[] args){

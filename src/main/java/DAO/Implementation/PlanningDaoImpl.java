@@ -39,6 +39,15 @@ public class PlanningDaoImpl implements PlanningDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
 
         return planning;
     }
@@ -76,6 +85,14 @@ public class PlanningDaoImpl implements PlanningDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return plannings;
 
@@ -111,6 +128,14 @@ public class PlanningDaoImpl implements PlanningDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return plannings;
     }
@@ -144,6 +169,14 @@ public class PlanningDaoImpl implements PlanningDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return plannings;
     }
@@ -164,6 +197,14 @@ public class PlanningDaoImpl implements PlanningDAO {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -184,6 +225,14 @@ public class PlanningDaoImpl implements PlanningDAO {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -203,6 +252,14 @@ public class PlanningDaoImpl implements PlanningDAO {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            if(connexion!=null){
+                try {
+                    connexion.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

@@ -41,6 +41,15 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
         }catch(SQLException e){
             e.printStackTrace();
         }
+        finally {
+            if(conn!=null){
+                try{
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         return banque;
     }
 
@@ -62,6 +71,14 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
             }
         }catch(SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return banque;
     }
@@ -84,6 +101,14 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
             }
         }catch(SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return banque;
     }
@@ -106,6 +131,14 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
             }
         }catch(SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return banqueSangs;
     }
@@ -145,6 +178,14 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
 
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -171,6 +212,14 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
 
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -189,6 +238,14 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
         }catch(SQLException e){
             e.printStackTrace();
 
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -205,6 +262,14 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
             if(rs.next()) return  true;
         }catch (SQLException sqlexc){
             sqlexc.getErrorCode();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return false;
     }
@@ -220,6 +285,14 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
             if(rs.next()) return  rs.getInt("nbr");
         }catch (SQLException sqlexc){
             sqlexc.getErrorCode();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return 0;
     }
@@ -237,10 +310,18 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
             ps.setString(2,password);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
-                admin = new Admin(rs.getInt(1),rs.getString(1),rs.getString(2));
+                admin = new Admin(rs.getInt(1),rs.getString(2),rs.getString(3));
             }
         }catch(SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return admin;
     }
@@ -263,6 +344,14 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
             }
         }catch(SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return banqueSangs;
     }
