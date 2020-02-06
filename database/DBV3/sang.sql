@@ -21,14 +21,16 @@ SET time_zone = "+00:00";
 --
 -- Database: `sang`
 --
+CREATE DATABASE IF NOT EXISTS `sang` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `sang`;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `admin`
 --
-
-CREATE TABLE `admin` (
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
   `idAdmin` int(2) NOT NULL,
   `emailAdmin` varchar(256) DEFAULT NULL,
   `passwordAdmin` varchar(256) DEFAULT NULL
@@ -47,7 +49,8 @@ INSERT INTO `admin` (`idAdmin`, `emailAdmin`, `passwordAdmin`) VALUES
 -- Table structure for table `alertebesoin`
 --
 
-CREATE TABLE `alertebesoin` (
+DROP TABLE IF EXISTS `alertebesoin`;
+CREATE TABLE IF NOT EXISTS `alertebesoin` (
   `idAlerte` int(11) NOT NULL,
   `idBS` int(11) NOT NULL,
   `idGS` int(11) NOT NULL,
@@ -73,7 +76,8 @@ INSERT INTO `alertebesoin` (`idAlerte`, `idBS`, `idGS`, `dateAlerte`, `descripti
 -- Table structure for table `banquesang`
 --
 
-CREATE TABLE `banquesang` (
+DROP TABLE IF EXISTS `banquesang`;
+CREATE TABLE IF NOT EXISTS `banquesang` (
   `idBS` int(11) NOT NULL,
   `nomBS` varchar(50) NOT NULL,
   `emailBS` varchar(50) NOT NULL,
@@ -99,7 +103,8 @@ INSERT INTO `banquesang` (`idBS`, `nomBS`, `emailBS`, `teleBS`, `passwordBS`, `a
 -- Table structure for table `convoi`
 --
 
-CREATE TABLE `convoi` (
+DROP TABLE IF EXISTS `convoi`;
+CREATE TABLE IF NOT EXISTS `convoi` (
   `idConvoi` int(11) NOT NULL,
   `titreConvoi` varchar(50) NOT NULL,
   `desciption` text NOT NULL,
@@ -121,7 +126,8 @@ INSERT INTO `convoi` (`idConvoi`, `titreConvoi`, `desciption`, `idBS`) VALUES
 -- Table structure for table `donnateur`
 --
 
-CREATE TABLE `donnateur` (
+DROP TABLE IF EXISTS `donnateur`;
+CREATE TABLE IF NOT EXISTS `donnateur` (
   `idDonnateur` int(11) NOT NULL,
   `cin` varchar(20) NOT NULL,
   `nomD` varchar(50) NOT NULL,
@@ -148,7 +154,8 @@ INSERT INTO `donnateur` (`idDonnateur`, `cin`, `nomD`, `prenomD`, `teleD`, `emai
 -- Table structure for table `donnation`
 --
 
-CREATE TABLE `donnation` (
+DROP TABLE IF EXISTS `donnation`;
+CREATE TABLE IF NOT EXISTS `donnation` (
   `idDonnateur` int(11) NOT NULL,
   `idBS` int(11) NOT NULL,
   `dateDonnation` date NOT NULL
@@ -169,7 +176,8 @@ INSERT INTO `donnation` (`idDonnateur`, `idBS`, `dateDonnation`) VALUES
 -- Table structure for table `groupesangin`
 --
 
-CREATE TABLE `groupesangin` (
+DROP TABLE IF EXISTS `groupesangin`;
+CREATE TABLE IF NOT EXISTS `groupesangin` (
   `idGS` int(11) NOT NULL,
   `nomGS` varchar(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -194,7 +202,8 @@ INSERT INTO `groupesangin` (`idGS`, `nomGS`) VALUES
 -- Table structure for table `planning`
 --
 
-CREATE TABLE `planning` (
+DROP TABLE IF EXISTS `planning`;
+CREATE TABLE IF NOT EXISTS `planning` (
   `idConvoi` int(11) NOT NULL,
   `idVille` int(11) NOT NULL,
   `dateConvoi_debut` timestamp NULL DEFAULT NULL,
@@ -215,7 +224,8 @@ INSERT INTO `planning` (`idConvoi`, `idVille`, `dateConvoi_debut`, `dateConvoi_f
 -- Table structure for table `stocksang`
 --
 
-CREATE TABLE `stocksang` (
+DROP TABLE IF EXISTS `stocksang`;
+CREATE TABLE IF NOT EXISTS `stocksang` (
   `idBS` int(11) NOT NULL,
   `idGS` int(11) NOT NULL,
   `quantite` int(11) NOT NULL
@@ -265,7 +275,8 @@ INSERT INTO `stocksang` (`idBS`, `idGS`, `quantite`) VALUES
 -- Table structure for table `ville`
 --
 
-CREATE TABLE `ville` (
+DROP TABLE IF EXISTS `ville`;
+CREATE TABLE IF NOT EXISTS `ville` (
   `idVille` int(11) NOT NULL,
   `nomVille` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

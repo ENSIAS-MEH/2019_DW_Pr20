@@ -28,47 +28,34 @@ public class AjouterConvoiServlet extends HttpServlet {
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.init();
-        /*
+
         HttpSession session = request.getSession();
-        if(session.getAttribute("BanqueSang")==null){
-            response.sendRedirect("/jsp/login.jsp");
+        if(session.getAttribute("banquesang")==null){
+            response.sendRedirect("SignIn");
         }else {
+            response.sendRedirect("Convois");
 
         }
-        */
-        response.sendRedirect("Convois");
+
 
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/*
+
         HttpSession session = request.getSession();
-        if(session.getAttribute("BanqueSang")==null){
-            response.sendRedirect("/jsp/login.jsp");
+        if(session.getAttribute("banquesang")==null){
+            response.sendRedirect("SignIn");
         }
         else {
+            try {
+                insertConvoi(request, response);
+            } catch (SQLException ex) {
+                throw new ServletException(ex);
+
+            }
         }
-            String titreConvoi = request.getParameter("titreConvoi");
-            String description = request.getParameter("description");
 
-            System.out.println(titreConvoi + " "+ description);
 
-            BanqueSang banqueSang = (BanqueSang) session.getAttribute("BanqueSang");
-
-            Convoi convoi = new Convoi();
-            convoi.setTitreConvoi(titreConvoi);
-            convoi.setDescription(description);
-            convoi.setIdBS(banqueSang.getIdBS());
-
-            convoiDao.addConvoi(convoi);
-            this.getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
- */
-        try {
-            insertConvoi(request, response);
-        } catch (SQLException ex) {
-            throw new ServletException(ex);
-
-        }
     }
 
     private void insertConvoi(HttpServletRequest request, HttpServletResponse response)
@@ -76,13 +63,14 @@ public class AjouterConvoiServlet extends HttpServlet {
         String titreConvoi = request.getParameter("titreConvoi");
         String description = request.getParameter("description");
 
-        //BanqueSang banqueSang = (BanqueSang) session.getAttribute("BanqueSang");
+        HttpSession session = request.getSession();
+        BanqueSang banqueSang = (BanqueSang) session.getAttribute("BanqueSang");
 
         Convoi convoi = new Convoi();
         convoi.setTitreConvoi(titreConvoi);
         convoi.setDescription(description);
-        //convoi.setIdBS(banqueSang.getIdBS());
-        convoi.setIdBS(1);
+        convoi.setIdBS(banqueSang.getIdBS());
+        //convoi.setIdBS(1);
         convoiDao.addConvoi(convoi);
         response.sendRedirect("Convois");
     }
