@@ -132,14 +132,12 @@
                 </tbody> 
             </table>
         </div>
-
-
     </div>
 
-    <hr />
     <!-- Start calendar -->
     <div class="p-5 container">
-        <h2 class="mb-4">Calendrier</h2>
+        <hr />
+        <h2 class="mb-4">Calendrier des planning</h2>
         <div class="card">
             <div class="card-body p-0">
                 <div id="calendar"></div>
@@ -205,8 +203,6 @@
 <script src="../frameworks/jquery/jquery.js"></script>
 <script src="../frameworks/bootstap4/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
 
