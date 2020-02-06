@@ -11,10 +11,7 @@
 <html>
 <head>
     <title>List Convois</title>
-    <link rel="stylesheet" href="frameworks/bootstap4/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="frameworks/font-awesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="frameworks/font-awesome/css/regular.min.css">
-    <link rel="stylesheet" href="frameworks/font-awesome/css/solid.min.css">
+    <link rel="stylesheet" href="../frameworks/bootstap4/dist/css/bootstrap.min.css"/>
 </head>
 <body>
     <header>
@@ -88,7 +85,7 @@
                                     </span>
                                 </a>
 
-                                <a data-toggle="modal" href="#Planning${convoi.idConvoi}" >
+                                <a  href="Planning?idConvoi=<c:out value='${convoi.idConvoi}'/>" >
                                     <span class="shadow text-danger p-2" data-toggle="tooltip" title="Planning" data-placement="right">
                                         <span class="fa fa-calendar-alt" aria-hidden="true"></span>
                                     </span>
@@ -116,7 +113,7 @@
                             </div>
                         </div>
 
-                        <div class="modal mt-lg-4" id="Planning${convoi.idConvoi}">
+                        <!--div class="modal mt-lg-4" id="Planning${convoi.idConvoi}">
                             <div class="modal-dialog">
                                 <div class="modal-content rounded">
                                     <div class="modal-body alert-dark">
@@ -129,7 +126,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div-->
 
 
                     <div class="modal mt-lg-4" id="modifier${convoi.idConvoi}">

@@ -10,8 +10,6 @@
 <html>
 <head>
     <link rel="stylesheet" href="../frameworks/bootstap4/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="../frameworks/font-awesome/css/solid.min.css">
     <style>
         .myCard{
             position: absolute;

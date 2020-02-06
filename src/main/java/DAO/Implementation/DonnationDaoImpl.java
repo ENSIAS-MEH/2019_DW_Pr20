@@ -6,6 +6,7 @@ import Model.Donnation;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DonnationDaoImpl implements DonnationDAO {
@@ -431,5 +432,10 @@ public class DonnationDaoImpl implements DonnationDAO {
 
         return nbr;
     }
+
+    /*public List<Integer> donnationsPerGS()
+    {
+            //appeler les dao per gs
+    }*/
 
 }

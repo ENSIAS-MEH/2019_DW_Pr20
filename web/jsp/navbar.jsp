@@ -8,6 +8,9 @@
 <html>
 <head>
     <title>Don du sang</title>
+    <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../frameworks/font-awesome/css/regular.min.css">
+    <link rel="stylesheet" href="../frameworks/font-awesome/css/solid.min.css">
     <style>
         .navbar{
             background: lightgray;
@@ -27,6 +30,8 @@
         .navbar-collapse{
             justify-content: center;
         }
+        .btn-round{border-radius:500px}
+        .btn-round,.btn-round:hover,.btn-round:active{border-color:transparent}
     </style>
 </head>
 <body>
@@ -44,16 +49,38 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link p-2 mr-5 rounded">Statistics</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mb-1">
                     <a href="#" class="nav-link p-2 mr-5 border border-danger rounded">Join US</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/SignIn" class="nav-link mr-5 p-2 border border-danger rounded">Sign In</a>
+                <li class="nav-item ">
+                    <a href="SignIn" class="nav-link mr-5 p-2 border border-danger rounded">Sign In</a>
                 </li>
             </c:if>
-            <c:if test="${(not empty sessionScope.admin)  || (not empty sessionScope.banquesang)}">
+            <c:if test="${not empty sessionScope.banquesang}">
                 <li class="nav-item">
-                    <a href="/LogOut" class="nav-link mr-5 p-2 border border-danger rounded"></a>
+                    <a href="Statistiques" class="nav-link mr-5 p-2 rounded">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Convois" class="nav-link mr-5 p-2 rounded">Convois</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Alertes" class="nav-link mr-5 p-2 rounded">Alertes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Donnation" class="nav-link mr-5 p-2 rounded">Donations</a>
+                </li>
+            </c:if>
+            <c:if test="${not empty sessionScope.admin}">
+                <li class="nav-item">
+                    <a href="AdminStatistiques" class="nav-link mr-5 p-2 rounded">Dashboard</a>
+                </li>
+            </c:if>
+            <c:if test="${not empty sessionScope.admin}">
+                <li class="nav-item">
+                    <a href="LesBanquesDuSang" class="nav-link mr-5 p-2 rounded">Banques</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link mr-5 p-2 rounded">Donators</a>
                 </li>
             </c:if>
             <c:if test="${(not empty sessionScope.admin)  || (not empty sessionScope.banquesang) || (not empty sessionScope.donnateur)}">
@@ -62,6 +89,16 @@
                 </li>
             </c:if>
         </ul>
+    </div>
+    <div class="justify-content-end">
+        <button class="btn btn-secondary btn-round btn-block" data-toggle="modal" data-target="#help"><span class="far fa-lightbulb text-danger fa-2x"></span></button>
+    </div>
+</div>
+<div class="modal" id="help" tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content p-1">
+            jj
+        </div>
     </div>
 </div>
 </body>

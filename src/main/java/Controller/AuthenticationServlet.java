@@ -51,23 +51,24 @@ public class AuthenticationServlet extends HttpServlet {
                 session.setAttribute("role", "admin");
                 session.setAttribute("admin", admin);
                 System.out.println("role : "+session.getAttribute("role") + "\n"+admin);
-                response.sendRedirect("/LesBanquesDuSang");
+
+                response.sendRedirect("/AdminStatistiques");
             }
             else if(banqueSang != null){
                 HttpSession session = request.getSession();
                 session.setAttribute("role", "banquesang");
                 session.setAttribute("banquesang", banqueSang);
                 System.out.println("role : "+session.getAttribute("role") + "\n"+banqueSang);
-                //response.sendRedirect("/Donnation");            //Dial Oussama bach ytesté b session :)
-                response.sendRedirect("/Statistiques");
+                response.sendRedirect("/Donnation");            //Dial Oussama bach ytesté b session :)
+                //response.sendRedirect("/Statistiques");
             }
             else if(donnateur != null){
                 HttpSession session = request.getSession();
                 session.setAttribute("role", "donnateur");
                 session.setAttribute("donnateur", donnateur);
                 System.out.println("role : "+session.getAttribute("role") + "\n"+donnateur);
-                //response.sendRedirect("/Donnation");            //Dial Oussama bach ytesté b session :)
-                response.sendRedirect("/");
+                response.sendRedirect("/Donnation");            //Dial Oussama bach ytesté b session :)
+               // response.sendRedirect("/");
             }
         }
 

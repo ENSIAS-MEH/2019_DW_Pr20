@@ -19,7 +19,7 @@ import java.util.List;
 
 @WebServlet("/Donnation")
 public class DonnationController extends HttpServlet {
-    private DAOFactory daoFactory = new DAOFactory("jdbc:mysql://localhost:3306/sang","root","");
+    private DAOFactory daoFactory = new DAOFactory("jdbc:mysql://localhost:3306/sang", "root", "");
     private HttpSession httpSession;
 
     private DonnationDAO donnationDAO;
@@ -43,60 +43,41 @@ public class DonnationController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getParameter("action").equals("ajouter")){
-            System.out.println("ajouttterrrr");
+        System.out.println("doPost");
+        if (request.getParameter("action").equals("ajouter")) {
             int idDonnateur = Integer.parseInt(request.getParameter("idD"));
             int idBS = Integer.parseInt(request.getParameter("idBS"));
 
-            System.out.println("pre add");
             Boolean res = donnationDAO.addDonnation(idDonnateur, idBS);
-            System.out.println("post add");
-            System.out.println("result add : "+res);
-            response.getWriter().write(res.toString());
-        }
-        if(request.getParameter("action").equals("modifier")){
-            System.out.println("ajouttterrrr");
-            int idDonnateur = Integer.parseInt(request.getParameter("idD"));
-            int idBS = Integer.parseInt(request.getParameter("idBS"));
-
-            System.out.println("pre add");
-            Boolean res = donnationDAO.addDonnation(idDonnateur, idBS);
-            System.out.println("post add");
-            System.out.println("result add : "+res);
+            System.out.println("result add : " + res);
             response.getWriter().write(res.toString());
         }
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        if(request.getParameter("action") == null || request.getParameter("action").equals("")){
-                try {
-                    showDonnations(request, response);
-                } catch (SQLException ex) {
-                    throw new ServletException(ex);
-                }
-        }
-        else if(request.getParameter("action").equals("filter")){
+        System.out.println("doGet");
+        if (request.getParameter("action") == null || request.getParameter("action").equals("")) {
+            try {
+                showDonnations(request, response);
+            } catch (SQLException ex) {
+                throw new ServletException(ex);
+            }
+        } else if (request.getParameter("action").equals("filter")) {
             String gs = request.getParameter("gs").trim();
             String ville = request.getParameter("ville").trim();
-
             response.setContentType("application/json");
 
-            if(gs.equals("all") && ville.equals("all")){
+            if (gs.equals("all") && ville.equals("all")) {
                 response.getWriter().write(allDonnations());
-            }
-            else if(!gs.equals("all") && ville.equals("all")){
+            } else if (!gs.equals("all") && ville.equals("all")) {
                 response.getWriter().write(filterByGs(gs));
-            }
-            else if(gs.equals("all") && !ville.equals("all")){
+            } else if (gs.equals("all") && !ville.equals("all")) {
                 response.getWriter().write(filterByVille(ville));
-            }
-            else if(!gs.equals("all") && !ville.equals("all")){
+            } else if (!gs.equals("all") && !ville.equals("all")) {
                 response.getWriter().write(filterByBoth(ville, gs));
             }
         }
-
     }
 /*
     @Override
@@ -177,6 +158,15 @@ public class DonnationController extends HttpServlet {
             donnationRow.append("\"" + date + "\"");
         }
 
+        donnationRow.append("],\"idBS\":[");
+        flag = false;
+        for (Donnation d : donnList) {
+            if (flag)
+                donnationRow.append(",");
+            flag = true;
+            donnationRow.append("\"" + d.getIdBS() + "\"");
+        }
+
         donnationRow.append("],\"nomB\":[");
         flag = false;
         for (Donnation d : donnList) {
@@ -212,19 +202,18 @@ public class DonnationController extends HttpServlet {
     }
 
     private void showDonnations(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException, ServletException{
+            throws SQLException, IOException, ServletException {
 
         List<Donnation> donnationList = null;
 
         HttpSession session = request.getSession(false);
-        String role = (String)session.getAttribute("role");
+        String role = (String) session.getAttribute("role");
 
-        if(role.equals("banquesang")){
-            BanqueSang banq = (BanqueSang)session.getAttribute("banquesang");
+        if (role.equals("banquesang")) {
+            BanqueSang banq = (BanqueSang) session.getAttribute("banquesang");
             donnationList = donnationDAO.getAllDonnationsBanq(banq.getIdBS());
-        }
-        else if(role.equals("donnateur")){
-            Donnateur donnateur = (Donnateur)session.getAttribute("donnateur");
+        } else if (role.equals("donnateur")) {
+            Donnateur donnateur = (Donnateur) session.getAttribute("donnateur");
             donnationList = donnationDAO.getAllDonnationsDonnateur(donnateur.getIdDonnateur());
         }
 
@@ -233,29 +222,29 @@ public class DonnationController extends HttpServlet {
         List<GroupeSangin> gsList = groupeSanginDAO.findAll();
         List<BanqueSang> banqueSangList = banqueSangDAO.findAllBanqueSang();
 
-        request.setAttribute("villes",villes);
-        request.setAttribute("donnateurs",donnateurs);
-        request.setAttribute("donnationList",donnationList);
-        request.setAttribute("gsList",gsList);
-        request.setAttribute("banqueSangList",banqueSangList);
+        request.setAttribute("villes", villes);
+        request.setAttribute("donnateurs", donnateurs);
+        request.setAttribute("donnationList", donnationList);
+        request.setAttribute("gsList", gsList);
+        request.setAttribute("banqueSangList", banqueSangList);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/listDonnation.jsp");
-        requestDispatcher.forward(request,response);
+        requestDispatcher.forward(request, response);
     }
 
-    private String allDonnations(){
+    private String allDonnations() {
 
         List<Donnation> donnationList = donnationDAO.getAllDennation();
         return donnationtoJSON(donnationList);
     }
 
-    private String filterByGs(String gs){
+    private String filterByGs(String gs) {
 
         List<Donnation> donnationList = donnationDAO.getAllDonnationsGS(gs);
         return donnationtoJSON(donnationList);
     }
 
-    private String filterByVille(String ville){
+    private String filterByVille(String ville) {
 
         int idVille = villeDAO.getVilleByName(ville).getIdVille();
         List<Donnation> donnationList = donnationDAO.getAllDonnationsVille(idVille);
@@ -263,55 +252,13 @@ public class DonnationController extends HttpServlet {
         return donnationtoJSON(donnationList);
     }
 
-    private String filterByBoth(String ville, String gs){
+    private String filterByBoth(String ville, String gs) {
         int idVille = villeDAO.getVilleByName(ville).getIdVille();
         int idGS = groupeSanginDAO.findGroupSanginByName(gs).getIdGS();
 
         List<Donnation> donnationList = donnationDAO.getAllDonnationsVilleGS(idVille, idGS);
         return donnationtoJSON(donnationList);
     }
-
-    private void addDonnation(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException{
-
-        HttpSession session=request.getSession(false);
-        BanqueSang banquesang = (BanqueSang)session.getAttribute("banquesang");
-
-        int idBS = banquesang.getIdBS();
-        String idDonnateur = request.getParameter("idD_aj");
-        String dateDonnation = request.getParameter("dateD_aj");
-
-        Donnation d = new Donnation();
-        d.setIdBS(idBS);
-        d.setIdDonnateur(Integer.parseInt(idDonnateur));
-        d.setDateDonnation(Timestamp.valueOf(dateDonnation));
-
-        //response.sendRedirect("Donnation");
-    }
-
-
-
-private void updateDonnation(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException{
-
-        int idBanque = Integer.parseInt(request.getParameter("idBS"));
-        String nomBanque = request.getParameter("modnomBS");
-        String emailBanque = request.getParameter("modemailBS");
-        String telebanque = request.getParameter("modteleBS");
-        String passwordBanque = request.getParameter("modpasswordBS");
-        String adresseBanque = request.getParameter("modadresseBS");
-        String idville = request.getParameter("modidVille");
-        BanqueSang banqueSang = new BanqueSang();
-        banqueSang.setTeleBS(telebanque);
-        banqueSang.setPasswordBS(passwordBanque);
-        banqueSang.setNomBS(nomBanque);
-        banqueSang.setEmailBS(emailBanque);
-        banqueSang.setAdresseBS(adresseBanque);
-        //System.out.println(adresseBanque);
-        banqueSang.setIdBS(idBanque);
-        //System.out.println(Integer.parseInt(idville));
-        banqueSang.setIdVille(Integer.parseInt(idville));
-
-        banqueSangDAO.updateBanqueSang(banqueSang);
-        response.sendRedirect("LesBanquesDuSang");
-    }
-
 }
+
+

@@ -7,9 +7,18 @@
 
     position: relative;
 }
+
 #gs_div, #ville_div {
     margin: 0;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
+}
+
+#supp_icon{
+    cursor: pointer;"
+}
+
+#aj_btn{
+    float: right;
 }
