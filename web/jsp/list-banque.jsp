@@ -54,8 +54,8 @@
 
         <br>
         <!-- Debut table -->
-        <table class="table table-bordered">
-            <thead>
+        <table class="table table-responsive-md">
+            <thead class="thead-light">
             <tr>
                 <th>Numéro</th>
                 <th>Nom</th>
@@ -250,11 +250,9 @@
                                 </c:forEach>
                             </select>
                         </fieldset>
-
                         <button type="submit" class="btn btn-danger align-content-md-center">
                             Ajouter la Banque
                         </button>
-
                     </form>
             </div>
         </div>
