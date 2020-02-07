@@ -50,7 +50,7 @@
 
                 </tr>
                 </thead>
-                <tbody id="conv" class="bg-white">
+                <tbody id="conv" style="background-color: #f2f2f2">
                     <c:forEach items="${convois}" var="convoi">
                         <tr>
                             <th scope="row">

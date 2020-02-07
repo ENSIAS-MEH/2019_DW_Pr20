@@ -17,8 +17,13 @@
     <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/regular.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/solid.min.css">
-
     <link rel="stylesheet" type="text/css" href="../css/donnation.css">
+    <style>
+        .card{
+            background-color: #f2f2f2;
+            border-color: #b21f2d;
+        }
+    </style>
 </head>
 
 <body>
@@ -237,7 +242,7 @@
 
             <c:if test="${sessionScope.role ne 'donnateur'}">
                 <div class="col-lg-3 float-left mb-3 row justify-content-end" >
-                    <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" data-target="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donnation</a>
+                    <a class="btn btn-dark text-white font-weight-bold " data-toggle="modal" data-target="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donnation</a>
                 </div>
             </c:if>
 
@@ -258,7 +263,7 @@
             </tr>
             </thead>
 
-            <tbody id = "dnt" class="bg-white">
+            <tbody id = "dnt" style="background-color: #f2f2f2">
 
             <c:forEach var="donnation" items="${donnationList}">
                 <tr>

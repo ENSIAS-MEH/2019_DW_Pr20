@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/regular.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/solid.min.css">
+    <style>
+        .card{
+            background-color: #f2f2f2;
+            border-color: #b21f2d;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,7 +36,9 @@
 <br>
 
     <div class="container">
-    <h3> Statistique d'Administration</h3>
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2 mb-5" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fas fa-chart-line pt-2"></span></span>&nbsp;&nbsp;Statistiques
+        </div>
     <div class="row">
         <div class="col-lg-3 ml-1 col-md-6 mb-3">
             <select name="villes" id="ville_select" class="form-control">
@@ -49,11 +57,11 @@
             </select>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-lg-6">
             <div class="row">
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger" style="background-color: #f2f2f2">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -68,7 +76,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -83,7 +91,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -98,7 +106,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -113,7 +121,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -128,7 +136,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -143,7 +151,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -158,7 +166,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">

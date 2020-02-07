@@ -27,8 +27,9 @@
 <div class="row">
 
     <div class="container">
-        <h3 class="text-center">La Liste des Donateurs</h3>
-        <hr>
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2 mb-5" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fas fa-users-cog pt-2"></span></span>&nbsp;&nbsp;Donateurs
+        </div>
         <div class="row" >
             <div class="input-group mb-3 col-lg-4" >
                 <input type="text" id="donnateur" class="form-control border-danger" placeholder="Chercher un donnateur">
@@ -70,14 +71,14 @@
             </div>
 
                 <div class="col-lg-3 float-left mb-3 row justify-content-end" >
-                    <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" data-target="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donateur</a>
+                    <a class="btn btn-dark font-weight-bold text-white" data-toggle="modal" data-target="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donateur</a>
                 </div>
 
         </div>
 
         <br>
         <table class="table table-bordered" id="dntr_table">
-            <thead>
+            <thead class="alert-danger">
             <tr>
                 <th >N° donateur</th>
                 <th >CIN</th>
@@ -89,7 +90,7 @@
             </tr>
             </thead>
 
-            <tbody id = "dnt">
+            <tbody id = "dnt" style="background-color: #f2f2f2">
 
             <c:forEach var="donnateur" items="${donnateurs}">
                 <tr>

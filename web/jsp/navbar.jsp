@@ -78,7 +78,10 @@
                     <a href="LesBanquesDuSang" class="nav-link mr-5 p-2 rounded">Banques</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link mr-5 p-2 rounded">Donators</a>
+                    <a href="Donnation" class="nav-link mr-5 p-2 rounded">Donations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Donnateur" class="nav-link mr-5 p-2 rounded">Donators</a>
                 </li>
             </c:if>
             <c:if test="${not empty sessionScope.donnateur}">

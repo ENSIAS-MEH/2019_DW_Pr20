@@ -38,7 +38,9 @@
 <div class="row">
 
     <div class="container">
-        <h3 class="text-center">La Liste des Banques du Sang</h3>
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2 mb-5" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fas fa-list-alt pt-2"></span></span>&nbsp;&nbsp;Banques du sang
+        </div>
         <hr>
         <div class="row">
             <div class="input-group mb-3 col-lg-5">
@@ -55,7 +57,7 @@
         <br>
         <!-- Debut table -->
         <table class="table table-responsive-md">
-            <thead class="thead-light">
+            <thead class="alert-danger">
             <tr>
                 <th>Numéro</th>
                 <th>Nom</th>
@@ -67,7 +69,7 @@
                 <th class="align-content-center">Actions</th>
             </tr>
             </thead>
-            <tbody id = "bnq">
+            <tbody id = "bnq" style="background-color: #f2f2f2">
             <!--   for (Todo todo: todos) {  -->
             <c:forEach var="banque" items="${banqueSangList}">
 
