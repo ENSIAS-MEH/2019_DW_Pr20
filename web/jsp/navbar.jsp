@@ -8,11 +8,9 @@
 <html>
 <head>
     <title>Don du sang</title>
-    <link rel="stylesheet" href="../frameworks/bootstap4/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/regular.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/solid.min.css">
-    <link rel="stylesheet" href="../frameworks/font-awesome/css/all.min.css">
     <style>
         .navbar{
             background: lightgray;
@@ -76,8 +74,6 @@
                 <li class="nav-item">
                     <a href="AdminStatistiques" class="nav-link mr-5 p-2 rounded">Dashboard</a>
                 </li>
-            </c:if>
-            <c:if test="${not empty sessionScope.admin}">
                 <li class="nav-item">
                     <a href="LesBanquesDuSang" class="nav-link mr-5 p-2 rounded">Banques</a>
                 </li>
@@ -85,9 +81,20 @@
                     <a href="#" class="nav-link mr-5 p-2 rounded">Donators</a>
                 </li>
             </c:if>
+            <c:if test="${not empty sessionScope.donnateur}">
+                <li class="nav-item">
+                    <a href="Alertes" class="nav-link mr-5 p-2 rounded">Alertes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Donnation" class="nav-link mr-5 p-2 rounded">Donations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Convois" class="nav-link mr-5 p-2 rounded">Convois</a>
+                </li>
+            </c:if>
             <c:if test="${(not empty sessionScope.admin)  || (not empty sessionScope.banquesang) || (not empty sessionScope.donnateur)}">
                 <li class="nav-item">
-                    <a href="/LogOut" class="nav-link mr-5 p-2 border border-danger rounded">Log Out</a>
+                    <a href="LogOut" class="nav-link mr-5 p-2 border border-danger rounded">Log Out</a>
                 </li>
             </c:if>
         </ul>

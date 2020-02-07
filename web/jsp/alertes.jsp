@@ -51,39 +51,42 @@
                     <span class="input-group-text"><span class="fa fa-search text-danger"></span></span>
                 </div>
             </div>
-            <div class="col-lg-7 float-left mb-3 row justify-content-end">
-                <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" href="#AjouterAlerte">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une alerte</a>
-            </div>
-            <div class="modal mt-lg-5" id="AjouterAlerte">
-                <div class="modal-dialog">
-                    <div class="modal-content rounded">
-                        <div class="modal-header alert-danger text-center">
-                            <h5 class="font-weight-bold modal-title">Informations de l'alerte</h5>
-                            <button type="button" class="close" data-dismiss="modal">x</button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="Alertes" method="post">
-                                <div class="form-group">
-                                    <label for="desc" class='control-label'>Description de l'alerte</label>
-                                    <textarea type="text" rows="5" name="desc" class="form-control" id="desc"></textarea>
-                                </div>
-                                <div class="form-group required">
-                                    <label for="GS" class='control-la'>Groupe sangin</label>
-                                    <select class="form-control" id="GS" name="groupesangin">
-                                        <option value="-1">Choisir un groupe sangin</option>
-                                        <c:forEach items="${groupes}" var="group" >
-                                            <option value="${group.idGS}"><c:out value="${group.nomGS}"/></option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
-                                <button class="btn btn-outline-danger btn-rounded btn-block z-depth-0 my-4" type="submit">
-                                    Ajouter l'alerte
-                                </button>
-                            </form>
+            <c:if test="${not empty sessionScope.banquesang}">
+                <div class="col-lg-7 float-left mb-3 row justify-content-end">
+                    <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" href="#AjouterAlerte">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une alerte</a>
+                </div>
+
+                <div class="modal mt-lg-5" id="AjouterAlerte">
+                    <div class="modal-dialog">
+                        <div class="modal-content rounded">
+                            <div class="modal-header alert-danger text-center">
+                                <h5 class="font-weight-bold modal-title">Informations de l'alerte</h5>
+                                <button type="button" class="close" data-dismiss="modal">x</button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="Alertes" method="post">
+                                    <div class="form-group">
+                                        <label for="desc" class='control-label'>Description de l'alerte</label>
+                                        <textarea type="text" rows="5" name="desc" class="form-control" id="desc"></textarea>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="GS" class='control-la'>Groupe sangin</label>
+                                        <select class="form-control" id="GS" name="groupesangin">
+                                            <option value="-1">Choisir un groupe sangin</option>
+                                            <c:forEach items="${groupes}" var="group" >
+                                                <option value="${group.idGS}"><c:out value="${group.nomGS}"/></option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-outline-danger btn-rounded btn-block z-depth-0 my-4" type="submit">
+                                        Ajouter l'alerte
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </c:if>
         </div>
         <hr>
         <c:if test="${empty alertes}">
@@ -103,24 +106,26 @@
                     <c:forEach items="${alertes}" var="alerte">
                         <div class="col-md-12 altr">
                             <div class="card border-danger mr-1 ml-1 mb-5 alert-danger">
-                                <div class="card border-danger shadow text-danger alert-dark p-3 myCard">
+                                <div class="card border-danger shadow text-danger bg-white p-3 myCard">
                                     <span class="fa fa-tint" aria-hidden="true"></span>
                                 </div>
-                                <a data-toggle="modal" href="#D${alerte.idAlerte}">
-                                <span class="card border-danger shadow text-danger p-3 myCard1" data-toggle="tooltip" title="Désactiver l'alerte">
-                                    <span class="fa fa-power-off" aria-hidden="true"></span>
-                                </span>
-                                </a>
-                                <a data-toggle="modal" href="#S${alerte.idAlerte}">
-                                <span class="card border-danger shadow text-danger p-3 myCard2" data-toggle="tooltip" title="Supprimer l'alerte">
-                                    <span class="far fa-trash-alt" aria-hidden="true"></span>
-                                </span>
-                                </a>
+                                <c:if test="${not empty sessionScope.banquesang}">
+                                    <a data-toggle="modal" href="#D${alerte.idAlerte}">
+                                        <span class="card border-danger shadow text-danger bg-white p-3 myCard1" data-toggle="tooltip" title="Désactiver l'alerte">
+                                            <span class="fa fa-power-off" aria-hidden="true"></span>
+                                        </span>
+                                    </a>
+                                    <a data-toggle="modal" href="#S${alerte.idAlerte}">
+                                        <span class="card border-danger shadow text-danger bg-white p-3 myCard2" data-toggle="tooltip" title="Supprimer l'alerte">
+                                            <span class="far fa-trash-alt" aria-hidden="true"></span>
+                                        </span>
+                                    </a>
+                                </c:if>
                                 <br>
                                 <div class="p-2">
                                         ${alerte.descriptionAlerte}
                                 </div>
-                                <div class="card-footer p-2 alert-dark">
+                                <div class="card-footer p-2 bg-white">
                                 <span class="mr-1 float-left">
                                     <span class="fa fa-tint text-danger"></span>&nbsp;
                                     ${alerte.GS.nomGS}
@@ -131,40 +136,42 @@
                                 </span>
                                 </div>
                             </div>
-                            <div class="modal mt-lg-5" id="D${alerte.idAlerte}">
-                                <div class="modal-dialog">
-                                    <div class="modal-content rounded">
-                                        <div class="modal-body alert-dark">
-                                            <p class="font-weight-bold text-center">Voulez vous vraiment désactiver cet alerte ? </p>
-                                            <div>
-                                                <button class="btn btn-outline-dark float-left" data-dismiss="modal" type="button">
-                                                    Annuler
-                                                </button>
-                                                <a class="btn btn-outline-danger float-right" type="button" href="TraiterAlerte?d=${alerte.idAlerte}">
-                                                    Désactiver
-                                                </a>
+                            <c:if test="${not empty sessionScope.banquesang}">
+                                <div class="modal mt-lg-5" id="D${alerte.idAlerte}">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content rounded">
+                                            <div class="modal-body alert-dark">
+                                                <p class="font-weight-bold text-center">Voulez vous vraiment désactiver cet alerte ? </p>
+                                                <div>
+                                                    <button class="btn btn-outline-dark float-left" data-dismiss="modal" type="button">
+                                                        Annuler
+                                                    </button>
+                                                    <a class="btn btn-outline-danger float-right" type="button" href="TraiterAlerte?d=${alerte.idAlerte}">
+                                                        Désactiver
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal mt-lg-5" id="S${alerte.idAlerte}">
-                                <div class="modal-dialog">
-                                    <div class="modal-content rounded">
-                                        <div class="modal-body alert-dark">
-                                            <p class="font-weight-bold text-center">Voulez vous vraiment supprimer cet alerte ? </p>
-                                            <div>
-                                                <button class="btn btn-outline-dark float-left" data-dismiss="modal" type="button">
-                                                    Annuler
-                                                </button>
-                                                <a class="btn btn-outline-danger float-right" type="button" href="TraiterAlerte?s=${alerte.idAlerte}">
-                                                    Supprimer
-                                                </a>
+                                <div class="modal mt-lg-5" id="S${alerte.idAlerte}">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content rounded">
+                                            <div class="modal-body alert-dark">
+                                                <p class="font-weight-bold text-center">Voulez vous vraiment supprimer cet alerte ? </p>
+                                                <div>
+                                                    <button class="btn btn-outline-dark float-left" data-dismiss="modal" type="button">
+                                                        Annuler
+                                                    </button>
+                                                    <a class="btn btn-outline-danger float-right" type="button" href="TraiterAlerte?s=${alerte.idAlerte}">
+                                                        Supprimer
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </c:if>
                         </div>
                     </c:forEach>
                 </div>

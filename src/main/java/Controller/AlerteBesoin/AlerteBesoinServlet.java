@@ -54,12 +54,18 @@ public class AlerteBesoinServlet extends HttpServlet {
         this.init();
         session=request.getSession();
         BanqueSang bs=(BanqueSang) session.getAttribute("banquesang");
-        if(bs==null){
+        Donnateur dn=(Donnateur) session.getAttribute("donnateur");
+        if(bs==null && dn==null){
             response.sendRedirect("SignIn");
         }
         else{
-            idBS = bs.getIdBS();
-            alertes = alerteBesoinDAO.getAlerteByBS(idBS);
+            if(bs!=null){
+                idBS = bs.getIdBS();
+                alertes = alerteBesoinDAO.getAlerteByBS(idBS);
+            }
+            else if(dn!=null){
+                alertes = alerteBesoinDAO.getAllAlertes();
+            }
             request.setAttribute("alertes", alertes);
             request.setAttribute("villes",villes);
             request.setAttribute("groupes",groupes);
