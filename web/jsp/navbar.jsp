@@ -46,12 +46,6 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link p-2 mr-5 rounded">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link p-2 mr-5 rounded">Statistics</a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="#" class="nav-link p-2 mr-5 border border-danger rounded">Join US</a>
-                </li>
                 <li class="nav-item ">
                     <a href="SignIn" class="nav-link mr-5 p-2 border border-danger rounded">Sign In</a>
                 </li>
@@ -76,9 +70,6 @@
                 </li>
                 <li class="nav-item">
                     <a href="LesBanquesDuSang" class="nav-link mr-5 p-2 rounded">Banques</a>
-                </li>
-                <li class="nav-item">
-                    <a href="Donnation" class="nav-link mr-5 p-2 rounded">Donations</a>
                 </li>
                 <li class="nav-item">
                     <a href="Donnateur" class="nav-link mr-5 p-2 rounded">Donators</a>
