@@ -70,7 +70,7 @@
             </div>
 
                 <div class="col-lg-3 float-left mb-3 row justify-content-end" >
-                    <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" data-target="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donateur</a>
+                    <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" data-target="#AjouterDonateur">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donateur</a>
                 </div>
 
         </div>
@@ -125,7 +125,7 @@
 </body>
 
 <!-- Début Modal - Ajouter Donnateur -->
-<div class="modal mt-lg-5" id="AjouterDonnation">
+<div class="modal mt-lg-5" id="AjouterDonateur">
     <div class="modal-dialog">
         <div class="modal-content rounded">
             <div class="modal-header alert-danger text-center">
@@ -141,36 +141,55 @@
                     </caption>
 
                     <fieldset class="form-group">
-                        <label>Numéro du donateur</label>
-                        <input type="text" class="form-control" name="idD_aj" id="idD_aj" required>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <label>Nom & Prénom</label>
+                        <label>Nom</label>
                         <input type="text" class="form-control" name="nomD_aj" id="nomD_aj" required>
                     </fieldset>
 
                     <fieldset class="form-group">
-                        <label>Groupe Sanguin</label><br>
-                        <select name="GrpSng" name="gs_aj" id="gs_aj">
-                            <option value="">-- Choisissez un groupe sanguin --</option>
-                            <option value="A-">A-</option>
-                            <option value="A+">A+</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                        </select>
+                        <label>Prénom</label>
+                        <input type="text" class="form-control" name="prenomD_aj" id="prenomD_aj" required>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>CIN</label>
+                        <input type="text" class="form-control" name="cinD" id="cinD" required>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="emailD_aj" id="emailD_aj" required>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Telephone</label>
+                        <input type="text" class="form-control" name="teleD_aj" id="teleD_aj" required>
                     </fieldset>
                     <fieldset class="form-group">
-                        <label>Date de donation</label>
-                        <input type="datetime-local" class="form-control" name="dateD_aj" id="dateD_aj" required>
+                        <label>Groupe Sanguin</label><br>
+                        <select name="GrpSng" name="gs_aj" id="gs_aj" class="browser-default custom-select form-control">
+                            <option value="" disabled>-- Choisissez un groupe sanguin --</option>
+                            <option value="1">A-</option>
+                            <option value="2">A+</option>
+                            <option value="3">B+</option>
+                            <option value="4">B-</option>
+                            <option value="5">AB+</option>
+                            <option value="6">AB-</option>
+                            <option value="7">O+</option>
+                            <option value="8">O-</option>
+                        </select>
                     </fieldset>
 
+                    <fieldset class="form-group">
+                        <label>Ville</label>
+                        <select class="browser-default custom-select form-control" name="ajidVille" id="ville_aj" required="required">
+                            <option selected value="" disabled>La ville du Banque</option>
+                            <c:forEach items="${villes}" var="ville">
+                                <option value="<c:out value="${ville.idVille}"/>" ><c:out value="${ville.nomVille}"/></option>
+                            </c:forEach>
+                        </select>
+                    </fieldset>
 
-                    <button id="aj_btn" class="btn btn-danger align-content-md-center" >
+                    <button id="ajt_btn" class="btn btn-danger align-content-md-center" >
                         Valider
                     </button>
 

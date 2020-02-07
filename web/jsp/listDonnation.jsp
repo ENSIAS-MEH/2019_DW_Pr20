@@ -36,7 +36,7 @@
         <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
             <span class=""><span class="fas fa-syringe pt-2"></span></span>&nbsp;&nbsp;Donations
         </div>
-        
+
         <hr>
         <div class="row">
             <div class="col-lg-12">

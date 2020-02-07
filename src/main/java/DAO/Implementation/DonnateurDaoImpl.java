@@ -23,29 +23,21 @@ public class DonnateurDaoImpl implements DonnateurDAO {
 
         try {
             conn  = daoFactory.getConnection();
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM donnateur WHERE emailD='" + donnateur.getEmailD() + "' ;");
-            int iVal;
-            rs.next();
+            String sql = "INSERT INTO donnateur(cin, nomD, prenomD, teleD, emailD, passwordD, idVille, idGS) VALUES(?,?,?,?,?,?,?,?)";
+            ps = conn.prepareStatement(sql);
 
-            iVal = rs.getInt(1);
+            ps.setString(1, donnateur.getCin());
+            ps.setString(2, donnateur.getNomD());
+            ps.setString(3, donnateur.getPrenomD());
+            ps.setString(4, donnateur.getTeleD());
+            ps.setString(5, donnateur.getEmailD());
+            ps.setString(6, donnateur.getPasswordD());
+            ps.setInt(7, donnateur.getIdVille());
+            ps.setInt(8, donnateur.getIdGS());
 
-            if (rs.wasNull()) {
-                String sql = "INSERT INTO donnateur(cin, nomD, prenomD, teleD, emailD, passwordD, idVille, idGS) VALUES(?,?,?,?,?,?,?,?);";
-                ps = conn.prepareStatement(sql);
+            ps.executeUpdate();
+            return true;
 
-                ps.setString(1, donnateur.getCin());
-                ps.setString(2, donnateur.getNomD());
-                ps.setString(3, donnateur.getPrenomD());
-                ps.setString(4, donnateur.getTeleD());
-                ps.setString(5, donnateur.getEmailD());
-                ps.setString(6, donnateur.getPasswordD());
-                ps.setInt(7, donnateur.getIdVille());
-                ps.setInt(8, donnateur.getIdGS());
-
-                ps.executeUpdate();
-                return true;
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

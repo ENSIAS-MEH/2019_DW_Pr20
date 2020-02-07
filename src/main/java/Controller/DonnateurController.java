@@ -40,10 +40,33 @@ public class DonnateurController extends HttpServlet {
     }
 
     @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("doPost..");
+        if (request.getParameter("action").equals("ajouter")) {
+            String nom = request.getParameter("nom");
+            String prenom = request.getParameter("prenom");
+            String cin = request.getParameter("cin");
+            String email = request.getParameter("email");
+            String tel = request.getParameter("tel");
+            String passwd = nom +"10";
+            int gs = Integer.parseInt(request.getParameter("gs"));
+            int ville = Integer.parseInt(request.getParameter("ville"));
+
+            Donnateur d = new Donnateur(cin, nom, prenom, tel, email, passwd, ville, gs);
+            System.out.println("avant");
+            Boolean res = donnateurDAO.addDonnateur(d);
+            System.out.println("result add : " + res);
+            response.getWriter().write(res.toString());
+        }
+
+    }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("doGet");
+        System.out.println("doGet..");
         if (request.getParameter("action") == null || request.getParameter("action").equals("")) {
             try {
+                System.out.println("tata");
                 showDonnateurs(request, response);
             } catch (SQLException ex) {
                 throw new ServletException(ex);
@@ -69,6 +92,7 @@ public class DonnateurController extends HttpServlet {
                 response.getWriter().write(filterByBoth(ville, gs));
             }
         }
+
     }
 
     private void showDonnateurs(HttpServletRequest request, HttpServletResponse response)

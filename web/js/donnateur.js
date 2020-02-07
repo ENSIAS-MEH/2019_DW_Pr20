@@ -46,10 +46,28 @@ function data_filter() {
     });
 }
 
+function ajouter_donateur(){
+    console.log("sadd");
+    var nom = document.getElementById("nomD_aj").value ;
+    var prenom = document.getElementById("prenomD_aj").value ;
+    var cin = document.getElementById("cinD").value ;
+    var email = document.getElementById("emailD_aj").value ;
+    var tel = document.getElementById("teleD_aj").value ;
+    var gs = document.getElementById("gs_aj").value ;
+    var ville = document.getElementById("ville_aj").value ;
+;
+    //console.log("idBS: "+idBS +"-- idDonnateur: "+idD+ "-- DateD: "+dateD);
+
+    $.post("Donnateur",{"nom":nom, "prenom":prenom, "cin":cin, "email":email, "tel":tel, "gs":gs, "ville":ville, "action":"ajouter"},function(array){
+        console.log(array);
+    });
+}
+
 window.onload = function() {
 
     document.querySelector("#donnateur").addEventListener("keyup", chercher);
     document.querySelector("#gs_select").addEventListener("change",data_filter);
     document.querySelector("#ville_select").addEventListener("change",data_filter);
+    document.querySelector("#ajt_btn").addEventListener("click",ajouter_donateur);
 
 }

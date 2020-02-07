@@ -105,7 +105,6 @@ function data_filter() {
 
 function ajouter_donation(){
 
-
     var idD = document.getElementById("idD_aj").value  ;
     var idBS = document.getElementById("session").value;
 
