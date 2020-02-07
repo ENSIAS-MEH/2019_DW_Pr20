@@ -253,7 +253,6 @@ public class BanqueSangDaoImpl implements BanqueSangDAO {
     public boolean searchBanqueSangByName(String nom){
         Connection conn = null;
         PreparedStatement ps = null;
-        //BanqueSang banqueSang = null;
         try {
             conn = daoFactory.getConnection();
             ps = conn.prepareStatement("select idBS from BanqueSang where nomBS = ?");

@@ -13,8 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +24,7 @@ public class AdminStatistics extends HttpServlet {
     private HttpSession httpSession;
     private StockSangDAO stockSangDAO;
     private GroupeSanginDAO groupeSanginDAO;
-    private int idBS = 9; /*Depuis la Sessions*/
+    private int idBS = 9; /*Depuis la Sessions : Never Used*/
 
     @Override
     public void init() throws ServletException  {
@@ -48,7 +46,6 @@ public class AdminStatistics extends HttpServlet {
             List<Ville> villes = villeDAO.getAllVille();
             List<BanqueSang> banqueSangList = banqueSangDAO.findAllBanqueSang();
             ArrayList<Integer> allStock = (ArrayList<Integer>) stockSangDAO.AllstocStatistic();
-            System.out.println("All Stock ;"+allStock);
 
             request.setAttribute("allStock",allStock);
             request.setAttribute("villes",villes);
@@ -61,44 +58,64 @@ public class AdminStatistics extends HttpServlet {
         else if(request.getParameter("action").equals("filter")){
             String ville = request.getParameter("ville").trim();
             String bq = request.getParameter("banq").trim();
-            System.out.println(request.getParameter("action").equals("filter"));
-            System.out.println(ville +" ----- "+bq);
 
             if(ville.equals("all") && bq.equals("all")){
                 System.out.println("case 0");
                 response.getWriter().write(allStats().toString());
             }
             else if(!ville.equals("all") && bq.equals("all")){
-                System.out.println("case 1");
                 response.getWriter().write(statsByVille(Integer.parseInt(ville)).toString());
                 System.out.println(statsByVille(Integer.parseInt(ville)).toString());
             }
             else if(ville.equals("all") && !bq.equals("all")){
-                System.out.println("case 2");
                 response.getWriter().write(statsByBanq(Integer.parseInt(bq)).toString());
-                System.out.println(statsByBanq(Integer.parseInt(bq)).toString());
             }
             else if(!ville.equals("all") && !bq.equals("all")){
-                System.out.println("case 3");
                 response.getWriter().write(statsBoth(Integer.parseInt(bq)).toString());
-                System.out.println(statsBoth(Integer.parseInt(bq)).toString());
             }
         }
-
-        //System.out.println("From statistics");
+        else if(request.getParameter("action").equals("load_bq")){
+            int ville = Integer.parseInt(request.getParameter("ville"));
+            List<BanqueSang> bqList = banqueSangDAO.findBanquesByVille(ville);
+            System.out.println(banqtoJSON(bqList));
+            response.getWriter().write(banqtoJSON(bqList));
+        }
 
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
         int idGroup = Integer.parseInt(request.getParameter("id"));
-        System.out.println("idPOST = "+idGroup);
-        //BanqueSang currentbanqueSang = banqueSangDAO.findBanqueSangById(idBS);
         StockSang stockSang  = stockSangDAO.findStockById(idBS,idGroup);
         int quantite = Integer.parseInt(request.getParameter("quantite"));
         stockSang.setQuantite(quantite);
         stockSangDAO.updateStockSang(stockSang);
         this.init();
         this.doGet(request,response);
+    }
+
+    private String banqtoJSON(List<BanqueSang> bqList) {
+
+        StringBuffer banqRow = new StringBuffer("{\"idBS\":[");
+
+        boolean flag = false;
+        for (BanqueSang b : bqList) {
+            if (flag)
+                banqRow.append(",");
+            flag = true;
+            banqRow.append("\"" + b.getIdBS() + "\"");
+        }
+
+        banqRow.append("],\"nomBS\":[");
+        flag = false;
+        for (BanqueSang b : bqList) {
+            if (flag)
+                banqRow.append(",");
+            flag = true;
+            banqRow.append("\"" + b.getNomBS()+ "\"");
+        }
+
+        banqRow.append("]}");
+        return banqRow.toString();
     }
 
     private List<Integer> allStats() {
@@ -120,104 +137,5 @@ public class AdminStatistics extends HttpServlet {
         List<Integer>  statList =  stockSangDAO.statsByBanque(idBnq);
         return statList;
     }
-
-    /*private String donnationtoJSON(List<Donnation> donnList) {
-
-        StringBuffer donnationRow = new StringBuffer("{\"idDonnateur\":[");
-
-        boolean flag = false;
-        for (Donnation d : donnList) {
-            if (flag)
-                donnationRow.append(",");
-            flag = true;
-            donnationRow.append("\"" + d.getIdDonnateur() + "\"");
-        }
-
-        donnationRow.append("],\"pnomD\":[");
-        flag = false;
-        for (Donnation d : donnList) {
-            if (flag)
-                donnationRow.append(",");
-            flag = true;
-            Donnateur donnateur = donnateurDAO.getDonnateurById(d.getIdDonnateur());
-            donnationRow.append("\"" + donnateur.getNomD() + " " + donnateur.getPrenomD() + "\"");
-        }
-
-        donnationRow.append("],\"telD\":[");
-        flag = false;
-        for (Donnation d : donnList) {
-            if (flag)
-                donnationRow.append(",");
-            flag = true;
-            Donnateur donnateur = donnateurDAO.getDonnateurById(d.getIdDonnateur());
-            donnationRow.append("\"" + donnateur.getTeleD() + "\"");
-        }
-
-        donnationRow.append("],\"emailD\":[");
-        flag = false;
-        for (Donnation d : donnList) {
-            if (flag)
-                donnationRow.append(",");
-            flag = true;
-            Donnateur donnateur = donnateurDAO.getDonnateurById(d.getIdDonnateur());
-            donnationRow.append("\"" + donnateur.getEmailD() + "\"");
-        }
-
-        donnationRow.append("],\"gs\":[");
-        flag = false;
-        for (Donnation d : donnList) {
-            if (flag)
-                donnationRow.append(",");
-            flag = true;
-            Donnateur donnateur = donnateurDAO.getDonnateurById(d.getIdDonnateur());
-            donnationRow.append("\"" + groupeSanginDAO.findGroupSanginById(donnateur.getIdGS()).getNomGS() + "\"");
-        }
-
-        SimpleDateFormat date_format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-
-        donnationRow.append("],\"dateDonnation\":[");
-        flag = false;
-        for (Donnation d : donnList) {
-            if (flag)
-                donnationRow.append(",");
-            flag = true;
-            String date = date_format.format(d.getDateDonnation());
-            donnationRow.append("\"" + date + "\"");
-        }
-
-        donnationRow.append("],\"nomB\":[");
-        flag = false;
-        for (Donnation d : donnList) {
-            if (flag)
-                donnationRow.append(",");
-            flag = true;
-            BanqueSang banq = banqueSangDAO.findBanqueSangById(d.getIdBS());
-            donnationRow.append("\"" + banq.getNomBS() + "\"");
-        }
-
-        donnationRow.append("],\"telB\":[");
-        flag = false;
-        for (Donnation d : donnList) {
-            if (flag)
-                donnationRow.append(",");
-            flag = true;
-            BanqueSang banq = banqueSangDAO.findBanqueSangById(d.getIdBS());
-            donnationRow.append("\"" + banq.getTeleBS() + "\"");
-        }
-
-        donnationRow.append("],\"villeB\":[");
-        flag = false;
-        for (Donnation d : donnList) {
-            if (flag)
-                donnationRow.append(",");
-            flag = true;
-            BanqueSang banq = banqueSangDAO.findBanqueSangById(d.getIdBS());
-            donnationRow.append("\"" + villeDAO.getVilleById(banq.getIdVille()).getNomVille() + "\"");
-        }
-
-        donnationRow.append("]}");
-        return donnationRow.toString();
-    }*/
-
 
 }

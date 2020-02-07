@@ -18,10 +18,9 @@
 
 <body>
 <%--
-<c:if test="${empty sessionScope.banque or empty sessionScope.admin}">
-    <c:redirect url="/"></c:redirect>
-</c:if>
---%>
+<c:if test="${empty sessionScope.banqueSang}">
+    <c:redirect url="/SignIn"></c:redirect>
+</c:if>--%>
 <header>
     <%@ include file="navbar.jsp"%>
 </header>
@@ -39,7 +38,7 @@
                                     <img src="/img/A+.png" width="40" height="60">
                                 </div>
                                 <div class="media-body text-right">
-                                    <h3 class="text-stat">${stockList.get(1)}L</h3>       <!--Text ghaykon fih Le nombre dyal kol Groupe-->
+                                    <h3 class="text-stat">${stockList.get(1)}L</h3>
                                     <a data-toggle="modal" href="#modifier1">
                                 <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
                                     <span class="fa fa-edit" aria-hidden="true"></span>
@@ -200,7 +199,7 @@
     <div class="modal-dialog">
         <div class="modal-content rounded">
             <div class="modal-body">
-                <p class="text-center">Entrer la nouvelle quantité. </p>
+                <button type="button" class="close" data-dismiss="modal">x</button>
                 <form action="Statistiques" method="post">
                     <input type="hidden" name="id" value="1" />
                     <fieldset class="form-group">
@@ -208,7 +207,7 @@
                         <input type="text" class="form-control" name="quantite" required="required">
                     </fieldset>
                     <div>
-                        <button class="btn btn-success " type="submit">Modifier</button>
+                        <button class="btn btn-danger " type="submit">Modifier</button>
                     </div>
                 </form>
             </div>
@@ -221,7 +220,7 @@
     <div class="modal-dialog">
         <div class="modal-content rounded">
             <div class="modal-body">
-                <p class="text-center">Entrer la nouvelle quantité. </p>
+                <button type="button" class="close" data-dismiss="modal">x</button>
                 <form action="Statistiques" method="post">
                     <input type="hidden" name="id" value="2" />
                     <fieldset class="form-group">
@@ -230,7 +229,7 @@
                     </fieldset>
 
                 <div>
-                    <button class="btn btn-success " type="submit">Modifier</button>
+                    <button class="btn btn-danger " type="submit">Modifier</button>
                 </div></form>
             </div>
         </div>
@@ -242,7 +241,7 @@
     <div class="modal-dialog">
         <div class="modal-content rounded">
             <div class="modal-body">
-                <p class="text-center">Entrer la nouvelle quantité. </p>
+                <button type="button" class="close" data-dismiss="modal">x</button>
                 <form action="Statistiques" method="post">
                     <input type="hidden" name="id" value="3" />
                     <fieldset class="form-group">
@@ -250,7 +249,7 @@
                         <input type="text" class="form-control" name="quantite" required="required">
                     </fieldset>
                 <div>
-                    <button class="btn btn-success " type="submit">Modifier</button>
+                    <button class="btn btn-danger " type="submit">Modifier</button>
                 </div>
                 </form>
             </div>
@@ -263,7 +262,7 @@
     <div class="modal-dialog">
         <div class="modal-content rounded">
             <div class="modal-body">
-                <p class="text-center">Entrer la nouvelle quantité. </p>
+                <button type="button" class="close" data-dismiss="modal">x</button>
                 <form action="Statistiques" method="post">
                     <input type="hidden" name="id" value="4" />
                     <fieldset class="form-group">
@@ -272,7 +271,7 @@
                     </fieldset>
 
                 <div>
-                    <button class="btn btn-success " type="submit">Modifier</button>
+                    <button class="btn btn-danger " type="submit">Modifier</button>
                 </div></form>
             </div>
         </div>
@@ -284,7 +283,7 @@
     <div class="modal-dialog">
         <div class="modal-content rounded">
             <div class="modal-body">
-                <p class="text-center">Entrer la nouvelle quantité. </p>
+                <button type="button" class="close" data-dismiss="modal">x</button>
                 <form action="Statistiques" method="post">
                     <input type="hidden" name="id" value="5" />
                     <fieldset class="form-group">
@@ -293,7 +292,7 @@
                     </fieldset>
 
                 <div>
-                    <button class="btn btn-success " type="submit">Modifier</button>
+                    <button class="btn btn-danger " type="submit">Modifier</button>
                 </div></form>
             </div>
         </div>
@@ -305,7 +304,7 @@
     <div class="modal-dialog">
         <div class="modal-content rounded">
             <div class="modal-body">
-                <p class="text-center">Entrer la nouvelle quantité. </p>
+                <button type="button" class="close" data-dismiss="modal">x</button>
                 <form action="Statistiques" method="post">
                     <input type="hidden" name="id" value="6" />
                     <fieldset class="form-group">
@@ -314,7 +313,7 @@
                     </fieldset>
 
                 <div>
-                    <button class="btn btn-success " type="submit">Modifier</button>
+                    <button class="btn btn-danger " type="submit">Modifier</button>
                 </div></form>
             </div>
         </div>
@@ -326,7 +325,7 @@
     <div class="modal-dialog">
         <div class="modal-content rounded">
             <div class="modal-body">
-                <p class="text-center">Entrer la nouvelle quantité. </p>
+                <button type="button" class="close" data-dismiss="modal">x</button>
                 <form action="Statistiques" method="post">
                     <input type="hidden" name="id" value="7" />
                     <fieldset class="form-group">
@@ -334,7 +333,7 @@
                         <input type="text" class="form-control" name="quantite" required="required">
                     </fieldset>
                 <div>
-                    <button class="btn btn-success " type="submit">Modifier</button>
+                    <button class="btn btn-danger " type="submit">Modifier</button>
                 </div>
                 </form>
             </div>
@@ -347,7 +346,6 @@
     <div class="modal-dialog">
         <div class="modal-content rounded">
             <div class="modal-body">
-                <p class="text-center">Entrer la nouvelle quantité. </p>
                 <button type="button" class="close" data-dismiss="modal">x</button>
                 <form action="Statistiques" method="post">
                     <input type="hidden" name="id" value="8" />
@@ -356,16 +354,17 @@
                         <input type="text" class="form-control" name="quantite" required="required">
                     </fieldset>
                 <div>
-                    <button class="btn btn-success " type="submit">Modifier</button>
+                    <button class="btn btn-danger " type="submit">Modifier</button>
                 </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+</div>
 <!-- Fin Modal Supprimer -->
 <br>
-<!--
+<!-- Container pour les statistiques en batant
 <div class="container">
     <div class="row">
         <div class="col-6">
@@ -395,7 +394,7 @@
 <script>
 
 
-    // Create the chart
+    // Start the chart
     Highcharts.chart('container1', {
         chart: {
             type: 'column'

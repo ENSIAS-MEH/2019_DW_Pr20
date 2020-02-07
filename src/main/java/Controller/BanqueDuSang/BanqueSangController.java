@@ -28,7 +28,6 @@ public class BanqueSangController extends HttpServlet {
     public void init() throws ServletException {
 
         daoFactory.getInstance();
-        //System.out.println("good : "+daoFactory);
         banqueSangDAO = daoFactory.getBanqueSangDaoImpl();
         villeDAO = daoFactory.getVilleDaoImpl();
     }
@@ -63,7 +62,6 @@ public class BanqueSangController extends HttpServlet {
 
     private void nouveauBanque(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException{
-        //String idBanque = request.getParameter("idBanque");
         String nomBanque = request.getParameter("ajnomBS");
         String emailBanque = request.getParameter("ajemailBS");
         String telebanque = request.getParameter("ajteleBS");
@@ -97,7 +95,6 @@ public class BanqueSangController extends HttpServlet {
         banqueSang.setNomBS(nomBanque);
         banqueSang.setEmailBS(emailBanque);
         banqueSang.setAdresseBS(adresseBanque);
-        //System.out.println(adresseBanque);
         banqueSang.setIdBS(idBanque);
         System.out.println(Integer.parseInt(idville));
         banqueSang.setIdVille(Integer.parseInt(idville));

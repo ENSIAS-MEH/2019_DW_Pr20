@@ -90,10 +90,15 @@ public class AlerteBesoinServlet extends HttpServlet {
                 ab.setDescriptionAlerte(d);
                 ab.setIdBS(idBS);
                 alerteBesoinDAO.addAlerte(ab);
-                Thread sms = new SendSMS(donnateurs,"Une Alerte est lancée. C'est urgent !! "+"Banque du Sang : "
+                try
+                {
+                Runnable sms = new SendSMS(donnateurs,"Une Alerte est lancée. C'est urgent !! "+"Banque du Sang : "
                         +banqueSangDao.findBanqueSangById(ab.getIdBS()).getNomBS()+" Adresse : "+banqueSangDao.findBanqueSangById(ab.getIdBS()).getAdresseBS()+" Groupe sangin : "
-                        +groupeSanginDao.findGroupSanginById(ab.getGS().getIdGS()).getNomGS()+"<br><br><b>Description de l'alerte :</b> "+ab.getDescriptionAlerte());
-                sms.start();
+                        +groupeSanginDao.findGroupSanginById(ab.getGS().getIdGS()).getNomGS()+"Description de l'alerte :"+ab.getDescriptionAlerte());
+                new Thread(sms).start();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
             }
             this.init();
             this.doGet(request, response);

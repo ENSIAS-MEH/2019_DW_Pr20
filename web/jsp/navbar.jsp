@@ -97,7 +97,12 @@
 <div class="modal" id="help" tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content p-1">
-            jj
+            <iframe
+                    allow="microphone;"
+                    width="480"
+                    height="430"
+                    src="https://console.dialogflow.com/api-client/demo/embedded/7c7758be-1a47-4da6-a08f-9826f726770c">
+            </iframe>
         </div>
     </div>
 </div>

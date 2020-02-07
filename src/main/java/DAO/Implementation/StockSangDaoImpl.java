@@ -32,9 +32,7 @@ public class StockSangDaoImpl implements StockSangDAO {
             preparedStatement.setInt(2,idGS);
 
             ResultSet rs=preparedStatement.executeQuery();
-            //System.out.println("Testtttt1");
             if(rs.next()){
-                //System.out.println("Testtttt2");
                 stock = new StockSang(rs.getInt("idBS"),rs.getInt("idGS"),rs.getInt("quantite"));
             }
 
@@ -311,7 +309,6 @@ public class StockSangDaoImpl implements StockSangDAO {
                         "select sum(quantite) as total from stocksang where idGS = ? and idBS = ?");
                 preparedStatement.setInt(1,i+1);
                 preparedStatement.setInt(2,banque.getIdBS());
-                //System.out.println("idGS : "+(i+1) +" idBS : "+banque.getIdBS());
                 rs = preparedStatement.executeQuery();
                 if(rs.next())
                      groups.set(i,rs.getInt("total")+groups.get(i));

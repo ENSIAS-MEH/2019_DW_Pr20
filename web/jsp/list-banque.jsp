@@ -22,16 +22,6 @@
 
 <header>
     <%@ include file="navbar.jsp"%>
-
-    <!--<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #af111c">
-        <div>
-            <a href="https://www.github.com/MejdaouiSoufiane" class="navbar-brand"> Platforme de Don du Sang</a>
-        </div>
-
-        <ul class="navbar-nav">
-            <li><a href="/LesBaqnuesDuSang" class="nav-link">Les Banques du Sang</a></li>
-        </ul>
-    </nav>-->
 </header>
 <br>
 
@@ -72,22 +62,22 @@
             <c:forEach var="banque" items="${banqueSangList}">
 
                 <tr>
-                    <td class="bnqq">
+                    <td>
                         <c:out value="${banque.idBS}" />
                     </td>
-                    <td class="bnqq">
+                    <td>
                         <c:out value="${banque.nomBS}" />
                     </td>
-                    <td class="bnqq">
+                    <td>
                         <c:out value="${banque.emailBS}" />
                     </td>
-                    <td class="bnqq">
+                    <td>
                         <c:out value="${banque.teleBS}" />
                     </td>
-                    <td class="bnqq">
+                    <td>
                         <c:out value="${banque.adresseBS}" />
                     </td>
-                    <td class="bnqq">
+                    <td>
                         <c:forEach var="ville" items="${villes}">
                             <c:if test="${banque.idVille eq ville.idVille}">
                                 <c:out value="${ville.nomVille}"/>
@@ -156,7 +146,7 @@
                                                 <input type="text" value="<c:out value='${banque.adresseBS}' />" class="form-control" name="modadresseBS">
                                             </fieldset>
                                             <fieldset class="form-group">
-                                                <label>Adresse</label>
+                                                <label>Ville</label>
                                                 <select class="browser-default custom-select form-control" name="modidVille">
                                                     <option selected value="">La ville du Banque</option>
                                                     <c:forEach items="${villes}" var="ville">
@@ -242,7 +232,7 @@
                             <input type="text" class="form-control" name="ajadresseBS">
                         </fieldset>
                         <fieldset class="form-group">
-                            <label>Adresse</label>
+                            <label>Ville</label>
                             <select class="browser-default custom-select form-control" name="ajidVille" required="required">
                                 <option selected value="">La ville du Banque</option>
                                 <c:forEach items="${villes}" var="ville">

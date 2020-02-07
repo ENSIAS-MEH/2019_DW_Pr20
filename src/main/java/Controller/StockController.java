@@ -8,27 +8,20 @@ import DAO.interfaces.VilleDAO;
 import Model.BanqueSang;
 import Model.GroupeSangin;
 import Model.StockSang;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-//@WebServlet("/Statistiques")
 public class StockController extends HttpServlet {
 
     private BanqueSangDAO banqueSangDAO;
     private VilleDAO villeDAO;
     private DAOFactory daoFactory = new DAOFactory("jdbc:mysql://localhost:3306/sang","root","");
-    private HttpSession httpSession;
+
     private StockSangDAO stockSangDAO;
     private GroupeSanginDAO groupeSanginDAO;
 
@@ -44,15 +37,14 @@ public class StockController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //System.out.println("From statistics");
         HttpSession session = request.getSession(false);
         BanqueSang banq = (BanqueSang)session.getAttribute("banquesang");
         int idBS = banq.getIdBS();
 
-        List<Integer> stockSangList = stockSangDAO.statsByBanque(idBS);   /*Id depuis la Session Aprés*/
+        List<Integer> stockSangList = stockSangDAO.statsByBanque(idBS);
         System.out.println(stockSangList);
         List<GroupeSangin> groupeSanginList = groupeSanginDAO.findAll();
-        BanqueSang currentBanque = banqueSangDAO.findBanqueSangById(idBS);  /*Id depuis la Session Aprés*/
+        BanqueSang currentBanque = banqueSangDAO.findBanqueSangById(idBS);
         request.setAttribute("groupList",groupeSanginList);
         request.setAttribute("currentBanque",currentBanque);
         request.setAttribute("stockList",stockSangList);
@@ -64,9 +56,9 @@ public class StockController extends HttpServlet {
         BanqueSang banq = (BanqueSang)session.getAttribute("banquesang");
         int idBS = banq.getIdBS();
         int idGroup = Integer.parseInt(request.getParameter("id"));
-        System.out.println("idPOST = "+idGroup);
         StockSang stockSang  = stockSangDAO.findStockById(idBS,idGroup);
         int quantite = Integer.parseInt(request.getParameter("quantite"));
+
         stockSang.setQuantite(quantite);
         stockSangDAO.updateStockSang(stockSang);
         this.init();
