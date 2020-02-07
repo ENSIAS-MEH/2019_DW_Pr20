@@ -187,7 +187,11 @@
 	\addcontentsline{toc}{chapter}{Introduction générale}
 	\markboth{INTRODUCTION GÉNÉRALE}{INTRODUCTION GÉNÉRALE}
 	\label{chap:introduction}{
-		
+		Après avoir terminer le cours de l'élément du module "Ingénieurie Web", on était amené à réaliser un projet pour appliquer les connaissances aquises dans de cet élément.\\
+		Pour notre cas, on a choisit un sujet qui peut s'appliquer dans le domaine de la santé et spécifiquement "Le don du sang". Il s'agit de développer une application Web en langage JEE qui permet l'automatisation du processus du don du sang.\\
+		L'application développée aura comme objectif principale la diffision des informations surtout dans le cas des besoins urgents (soit par Mail, par SMS et par Twitter), Consultation des statisques, Interaction avec un Chatbot et d'autres fonctionnalités.\\
+		Ce document présente les différentes phase de développement du projet qui s"'est déroulé en semaines.\\
+		On commence par l'analyse des différents besoins, et la conception de la solution. Ensuite, on va aborder le choix des technologies et la présentation de l'application sous forme des captures d'écrans.
 
 	 }
 		
@@ -204,15 +208,25 @@
 				\item \textbf{Gérer l’authentification :} Pour l’accès aux espaces basé sur role de l’utilisateur (généralement, on a 3 roles : Administrateur,Responsable de la banque du sang et Donateur).
 				\item \textbf{Pour l'administrateur ,} il peut :
 						\begin{itemize}
-							\item 
+							\item Gérer des banques de sang.
+							\item Gérer des donateurs.
+							\item Consulter les convois.
+							\item Consulter les alertes des besoins.
+							\item Consulter les statistiques des banques de sang.
 						\end{itemize}
 				\item \textbf{Pour le responsable de la banque du sang,} il peut :
 						\begin{itemize}
-								\item 
+								\item Gérer les alertes des besoins.
+								\item Gérer les convois et leurs plannings.
+								\item Gérer les donations.
+								\item Gérer le stock du sang.
+								\item Consulter les statistiques.
 						\end{itemize}
 				\item \textbf{Pour le donateur :}
 						\begin{itemize}
-								\item 
+								\item Consulter ses donations.
+								\item Consulter les alertes des besoins.
+								\item Consulter les convois.
 						\end{itemize}
 			\end{itemize}
 			}
@@ -231,11 +245,11 @@
 	\section{Conception :}{
 		
 			\subsection{Diagramme des cas d'utilisations :}{
-				Afin de donner une vision globale du comportement fonctionnel du système, on présente ci-dessous les diagrammes des cas d’utilisations des quatre acteurs identifiés auparavant. Nous allons détailler par la suite, les cas d’utilisations jugés les plus importants.
+				Afin de donner une vision globale du comportement fonctionnel du système, on présente ci-dessous le diagrammes des cas d’utilisations.
 								\begin{figure}[H]
-									 \includegraphics[width=13cm]{Images/chapitre3/usd1.png}
+									 \includegraphics[width=13cm]{Images/usecase.png}
 									 \centering
-									 \caption{\label{usd1} Diagramme de cas d'utilisations de l'acteur "Responsable"}
+									 \caption{\label{usd1} Diagramme de cas d'utilisations}
 								\end{figure}
 						
 			}
@@ -243,7 +257,7 @@
 		\subsection{Diagramme de classe:}{
 			Le diagramme de classes est considéré le plus important de la modélisation orientée objet. Il montre la structure interne du système et permet de fournir une représentation abstraite des objets du système qui vont interagir ensemble pour réaliser les cas d’utilisation.
 				\begin{figure}[H]
-					 \includegraphics[width=15cm]{Images/chapitre3/class.png}
+					 \includegraphics[width=15cm]{Images/class.png}
 					 \centering
 					 \caption{\label{classe} Diagramme de classe}
 				\end{figure}
@@ -257,6 +271,20 @@
 	\newpage
 	}
 	\section{Choix des outils \& technologies :}{
+			\begin{itemize}[label=\textbullet]
+				\item Langage de programmation: Java/JEE.
+				\item Servlets/JSP/JSTL.
+				\item Serveur d'application: Tomcat Server.
+				\item Maven.
+				\item SGBD: MySQL.
+				\item Gestion des versions: Git/GitHub.
+				\item Envoi des MAILs : API javax.mail.
+				\item Envoi des SMSs : API nexmo.
+				\item Publication sur Twitter : API Twitter4J.
+				\item Traitement asynchrone : AJAX.
+				\item ChatBot : DialogFlow.
+				\item Design: Bootstrap4.
+			\end{itemize}
 	}
 	\section{Présentation de l'application :}{
 	}
@@ -264,16 +292,16 @@
 	\addcontentsline{toc}{chapter}{Conclusion \& Percpectives}
 	\markboth{CONCLUSION \& PERCPECTIVES}{CONCLUSION \& PERCPECTIVES}
 	\label{chap:conclusion}{
-		Ce rapport présente brièvement le projet que j'étais amené à réaliser dans la période de mon stage. Pour mettre en oeuvre ce projet j'ai établi dans un premier lieu
-une étude de l'existant et une analyse des diffrents besoins suivie par une étude conceptuelle du sujet affin de dégager les différents fonctionnalités du système ainsi qu'une étude des outils et technologies qui seront utilisés pour la réalisation de l'application.
+		Ce rapport présente brièvement le projet que nous étions amené à le réaliser durant 3 semaines. Pour mettre en oeuvre ce projet, on a établi dans un premier lieu
+une analyse des diffrents besoins suivie par une étude conceptuelle du sujet affin de dégager les différents fonctionnalités du système ainsi qu'une étude des outils et technologies qui seront utilisés pour la réalisation de l'application.
 
-j'ai essayé au maximum de respecter les fonctionnalités exigées par le cahier de charge.
+On a essayé au maximum de respecter les fonctionnalités établies dans la phase d'analyse.
 
-Sur le plan personnel, ce stage était pour moi une opportunité et une expérience très satisfaisante et enrichissante, grâce à ce stage j'ai appris et j'ai approfondis des connaissances sur des nouvelles technologies, j'ai eu la chance de découvrir le monde du web en temps réel qui est de plus en plus présent dans l'informatique.
+Sur le plan personnel, ce projet était pour nous une opportunité et une expérience très satisfaisante et enrichissante, grâce à ce projet on a appris et on a approfondis des connaissances sur des nouvelles technologies.
 
-Comme perspectives de ce travail, j'ai voulu ajouter des nouvelles fonctionnalités comme l’échange des messages entre les différentes entité du système, et j'ai voulu aussi entamer une partie très importante qui est la partie des tests (Il s'agit d'un effort personnel et non demandé), j'ai commencé quelques tests, mais suite à des contraintes de temps, j'ai pas pu les terminer.
+Comme perspectives de ce travail, on a voulu ajouter des nouvelles fonctionnalités comme l’échange des messages entre les différentes entité du système par les websockets, et on a voulu aussi entamer une partie très importante qui est la partie des tests (Dans notre cas, c'était avec l'outil JUnit) et la partie de de déploiment (DOCKER), mais suite à des contraintes de temps, on a pas pu les faire.
 
-En somme ce stage m'a permis de mettre en pratique et d'approfondir les connaissances reçues au cours de ma première année à l'École nationale supérieure d'informatique et d'analyse des systèmes. Ce stage s'est très bien déroulé, et a été pour moi une véritable opportunité d'apprendre, de découvrir et d'être plus efficace.
+En somme ce projet nous a permis de mettre en pratique et d'approfondir les connaissances reçues au cours enseignés à l'École nationale supérieure d'informatique et d'analyse des systèmes. Ce projet s'est très bien déroulé, et a été pour nous une véritable opportunité d'apprendre, de découvrir et d'être plus efficace.
 	}
 
 \renewcommand{\bibname}{Bibliographie et Webographie}
@@ -281,52 +309,19 @@ En somme ce stage m'a permis de mettre en pratique et d'approfondir les connaiss
 	\bibliographystyle{alpha}
 	\addcontentsline{toc}{chapter}{Bibliographie et Webographie}
 
-	\bibitem{valScrum}[En ligne] Disponible sur :
-	\\\texttt{http ://blog. Dcube.fr/index.php/2014/04/28/scrum-vs-cycle-en-v-2-2/}
-
-	\bibitem{roleScrum}[En ligne] Disponible sur :
-	\\\texttt{http ://blog. Dcube.fr/index.php/2014/04/28/scrum-vs-cycle-en-v-2-2/}
-
-	\bibitem{backlog}[En ligne] Disponible sur :
-	\\\texttt{http ://blog. Dcube.fr/index.php/2014/04/28/scrum-vs-cycle-en-v-2-2/}
-
-	\bibitem{jee}[En ligne] Disponible sur :
+	\bibitem{jee}[En ligne] (JEE) Disponible sur :
 	\\\texttt{https://docs.oracle.com/javaee/}
 
-	\bibitem{spring}[En ligne] Disponible sur :
-	\\\texttt{https://github.com/spring-projects/spring-framework}
-
-	\bibitem{intellij}[En ligne] Disponible sur :
+	\bibitem{intellij}[En ligne] (intellij) Disponible sur :
 	\\\texttt{https://fr.wikipedia.org/wiki/IntelliJ\_IDEA}
 
-	\bibitem{boot}[En ligne] Disponible sur :
-	\\\texttt{http://www.neo-soft-solutions.fr/spring-boot-kesako/}
-
-	\bibitem{rest}[En ligne] Disponible sur :
-	\\\texttt{https://fr.wikipedia.org/wiki/Representational\_state\_transfer}
-
-	\bibitem{angular}[En ligne] Disponible sur :
-	\\\texttt{https://fr.wikipedia.org/wiki/Angular}
-
-	\bibitem{hibernate}[En ligne] Disponible sur :
-	\\\texttt{https://www.jmdoudoux.fr/java/dej/chap-hibernate.htm}
-
-	\bibitem{mysql}[En ligne] Disponible sur :
-	\\\texttt{https://fr.wikipedia.org/wiki/MySQL}
-
-	\bibitem{mongo}[En ligne] Disponible sur :
-	\\\texttt{https://www.ideematic.com/dictionnaire-digital/mongodb/}
-
-	\bibitem{maven}[En ligne] Disponible sur :
+	\bibitem{maven}[En ligne] (maven) Disponible sur :
 	\\\texttt{https://fr.wikipedia.org/wiki/Apache\_Maven}
 
-	\bibitem{npm}[En ligne] Disponible sur :
-	\\\texttt{https://fr.wikipedia.org/wiki/Npm}
-
-	\bibitem{git}[En ligne] Disponible sur :
+	\bibitem{git}[En ligne] (git) Disponible sur :
 	\\\texttt{https://fr.wikipedia.org/wiki/Git}
 
-	\bibitem{github}[En ligne] Disponible sur :
+	\bibitem{github}[En ligne] (github) Disponible sur :
 	\\\texttt{https://fr.wikipedia.org/wiki/GitHub}
 \end{thebibliography}
 \end{document}
