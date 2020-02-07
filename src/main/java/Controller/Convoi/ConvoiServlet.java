@@ -43,12 +43,24 @@ public class ConvoiServlet extends HttpServlet {
         if(session.getAttribute("banquesang")==null && session.getAttribute("donnateur")==null){
             response.sendRedirect("SignIn");
         }else {
-            try{
-                listConvoi(request, response);
+            if(session.getAttribute("donnateur")!=null){
+                try{
+                    listConvoipourDonnateur(request, response);
 
-            }catch (SQLException ex){
-                throw new ServletException(ex);
+                }catch (SQLException ex){
+                    throw new ServletException(ex);
+                }
             }
+
+            if(session.getAttribute("banquesang")!=null){
+                try{
+                    listConvoipourBanque(request, response);
+
+                }catch (SQLException ex){
+                    throw new ServletException(ex);
+                }
+            }
+
         }
 
 
@@ -56,9 +68,21 @@ public class ConvoiServlet extends HttpServlet {
 
     }
 
-    private void listConvoi(HttpServletRequest request , HttpServletResponse response) throws SQLException, IOException, ServletException{
+    private void listConvoipourDonnateur(HttpServletRequest request , HttpServletResponse response) throws SQLException, IOException, ServletException{
         List<BanqueSang> banqueSangs = banqueSangDAO.findAllBanqueSang();
         List<Convoi> convois = convoiDao.allConvoi();
+        request.setAttribute("convois",convois);
+        request.setAttribute("banques",banqueSangs);
+        this.getServletContext().getRequestDispatcher("/jsp/list-convois.jsp").forward(request, response);
+
+    }
+
+    private void listConvoipourBanque(HttpServletRequest request , HttpServletResponse response) throws SQLException, IOException, ServletException{
+        List<BanqueSang> banqueSangs = banqueSangDAO.findAllBanqueSang();
+
+        HttpSession session = request.getSession();
+        BanqueSang banqueSang = (BanqueSang) session.getAttribute("banquesang");
+        List<Convoi> convois = convoiDao.allConvoiByBanque(banqueSang.getIdBS());
         request.setAttribute("convois",convois);
         request.setAttribute("banques",banqueSangs);
         this.getServletContext().getRequestDispatcher("/jsp/list-convois.jsp").forward(request, response);
