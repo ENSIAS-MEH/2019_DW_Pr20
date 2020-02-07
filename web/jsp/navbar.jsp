@@ -103,7 +103,12 @@
         </ul>
     </div>
     <div class="justify-content-end">
-        <button class="btn btn-secondary btn-round btn-block" data-toggle="modal" data-target="#help"><span class="far fa-lightbulb text-white fa-2x"></span></button>
+        <!--button class="btn btn-secondary btn-round btn-block" data-toggle="modal" data-target="#help"><span class="far fa-lightbulb text-white fa-2x"></span></button-->
+        <a data-toggle="modal" class="btn btn-secondary btn-round btn-block" data-target="#help">
+                                        <span data-toggle="tooltip" title="ChatBot" data-placement="left">
+                                            <span class="far fa-lightbulb text-white fa-2x"></span>
+                                        </span>
+        </a>
     </div>
 </div>
 <div class="modal" id="help" tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop="true">
@@ -119,4 +124,5 @@
     </div>
 </div>
 </body>
+
 </html>
