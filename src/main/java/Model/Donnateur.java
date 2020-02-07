@@ -15,8 +15,7 @@ public class Donnateur {
         super();
     }
 
-    public Donnateur(int idDonnateur, String cin, String nomD, String prenomD, String teleD, String emailD, String passwordD, int idVille, int idGS) {
-        this.idDonnateur = idDonnateur;
+    public Donnateur(String cin, String nomD, String prenomD, String teleD, String emailD, String passwordD, int idVille, int idGS) {
         this.cin = cin;
         this.nomD = nomD;
         this.prenomD = prenomD;
