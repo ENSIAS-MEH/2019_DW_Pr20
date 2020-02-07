@@ -129,11 +129,54 @@ function load_target(e){
 
 }
 
+function verifier_donateur(){
+
+    var idD = document.getElementById("idD_aj").value;
+
+    $.get("DonnationStats",{"idD":idD, "action":"load_dnt"},function(data){
+        if(data == "notfound"){
+            document.getElementById("aj_btn"). disabled = true;
+            document.getElementById("nomD_aj").value = "";
+            document.getElementById("gs_aj").value = "";
+            document.getElementById('warn_dnt').innerHTML = '<div class="alert alert-danger" role="alert"> <i class="fas fa-exclamation-circle"></i> <b> Aucun donateur ne correspond à ce numéro!</b></div>';
+        }
+        else if (data == 'lastmonths'){
+            document.getElementById("aj_btn"). disabled = true;
+            document.getElementById("nomD_aj").value = "";
+            document.getElementById("gs_aj").value = "";
+            document.getElementById('warn_dnt').innerHTML = '<div class="alert alert-danger" role="alert"> <i class="fas fa-exclamation-circle"></i> <b> Les 3 mois ne sont pas encore depassés après sa dernière donation!</b></div>';
+        }
+        else{
+            var tab = JSON.parse(data);
+            document.getElementById('warn_dnt').innerHTML = '';
+            document.getElementById("nomD_aj").value = tab.pnomD;
+            document.getElementById("gs_aj").value = tab.gs;
+            document.getElementById("aj_btn"). disabled = false;
+        }
+    });
+}
+
 
 window.onload = function(){
-
     document.querySelector("#donnation").addEventListener("keyup",chercher);
+    document.querySelector("#idD_aj").addEventListener("keyup",verifier_donateur);
     var role = document.getElementById("role").value;
+
+    $.get("DonnationStats",{"action":"dnt_stat"},function(data){
+        var tab = JSON.parse(data);
+        if(role == "banquesang")
+            document.getElementById("titre_stats").innerHTML = 'Nombre de donations pour notre banque (par groupe sanguin)';
+        else if(role == "admin")
+            document.getElementById("titre_stats").innerHTML = 'Nombre total de donations (par groupe sanguin)';
+        document.getElementById("cardAmoin").innerHTML = tab[0];
+        document.getElementById("cardAplus").innerHTML = tab[1];
+        document.getElementById("cardBplus").innerHTML = tab[2];
+        document.getElementById("cardBmoin").innerHTML = tab[3];
+        document.getElementById("cardABplus").innerHTML = tab[4];
+        document.getElementById("cardABmoin").innerHTML = tab[5];
+        document.getElementById("cardOplus").innerHTML = tab[6];
+        document.getElementById("cardOmoin").innerHTML = tab[7];
+    });
 
     if(role == "donnateur"){
         document.querySelector("#ville_select").addEventListener("change",data_filter);
@@ -162,6 +205,8 @@ window.onload = function(){
     if(role == "banquesang"){
         document.querySelector("#gs_select").addEventListener("change",data_filter);
         document.querySelector("#aj_btn").addEventListener("click",ajouter_donation);
+        document.getElementById("aj_btn"). disabled = true;
     }
-    document.getElementById('dateD_aj').value = new Date();
+
+    //document.getElementById('dateD_aj').value = new Date();
 }

@@ -24,6 +24,8 @@ public interface DonnateurDAO {
     List<Donnateur> getDonnateursByGrpSg(int idGS);
     List<Donnateur> getAllDonnateursVilleGS(int idVille, int idGS);
 
+    int donnationLastM(int idDonnateur);        //return si un donateur a des donations dans les 3 dernièrs mois
+
     //Pour les statistiques
     int donorsNbrPerCity(int idVille);
     int donorsNbrPerGrpSg(int idGS);
