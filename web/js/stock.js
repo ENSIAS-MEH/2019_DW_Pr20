@@ -328,9 +328,29 @@ function data_filter(){
 
 }
 
+function data_filter_ville(){
+    var ville = document.getElementById("ville_select").value;
+    console.log("coucoo");
+    if(ville == "all"){
+        document.getElementById("banq_select").innerHTML = "<option value=\"all\">-- All --</option>"
+    }
+    else{
+        $.get("AdminStatistiques", {"ville":ville, "action":"load_bq"}, function(data) {
+            var tab = JSON.parse(data);
+            var elements = "<option value=\"all\">-- All --</option>";
+
+            for(var i=0; tab.idBS[i]!=null; i++){
+                elements += '<option value="'+tab.idBS[i]+'">'+tab.nomBS[i]+'</option>'
+            }
+            document.getElementById("banq_select").innerHTML = elements;
+        });
+    }
+    data_filter();
+}
+
 window.onload = function(){
 
-    document.querySelector("#ville_select").addEventListener("change",data_filter);
+    document.querySelector("#ville_select").addEventListener("change",data_filter_ville);
     document.querySelector("#banq_select").addEventListener("change",data_filter);
 
     $.get("AdminStatistiques", {"ville":"all", "banq":"all", "action":"filter"} , function (data){

@@ -16,21 +16,27 @@
     <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/regular.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/solid.min.css">
+    <style>
+        .card{
+            background-color: #f2f2f2;
+            border-color: #b21f2d;
+        }
+    </style>
 </head>
 
 <body>
-<%--
-<c:if test="${empty sessionScope.banque or empty sessionScope.admin}">
-    <c:redirect url="/"></c:redirect>
+<c:if test="${empty sessionScope.admin}">
+    <c:redirect url="/SignIn"></c:redirect>
 </c:if>
---%>
 <header>
     <%@ include file="navbar.jsp"%>
 </header>
 <br>
 
     <div class="container">
-    <h3> Statistique d'Administration</h3>
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2 mb-5" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fas fa-chart-line pt-2"></span></span>&nbsp;&nbsp;Statistiques
+        </div>
     <div class="row">
         <div class="col-lg-3 ml-1 col-md-6 mb-3">
             <select name="villes" id="ville_select" class="form-control">
@@ -42,18 +48,15 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-3">
             <select name="banques" id="banq_select" class="form-control">
-                <option value="all">-- All --</option>
-                <c:forEach var="bnq" items="${banqueSangList}">
-                    <option value="<c:out value="${bnq.idBS}"/>"><c:out value="${bnq.nomBS}"/></option>
-                </c:forEach>
+                <option value="all ">-- All --</option>
             </select>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-lg-6">
             <div class="row">
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger" style="background-color: #f2f2f2">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -68,7 +71,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -83,7 +86,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -98,7 +101,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -113,7 +116,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -128,7 +131,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -143,7 +146,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -158,7 +161,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2">
-                    <div class="card">
+                    <div class="card border rounded border-danger">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="align-self-center">
@@ -195,7 +198,6 @@
     <script src="../frameworks/js/drilldown.js"></script>
     <script src="../frameworks/jquery/jquery.js"></script>
     <script src="../frameworks/bootstap4/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- Statistic Script-->
     <!-- End Script for Stat -->
     </div>

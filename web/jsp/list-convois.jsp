@@ -17,7 +17,7 @@
     <%@ include file="navbar.jsp"%>
     <div class="row">
         <div class="container" style="margin-top: 30px;">
-            <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2 mb-5" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
                 <span class=""><span class="fas fa-truck-moving pt-2"></span></span>&nbsp;&nbsp;Convois
             </div>
             <div class="row">
@@ -40,7 +40,7 @@
             </div>
 
             <table class="table">
-                <thead class="alert-dark">
+                <thead class="alert-danger">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Titre</th>
@@ -50,7 +50,7 @@
 
                 </tr>
                 </thead>
-                <tbody id="conv">
+                <tbody id="conv" style="background-color: #f2f2f2">
                     <c:forEach items="${convois}" var="convoi">
                         <tr>
                             <th scope="row">

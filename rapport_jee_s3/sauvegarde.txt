@@ -1,0 +1,38 @@
+\begin{longtable}[H]{|l|p{9.4cm}|}
+\hline
+Dénomination & MonMecanicien.fr \\
+\hline
+Secteur d’activité & Service Automobile après-vente \\
+\hline
+Code APE & 8299Z - Autres activités de soutien aux entreprises n.c.a. \\
+\hline
+ Adresse juridique & 3 rue des Flamboyants
+77830 VALENCE EN BRIE \\
+\hline 
+Adresse physique & 40 ter avenue de Suffren 
+75015 PARIS \\
+\hline
+Capital & Pas de capital minimum - 5618€  \\
+\hline
+Dirigeant(s) & Hugo Barberot et Samir El Maoujoudi \\
+\hline
+Régime Social & Le dirigeant de SAS relève du régime des assimilés salariés.
+Il est donc assujetti au régime général de la sécurité sociale, et non au régime social des indépendants.\\
+\hline
+Régime Fiscal & Non communiqué - En fonction de la nature d’activités de la société et/ou selon de la situation économique avantageuse de celle-ci, impôt sur les sociétés ou sur le revenu. \\
+\hline
+Commissaire aux comptes & Non - Pas utile sauf si la SAS atteint deux des trois seuils suivants : = ou  >2M€ de CA HT, = ou >1M€ total de bilan et effectif permanent = ou >20 salariés. \\
+\hline
+\caption{Caractéristiques de MonMecanicien}
+\end{longtable}
+------------
+	//235  DESC : BCMRSM     - Management Fee Rebate Maintenance
+//107- DESC : BCMBDY - List of Act Turning Age 69
+//224- DESC : BCMDHR - Dealer holdings report
+DESC : BCMAW2 - UPCOMING AWD'S REPORT WITH DEALER SUBTOTAL
+----
+Protractor est un framework de test de bout en bout pour les applications Angular et AngularJS. Protractor exécute des tests sur l'application exécutée dans un navigateur réel et interagit avec celle-ci comme le ferait un utilisateur.
+--
+WinMerge est un outil Open Source de différenciation et de fusion pour Windows. WinMerge peut comparer et les dossiers et les fichiers, en repésentant les différences dans un fichier texte visuel qui est facile à comprendre ou manipuler.
+
+consacré à la conception de la solution, la réalisation où on décrit les différentes interfaces du cas de test BCM avant et après modernisation et à la fin les tests.

@@ -54,12 +54,18 @@ public class AlerteBesoinServlet extends HttpServlet {
         this.init();
         session=request.getSession();
         BanqueSang bs=(BanqueSang) session.getAttribute("banquesang");
-        if(bs==null){
+        Donnateur dn=(Donnateur) session.getAttribute("donnateur");
+        if(bs==null && dn==null){
             response.sendRedirect("SignIn");
         }
         else{
-            idBS = bs.getIdBS();
-            alertes = alerteBesoinDAO.getAlerteByBS(idBS);
+            if(bs!=null){
+                idBS = bs.getIdBS();
+                alertes = alerteBesoinDAO.getAlerteByBS(idBS);
+            }
+            else if(dn!=null){
+                alertes = alerteBesoinDAO.getAllAlertes();
+            }
             request.setAttribute("alertes", alertes);
             request.setAttribute("villes",villes);
             request.setAttribute("groupes",groupes);
@@ -90,10 +96,11 @@ public class AlerteBesoinServlet extends HttpServlet {
                 ab.setDescriptionAlerte(d);
                 ab.setIdBS(idBS);
                 alerteBesoinDAO.addAlerte(ab);
-                Thread sms = new SendSMS(donnateurs,"Une Alerte est lancée. C'est URGENT !! "+"\n*Banque du Sang: "
+
+                Runnable sms = new SendSMS(donnateurs,"Une Alerte est lancée. C'est URGENT !! "+"\n*Banque du Sang: "
                         +banqueSangDao.findBanqueSangById(ab.getIdBS()).getNomBS()+"    \n*Adresse: "+banqueSangDao.findBanqueSangById(ab.getIdBS()).getAdresseBS()+"\nGroupe sangin: "
                         +groupeSanginDao.findGroupSanginById(ab.getGS().getIdGS()).getNomGS()+"\n*Description de l'alerte :"+ab.getDescriptionAlerte()+"\n");
-                sms.start();
+                new Thread(sms).start();
             }
             this.init();
             this.doGet(request, response);

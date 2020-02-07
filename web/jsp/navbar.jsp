@@ -8,11 +8,9 @@
 <html>
 <head>
     <title>Don du sang</title>
-    <link rel="stylesheet" href="../frameworks/bootstap4/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/regular.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/solid.min.css">
-    <link rel="stylesheet" href="../frameworks/font-awesome/css/all.min.css">
     <style>
         .navbar{
             background: lightgray;
@@ -76,32 +74,55 @@
                 <li class="nav-item">
                     <a href="AdminStatistiques" class="nav-link mr-5 p-2 rounded">Dashboard</a>
                 </li>
-            </c:if>
-            <c:if test="${not empty sessionScope.admin}">
                 <li class="nav-item">
                     <a href="LesBanquesDuSang" class="nav-link mr-5 p-2 rounded">Banques</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link mr-5 p-2 rounded">Donators</a>
+                    <a href="Donnation" class="nav-link mr-5 p-2 rounded">Donations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Donnateur" class="nav-link mr-5 p-2 rounded">Donators</a>
+                </li>
+            </c:if>
+            <c:if test="${not empty sessionScope.donnateur}">
+                <li class="nav-item">
+                    <a href="Alertes" class="nav-link mr-5 p-2 rounded">Alertes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Donnation" class="nav-link mr-5 p-2 rounded">Donations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Convois" class="nav-link mr-5 p-2 rounded">Convois</a>
                 </li>
             </c:if>
             <c:if test="${(not empty sessionScope.admin)  || (not empty sessionScope.banquesang) || (not empty sessionScope.donnateur)}">
                 <li class="nav-item">
-                    <a href="/LogOut" class="nav-link mr-5 p-2 border border-danger rounded">Log Out</a>
+                    <a href="LogOut" class="nav-link mr-5 p-2 border border-danger rounded">Log Out</a>
                 </li>
             </c:if>
         </ul>
     </div>
     <div class="justify-content-end">
-        <button class="btn btn-secondary btn-round btn-block" data-toggle="modal" data-target="#help"><span class="far fa-lightbulb text-white fa-2x"></span></button>
+        <!--button class="btn btn-secondary btn-round btn-block" data-toggle="modal" data-target="#help"><span class="far fa-lightbulb text-white fa-2x"></span></button-->
+        <a data-toggle="modal" class="btn btn-secondary btn-round btn-block" data-target="#help">
+                                        <span data-toggle="tooltip" title="ChatBot" data-placement="left">
+                                            <span class="far fa-lightbulb text-white fa-2x"></span>
+                                        </span>
+        </a>
     </div>
 </div>
 <div class="modal" id="help" tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content p-1">
-            jj
+            <iframe
+                    allow="microphone;"
+                    width="480"
+                    height="430"
+                    src="https://console.dialogflow.com/api-client/demo/embedded/7c7758be-1a47-4da6-a08f-9826f726770c">
+            </iframe>
         </div>
     </div>
 </div>
 </body>
+
 </html>

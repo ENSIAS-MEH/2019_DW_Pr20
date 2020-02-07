@@ -17,8 +17,13 @@
     <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/regular.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/solid.min.css">
-
     <link rel="stylesheet" type="text/css" href="../css/donnation.css">
+    <style>
+        .card{
+            background-color: #f2f2f2;
+            border-color: #b21f2d;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,10 +36,9 @@
 <div class="row">
 
     <div class="container">
-        <h3 class="text-center" id="titre_stats"></h3>
 
-        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
-            <span class=""><span class="fas fa-syringe pt-2"></span></span>&nbsp;&nbsp;Donations
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2 mb-5" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fas fa-syringe pt-2"></span></span>&nbsp;&nbsp;<h3 class="text-center" id="titre_stats"></h3>
         </div>
 
         <hr>
@@ -160,8 +164,11 @@
                 </div>
             </div>
         </div>
-        <br><br>
-        <h3 class="text-center">La Liste des Donations</h3>
+        <br>
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fas fa-syringe pt-2"></span></span>&nbsp;&nbsp;<h3 class="text-center">La Liste des Donations</h3>
+        </div>
+
         <br><br>
         <div class="row" >
 
@@ -235,7 +242,7 @@
 
             <c:if test="${sessionScope.role ne 'donnateur'}">
                 <div class="col-lg-3 float-left mb-3 row justify-content-end" >
-                    <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" data-target="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donnation</a>
+                    <a class="btn btn-dark text-white font-weight-bold " data-toggle="modal" data-target="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donnation</a>
                 </div>
             </c:if>
 
@@ -243,7 +250,7 @@
 
         <br>
         <table class="table table-bordered" id="dnt_table">
-            <thead class="alert-dark">
+            <thead class="alert-danger">
             <tr>
                 <th onclick='sortTable(1)'>N° donateur</th>
                 <th onclick='sortTable(2)'>Nom & Prenom</th>
@@ -256,7 +263,7 @@
             </tr>
             </thead>
 
-            <tbody id = "dnt">
+            <tbody id = "dnt" style="background-color: #f2f2f2">
 
             <c:forEach var="donnation" items="${donnationList}">
                 <tr>

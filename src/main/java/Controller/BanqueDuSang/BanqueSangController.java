@@ -3,6 +3,7 @@ package Controller.BanqueDuSang;
 import DAO.DAOFactory;
 import DAO.interfaces.BanqueSangDAO;
 import DAO.interfaces.VilleDAO;
+import Model.Admin;
 import Model.BanqueSang;
 import Model.Ville;
 
@@ -28,42 +29,53 @@ public class BanqueSangController extends HttpServlet {
     public void init() throws ServletException {
 
         daoFactory.getInstance();
-        //System.out.println("good : "+daoFactory);
         banqueSangDAO = daoFactory.getBanqueSangDaoImpl();
         villeDAO = daoFactory.getVilleDaoImpl();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int banqueid = Integer.parseInt(request.getParameter("idBS"));
-        if(banqueid == -1) {
-            try {
-                nouveauBanque(request,response);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+        httpSession=request.getSession();
+        Admin admin = (Admin) httpSession.getAttribute("admin");
+        if(admin == null){
+            response.sendRedirect("SignIn");
         }
         else {
-            try {
-                modifierBanque(request,response);
-            } catch (SQLException e) {
-                e.printStackTrace();
+            int banqueid = Integer.parseInt(request.getParameter("idBS"));
+            if (banqueid == -1) {
+                try {
+                    nouveauBanque(request, response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                try {
+                    modifierBanque(request, response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<BanqueSang> banqueSangList = banqueSangDAO.findAllBanqueSang();
-        List<Ville> villes = villeDAO.getAllVille();
-        request.setAttribute("villes",villes);
-        request.setAttribute("banqueSangList",banqueSangList);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/list-banque.jsp");
-        requestDispatcher.forward(request,response);
+        httpSession=request.getSession();
+        Admin admin = (Admin) httpSession.getAttribute("admin");
+        if(admin == null){
+            response.sendRedirect("SignIn");
+        }
+        else {
+            List<BanqueSang> banqueSangList = banqueSangDAO.findAllBanqueSang();
+            List<Ville> villes = villeDAO.getAllVille();
+            request.setAttribute("villes", villes);
+            request.setAttribute("banqueSangList", banqueSangList);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/list-banque.jsp");
+            requestDispatcher.forward(request, response);
+        }
     }
 
     private void nouveauBanque(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException{
-        //String idBanque = request.getParameter("idBanque");
         String nomBanque = request.getParameter("ajnomBS");
         String emailBanque = request.getParameter("ajemailBS");
         String telebanque = request.getParameter("ajteleBS");
@@ -97,7 +109,6 @@ public class BanqueSangController extends HttpServlet {
         banqueSang.setNomBS(nomBanque);
         banqueSang.setEmailBS(emailBanque);
         banqueSang.setAdresseBS(adresseBanque);
-        //System.out.println(adresseBanque);
         banqueSang.setIdBS(idBanque);
         System.out.println(Integer.parseInt(idville));
         banqueSang.setIdVille(Integer.parseInt(idville));

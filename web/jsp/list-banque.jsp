@@ -22,23 +22,15 @@
 
 <header>
     <%@ include file="navbar.jsp"%>
-
-    <!--<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #af111c">
-        <div>
-            <a href="https://www.github.com/MejdaouiSoufiane" class="navbar-brand"> Platforme de Don du Sang</a>
-        </div>
-
-        <ul class="navbar-nav">
-            <li><a href="/LesBaqnuesDuSang" class="nav-link">Les Banques du Sang</a></li>
-        </ul>
-    </nav>-->
 </header>
 <br>
 
 <div class="row">
 
     <div class="container">
-        <h3 class="text-center">La Liste des Banques du Sang</h3>
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2 mb-5" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fas fa-list-alt pt-2"></span></span>&nbsp;&nbsp;Banques du sang
+        </div>
         <hr>
         <div class="row">
             <div class="input-group mb-3 col-lg-5">
@@ -55,7 +47,7 @@
         <br>
         <!-- Debut table -->
         <table class="table table-responsive-md">
-            <thead class="thead-light">
+            <thead class="alert-danger">
             <tr>
                 <th>Numéro</th>
                 <th>Nom</th>
@@ -67,27 +59,27 @@
                 <th class="align-content-center">Actions</th>
             </tr>
             </thead>
-            <tbody id = "bnq">
+            <tbody id = "bnq" style="background-color: #f2f2f2">
             <!--   for (Todo todo: todos) {  -->
             <c:forEach var="banque" items="${banqueSangList}">
 
                 <tr>
-                    <td class="bnqq">
+                    <td>
                         <c:out value="${banque.idBS}" />
                     </td>
-                    <td class="bnqq">
+                    <td>
                         <c:out value="${banque.nomBS}" />
                     </td>
-                    <td class="bnqq">
+                    <td>
                         <c:out value="${banque.emailBS}" />
                     </td>
-                    <td class="bnqq">
+                    <td>
                         <c:out value="${banque.teleBS}" />
                     </td>
-                    <td class="bnqq">
+                    <td>
                         <c:out value="${banque.adresseBS}" />
                     </td>
-                    <td class="bnqq">
+                    <td>
                         <c:forEach var="ville" items="${villes}">
                             <c:if test="${banque.idVille eq ville.idVille}">
                                 <c:out value="${ville.nomVille}"/>
@@ -156,7 +148,7 @@
                                                 <input type="text" value="<c:out value='${banque.adresseBS}' />" class="form-control" name="modadresseBS">
                                             </fieldset>
                                             <fieldset class="form-group">
-                                                <label>Adresse</label>
+                                                <label>Ville</label>
                                                 <select class="browser-default custom-select form-control" name="modidVille">
                                                     <option selected value="">La ville du Banque</option>
                                                     <c:forEach items="${villes}" var="ville">
@@ -242,7 +234,7 @@
                             <input type="text" class="form-control" name="ajadresseBS">
                         </fieldset>
                         <fieldset class="form-group">
-                            <label>Adresse</label>
+                            <label>Ville</label>
                             <select class="browser-default custom-select form-control" name="ajidVille" required="required">
                                 <option selected value="">La ville du Banque</option>
                                 <c:forEach items="${villes}" var="ville">

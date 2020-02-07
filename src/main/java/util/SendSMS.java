@@ -11,7 +11,7 @@ import com.nexmo.client.sms.messages.TextMessage;
 
 import java.util.List;
 
-public class SendSMS extends Thread {
+public class SendSMS implements Runnable {
     private List<Donnateur> donnateurList;
     private String message;
 
@@ -32,22 +32,17 @@ public class SendSMS extends Thread {
         String API_KEY = "4373f51f";
         String API_SECRET = "OGZ2MA2VCb7TCPvY";
 
-        NexmoClient client = new NexmoClient.Builder()
-                .apiKey(API_KEY)
-                .apiSecret(API_SECRET)
-                .build();
+        NexmoClient client = new NexmoClient.Builder().apiKey(API_KEY).apiSecret(API_SECRET).build();
 
         for (Donnateur donnateur : donnateurList) {
 
             SmsSubmissionResponse responses = client.getSmsClient().submitMessage(new TextMessage(
                     "DON DU SANG",
-                    donnateur.getTeleD(),
-                    message));
+                    donnateur.getTeleD(),message));
             for (SmsSubmissionResponseMessage response : responses.getMessages()) {
                 System.out.println(response);
             }
         }
-
 
     }
 

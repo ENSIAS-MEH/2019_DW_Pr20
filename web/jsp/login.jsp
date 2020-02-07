@@ -41,7 +41,7 @@
             </div>
             <img class="card-img-top border-bottom border-danger h-50" src="../img/log.jpg">
             <div class="card-body">
-                <form action="/SignIn" method="post">
+                <form action="SignIn" method="post">
                     <div class="form-group p-2">
                         <i class="fa fa-user text-danger"></i>
                         <input type="text" class="form-control text-center" placeholder="Username" required="required" name="username">
