@@ -36,7 +36,7 @@
 <div class="row">
 
     <div class="container">
-
+<c:if test="${not empty sessionScope.banquesang}">
         <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2 mb-5" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
             <span class=""><span class="fas fa-syringe pt-2"></span></span>&nbsp;&nbsp;<h3 class="text-center" id="titre_stats"></h3>
         </div>
@@ -164,6 +164,7 @@
                 </div>
             </div>
         </div>
+</c:if>
         <br>
         <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
             <span class=""><span class="fas fa-syringe pt-2"></span></span>&nbsp;&nbsp;<h3 class="text-center">La Liste des Donations</h3>
