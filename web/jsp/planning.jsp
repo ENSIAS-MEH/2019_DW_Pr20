@@ -47,7 +47,7 @@
             </div>
 
             <table class="table">
-                <thead>
+                <thead class="alert-danger">
                 <tr>
                     <th scope="col">Ville</th>
                     <th scope="col">Date debut</th>
@@ -58,7 +58,7 @@
                 </tr>
                 </thead>
 
-                <tbody id="plan">
+                <tbody id="plan" style="background-color: #f2f2f2">
                     <c:forEach items="${plannings}" var="planning">
                         <tr>
                             <td scope="row">
