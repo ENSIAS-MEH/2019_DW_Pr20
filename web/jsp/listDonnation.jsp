@@ -31,10 +31,9 @@
 <div class="row">
 
     <div class="container">
-        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2 mb-5" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
             <span class=""><span class="fas fa-syringe pt-2"></span></span>&nbsp;&nbsp;Donations
         </div>
-        <hr>
         <div class="row" >
             <div class="input-group mb-3 col-lg-4" >
                 <input type="text" id="donnation" class="form-control border-danger" placeholder="Chercher par nom du donnateur">
@@ -114,7 +113,7 @@
 
         <br>
         <table class="table table-bordered" id="dnt_table">
-            <thead class="alert-dark">
+            <thead class="alert-danger">
             <tr>
                 <th onclick='sortTable(1)'>N° donateur</th>
                 <th onclick='sortTable(2)'>Nom & Prenom</th>
@@ -127,7 +126,7 @@
             </tr>
             </thead>
 
-            <tbody id = "dnt">
+            <tbody id = "dnt" class="bg-white">
 
             <c:forEach var="donnation" items="${donnationList}">
                 <tr>
