@@ -343,6 +343,27 @@ public class DonnateurDaoImpl implements DonnateurDAO {
     }
 
     @Override
+    public int donnationLastM(int idD){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int nbrDonors = 0;
+
+        try {
+            conn = daoFactory.getConnection();
+            ps = conn.prepareStatement("select count(*) as nbr from donnation where idDonnateur="+idD+" and " +
+                    "dateDonnation >= now()-interval 3 month ;" );
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                nbrDonors = Integer.parseInt(rs.getString("nbr"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return nbrDonors;
+    }
+
+    @Override
     public List<Donnateur> getDonnateursByGrpSg(int idGS){
         Connection conn = null;
         Statement st = null;

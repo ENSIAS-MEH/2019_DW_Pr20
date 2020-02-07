@@ -34,7 +34,7 @@
         .btn-round,.btn-round:hover,.btn-round:active{border-color:transparent}
     </style>
 </head>
-<body>
+<body class="alert-secondary">
 <div class="navbar navbar-expand-lg navbar-dark mb-3">
     <a href="#" class="navbar-brand font-weight-bold text-Danger text-lg-left float-left"><span class="fa fa-tint fa-2x"></span>&nbsp;Don du Sang</a>
     <button type="button" class="navbar-toggler btn btn-outline-danger" data-toggle="collapse" data-target="#nav">
@@ -74,24 +74,36 @@
                 <li class="nav-item">
                     <a href="AdminStatistiques" class="nav-link mr-5 p-2 rounded">Dashboard</a>
                 </li>
-            </c:if>
-            <c:if test="${not empty sessionScope.admin}">
                 <li class="nav-item">
                     <a href="LesBanquesDuSang" class="nav-link mr-5 p-2 rounded">Banques</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link mr-5 p-2 rounded">Donators</a>
+                    <a href="Donnation" class="nav-link mr-5 p-2 rounded">Donations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Donnateur" class="nav-link mr-5 p-2 rounded">Donators</a>
+                </li>
+            </c:if>
+            <c:if test="${not empty sessionScope.donnateur}">
+                <li class="nav-item">
+                    <a href="Alertes" class="nav-link mr-5 p-2 rounded">Alertes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Donnation" class="nav-link mr-5 p-2 rounded">Donations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Convois" class="nav-link mr-5 p-2 rounded">Convois</a>
                 </li>
             </c:if>
             <c:if test="${(not empty sessionScope.admin)  || (not empty sessionScope.banquesang) || (not empty sessionScope.donnateur)}">
                 <li class="nav-item">
-                    <a href="/LogOut" class="nav-link mr-5 p-2 border border-danger rounded">Log Out</a>
+                    <a href="LogOut" class="nav-link mr-5 p-2 border border-danger rounded">Log Out</a>
                 </li>
             </c:if>
         </ul>
     </div>
     <div class="justify-content-end">
-        <button class="btn btn-secondary btn-round btn-block" data-toggle="modal" data-target="#help"><span class="far fa-lightbulb text-danger fa-2x"></span></button>
+        <button class="btn btn-secondary btn-round btn-block" data-toggle="modal" data-target="#help"><span class="far fa-lightbulb text-white fa-2x"></span></button>
     </div>
 </div>
 <div class="modal" id="help" tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop="true">

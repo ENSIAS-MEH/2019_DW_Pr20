@@ -14,14 +14,12 @@
     <link rel="stylesheet" href="../frameworks/bootstap4/dist/css/bootstrap.min.css"/>
 </head>
 <body>
-    <header>
-        <%@ include file="navbar.jsp"%>
-    </header>
-
+    <%@ include file="navbar.jsp"%>
     <div class="row">
         <div class="container" style="margin-top: 30px;">
-            <h3 class="text-center">La List des Convoi</h3>
-            <hr />
+            <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2 mb-5" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+                <span class=""><span class="fas fa-truck-moving pt-2"></span></span>&nbsp;&nbsp;Convois
+            </div>
             <div class="row">
                 <div class="input-group mb-3 col-lg-5">
                     <input type="text" id="convoi" class="form-control border-danger" placeholder="Chercher un Convoi">
@@ -31,15 +29,18 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-lg-7 float-left mb-3 row justify-content-end">
-                    <a class="btn btn-outline-dark font-weight-bold" data-toggle="modal" href="#AjouterConvoi">
-                        <span class="fa fa-plus"></span>&nbsp;Ajouter un Convoi
-                    </a>
-                </div>
+
+                <c:if test="${sessionScope.role eq 'banquesang'}">
+                    <div class="col-lg-7 float-left mb-3 row justify-content-end">
+                        <a class="btn btn-outline-dark font-weight-bold" data-toggle="modal" href="#AjouterConvoi">
+                            <span class="fa fa-plus"></span>&nbsp;Ajouter un Convoi
+                        </a>
+                    </div>
+                </c:if>
             </div>
 
             <table class="table">
-                <thead>
+                <thead class="alert-danger">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Titre</th>
@@ -49,7 +50,7 @@
 
                 </tr>
                 </thead>
-                <tbody id="conv">
+                <tbody id="conv" style="background-color: #f2f2f2">
                     <c:forEach items="${convois}" var="convoi">
                         <tr>
                             <th scope="row">
@@ -72,26 +73,28 @@
                                 </c:forEach>
                             </td>
 
-                            <td>
-                                <a data-toggle="modal" href="#modifier${convoi.idConvoi}">
-                                    <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
-                                        <span class="fa fa-edit" aria-hidden="true"></span>
-                                    </span>
-                                </a>
+                                <td>
+                                    <c:if test="${sessionScope.role eq 'banquesang'}">
+                                        <a data-toggle="modal" href="#modifier${convoi.idConvoi}">
+                                            <span class="shadow text-danger p-2" data-toggle="tooltip" title="Modifier" data-placement="left">
+                                                <span class="fa fa-edit" aria-hidden="true"></span>
+                                            </span>
+                                        </a>
 
-                                <a data-toggle="modal" href="#supprimer${convoi.idConvoi}">
-                                    <span class="shadow text-danger p-2" data-toggle="tooltip" title="Supprimer" data-placement="right">
-                                        <span class="fa fa-trash-alt" aria-hidden="true"></span>
-                                    </span>
-                                </a>
+                                        <a data-toggle="modal" href="#supprimer${convoi.idConvoi}">
+                                            <span class="shadow text-danger p-2" data-toggle="tooltip" title="Supprimer" data-placement="right">
+                                                <span class="fa fa-trash-alt" aria-hidden="true"></span>
+                                            </span>
+                                        </a>
+                                    </c:if>
+                                    <a  href="Planning?idConvoi=<c:out value='${convoi.idConvoi}'/>" >
+                                        <span class="shadow text-danger p-2" data-toggle="tooltip" title="Planning" data-placement="right">
+                                            <span class="fa fa-calendar-alt" aria-hidden="true"></span>
+                                        </span>
+                                    </a>
 
-                                <a  href="Planning?idConvoi=<c:out value='${convoi.idConvoi}'/>" >
-                                    <span class="shadow text-danger p-2" data-toggle="tooltip" title="Planning" data-placement="right">
-                                        <span class="fa fa-calendar-alt" aria-hidden="true"></span>
-                                    </span>
-                                </a>
+                                </td>
 
-                            </td>
 
                         </tr>
 

@@ -1,14 +1,8 @@
 package Controller;
 
 import DAO.DAOFactory;
-import DAO.interfaces.BanqueSangDAO;
-import DAO.interfaces.GroupeSanginDAO;
-import DAO.interfaces.StockSangDAO;
-import DAO.interfaces.VilleDAO;
-import Model.BanqueSang;
-import Model.GroupeSangin;
-import Model.StockSang;
-import Model.Ville;
+import DAO.interfaces.*;
+import Model.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,9 +21,9 @@ public class DonnationStatsCtrl extends HttpServlet {
     private VilleDAO villeDAO;
     private DAOFactory daoFactory = new DAOFactory("jdbc:mysql://localhost:3306/sang","root","");
     private HttpSession httpSession;
-    private StockSangDAO stockSangDAO;
+    private DonnationDAO donnationDAO;
+    private DonnateurDAO donnateurDAO;
     private GroupeSanginDAO groupeSanginDAO;
-    private int idBS = 9; /*Depuis la Sessions*/
 
     @Override
     public void init() throws ServletException {
@@ -37,25 +31,52 @@ public class DonnationStatsCtrl extends HttpServlet {
         daoFactory.getInstance();
         banqueSangDAO = daoFactory.getBanqueSangDaoImpl();
         villeDAO = daoFactory.getVilleDaoImpl();
-        stockSangDAO = daoFactory.getStockSangDaoImpl();
+        donnationDAO = daoFactory.getDonnationDaoImpl();
+        donnateurDAO = daoFactory.getDonnateurDaoImpl();
         groupeSanginDAO = daoFactory.getGroupeSanginDaoImpl();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getParameter("action") == null || request.getParameter("action").equals("")){
 
-            List<GroupeSangin> groupeSanginList = groupeSanginDAO.findAll();
-            List<Ville> villes = villeDAO.getAllVille();
-            List<BanqueSang> banqueSangList = banqueSangDAO.findAllBanqueSang();
-            ArrayList<Integer> allStock = (ArrayList<Integer>) stockSangDAO.AllstocStatistic();
+        if(request.getParameter("action").equals("dnt_stat")){
 
-            System.out.println("All Stock ;"+allStock);
+            List<Integer> stats = new ArrayList<>();
+            HttpSession session = request.getSession(false);
+            String role = (String)session.getAttribute("role");
 
-            request.setAttribute("villes",villes);
-            request.setAttribute("banqueSangList",banqueSangList);
-            request.setAttribute("groupList",groupeSanginList);
+            if(role.equals("admin")){
+                for(int i=1; i<9; i++)
+                    stats.add(donnationDAO.DonnationsNbrPerGS(i));
+            }
+            else if(role.equals("banquesang")){
+                BanqueSang bq = (BanqueSang)session.getAttribute("banquesang");
+                for(int i=1; i<9; i++)
+                    stats.add(donnationDAO.DonnationsNbrPerGS(i, bq.getIdBS()));
+            }
 
-            this.getServletContext().getRequestDispatcher("/jsp/DonnationStats.jsp").forward(request,response);
+            response.getWriter().write(stats.toString());
         }
+        else if(request.getParameter("action").equals("load_dnt")){
+
+            int idD = Integer.parseInt(request.getParameter("idD"));
+            Donnateur d = donnateurDAO.getDonnateurById(idD);
+
+            if(d == null)
+                response.getWriter().write("notfound");
+            else{
+                int nbrd = donnateurDAO.donnationLastM(d.getIdDonnateur());         //donations nbr last 3 mounths
+                if(nbrd == 0)
+                    response.getWriter().write(donnateurtoJSON(d));
+                else
+                    response.getWriter().write("lastmonths");
+            }
+        }
+    }
+
+    private String donnateurtoJSON(Donnateur d) {
+        String nom = d.getNomD() + " " + d.getPrenomD();
+        String gs = groupeSanginDAO.findGroupSanginById(d.getIdGS()).getNomGS();
+
+        return "{\"pnomD\":\""+nom+"\",\"gs\":\""+gs+"\"}";
     }
 }

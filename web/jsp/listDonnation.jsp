@@ -17,8 +17,13 @@
     <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/regular.min.css">
     <link rel="stylesheet" href="../frameworks/font-awesome/css/solid.min.css">
-
     <link rel="stylesheet" type="text/css" href="../css/donnation.css">
+    <style>
+        .card{
+            background-color: #f2f2f2;
+            border-color: #b21f2d;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,9 +36,142 @@
 <div class="row">
 
     <div class="container">
-        <h3 class="text-center">La Liste des Donations</h3>
+
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2 mb-5" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fas fa-syringe pt-2"></span></span>&nbsp;&nbsp;<h3 class="text-center" id="titre_stats"></h3>
+        </div>
+
         <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <img src="/img/A+.png" width="40" height="60">
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h3 class="text-stat" id="cardAplus" ></h3>       <!--Text ghaykon fih Le nombre dyal kol Groupe-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <img src="/img/B+.png" width="40" height="60">
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h3 class="text-stat" id="cardBplus"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <img src="/img/AB+.png" width="40" height="60">
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h3 class="text-stat" id="cardABplus"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <img src="/img/O+.png" width="40" height="60">
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h3 class="text-stat" id="cardOplus"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <img src="/img/A-.png" width="40" height="60">
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h3 class="text-stat" id="cardAmoin"></h3>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <img src="/img/B-.png" width="40" height="60">
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h3 class="text-stat" id="cardBmoin"></h3>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <img src="/img/AB-.png" width="40" height="60">
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h3 class="text-stat" id="cardABmoin"></h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <img src="/img/O-.png" width="40" height="60">
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h3 class="text-stat" id="cardOmoin"></h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fas fa-syringe pt-2"></span></span>&nbsp;&nbsp;<h3 class="text-center">La Liste des Donations</h3>
+        </div>
+
+        <br><br>
         <div class="row" >
+
             <div class="input-group mb-3 col-lg-4" >
                 <input type="text" id="donnation" class="form-control border-danger" placeholder="Chercher par nom du donnateur">
 
@@ -104,7 +242,7 @@
 
             <c:if test="${sessionScope.role ne 'donnateur'}">
                 <div class="col-lg-3 float-left mb-3 row justify-content-end" >
-                    <a class="btn btn-outline-dark font-weight-bold " data-toggle="modal" data-target="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donnation</a>
+                    <a class="btn btn-dark text-white font-weight-bold " data-toggle="modal" data-target="#AjouterDonnation">&nbsp;<span class="fa fa-plus"></span>&nbsp;Ajouter une Donnation</a>
                 </div>
             </c:if>
 
@@ -112,7 +250,7 @@
 
         <br>
         <table class="table table-bordered" id="dnt_table">
-            <thead>
+            <thead class="alert-danger">
             <tr>
                 <th onclick='sortTable(1)'>N° donateur</th>
                 <th onclick='sortTable(2)'>Nom & Prenom</th>
@@ -125,7 +263,7 @@
             </tr>
             </thead>
 
-            <tbody id = "dnt">
+            <tbody id = "dnt" style="background-color: #f2f2f2">
 
             <c:forEach var="donnation" items="${donnationList}">
                 <tr>
@@ -192,31 +330,18 @@
 
                     <fieldset class="form-group">
                         <label>Numéro du donateur</label>
-                        <input type="text" class="form-control" name="idD_aj" id="idD_aj" required>
+                        <input type="text" class="form-control" id="idD_aj">
                     </fieldset>
+                    <div id="warn_dnt" ></div>
 
                     <fieldset class="form-group">
                         <label>Nom & Prénom</label>
-                        <input type="text" class="form-control" name="nomD_aj" id="nomD_aj" required>
+                        <input type="text" class="form-control" id="nomD_aj" disabled>
                     </fieldset>
 
                     <fieldset class="form-group">
                         <label>Groupe Sanguin</label><br>
-                        <select name="GrpSng" name="gs_aj" id="gs_aj">
-                            <option value="">-- Choisissez un groupe sanguin --</option>
-                            <option value="A-">A-</option>
-                            <option value="A+">A+</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                        </select>
-                    </fieldset>
-                    <fieldset class="form-group">
-                        <label>Date de donation</label>
-                        <input type="datetime-local" class="form-control" name="dateD_aj" id="dateD_aj" required>
+                        <input type="text" class="form-control" id="gs_aj" disabled>
                     </fieldset>
 
 

@@ -59,25 +59,40 @@ public class AuthenticationServlet extends HttpServlet {
                 session.setAttribute("role", "banquesang");
                 session.setAttribute("banquesang", banqueSang);
                 System.out.println("role : "+session.getAttribute("role") + "\n"+banqueSang);
-                response.sendRedirect("/Donnation");            //Dial Oussama bach ytesté b session :)
-                //response.sendRedirect("/Statistiques");
+                response.sendRedirect("/Statistiques");
             }
             else if(donnateur != null){
                 HttpSession session = request.getSession();
                 session.setAttribute("role", "donnateur");
                 session.setAttribute("donnateur", donnateur);
                 System.out.println("role : "+session.getAttribute("role") + "\n"+donnateur);
-                response.sendRedirect("/Donnation");            //Dial Oussama bach ytesté b session :)
-               // response.sendRedirect("/");
+                response.sendRedirect("/Donnation");
             }
         }
-
-        //response.sendRedirect("/TestServlet");
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.init();
-        this.getServletContext().getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        session=request.getSession();
+        BanqueSang ad=(BanqueSang) session.getAttribute("admin");
+        BanqueSang bs=(BanqueSang) session.getAttribute("banquesang");
+        Donnateur dn=(Donnateur) session.getAttribute("donnateur");
+
+        if(ad!=null){
+            response.sendRedirect("/AdminStatistiques");
+        }
+
+        else if(bs!=null) {
+            response.sendRedirect("/Statistiques");
+        }
+
+        else if(dn!=null){
+            response.sendRedirect("/Donnation");
+        }
+        else {
+            this.getServletContext().getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+        }
     }
 }

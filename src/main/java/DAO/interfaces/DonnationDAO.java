@@ -22,6 +22,8 @@ public interface DonnationDAO {
 
 
     int DonnationsNbrPerVille(int idVille);                     //ville du BanqueSang pas du donnateur
+    int DonnationsNbrPerGS(int idGS);
+    int DonnationsNbrPerGS(int idGS, int idBS);
     int DonnationsNbrPerBanq(int idBS);
     int DonnationsNbrPerDonnateur(int idDonnateur);
     int DonnationsNbrPerVilleGS(int idVille, int idGS);         //ville du BanqueSang pas du donnateur
