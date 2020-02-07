@@ -12,9 +12,6 @@
 <head>
     <title>Donnation du sang</title>
     <link rel="stylesheet" href="../frameworks/bootstap4/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../frameworks/font-awesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="../frameworks/font-awesome/css/regular.min.css">
-    <link rel="stylesheet" href="../frameworks/font-awesome/css/solid.min.css">
     <style>
         .myCard{
             position: absolute;
@@ -37,15 +34,15 @@
         .twitter-timeline{
             height: 150px;
         }
+
     </style>
 </head>
 <body>
-<br><br><br><br>
+<%@ include file="navbar.jsp"%>
+<br>
     <div class="container">
-        <div class="row justify-content-center ">
-            <div class="col-lg-6 ">
-            </div>
-
+        <div class="row font-weight-bold text-danger mb-3 border-secondary p-2 m-2" style="font-size: 30px;border-left-style: dashed;border-bottom-style: dashed;">
+            <span class=""><span class="fa fa-bell pt-2"></span></span>&nbsp;&nbsp;Alertes des Besoins
         </div>
         <div class="row">
             <div class="input-group mb-3 col-lg-5">
@@ -98,7 +95,10 @@
             </div>
         </c:if>
         <c:if test="${not empty alertes}">
-            <div class="row w-100 mt-5" id="alt">
+            <div class=" w-100 mt-5" id="alt">
+                <div class="col-lg-5 float-lg-right">
+                    <a class="twitter-timeline" href="https://twitter.com/Donation_Sang" data-height="600">Tweets by @Donation_Sang</a>
+                </div>
                 <div class="col-lg-7">
                     <c:forEach items="${alertes}" var="alerte">
                         <div class="col-md-12 altr">
@@ -168,16 +168,13 @@
                         </div>
                     </c:forEach>
                 </div>
-                <div class="col-lg-5 tt">
-                    <a class="twitter-timeline" href="https://twitter.com/Donation_Sang">Tweets by @Donation_Sang</a>
-                </div>
-
             </div>
         </c:if>
     </div>
 </body>
 <script src="../frameworks/jquery/jquery.js"></script>
 <script src="../frameworks/bootstap4/dist/js/bootstrap.bundle.min.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
     $(function(){
         $('[data-toggle="tooltip"]').tooltip();
@@ -189,5 +186,4 @@
         });
     });
 </script>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </html>

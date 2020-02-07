@@ -72,7 +72,6 @@ public class StockController extends HttpServlet {
         this.init();
         this.doGet(request,response);
 
-
     }
 
 }

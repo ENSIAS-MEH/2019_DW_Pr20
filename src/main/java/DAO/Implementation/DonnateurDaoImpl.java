@@ -49,6 +49,15 @@ public class DonnateurDaoImpl implements DonnateurDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         return false;
     }
 
@@ -79,6 +88,15 @@ public class DonnateurDaoImpl implements DonnateurDAO {
             e.printStackTrace();
             return false;
         }
+        finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     @Override
@@ -99,6 +117,14 @@ public class DonnateurDaoImpl implements DonnateurDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -126,6 +152,14 @@ public class DonnateurDaoImpl implements DonnateurDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -154,6 +188,14 @@ public class DonnateurDaoImpl implements DonnateurDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -174,6 +216,14 @@ public class DonnateurDaoImpl implements DonnateurDAO {
         }catch (SQLException e){
             e.printStackTrace();
             return false;
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return false;
     }
@@ -206,6 +256,14 @@ public class DonnateurDaoImpl implements DonnateurDAO {
             return donorsList;
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -272,6 +330,14 @@ public class DonnateurDaoImpl implements DonnateurDAO {
             return donorsList;
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -325,6 +391,14 @@ public class DonnateurDaoImpl implements DonnateurDAO {
             return donorsList;
         }catch (SQLException e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -344,6 +418,14 @@ public class DonnateurDaoImpl implements DonnateurDAO {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         return nbrDonors;
@@ -364,6 +446,14 @@ public class DonnateurDaoImpl implements DonnateurDAO {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            if(conn!=null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         return nbrDonors;

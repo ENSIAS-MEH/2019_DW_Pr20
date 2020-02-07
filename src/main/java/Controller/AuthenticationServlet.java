@@ -51,7 +51,8 @@ public class AuthenticationServlet extends HttpServlet {
                 session.setAttribute("role", "admin");
                 session.setAttribute("admin", admin);
                 System.out.println("role : "+session.getAttribute("role") + "\n"+admin);
-                //response.sendRedirect("/");
+
+                response.sendRedirect("/AdminStatistiques");
             }
             else if(banqueSang != null){
                 HttpSession session = request.getSession();
