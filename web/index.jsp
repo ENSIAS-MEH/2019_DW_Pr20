@@ -231,7 +231,6 @@
                     <p><i class="fas fa-phone" ></i> Téléphone: O5 36 22 67 11</p>
                     <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hello@domain.com" class="a">support@esurte.com</a></p>
                 </div>
-
             </div>
         </div>
     </div>
