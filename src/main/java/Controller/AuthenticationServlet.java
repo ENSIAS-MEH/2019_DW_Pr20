@@ -76,7 +76,7 @@ public class AuthenticationServlet extends HttpServlet {
         this.init();
         HttpSession session = request.getSession();
         session=request.getSession();
-        BanqueSang ad=(BanqueSang) session.getAttribute("admin");
+        Admin ad=(Admin) session.getAttribute("admin");
         BanqueSang bs=(BanqueSang) session.getAttribute("banquesang");
         Donnateur dn=(Donnateur) session.getAttribute("donnateur");
 

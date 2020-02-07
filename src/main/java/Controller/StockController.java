@@ -39,30 +39,43 @@ public class StockController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         BanqueSang banq = (BanqueSang)session.getAttribute("banquesang");
-        int idBS = banq.getIdBS();
+        if(banq == null){
+            response.sendRedirect("SignIn");
+        }
+        else
+        {
+            int idBS = banq.getIdBS();
+            List<Integer> stockSangList = stockSangDAO.statsByBanque(idBS);
+            System.out.println(stockSangList);
+            List<GroupeSangin> groupeSanginList = groupeSanginDAO.findAll();
+            BanqueSang currentBanque = banqueSangDAO.findBanqueSangById(idBS);
+            request.setAttribute("groupList",groupeSanginList);
+            request.setAttribute("currentBanque",currentBanque);
+            request.setAttribute("stockList",stockSangList);
+            this.getServletContext().getRequestDispatcher("/jsp/AfficherStock.jsp").forward(request,response);
+        }
 
-        List<Integer> stockSangList = stockSangDAO.statsByBanque(idBS);
-        System.out.println(stockSangList);
-        List<GroupeSangin> groupeSanginList = groupeSanginDAO.findAll();
-        BanqueSang currentBanque = banqueSangDAO.findBanqueSangById(idBS);
-        request.setAttribute("groupList",groupeSanginList);
-        request.setAttribute("currentBanque",currentBanque);
-        request.setAttribute("stockList",stockSangList);
-        this.getServletContext().getRequestDispatcher("/jsp/AfficherStock.jsp").forward(request,response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
         HttpSession session = request.getSession(false);
         BanqueSang banq = (BanqueSang)session.getAttribute("banquesang");
-        int idBS = banq.getIdBS();
-        int idGroup = Integer.parseInt(request.getParameter("id"));
-        StockSang stockSang  = stockSangDAO.findStockById(idBS,idGroup);
-        int quantite = Integer.parseInt(request.getParameter("quantite"));
+        if(banq == null){
+            response.sendRedirect("SignIn");
+        }
+        else
+        {
+            int idBS = banq.getIdBS();
+            int idGroup = Integer.parseInt(request.getParameter("id"));
+            StockSang stockSang  = stockSangDAO.findStockById(idBS,idGroup);
+            int quantite = Integer.parseInt(request.getParameter("quantite"));
 
-        stockSang.setQuantite(quantite);
-        stockSangDAO.updateStockSang(stockSang);
-        this.init();
-        this.doGet(request,response);
+            stockSang.setQuantite(quantite);
+            stockSangDAO.updateStockSang(stockSang);
+            this.init();
+            this.doGet(request,response);
+        }
+
 
     }
 
