@@ -287,6 +287,143 @@
 			\end{itemize}
 	}
 	\section{Présentation de l'application :}{
+		\subsection{Acceuil et Authentification :}{
+			\begin{itemize}
+					\item \textbf{Page d'acceuil}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/acc.png}
+									 \centering
+									 \caption{\label{acc} Page d'acceuil}
+								\end{figure}
+								Cette présente l'objectif de la plateforme et quelques statistiques générales.
+					\newline
+					\item \textbf{Page d'authentification}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/auth.png}
+									 \centering
+									 \caption{\label{auth} Page d'authentification}
+								\end{figure}
+					Dans cette page, on saisit les informations relatives à la création de la session pour accéder à un espace selon le role.
+					\newline
+					\item \textbf{ChatBot}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/bot.png}
+									 \centering
+									 \caption{\label{bot} Chat Bot}
+								\end{figure}
+								Il s'agit d'un bot qui analyse le message envoyé et envoie une réponse convenable par la suite.
+					
+			\end{itemize}
+		}
+		\subsection{Espace administrateur :}{
+			\begin{itemize}
+					\item \textbf{Statistiques générales}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/statAd.png}
+									 \centering
+									 \caption{\label{statAd} Statistiques de toutes les banques de sang}
+								\end{figure}
+								dans cette page, l'administrateur peut accéder aux statistiques de toutes les banques des sangs en choisissant une ville et puis un banque du sang.
+					\newline
+					\item \textbf{Gestion de Banques de sang}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/bs.png}
+									 \centering
+									 \caption{\label{bs} Gestion des banques de sang}
+								\end{figure}
+								L'administrateur peut ajouter, modifier ou supprimer une banque de sang.
+					\newline
+					\item \textbf{Gestion des donnateurs}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/dn.png}
+									 \centering
+									 \caption{\label{dn} Gestion des donateurs}
+								\end{figure}
+								L'administrateur peut ajouter, modifier ou supprimer un donateur.
+			\end{itemize}
+		}
+		\subsection{Espace Responsable d'un banque du sang :}{
+			\begin{itemize}
+					\item \textbf{Statistiques}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/statBS.png}
+									 \centering
+									 \caption{\label{statBS} Statistiques d'une banque de sang}
+								\end{figure}
+					Il s'agit des statistiques relatives à une banque.
+					\newline
+					\item \textbf{Gestion des convois}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/convoi.png}
+									 \centering
+									 \caption{\label{convoi} Gestion des convois}
+								\end{figure}
+								Le responsable de la banque du sang peut ajouter, modifier,supprimer o consulter un convoi
+								
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/planning.png}
+									 \centering
+									 \caption{\label{plan} Planning des convois}
+								\end{figure}
+								Le responsable de la banque du sang peut également modifier le planning du convoi pour chaqune des villes.
+								\newline
+					\item \textbf{Gestion des alertes}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/alerte.png}
+									 \centering
+									 \caption{\label{alerte} Alertes du besoin}
+								\end{figure}
+								Il s'agit des alertes relatives à un banque du sang en cas d'un besoin urgent d'un groupe sangin. Si l'alerte est ajoutée, une notification par SMS et par Email sera envoyée à tous les donateurs, ainsi la publication d'un post sur Twitter.
+								\begin{figure}[H]
+									 \includegraphics[width=7cm]{Images/sms.jpg}
+									 \centering
+									 \caption{\label{sms} Exemple du SMS envoyé}
+								\end{figure}
+								
+								\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/mail.png}
+									 \centering
+									 \caption{\label{mail} Exemple du Mail envoyé}
+								\end{figure}
+								
+								\begin{figure}[H]
+									 \includegraphics[width=8cm]{Images/twitter.png}
+									 \centering
+									 \caption{\label{twitter} Exemple du Post Twitter publié}
+								\end{figure}
+					
+					\item \textbf{Gestion des donations}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/don.png}
+									 \centering
+									 \caption{\label{don} Gestion des donations}
+								\end{figure}
+								Le responsable de la banque du sang peut aussi gérer les donations faites par un donateur.
+					\begin{figure}[H]
+									 \includegraphics[width=10cm]{Images/ajoutDon.png}
+									 \centering
+									 \caption{\label{adon} Ajouter une donation}
+								\end{figure}
+								Le responsable saisit le code du donateur en premier, après une requete ajax est passée, si le code n'existe pas ou bien le donateur n'est pas encore dépassé 3 mois apès sa dernière donation, un message d'erreur est affiché.
+			\end{itemize}
+		}
+		\subsection{Espace Donateur :}{
+		\begin{itemize}
+					\item \textbf{Convois}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/convoiD.png}
+									 \centering
+									 \caption{\label{convoiD} La liste des convois affichée à un donateur.}
+								\end{figure}
+					
+					\item \textbf{Donations}
+					\begin{figure}[H]
+									 \includegraphics[width=13cm]{Images/donD.png}
+									 \centering
+									 \caption{\label{donD} La liste des donations d'un donateurs.}
+									\end{figure}
+			\end{itemize}
+		}
 	}
 	\chapter*{Conclusion \& Percpectives}
 	\addcontentsline{toc}{chapter}{Conclusion \& Percpectives}

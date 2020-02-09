@@ -44,7 +44,7 @@
         <ul class="navbar-nav">
             <c:if test="${(empty sessionScope.admin)  && (empty sessionScope.banquesang) && (empty sessionScope.donnateur)}">
                 <li class="nav-item">
-                    <a href="#" class="nav-link p-2 mr-5 rounded">Home</a>
+                    <a href="../index.jsp" class="nav-link p-2 mr-5 rounded">Home</a>
                 </li>
                 <li class="nav-item ">
                     <a href="SignIn" class="nav-link mr-5 p-2 border border-danger rounded">Sign In</a>
@@ -107,8 +107,8 @@
         <div class="modal-content p-1">
             <iframe
                     allow="microphone;"
-                    width="480"
-                    height="430"
+                    width="490"
+                    height="700"
                     src="https://console.dialogflow.com/api-client/demo/embedded/7c7758be-1a47-4da6-a08f-9826f726770c">
             </iframe>
         </div>

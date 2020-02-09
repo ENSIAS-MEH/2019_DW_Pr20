@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.17)  7 FEB 2020 03:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.17)  9 FEB 2020 22:11
 entering extended mode
 **./main.tex
 (main.tex
@@ -980,7 +980,7 @@ sty"
 ("C:\Users\Mohamed Amine\Documents\latex\installation\tex/latex/arabtex\alocal.
 sty" (ArabTeX) 3.11 local stub, 26.02.2006)
 (ArabTeX) version 3.11s (02.07.2006): second phase of patching)
-<Images/logo/ensias.png, id=56, 293.095pt x 248.93pt>
+<Images/logo/ensias.png, id=73, 293.095pt x 248.93pt>
 File: Images/logo/ensias.png Graphic file (type png)
 <use Images/logo/ensias.png>
 Package pdftex.def Info: Images/logo/ensias.png  used on input line 113.
@@ -1002,7 +1002,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 115.
 d"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Images/logo/um5.png, id=58, 301.125pt x 145.54375pt>
+<Images/logo/um5.png, id=75, 301.125pt x 145.54375pt>
 File: Images/logo/um5.png Graphic file (type png)
 <use Images/logo/um5.png>
 Package pdftex.def Info: Images/logo/um5.png  used on input line 118.
@@ -1058,13 +1058,13 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [6]
-<Images/usecase.png, id=120, 678.535pt x 477.785pt>
+<Images/usecase.png, id=173, 678.535pt x 477.785pt>
 File: Images/usecase.png Graphic file (type png)
 <use Images/usecase.png>
 Package pdftex.def Info: Images/usecase.png  used on input line 250.
 (pdftex.def)             Requested size: 369.88582pt x 260.44963pt.
  [7]
-<Images/class.png, id=126, 638.385pt x 477.785pt>
+<Images/class.png, id=179, 638.385pt x 477.785pt>
 File: Images/class.png Graphic file (type png)
 <use Images/class.png>
 Package pdftex.def Info: Images/class.png  used on input line 260.
@@ -1086,29 +1086,266 @@ Chapitre 2.
 [10
 
 ]
+<Images/acc.png, id=195, 1211.27531pt x 720.44156pt>
+File: Images/acc.png Graphic file (type png)
+<use Images/acc.png>
+Package pdftex.def Info: Images/acc.png  used on input line 294.
+(pdftex.def)             Requested size: 369.88582pt x 220.00368pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--300
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (14.49998pt): 
 Make it at least 14.61858pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[11] [12
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.300 					\item \textbf
+                        {Page d'authentification} <./Images/acc.png>]
+<Images/auth.png, id=201, 514.17094pt x 593.21625pt>
+File: Images/auth.png Graphic file (type png)
+<use Images/auth.png>
+Package pdftex.def Info: Images/auth.png  used on input line 302.
+(pdftex.def)             Requested size: 369.88582pt x 426.7533pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--308
+
+ []
+
+<Images/bot.png, id=202, 364.36125pt x 527.72156pt>
+File: Images/bot.png Graphic file (type png)
+<use Images/bot.png>
+Package pdftex.def Info: Images/bot.png  used on input line 310.
+(pdftex.def)             Requested size: 369.88582pt x 535.74043pt.
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.314 								I
+               l s'agit d'un bot qui analyse le message envoyé et envoie un...
+ <./Images/auth.png>]
+<Images/statAd.png, id=209, 1430.34375pt x 600.74437pt>
+File: Images/statAd.png Graphic file (type png)
+<use Images/statAd.png>
+Package pdftex.def Info: Images/statAd.png  used on input line 322.
+(pdftex.def)             Requested size: 369.88582pt x 155.34653pt.
+ [13pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.326 								d
+               ans cette page, l'administrateur peut accéder aux statistiqu...
+ <./Images/bot.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 326--328
+
+ []
+
+<Images/bs.png, id=215, 1438.6247pt x 484.05844pt>
+File: Images/bs.png Graphic file (type png)
+<use Images/bs.png>
+Package pdftex.def Info: Images/bs.png  used on input line 330.
+(pdftex.def)             Requested size: 369.88582pt x 124.45624pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
+
+ []
+
+<Images/dn.png, id=216, 1440.13031pt x 576.65437pt>
+File: Images/dn.png Graphic file (type png)
+<use Images/dn.png>
+Package pdftex.def Info: Images/dn.png  used on input line 338.
+(pdftex.def)             Requested size: 369.88582pt x 148.1052pt.
+[14pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.342 								L
+               'administrateur peut ajouter, modifier ou supprimer un donateur.
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.342 								L
+               'administrateur peut ajouter, modifier ou supprimer un donateur.
+ <./Images/statAd.png> <./Images/bs.png>]
+<Images/statBS.png, id=223, 1436.36626pt x 637.63219pt>
+File: Images/statBS.png Graphic file (type png)
+<use Images/statBS.png>
+Package pdftex.def Info: Images/statBS.png  used on input line 349.
+(pdftex.def)             Requested size: 369.88582pt x 164.19455pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--355
+
+ []
+
+<Images/convoi.png, id=224, 1440.13031pt x 422.32782pt>
+File: Images/convoi.png Graphic file (type png)
+<use Images/convoi.png>
+Package pdftex.def Info: Images/convoi.png  used on input line 357.
+(pdftex.def)             Requested size: 369.88582pt x 108.46869pt.
+[15pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.361 								L
+               e responsable de la banque du sang peut ajouter, modifier,sup...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.7}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.361 								L
+               e responsable de la banque du sang peut ajouter, modifier,sup...
+ <./Images/dn.png> <./Images/statBS.png>]
+<Images/planning.png, id=231, 1014.79124pt x 747.54282pt>
+File: Images/planning.png Graphic file (type png)
+<use Images/planning.png>
+Package pdftex.def Info: Images/planning.png  used on input line 364.
+(pdftex.def)             Requested size: 369.88582pt x 272.46873pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--370
+
+ []
+
+<Images/alerte.png, id=232, 868.74562pt x 517.935pt>
+File: Images/alerte.png Graphic file (type png)
+<use Images/alerte.png>
+Package pdftex.def Info: Images/alerte.png  used on input line 372.
+(pdftex.def)             Requested size: 369.88582pt x 220.52646pt.
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.2.8
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.376 								I
+               l s'agit des alertes relatives à un banque du sang en cas d'...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.9}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.376 								I
+               l s'agit des alertes relatives à un banque du sang en cas d'...
+ <./Images/convoi.png> <./Images/planning.png>]
+<Images/sms.jpg, id=239, 1075.01625pt x 1665.22125pt>
+File: Images/sms.jpg Graphic file (type jpg)
+<use Images/sms.jpg>
+Package pdftex.def Info: Images/sms.jpg  used on input line 378.
+(pdftex.def)             Requested size: 199.16928pt x 308.51848pt.
+<Images/mail.png, id=240, 395.97937pt x 182.18062pt>
+File: Images/mail.png Graphic file (type png)
+<use Images/mail.png>
+Package pdftex.def Info: Images/mail.png  used on input line 384.
+(pdftex.def)             Requested size: 369.88582pt x 170.17955pt.
+ [17pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.388 								
+              pdfTeX warning (ext4): destination with the same identifier (name
+{figure.2.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.388 								
+               <./Images/alerte.png> <./Images/sms.jpg>]
+<Images/twitter.png, id=246, 313.9228pt x 322.20375pt>
+File: Images/twitter.png Graphic file (type png)
+<use Images/twitter.png>
+Package pdftex.def Info: Images/twitter.png  used on input line 390.
+(pdftex.def)             Requested size: 227.62204pt x 233.62369pt.
+<Images/don.png, id=247, 1439.3775pt x 687.31781pt>
+File: Images/don.png Graphic file (type png)
+<use Images/don.png>
+Package pdftex.def Info: Images/don.png  used on input line 397.
+(pdftex.def)             Requested size: 369.88582pt x 176.62186pt.
+ [18pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.401 								L
+               e responsable de la banque du sang peut aussi gérer les dona...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.13})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.401 								L
+               e responsable de la banque du sang peut aussi gérer les dona...
+ <./Images/mail.png> <./Images/twitter.png>]
+<Images/ajoutDon.png, id=255, 376.40625pt x 368.87813pt>
+File: Images/ajoutDon.png Graphic file (type png)
+<use Images/ajoutDon.png>
+Package pdftex.def Info: Images/ajoutDon.png  used on input line 403.
+(pdftex.def)             Requested size: 284.52756pt x 278.85869pt.
+<Images/convoiD.png, id=256, 1438.6247pt x 431.36156pt>
+File: Images/convoiD.png Graphic file (type png)
+<use Images/convoiD.png>
+Package pdftex.def Info: Images/convoiD.png  used on input line 414.
+(pdftex.def)             Requested size: 369.88582pt x 110.90735pt.
+ [19pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.417 								\end{figure}
+                          pdfTeX warning (ext4): destination with the same iden
+tifier (name{figure.2.15}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.417 								\end{figure}
+                           <./Images/don.png> <./Images/ajoutDon.png>]
+<Images/donD.png, id=263, 871.00406pt x 259.7203pt>
+File: Images/donD.png Graphic file (type png)
+<use Images/donD.png>
+Package pdftex.def Info: Images/donD.png  used on input line 421.
+(pdftex.def)             Requested size: 369.88582pt x 110.29446pt.
+ [20pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+16}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.428 	\chapter
+               *{Conclusion \& Percpectives}pdfTeX warning (ext4): destination 
+with the same identifier (name{figure.2.17}) has been already used, duplicate i
+gnored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.428 	\chapter
+               *{Conclusion \& Percpectives} <./Images/convoiD.png> <./Images/d
+onD.png>] [21
 
 ]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 313.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 450.
 
 
 ("C:\Users\Mohamed Amine\Documents\latex\installation\tex/latex/base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) 
 AED: lastpage setting LastPage
-[13
+[22
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 327.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 327.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 464.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 464.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 327.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 464.
 
 
  *File List*
@@ -1248,22 +1485,42 @@ Images/logo/um5.png
   t1cmss.fd    2014/09/29 v2.5h Standard LaTeX font definitions
 Images/usecase.png
 Images/class.png
+Images/acc.png
+Images/auth.png
+Images/bot.png
+Images/statAd.png
+Images/bs.png
+Images/dn.png
+Images/statBS.png
+Images/convoi.png
+Images/planning.png
+Images/alerte.png
+Images/sms.jpg
+Images/mail.png
+Images/twitter.png
+Images/don.png
+Images/ajoutDon.png
+Images/convoiD.png
+Images/donD.png
   t1cmtt.fd    2014/09/29 v2.5h Standard LaTeX font definitions
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 327.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 464.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DB8ADE4C5CBDF7C6C7367699E53280B9;992.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 327.
+(rerunfilecheck)             Checksum: AA059BE47151DD5F1161F724F825E8D6;1321.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 464.
  ) 
 Here is how much of TeX's memory you used:
- 14967 strings out of 492945
- 211901 string characters out of 3124903
- 376492 words of memory out of 3000000
- 18489 multiletter control sequences out of 15000+200000
+ 15121 strings out of 492945
+ 214167 string characters out of 3124903
+ 377330 words of memory out of 3000000
+ 18596 multiletter control sequences out of 15000+200000
  23526 words of font info for 54 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,11n,64p,443b,623s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,12n,64p,443b,650s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Mohamed Amine\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec
 /dpi600\ectt1200.pk> <C:\Users\Mohamed Amine\AppData\Local\MiKTeX\2.9\fonts/pk/
 ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\Mohamed Amine\AppData\Local\Mi
@@ -1284,9 +1541,9 @@ Amine\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk>
 i600\ecbx1200.pk> <C:\Users\Mohamed Amine\AppData\Local\MiKTeX\2.9\fonts/pk/ljf
 our/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/Mohamed Amine/Documents/latex/inst
 allation/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (14 pages, 303937 bytes).
+Output written on main.pdf (23 pages, 2315558 bytes).
 PDF statistics:
- 562 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 702 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

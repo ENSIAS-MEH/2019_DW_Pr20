@@ -11,5 +11,9 @@
 \contentsline {chapter}{\numberline {2}Etude technique \& R\IeC {\'e}alisation}{10}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Choix des outils \& technologies :}{11}{section.2.1}% 
 \contentsline {section}{\numberline {2.2}Pr\IeC {\'e}sentation de l'application :}{11}{section.2.2}% 
-\contentsline {chapter}{Conclusion \& Percpectives}{12}{section.2.2}% 
-\contentsline {chapter}{Bibliographie et Webographie}{13}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Acceuil et Authentification :}{11}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Espace administrateur :}{13}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.3}Espace Responsable d'un banque du sang :}{15}{subsection.2.2.3}% 
+\contentsline {subsection}{\numberline {2.2.4}Espace Donateur :}{20}{subsection.2.2.4}% 
+\contentsline {chapter}{Conclusion \& Percpectives}{21}{figure.2.17}% 
+\contentsline {chapter}{Bibliographie et Webographie}{22}{figure.2.17}% 
